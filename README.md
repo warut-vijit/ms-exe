@@ -4,7 +4,7 @@
 
 ### About This Project
 
-This project contains the main game executable, written in Python for use alongside the Ren'Py Launcher. More info on Ren'Py can be found [here](https://www.renpy.org/). Drag the containing folder into the Ren'Py Launcher folder in order to launch it.
+This project contains the main game executable, written in Python for use alongside the Ren'Py Launcher. More info on Ren'Py can be found [here](https://www.renpy.org/). Drag the containing folder into the Ren'Py Launcher folder in order to launch it. Or, if you clone it using the desktop app, you can specify the target folder to clone into.
 
 NOTE: PLEASE MAKE REVISION CHANGES IN THE GITHUB FOLDER.
 
