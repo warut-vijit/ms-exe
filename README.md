@@ -4,7 +4,9 @@
 
 ### About This Project
 
-This project contains the main game executable, written in Python for use alongside the Ren'Py Launcher. More info on Ren'Py can be found [here](https://www.renpy.org/).
+This project contains the main game executable, written in Python for use alongside the Ren'Py Launcher. More info on Ren'Py can be found [here](https://www.renpy.org/). Drag the containing folder into the Ren'Py Launcher folder in order to launch it.
+
+NOTE: PLEASE MAKE REVISION CHANGES IN THE GITHUB FOLDER.
 
 For this game, we are using version 6.99.12.2, which may change. Please discuss possible version changes on Discord.
 
@@ -18,7 +20,7 @@ There are many ways to keep track of versions, but for this project we'll be usi
 
 major.minor.build-stage
 
-Major numbers are reserved for finalized versions (i.e., the full game) and significant jumps in functionality.
+Major numbers are reserved for finalized versions (i.e., the public release of the full game) and significant jumps in functionality.
 
 Minor numbers are reserved for smaller changes, such as small feature additions or script changes.
 
