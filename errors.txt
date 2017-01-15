@@ -1,0 +1,11 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/scripts_game/A1_04.rpy", line 302: end of line expected.
+    claes "\"It's nice to see family members so interested in this school.  Where are you coming from?"\"
+                                                                                                       ^
+    
+    hilda "\"We actually live in Vienna, but Erik here is from Basel-Stadt.\""
+
+Ren'Py Version: Ren'Py 6.99.12.2.2029
