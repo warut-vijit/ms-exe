@@ -3,7 +3,8 @@
 log.txt
 traceback.txt
 errors.txt
-game\saves\
+game\saves
+game\cache
 
 # Windows image file caches
 Thumbs.db
@@ -52,3 +53,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.save
+game/saves/persistent
+game/saves/persistent
