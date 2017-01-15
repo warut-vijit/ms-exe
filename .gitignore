@@ -3,7 +3,7 @@
 log.txt
 traceback.txt
 errors.txt
-./game/saves/*
+game\saves\
 
 # Windows image file caches
 Thumbs.db
