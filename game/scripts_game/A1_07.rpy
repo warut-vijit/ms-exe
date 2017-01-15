@@ -6,33 +6,25 @@ label A1_07:
 
 
 # A1_07
-
 #
 # Backgrounds:
 # School Entrance (day)
-
 #
 # Sprites:
 # Beatrice, Hilda, Mr. + Mrs. Wilhelm, Ela
-
 #
 # Music:
 # Schooltheme
-
 #
 # Sound Effects:
 # Dull thump/punch
-
-
 #
 #
 #-# >open to School Entrance (day)
-
 scene MainLobby
 with Dissolve(2)
 #--#
 #-# >Ela + sisters slide to center, as does the background to signify movement coming to a stop.
-
 show Hilda Neutral:
   offscreenleft
   alpha 0.0 xalign 0.35 yalign -0.2
@@ -70,7 +62,6 @@ erik "\"Sure, thanks.\""
 n "Ela leaves with a wave and a smile. I offer a half-hearted wave back, but it seems like she’s turned around by the time my hand is raised. Ah."
 
 #-# >Ela out
-
 hide Ela
 with Dissolve(0.5)
 #--#
@@ -86,11 +77,9 @@ n "Irene winks and spins on her heels just like Ela did before strutting off tow
 n "Beatrice releases a small sigh as her new best friend walks away before turning her eyes to me."
 
 #-# >Beatrice in close
-
 show Beatrice Happy VClose
 #--#
 #-# >Hilde in further away
-
 image Hilda Neutral Far = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P1_E2.png", 0.42)
 show Hilda Neutral Far:
   offscreenleft
@@ -115,7 +104,6 @@ erik "\"...Sure.\""
 n "Beatrice:\" And what about Ire-!\""
 
 #-# >Beatrice shakes / is bumped over the screen
-
 show Beatrice Happy VClose:
   linear 0.090 xoffset -10 #-offset to keep Character in place
   linear 0.090 xoffset +0 #+offset to move Character
@@ -152,14 +140,12 @@ beatrice "\"Yes! He understands!\""
 n "This casual conversation is calming after the whirlwind that my tour turned out to be. I expected today to turn out very differently."
 
 #-# >Mom + Dad in center
-
 show Mum Smile:
   xalign 0.65 yalign -0.2
 show Dad Neutral2:
   xalign 0.85 yalign -0.2
 #--#
 #-# >Sisters slide over to the left
-
 show Beatrice Neutral:
   easein 1.0 xalign 0.1
 show Hilda Neutral:
@@ -241,7 +227,6 @@ n "Both sisters move in for a hug, and then are quickly herded towards the car w
 n "And now I’m alone."
 
 #-# >END
-
 #
 #--#
 

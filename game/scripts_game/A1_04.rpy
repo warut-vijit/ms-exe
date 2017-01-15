@@ -18,10 +18,10 @@ label A1_04:
 # 
 # Music:
 # Schooltheme
-#
+# 
 # Sound Effects:
 # door closing
-#
+# 
 #-# >open to apartment interior (day)
 image MainBuilding:
   im.Scale("images/Backgrounds/MainBuilding.png", config.screen_width, config.screen_height)
@@ -41,7 +41,6 @@ n "But, I still have this feeling, the one that sticks in the back of your head,
 n "I try my best to shake it off, but it's no good."
 
 #-# >Mum_smile.png
-
 show Mum Smile Vclose:
   xalign 0.3 yalign 0.0
 with Dissolve(0.5)
@@ -68,7 +67,6 @@ mom "\"Isn't this building pretty, Erik? This is where you'll be going for class
 erik "\"It's nice. I like older buildings like this. It’s kind of like the old church back at home.\""
 
 #-# >Screen Shake
-
 image Entrance1:
   im.Scale("images/Backgrounds/MainBuilding.png", config.screen_width, config.screen_height)
 scene Entrance1
@@ -90,7 +88,6 @@ n "I tilt my head disbelievingly toward the man."
 dad "\"...Yes.\""
 
 #-# >Bosworth enter right
-
 image Bosworth Neutral = im.FactorScale("images/Sprites/Side Characters/Principal Bosworth/Bosworth_P1_E2.png", 0.5)
 show Bosworth Neutral:
   offscreenright
@@ -125,7 +122,6 @@ bosworth "\"Kidding, kidding!\""
 n "He herds us inside with a jolly laugh."
 
 #-# >Fade to interior building
-
 image MainLobby:
   im.Scale("images/Backgrounds/MainLobby.png", config.screen_width, config.screen_height)
 scene MainLobby
@@ -141,7 +137,6 @@ bosworth "\"If you don't mind, I'd like to begin with a short one-on-one with Er
 mom "\"We'll be right here, then.\""
 
 #-# >Fade to office (day)
-
 scene missing office (day)
 show Bosworth Neutral:
   xalign 0.8 yalign 0.0
@@ -247,7 +242,6 @@ bosworth "\"Ms. Claes is in her office at the end of this hallway, Erik. She'll 
 n "He guides them into the office and I'm left with Beatrice and Hilda."
 
 #-# >Beatrice and Hilda enter in from left
-
 show Hilda Neutral:
   offscreenleft
   alpha 0.0 xalign 0.35 yalign -0.2
@@ -278,7 +272,6 @@ scene missing office (day)
 n "A young woman, probably a few years older than Hilda, greets us."
 
 #-# >Claes_smile.png
-
 image Claes Smile = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E1.png", 0.5)
 show Claes Smile:
   alpha 0.0 xalign 0.7 yalign 0.0
@@ -320,7 +313,6 @@ todo "{color=#ff8c00}>knock knock 2{/color}"
 
 
 #-# >Ela enters from right
-
 image Ela Neutral = im.FactorScale("images/Sprites/Main Characters/Ela/Ela_P1_E1.png", 0.5)
 show Ela Neutral:
   offscreenright
@@ -341,7 +333,6 @@ n "Ela is a dark-skinned, slender girl, about my age. Her uniform is neatly pres
 erik "\"Nice to meet you, Ela.\""
 
 #-# >ela_smile.png
-
 image Ela Smile = im.FactorScale("images/Sprites/Main Characters/Ela/Ela_P1_E2.png", 0.5)
 show Ela Smile
 with Dissolve(0.25)
@@ -361,7 +352,6 @@ todo "{color=#ff8c00}>clock wipe transition{/color}"
 #--#
 
 #-# >end
-
 scene PitchBlack
 #--#
 

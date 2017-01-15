@@ -1,4 +1,4 @@
-﻿
+
 label A1_01:
 ###############
 
@@ -31,7 +31,7 @@ label A1_01:
 #--#
 #-# <apartment bedroom>
 image PitchBlack = Solid("#000")
-show PitchBlack
+scene PitchBlack
 #--#
 
 #-# <pitch black>
@@ -39,14 +39,14 @@ show PitchBlack
 #--#
 
 #-# >discordant noise
-play music "music/Swampie/Panic Attack Sounds.mp3" fadein 1.0 loop
+play sound "music/Swampie/Panic Attack Sounds.mp3" fadein 1.0 loop
 $ renpy.sound.set_volume(0.5)
 #--#
 
 n "It's here again."
 
 #-# >discordant noise (louder)
-$ renpy.music.set_volume(0.75)
+$ renpy.sound.set_volume(0.75)
 #--#
 
 n "That sound."
@@ -62,7 +62,7 @@ $ renpy.pause (3.0)
 n "it hurts to breathe."
 
 #-# >discordant noise (really loud)
-$ renpy.music.set_volume(1.0)
+$ renpy.sound.set_volume(1.0)
 #--#
 #-# >bedsheets rustling
 
@@ -101,12 +101,12 @@ n "...Breathe in..."
 n "...Breathe out..."
 
 #-# >discordant noise (softer)
-$ renpy.music.set_volume(0.666)
+$ renpy.sound.set_volume(0.666)
 #--#
 #-# <apartment bedroom (night), dark hazy lighting begins to lighten>
 image SisAptNight2:
   im.Scale("images/Backgrounds/SistersAppartment_ErikRoom_Night.png", config.screen_width, config.screen_height)
-  alpha 0.5
+  alpha 0.4
 show SisAptNight2
 with Dissolve(2)
 #--#
@@ -116,8 +116,8 @@ n "...Breathe in..."
 n "...Breathe out..."
 
 #-# >discordant noise (softer, fade over a few seconds)
-$ renpy.music.set_volume(0.5)
-stop music fadeout 3.0
+$ renpy.sound.set_volume(0.5)
+stop sound fadeout 3.0
 #--#
 #-# <apartment bedroom (night), fades into normal cg lighting>
 image SisAptNight:
@@ -210,16 +210,12 @@ play sound "music/effects/door open and close.mp3"
 #--#
 
 #-# >Mum_concerned.png enter from left to center
-$ move = MoveTransition(0.5)
 
-image Mom Concerned = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E8.png", 0.5)
-show Mom Concerned at Position(xpos = 0.0, xanchor=1.0, ypos=0.05, yanchor=0.0)
-show Mom Concerned at Position(xpos = 0.2, xanchor=0.5, ypos=0.05, yanchor=0.0)
-with move
-
-
-
-
+image Mum Concerned Vclose = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E8.png", 0.75)
+show Mum Concerned Vclose:
+  offscreenleft
+  alpha 0.0 xalign 0.05 yalign 0.1
+  easein 1.0 xalign 0.1 alpha 1.0
 
 
 #--#
@@ -237,9 +233,8 @@ n "There’s never a reason for these episodes, no easy explanation that I can g
 erik "\"It’s just hard to fall back asleep.\""
 
 #-# >Mum_smile.png
-image Mom Smile = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E4.png", 0.5)
-show Mom Smile at Position(xpos = 0.2, xanchor=0.5, ypos=0.05, yanchor=0)
-
+image Mum Smile Vclose = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E2.png", 0.75)
+show Mum Smile Vclose
 with Dissolve(0.25)
 #--#
 
@@ -248,9 +243,8 @@ mum "\"Come here. It's going to be fine.\""
 n "She sits on the edge of the bed, beckoning me over with open arms. Helpless, I sidle up next to her as she gently puts her arm around my shoulder."
 
 #-# >Mum_shocked.png
-image Mom Shocked = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E7.png", 0.5)
-show Mom Shocked at Position(xpos = 0.2, xanchor=0.5, ypos=0.05, yanchor=0)
-
+image Mum Shocked Vclose = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E7.png", 0.75)
+show Mum Shocked Vclose
 with Dissolve(0.25)
 #--#
 
@@ -297,8 +291,7 @@ erik "\"Yeah, I know.\""
 n "I know they have the best intentions, at least. As for where that road leads, well, that isn’t as certain."
 
 #-# >Mum_concerned.png
-show Mom Concerned at Position(xpos = 0.2, xanchor=0.5, ypos=0.05, yanchor=0)
-
+show Mum Concerned Vclose
 with Dissolve(0.25)
 #--#
 
@@ -308,13 +301,9 @@ n "It feels like I’m being introduced to new sights, new smells, new everythin
 
 n "I want to be excited, but all I can think of is how easily it can all go wrong. Everything is a potential threat."
 
-
-n "Again."
-
 #-# >Mum_sad_smile.png
-image Mom SadSmile = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E2.png", 0.5)
-show Mom SadSmile at Position(xpos = 0.2, xanchor=0.5, ypos=0.05, yanchor=0)
-
+image Mum SadSmile Vclose = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E2.png", 0.75)
+show Mum SadSmile Vclose
 with Dissolve(0.25)
 #--#
 
@@ -327,8 +316,8 @@ n "After my panic attack, I really needed this."
 erik "\"Mum… thanks.\""
 
 #-# >Mum_smile.png 2
-
-show Mom Smile
+image Mum Smile Vclose2 = im.Flip(im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E2.png", 0.75), horizontal=True)
+show Mum Smile Vclose2
 with Dissolve(0.25)
 #--#
 
@@ -337,8 +326,6 @@ with Dissolve(0.25)
 
 mum "\"Anytime.\""
 
-hide Mom
-with Dissolve(0.25)
 
 
 
@@ -370,15 +357,12 @@ n "She lingers a little, giving me one last smile as she brushes the top of my h
 
 mum "\"Goodnight Erik.\""
 
-stop music fadeout 5.0
 
 
 
 #-# >Mum_smile.png exit center to left
-hide Mom
-with Dissolve(0.25)
-
-
+show Mum Smile Vclose2:
+  easein 2.0 xalign 0.0 alpha 0.0
 
 
 #--#
