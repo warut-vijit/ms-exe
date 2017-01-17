@@ -30,7 +30,10 @@ label A1_02:
 show PitchBlack
 #--#
 #-# >door knocking
-todo "{color=#ff8c00}>door knocking{/color}"
+$ renpy.sound.set_volume(0.75)
+play sound "music/effects/Knock Knock.mp3"
+play music "music/Be Green.mp3" fadein 2.0 loop
+$ renpy.music.set_volume(0.75)
 #--#
 
 voice "\"Erik? Are you up yet?\""
@@ -51,10 +54,10 @@ n "I crack open my eyes. Daylight streams through the open window."
 n "Before I can even respond I hear the door open, footsteps rushing in to greet me."
 
 #-# >Beatrice_happy.png, very close
-image Beatrice Happy VClose = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 0.8)
+image Beatrice Happy VClose = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 1.5)
 show Beatrice Happy VClose:
   offscreenleft
-  alpha 0.0 xalign 0.05 yalign 0.05
+  alpha 0.0 xalign 0.05 yalign 0.1
   easein 1.0 xalign 0.1 alpha 1.0
 #--#
 
@@ -64,6 +67,11 @@ n "A girl is inches away from my face, cheerfully greeting me."
 
 n "It's a face I know all too well."
 
+#-# >Beatrice_happy.png, very close
+image Beatrice VHappy VClose = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E3.png", 1.5)
+show Beatrice VHappy VClose
+#--#
+
 erik "\"Morning Beatrice…\""
 
 n "A tired mumble escapes me as I greet who most people assume to be my younger sister."
@@ -72,16 +80,29 @@ n "Beatrice, however, is my senior by a few years, exuding youth that belies her
 
 n "I'm not ready for this."
 
+#-#
+image Beatrice Happy VClose = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 1.5)
+show Beatrice Happy VClose
+with Dissolve(0.25)
+#-#
+
 n "Still drained from last night, I work to pull the covers up as far as my nose."
 
 erik "\"Mind if I sleep some more?\""
 
 #-# >Beatrice_pout.png
-image Beatrice Pout Close = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E5.png", 0.666)
+image Beatrice Pout Close = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E5.png", 0.8)
 show Beatrice Pout Close
 with Dissolve(0.25)
 #--#
+
 n "Beatrice pouts. A classic expression of hers."
+
+#-#
+image Beatrice Happy Far = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 0.8)
+show Beatrice Happy Far
+with Dissolve(0.25)
+#--#
 
 beatrice "\"But we have breakfast!\""
 
@@ -93,14 +114,26 @@ erik "\"What's on the menu?\""
 
 n "She winks at me."
 
+#-#
+image Beatrice VHappy Far = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E3.png", 0.8)
+show Beatrice VHappy Far
+with Dissolve(0.25)
+#--#
+
 beatrice "\"You'll have to get your butt out of bed and find out~\""
+
+#-#
+image Beatrice Happy Far = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 0.8)
+show Beatrice Happy Far
+with Dissolve(0.25)
+#--#
 
 n "She whips the covers off my bed in one last-ditch effort for me to finally get up. Instinctively, I pull the covers back; Beatrice just pulls them off playfully again. It’s really not as funny as she seems to think it is."
 
 erik "\"Okay, okay, you win. At least let me wash up first.\""
 
 #-# >Beatrice_laugh.png
-image Beatrice Laugh Close2 = im.Flip(im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E3.png", 0.666), horizontal=True)
+image Beatrice Laugh Close2 = im.Flip(im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E3.png", 0.8), horizontal=True)
 show Beatrice Laugh Close2:
   easein 1.0 xalign 0.0 alpha 0.0
 #--#
@@ -119,6 +152,7 @@ n "Thankfully my morning prep isn't too extensive. With just a rinsing of my fac
 image SisAptMain:
   im.Scale("images/Backgrounds/SistersAppartmentMain.png", config.screen_width*1.2, config.screen_height*1.2)
 scene SisAptMain at Position(xpos = 1.0, xanchor=1.0, ypos=0.5, yanchor=0.5)
+with Dissolve(1)
 #--#
 
 
