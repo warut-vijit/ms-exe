@@ -112,13 +112,13 @@ n "...Maybe I can reconsider."
 
 erik "\"What's on the menu?\""
 
-n "She winks at me."
-
 #-#
 image Beatrice VHappy Far = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E3.png", 0.8)
 show Beatrice VHappy Far
 with Dissolve(0.25)
 #--#
+
+n "She winks at me."
 
 beatrice "\"You'll have to get your butt out of bed and find out~\""
 
@@ -162,7 +162,7 @@ n "I enter the main area of the flat, where the rest of my family is squashed in
 erik "\"Morning, everyone.\""
 
 #-# >Mum_smile.png enter right to center
-image Mum Smile = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E2.png", 0.5)
+image Mum Smile = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E2.png", 0.82)
 show Mum Smile:
   offscreenright
   alpha 0.0 xalign 0.3 yalign -0.1
@@ -187,7 +187,7 @@ show Mum Smile:
 #--#
 
 #-# >Hilda enter left to center
-image Hilda Neutral = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P1_E2.png", 0.5)
+image Hilda Neutral = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P1_E2.png", 0.82)
 show Hilda Neutral:
   offscreenleft
   alpha 0.0 xalign 0.0 yalign -0.2
@@ -197,7 +197,7 @@ show Hilda Neutral:
 erik "\"How can I be a baby if I'm the tallest one here?\""
 
 #-# >Hilda_pout.png
-image Hilda Pout = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P2_E1.png", 0.5)
+image Hilda Pout = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P2_E1.png", 0.82)
 show Hilda Pout
 with Dissolve(0.25)
 #--#
@@ -209,7 +209,7 @@ erik "\"It’s the only thing you’ll never hold over me. I take pride in that.
 n "Her eyes narrow, straightening herself and taking a commanding stance. Stepping close, she reaches her hand up purposely over my head - and proceeds to tousle my hair."
 
 #-# >Hilda_smile.png
-image Hilda Smile = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P2_E2.png", 0.5)
+image Hilda Smile = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P2_E2.png", 0.82)
 show Hilda Smile
 with Dissolve(0.25)
 #--#
@@ -221,6 +221,12 @@ n "Still, the feeling’s gone in a flash, and her eyes are soon back on mine."
 hilda "\"I missed you. It’s great to see you up and about, Erik.\""
 
 erik "\"I missed you too. I hate how every time I see you guys there has to be some reason behind it.\""
+
+#-# >Hilda_smile.png
+image Hilda Neutral = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P2_E6.png", 0.82)
+show Hilda Neutral
+with Dissolve(0.25)
+#--#
 
 hilda "\"It’s understandable. Making a trip out to Vienna isn’t something you can do on a whim. If anything, it would be more feasible for us to come visit you.\""
 
@@ -237,19 +243,23 @@ hilda "\"He stepped out to take a phone call.\""
 
 erik "\"Even on a Sunday? Geez, work never lets up for him, does it?\""
 
-
-
-
-
 "It's not unheard of for Dad to have to take or receive calls at any time during the week. During dinner, at breakfast, even when we're in the car – it seems like someone always needs Dad for something. I'm sure he hates it at this point."
 
+#-# >Hilda_smile.png
+image Hilda Smile = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P2_E2.png", 0.82)
+show Hilda Smile
+with Dissolve(0.25)
+#--#
+
 #-# >Beatrice_happy.png enter right
-image Beatrice Happy2 = im.Flip(im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 0.5), horizontal=True)
+image Beatrice Happy2 = im.Flip(im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 0.66), horizontal=True)
 show Beatrice Happy2:
   offscreenright
-  alpha 0.0 xalign 0.8 yalign 0.05
-  easein 1.0 xalign 0.7 alpha 1.0
+  alpha 0.0 xalign 0.8 yalign 1
+  easein 1.0 xalign 0.7 yalign 1 alpha 1
 #--#
+
+todo "\"Beatrice defaulting to yalign 0.5 even when told otherwise.\""
 
 beatrice "\"Sit down and eat something, Erik! The food’s getting cold.\""
 
@@ -258,7 +268,7 @@ n "My sister's reminder that food exists is enough for me. I plop down and am im
 beatrice "\"Just take what you want – I made a bunch for everyone today!\""
 
 #-# >Beatrice_happy.png exit right
-image Beatrice Happy = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 0.5)
+image Beatrice Happy = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 0.66)
 show Beatrice Happy:
   easein 1.0 xalign 0.9 alpha 0.0
 #--#
@@ -269,7 +279,7 @@ n "Beatrice is apparently far more skilled than I am at the culinary arts; I dou
 show Mum Smile:
   offscreenleft
   alpha 0.0 xalign 0.2 yalign -0.1
-  easein 1.0 xalign 0.35 alpha 1.0
+  easein 1.0 xalign 0.4 alpha 1.0
 #--#
 
 n "I take a generous sampling of eggs and bacon, and with a gentle nudge from my mum, I take a spoonful of vegetables too."
@@ -293,15 +303,16 @@ n "We’re in their house and already my mother has taken control of the situati
 #-# >Beatrice_happy.png exit right 2
 show Beatrice Happy:
   easein 1.0 xalign 0.9 alpha 0.0
-show Hilda:
-  easein 1.0 xalign 0. alpha 0.0
 #--#
 
 #-# >Mum_smile.png exit left
-image Mum Smile2 = im.Flip(im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E2.png", 0.5), horizontal=True)
+image Mum Smile2 = im.Flip(im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E2.png", 0.66), horizontal=True)
 show Mum Smile2:
-  easein 1.0 xalign 0.1 alpha 0.0
+  xalign 0.4 yalign -0.1 alpha 1.0
+  easein 1.0 xalign 0.1 yalign -0.1 alpha 0.0
 #--#
+
+todo "\"Mum also jumps to yalign 0.5 during this transition.\""
 
 n "I could get used to this treatment. In the back of my head, though, I'm well aware of what Monday will bring. A new school and no more breakfasts as good as this one. At least not until Christmas."
 
@@ -312,10 +323,10 @@ n "It’s a photogenic school, at least if their website is anything to go by. T
 n "A school for..."
 
 #-# >pause
-$ renpy.pause (3.0)
+$ renpy.pause (1.0)
 #--#
 
-n "well, people like me."
+n "Well, people like me."
 
 n "I'll be seeing it tomorrow. Today, however, my sisters want to take me around Vienna while Mum and Dad take care of some school paperwork and arrange to meet with the headmaster."
 
@@ -326,13 +337,15 @@ n "Pastel green to keep patients calm, the smell of antiseptics and bleach, and 
 dad "\"Okay, we'll be there soon. Thank you, Doctor.\""
 
 #-# >>Dad enter left to center
-image Dad Neutral2 = im.Flip(im.FactorScale("images/Sprites/Side Characters/Mr Wilhelm/MrWilhelm_P1_E1.png", 0.5), horizontal=True)
+image Dad Neutral2 = im.Flip(im.FactorScale("images/Sprites/Side Characters/Mr Wilhelm/MrWilhelm_P1_E1.png", 0.57), horizontal=True)
 show Dad Neutral2:
   offscreenleft
   alpha 0.0 xalign 0.3 yalign 0.05
   easein 1.0 xalign 0.45 alpha 1.0
 with Dissolve(0.25)
 #--#
+
+todo "\"Why will these sprites not accept yalign?.\""
 
 n "My dad finally returns from his phone call."
 
