@@ -1,4 +1,4 @@
-﻿
+
 label A1_01:
 ###############
 
@@ -31,7 +31,7 @@ label A1_01:
 #--#
 #-# <apartment bedroom>
 image PitchBlack = Solid("#000")
-show PitchBlack
+scene PitchBlack
 #--#
 
 #-# <pitch black>
@@ -39,14 +39,14 @@ show PitchBlack
 #--#
 
 #-# >discordant noise
-play music "music/Swampie/Panic Attack Sounds.mp3" fadein 1.0 loop
+play sound "music/Swampie/Panic Attack Sounds.mp3" fadein 1.0 loop
 $ renpy.sound.set_volume(0.5)
 #--#
 
 n "It's here again."
 
 #-# >discordant noise (louder)
-$ renpy.music.set_volume(0.75)
+$ renpy.sound.set_volume(0.75)
 #--#
 
 n "That sound."
@@ -56,23 +56,23 @@ n "I can feel it seeping into me, filling my body with a cold chill and crushing
 n "It's chokingly, agonizingly there, and suddenly-"
 
 #-# >pause
-$ renpy.pause (3.0)
+$ renpy.pause (1.5)
 #--#
 
-n "it hurts to breathe."
+n "It hurts to breathe."
 
 #-# >discordant noise (really loud)
-$ renpy.music.set_volume(1.0)
+$ renpy.sound.set_volume(1.0)
 #--#
 #-# >bedsheets rustling
 
 
-play sound "music/effects/heavy cloth.wav"
+play audio "music/effects/heavy cloth.wav"
 #--#
 
 #-# <apartment bedroom (night), dark hazy lighting>
 image SisAptNight1:
-  im.Scale("images/Backgrounds/SistersAppartment_ErikRoom_Night.png", config.screen_width, config.screen_height)
+  im.Scale("images/Backgrounds/bedroom.jpg", config.screen_width, config.screen_height)
   alpha 0.2
 show SisAptNight1
 with Dissolve(2)
@@ -101,12 +101,12 @@ n "...Breathe in..."
 n "...Breathe out..."
 
 #-# >discordant noise (softer)
-$ renpy.music.set_volume(0.666)
+$ renpy.sound.set_volume(0.666)
 #--#
 #-# <apartment bedroom (night), dark hazy lighting begins to lighten>
 image SisAptNight2:
-  im.Scale("images/Backgrounds/SistersAppartment_ErikRoom_Night.png", config.screen_width, config.screen_height)
-  alpha 0.5
+  im.Scale("images/Backgrounds/bedroom.jpg", config.screen_width, config.screen_height)
+  alpha 0.4
 show SisAptNight2
 with Dissolve(2)
 #--#
@@ -116,8 +116,8 @@ n "...Breathe in..."
 n "...Breathe out..."
 
 #-# >discordant noise (softer, fade over a few seconds)
-$ renpy.music.set_volume(0.5)
-stop music fadeout 3.0
+$ renpy.sound.set_volume(0.5)
+stop sound fadeout 3.0
 #--#
 #-# <apartment bedroom (night), fades into normal cg lighting>
 image SisAptNight:
@@ -135,12 +135,10 @@ n "Eventually, the noise stops, or at least becomes bearable. The pressure lifts
 n "Decisively, my first pressure free action is to crack open a window."
 
 #-# >window opening
-
-
-play sound "music/effects/window.mp3"
+play audio "music/effects/window.mp3"
 #--#
 #-# >ambient city noises (fade in)
-todo "{color=#ff8c00}>ambient city noises (fade in){/color}"
+
 #--#
 
 n "There’s a breeze."
@@ -160,6 +158,8 @@ n "My older sisters, Beatrice and Hilda, are hosting me and my parents for the w
 n "I should get back to bed. Maybe the cool air will help."
 
 erik "\"Ah…\""
+
+stop sound fadeout 5.0
 
 n "However, my right leg refuses to cooperate."
 
@@ -187,7 +187,7 @@ n "I shouldn't be like this. This part of me is not what I want to be."
 
 #-# >>door knocking
 
-
+$ renpy.sound.set_volume(0.75)
 play sound "music/effects/Knock Knock.mp3"
 #--#
 
@@ -207,22 +207,7 @@ n "It’s not exactly the truth, but it’s close enough, I suppose."
 
 
 play sound "music/effects/door open and close.mp3"
-#--#
 
-#-# >Mum_concerned.png enter from left to center
-$ move = MoveTransition(0.5)
-
-image Mom Concerned = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E8.png", 0.5)
-show Mom Concerned at Position(xpos = 0.0, xanchor=1.0, ypos=0.05, yanchor=0.0)
-show Mom Concerned at Position(xpos = 0.2, xanchor=0.5, ypos=0.05, yanchor=0.0)
-with move
-
-
-
-
-
-
-#--#
 
 n "Mum quietly opens the door and makes her way to the end of my bed. It’s hard to see her with only dim moonlight, but I can practically feel the concern radiating off her."
 
@@ -236,23 +221,19 @@ n "There’s never a reason for these episodes, no easy explanation that I can g
 
 erik "\"It’s just hard to fall back asleep.\""
 
-#-# >Mum_smile.png
-image Mom Smile = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E4.png", 0.5)
-show Mom Smile at Position(xpos = 0.2, xanchor=0.5, ypos=0.05, yanchor=0)
-
-with Dissolve(0.25)
-#--#
-
 mum "\"Come here. It's going to be fine.\""
 
-n "She sits on the edge of the bed, beckoning me over with open arms. Helpless, I sidle up next to her as she gently puts her arm around my shoulder."
+#-# >CG1
 
-#-# >Mum_shocked.png
-image Mom Shocked = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E7.png", 0.5)
-show Mom Shocked at Position(xpos = 0.2, xanchor=0.5, ypos=0.05, yanchor=0)
+image CG01:
+  im.Scale("images/CG/CG01.png", config.screen_width, config.screen_height)
+show CG01
+with Dissolve(2)
 
-with Dissolve(0.25)
+
 #--#
+
+n "She sits on the edge of the bed, beckoning me over with open arms. Helpless, I sidle up next to her as she gently puts her arm around my shoulder."
 
 mum "\"Erik, you’re covered in sweat, are you feeling ill?\""
 
@@ -266,7 +247,7 @@ n "I try my best to dispel any of the concern my mum has. Traveling all the way 
 
 mum "\"Is it about the school?\""
 
-n "I pause."
+n "Ah."
 
 n "That."
 
@@ -296,27 +277,11 @@ erik "\"Yeah, I know.\""
 
 n "I know they have the best intentions, at least. As for where that road leads, well, that isn’t as certain."
 
-#-# >Mum_concerned.png
-show Mom Concerned at Position(xpos = 0.2, xanchor=0.5, ypos=0.05, yanchor=0)
-
-with Dissolve(0.25)
-#--#
-
 n "What I do know is that I'm incredibly exhausted and feeling more on edge than I have since the accident."
 
 n "It feels like I’m being introduced to new sights, new smells, new everything."
 
 n "I want to be excited, but all I can think of is how easily it can all go wrong. Everything is a potential threat."
-
-
-n "Again."
-
-#-# >Mum_sad_smile.png
-image Mom SadSmile = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E2.png", 0.5)
-show Mom SadSmile at Position(xpos = 0.2, xanchor=0.5, ypos=0.05, yanchor=0)
-
-with Dissolve(0.25)
-#--#
 
 mum "\"I know it's been a rough few days, but you know we're here for you Erik. Always.\""
 
@@ -324,25 +289,28 @@ n "She hugs me tighter. By instinct, I hug back in response. Something about mot
 
 n "After my panic attack, I really needed this."
 
+stop music fadeout 10.0
+
+play sound "music/effects/City Night Ambience.mp3" fadein 2.0 loop
+$ renpy.sound.set_volume(0.1)
+
 erik "\"Mum… thanks.\""
-
-#-# >Mum_smile.png 2
-
-show Mom Smile
-with Dissolve(0.25)
-#--#
-
-
-
 
 mum "\"Anytime.\""
 
-hide Mom
-with Dissolve(0.25)
-
-
-
 n "She pulls away, and her expression shifts to a warm smile."
+
+#-#
+
+hide CG01
+##Not sure why I had to hide this but the next BG refuses to show if I don't.
+
+image SisAptNight:
+  im.Scale("images/Backgrounds/SistersAppartment_ErikRoom_Night.png", config.screen_width, config.screen_height)
+show SisAptNight
+with Dissolve(2)
+
+#-#
 
 mum "\"Now, your sisters have been dying to show you the city tomorrow. Are you okay to get some rest, or do you need anything?\""
 
@@ -370,22 +338,11 @@ n "She lingers a little, giving me one last smile as she brushes the top of my h
 
 mum "\"Goodnight Erik.\""
 
-stop music fadeout 5.0
-
-
-
-#-# >Mum_smile.png exit center to left
-hide Mom
-with Dissolve(0.25)
-
-
-
-
 #--#
 #-# >door closing
-
-
-play sound "music/effects/door open and close.mp3"
+play audio "music/effects/door open and close.mp3"
+play sound "music/effects/City Night Ambience.mp3" fadein 5.0 loop
+$ renpy.sound.set_volume(0.5)
 #--#
 
 n "She leaves my bedroom, and I'm alone once again."
@@ -402,6 +359,7 @@ n "Against the noise of Vienna's city life my mind finally drifts away, fading f
 image PitchBlack2 = Solid("#000")
 show PitchBlack2
 with Dissolve(2.0)
+stop sound fadeout 2.0
 
 
 

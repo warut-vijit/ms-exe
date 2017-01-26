@@ -20,7 +20,6 @@ label A1_06:
 # TBD
 # 
 #-# <Shot of the beautiful campus of St. Dymphna>
-
 scene MainBuilding
 with Dissolve(2)
 #--#
@@ -64,7 +63,6 @@ beatrice "\"Okay, but is there anything interesting out here?\""
 irene "\"No tunnel system that I could find. No murders either, as far as I’m aware. The trees are a nice vantage point for the west side of the building, though.\""
 
 #-# <CG of the school as a whole? Otherwise a wide-angle background>
-
 scene MainGate
 with Dissolve(2)
 #--#
@@ -341,7 +339,6 @@ n "Who I will meet and how I will act at that this point is all up to me."
 todo "{color=#ff8c00}>transition start{/color}"
 #--#
 #-# <end>
-
 #
 #--#
 

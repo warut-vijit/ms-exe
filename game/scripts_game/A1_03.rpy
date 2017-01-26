@@ -5,24 +5,24 @@ label A1_03:
   $ persistent.scene_number = "A1_03" # current scene
 
 
-# "Scene 03"
-
-# "Backgrounds:"
-# "Apartment Exterior (day)"
-# "City streets (day)"
-# "Bookstore (day)"
-
-# "Sprites:"
-# "Beatrice, Hilda"
-
-# "Music:"
-# "Town theme"
-
-# "Sound Effects:"
-# "door closing"
-# "city noises (loop)"
-# "bell tinkle"
-
+# Scene 03
+# 
+# Backgrounds:
+# Apartment Exterior (day)
+# City streets (day)
+# Bookstore (day)
+# 
+# Sprites:
+# Beatrice, Hilda
+# 
+# Music:
+# Town theme
+# 
+# Sound Effects:
+# door closing
+# city noises (loop)
+# bell tinkle
+# 
 #-# >transition_end
 todo "{color=#ff8c00}>transition_end{/color}"
 #--#
@@ -75,7 +75,7 @@ n "Right now, all I can do is reply with a simple answer."
 
 erik "\"Simply put, yes, It's still pretty numb. Today it seems to be okay – enough to go around town with you and Beatrice, at least.\""
 
-##-# >Hilda_neutral.png
+#-# >Hilda_neutral.png
 show Hilda Neutral
 with Dissolve(0.25)
 #--#
@@ -490,7 +490,6 @@ with Dissolve(0.25)
 beatrice "\"Yeah. We need to catch the U-Bahn back to our place. Let's go!\""
 
 n "We make a dash back to the station, almost missing the next tram back home."
-
 
 #-# >fade to black
 image PitchBlack3 = Solid("#000")
