@@ -92,7 +92,8 @@ n "Still drained from last night, I work to pull the covers up as far as my nose
 erik "\"Mind if I sleep some more?\""
 
 #-# >Beatrice_pout.png
-show beatrice P1_E5
+show beatrice P1_E5:
+  xalign 0.1 yalign 1.0
 with Dissolve(0.25)
 #--#
 
@@ -184,9 +185,8 @@ show mum P1_E2:
 
 #-# >Hilda enter left to center
 show hilda P1_E2:
-  offscreenleft
   alpha 0.0 xalign 0.0 yalign -0.1
-  easein 1.0 xalign 0.1 alpha 1.0
+  easein 1.0 xalign 0.1 yalign -0.1 alpha 1.0
 #--#
 
 erik "\"How can I be a baby if I'm the tallest one here?\""
@@ -413,7 +413,7 @@ show mum Smile2 behind Dad:
 image Beatrice angry2 = im.Flip(im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E7.png", 0.66), horizontal=True)
 show Beatrice angry2:
     offscreenleft
-    easein 1.0 xalign 0.2
+    easein 1.0 xalign 0.1
 #--#
 
 beatrice "\"OH MY GOD, ERIK.\""
@@ -427,7 +427,6 @@ show dad P1_E2:
 show mum Smile2 behind Dad:
   easein 1.0xalign 0.75  
 show Beatrice angry2:
-    xalign 0.2
     easein 1.0 offscreenleft
 #--#
 

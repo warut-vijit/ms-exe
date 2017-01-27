@@ -27,11 +27,13 @@ label A1_03:
 todo "{color=#ff8c00}>transition_end{/color}"
 #--#
 #-# >open to Apartment Exterior (day)
-todo "{color=#ff8c00}>open to Apartment Exterior (day){/color}"
-scene missing Apartment Exterior (day)
+image SistersAppartment_Outside:
+  im.Scale("images/Backgrounds/SistersAppartment_Outside.png", config.screen_width, config.screen_height)
+scene SistersAppartment_Outside
+with Dissolve(0.5)
 #--#
 #-# >Hilda_neutral.png enters left to center
-show Hilda Neutral:
+show hilda P2_E1:
   offscreenleft
   alpha 0.0 xalign 0.45 yalign -0.2
   easein 1.0 xalign 0.5 alpha 1.0
@@ -48,8 +50,7 @@ erik "\"Hm?\""
 n "She hesitates, looking as if she’s carefully crafting her next words."
 
 #-# >Hilda_frown.png
-image Hilda Frown = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P2_E5.png", 0.5)
-show Hilda Frown
+show hilda P2_E5
 with Dissolve(0.25)
 #--#
 
@@ -76,7 +77,7 @@ n "Right now, all I can do is reply with a simple answer."
 erik "\"Simply put, yes, It's still pretty numb. Today it seems to be okay – enough to go around town with you and Beatrice, at least.\""
 
 #-# >Hilda_neutral.png
-show Hilda Neutral
+show hilda P2_E1
 with Dissolve(0.25)
 #--#
 
@@ -125,14 +126,14 @@ if (persistent.skip_menus):
   "{color=#ff8c00}<if menu choice 1>{/color}"
   "{color=#ff8c00}[[1] \"...just wanted to get back into school.\" (+1 Lena, Jeanne, Twins){/color}"
 #--#
-erik "\"...just wanted to get back into school. Mom and Dad approved; they think the environment here is a good thing.\""
+erik "\"I just wanted to get back into school. Mom and Dad approved; they think the environment here is a good thing.\""
 
 hilda "\"Really?\""
 
 erik "\"Plus, I still want to go to university, so I have to keep up my studies and do something with my time.\""
 
 #-# >Hilda_smile.png
-show Hilda Smile
+show hilda P2_E2
 with Dissolve(0.25)
 #--#
 
@@ -152,14 +153,14 @@ if (persistent.skip_menus):
   "{color=#ff8c00}<if menu choice 2>{/color}"
   "{color=#ff8c00}[[2] \"...want to get better.\" (+1 Isolda, Anna){/color}"
 #--#
-erik "\"...want to get better. I don't just want my leg back – I want to feel like I was before all of this happened to me.\""
+erik "\"I want to get better. I don't just want my leg back – I want to feel like I was before all of this happened to me.\""
 
 erik "\"No more guilt, no more stress, no more anxiety. I think this school is the best chance I've got.\""
 
 n "Hilda gives me an incredulous look for a second."
 
 #-# >Hilda_smile.png 2
-show Hilda Smile
+show hilda P2_E2
 with Dissolve(0.25)
 #--#
 
@@ -189,11 +190,10 @@ label A1_03c:
 todo "{color=#ff8c00}>door open{/color}"
 #--#
 #-# >Beatrice_smile.png enter left
-image Beatrice Smile = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E4.png", 0.5)
-show Beatrice Smile:
+show beatrice P2_E4:
   offscreenleft
-  alpha 0.0 xalign 0.15 yalign 0.05
-  easein 1.0 xalign 0.2 alpha 1.0
+  alpha 0.0 xalign 0.15 yalign 1.0
+  easein 1.0 xalign 0.2 yalign 1.0 alpha 1.0
 #--#
 
 beatrice "\"Sorry to keep you waiting!\""
@@ -201,6 +201,11 @@ beatrice "\"Sorry to keep you waiting!\""
 n "As if on cue, Beatrice pops out of the front door, apparently finished with cleaning up inside."
 
 hilda "\"What took you?\""
+
+#-#
+show beatrice P1_E2
+with Dissolve(0.25)
+#-#
 
 beatrice "\"Lots of dishes, plus Mom wanted to talk.\""
 
@@ -216,6 +221,11 @@ hilda "\"She’s worried about us, is all. You should both be a little more unde
 
 beatrice "\"You say that, but I’m pretty sure you waited until she wasn’t looking before you bolted for the door.\""
 
+#-#
+show beatrice P1_E3
+with Dissolve(0.25)
+#-#
+
 hilda "\"Coincidence. Shall we get going?\""
 
 n "She does her best to get us moving, but it’s not long before things slow down thanks to yours truly."
@@ -223,8 +233,12 @@ n "She does her best to get us moving, but it’s not long before things slow do
 erik "\"...Sorry. Leg's still out of order.\""
 
 #-# >Beatrice_frown.png
-image Beatrice Frown = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E7.png", 0.5)
-show Beatrice Frown
+show beatrice P2_E5
+with Dissolve(0.25)
+#--#
+
+#-# 
+show hilda P2_E1
 with Dissolve(0.25)
 #--#
 
@@ -239,11 +253,11 @@ n "It must be tough to get used to the fact that your younger brother, who loves
 erik "\"Okay. Ready.\""
 
 #-# >Hilda_smile.png 3
-show Hilda Smile
+show hilda P2_E2
 with Dissolve(0.25)
 #--#
 #-# >Beatrice_smile.png
-show Beatrice Smile
+show beatrice P2_E2
 with Dissolve(0.25)
 #--#
 
@@ -274,20 +288,38 @@ n "Beatrice is our guide, taking us around the streets, showing me the various t
 
 n "Honestly, it's a lot to take in. Years of navigating one of the oldest cities in Europe have clearly molded my sisters into true city-dwellers."
 
-n "Hilda does her best to provide some sense of where we are in relation to the school and to their apartment in case I ever get lost. We all take a U-Bahn route that has a stop one block away from St. Dymphna's shuttle pickup zone according to the information we got from the brochure."
+n "Hilda does her best to provide some sense of where we are in relation to the school and to their apartment in case I ever get lost."
+
+n "We all take a U-Bahn route that has a stop one block away from St. Dymphna's shuttle pickup zone according to the information we got from the brochure."
+
+#-# >
+show beatrice P2_E2:
+  xalign 0.5 yalign 1.0 alpha 0.0
+  easein 0.25 alpha 1.0
+#--#
 
 beatrice "\"It's a great route for you, because it goes straight into the heart of the city! Stadtpark is a short walk from there, and the restaurants along Kärnter Ring are the best!\""
 
 erik "\"Sounds like you've done your research.\""
 
+#-#
+show beatrice P2_E3
+with Dissolve (0.25)
+#--#
+
 beatrice "\"What can I say? It's my sisterly duty to help out my brother with city navigation.\""
+
+#-#
+hide beatrice
+with Dissolve (0.25)
+#-#
 
 n "I’m not so sure about that, but I decide not to deflate her swelling pride and allow her to continue on about shopping. As she speaks, I skim through the school brochure."
 
 n "Apparently, the school encourages students to explore the city (within limits, I assume) for a weekend or class trip. With careful supervision, most students get to visit the city every week."
 
 #-# >Hilda_smile.png 4
-show Hilda Smile:
+show hilda P1_E2:
   xalign 0.5 yalign -0.2 alpha 0.0
   easein 0.25 alpha 1.0
 #--#
@@ -314,7 +346,7 @@ n "Stadtpark is quieter than the rest of the city, but there are still a lot of 
 n "I'm impressed – it's a lot more lively than I expected. Tourists are clustered around a few statues."
 
 #-# >Hilda_neutral.png enter left
-show Hilda Neutral:
+show hilda P2_E2:
   offscreenleft
   alpha 0.0 xalign 0.35 yalign -0.2
   easein 1.0 xalign 0.4 alpha 1.0
@@ -330,6 +362,20 @@ with Dissolve(2)
 #--#
 
 n "The cafe is busy during the lunch hour, with a long line working its way from the entrance to the counter."
+
+#-#
+show hilda P2_E2:
+  offscreenleft
+  alpha 0.0 xalign 0.7 yalign -0.2
+  easein 1.0 xalign 0.6 alpha 1.0
+#--#
+
+#-#
+show beatrice P1_E2:
+  offscreenleft
+  alpha 0.0 xalign 0.2 yalign 1.0
+  easein 1.0 xalign 0.3 alpha 1.0
+#--#
 
 beatrice "\"This place has a lot of great snacks and drinks. They cater to the people who come to the park to take walks and exercise here.\""
 
@@ -355,13 +401,38 @@ erik "\"Thanks for lunch.\""
 
 hilda "\"No problem! It’s my sisterly duty to treat my little brother on special occasions like this.\""
 
+#-#
+show beatrice P1_E3
+with Dissolve(0.25)
+#-#
+
 beatrice "\"Feel free to treat your little sister as well.\""
+
+#-#
+show hilda P2_E1
+with Dissolve(0.25)
+#-#
 
 hilda "\"What’s your special occasion…?\""
 
+#-#
+show beatrice P2_E2
+with Dissolve(0.25)
+#-#
+
 beatrice "\"I cooked breakfast?\""
 
+#-#
+show hilda P2_E2
+with Dissolve(0.25)
+#-#
+
 hilda "\"Just the one sandwich, thank you.\""
+
+#-#
+show beatrice P1_E8
+with Dissolve(0.25)
+#-#
 
 beatrice "\"...Seems like a double standard, that’s all I’m saying...\""
 
@@ -371,17 +442,32 @@ n "With Beatrice being able to cook so well, it seems that she has a lot of infl
 
 n "As we sit down, the two sisters talk about what they’ve been up to in the months since I last saw them at home."
 
+#-#
+show beatrice P1_E1
+with Dissolve(0.25)
+#-#
+
 beatrice "\"I’ve been prepping for my final year at MDW. Gonna’ be a long year with all the papers I have to write…\""
 
 erik "\"Music theory is that intensive?\""
 
 n "Beatrice slumps in her chair with a big sigh."
 
+#-#
+show beatrice P1_E8
+with Dissolve(0.25)
+#-#
+
 beatrice "\"Not really, it’s just that 20 pages on contemporary jazz gets to you in the long hours of the night.\""
 
 hilda "\"Ah, I remember you not being able to sleep because the music you were studying got stuck in your head.\""
 
 erik "\"Sounds more like too much coffee.\""
+
+#-#
+show beatrice P1_E7
+with Dissolve(0.25)
+#-#
 
 beatrice "\"...\""
 
@@ -393,6 +479,11 @@ erik "\"It’s my brotherly duty to annoy Beatrice, though. Gotta do it.\""
 
 n "Beatrice’s glowering continues as I take a bite out of my sandwich."
 
+#-#
+show beatrice P1_E5
+with Dissolve(0.25)
+#-#
+
 erik "\"Anyway, what have you been up to, Hilda? Still researching?\""
 
 hilda "\"Pretty much. We’re working on developing new surgical tools. Can’t give you the details, but I’m proud of what our team has done so far.\""
@@ -401,16 +492,20 @@ erik "\"Sounds interesting.\""
 
 hilda "\"It’s certainly better than mountains of research papers, that’s for sure. I’m not envious of you two.\""
 
+#-#
+show beatrice P1_E1
+with Dissolve(0.25)
+#-#
+
 beatrice "\"But what about your youthful escapades?\""
 
 erik "\"Or procrastinating on your homework?\""
 
 beatrice "\"Surely you miss those?\""
 
-#-# >Hilda_smile.png 5
-show Hilda Smile:
-  xalign 0.5 yalign -0.2 alpha 0.0
-  easein 0.25 alpha 1.0
+#-#
+show hilda P1_E4
+with Dissolve(0.25)
 #--#
 
 hilda "\"Okay, you got me. I suppose I miss secondary school and university a bit. You two should try and enjoy your time in school. Especially you, Erik.\""
@@ -424,12 +519,13 @@ n "The rest of our lunch is more playful banter, teasing Beatrice, and enjoying 
 #-# >timeskip
 todo "{color=#ff8c00}>timeskip{/color}"
 scene ViennaStreet3
+with Dissolve(0.5)
 #--#
 
 n "Despite the allegedly light fare, the sandwich is actually pretty filling. Cleaning up the table, all of us head back into the city."
 
-#-# >Hilda_neutral.png enter left 2
-show Hilda Neutral:
+#-#
+show hilda P2_E1:
   offscreenleft
   alpha 0.0 xalign 0.2 yalign -0.2
   easein 1.0 xalign 0.3 alpha 1.0
@@ -440,17 +536,17 @@ hilda "\"So, what do you think of Vienna, Erik?\""
 erik "\"I can see why you moved here, it's a great city. I wish we had more time to explore.\""
 
 #-# >Hilda_smile.png 6
-show Hilda Smile
+show hilda P2_E2
 with Dissolve(0.25)
 #--#
 
 hilda "\"Well, you're free to come visit us if you're lonely!\""
 
 #-# >Beatrice_smile enter right
-show Beatrice Smile:
+show beatrice P2_E3:
   offscreenright
-  alpha 0.0 xalign 0.8 yalign 0.05
-  easein 1.0 xalign 0.7 alpha 1.0
+  alpha 0.0 xalign 0.7 yalign 1.0
+  easein 1.0 xalign 0.6 alpha 1.0
 #--#
 
 beatrice "\"We'd never turn you away! You mean so much to us, Erik.\""
@@ -461,29 +557,28 @@ n "My sisters may be overly doting, but it's definitely sincere."
 todo "{color=#ff8c00}>ping{/color}"
 #--#
 #-# >Beatrice_neutral.png
-image Beatrice Neutral = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E1.png", 0.5)
-show Beatrice Neutral
+show beatrice P1_E1
 with Dissolve(0.25)
 #--#
 
 n "Beatrice's cell phone pings with a notification. She takes it out to read it, then frowns."
 
 #-# >Beatrice_frown.png 2
-show Beatrice Frown
+show beatrice P1_E5
 with Dissolve(0.25)
 #--#
 
 beatrice "\"Sadly, this concludes our regrettably brief tour of Vienna. We need to meet back with Mom and Dad for dinner.\""
 
 #-# >Hilda_neutral.png 2
-show Hilda Neutral
+show hilda P2_E1
 with Dissolve(0.25)
 #--#
 
 hilda "\"Really? It's that late?\""
 
 #-# >Beatrice_neutral.png 2
-show Beatrice Neutral
+show beatrice P1_E1
 with Dissolve(0.25)
 #--#
 
