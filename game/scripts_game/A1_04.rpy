@@ -18,14 +18,12 @@ label A1_04:
 # 
 # Music:
 # Schooltheme
-# 
+#
 # Sound Effects:
 # door closing
-# 
+#
 #-# >open to apartment interior (day)
-image MainBuilding:
-  im.Scale("images/Backgrounds/MainBuilding.png", config.screen_width, config.screen_height)
-show MainBuilding
+scene mainbuilding
 #--#
 
 n "Morning comes almost too quickly. I thought days like this were supposed to take forever to get to, like Christmas morning, or the day after a hard test."
@@ -41,8 +39,15 @@ n "But, I still have this feeling, the one that sticks in the back of your head,
 n "I try my best to shake it off, but it's no good."
 
 #-# >Mum_smile.png
-show Mum Smile Vclose:
-  xalign 0.3 yalign 0.0
+
+show mom P1_E2:
+  xalign 0.0 yalign -0.2 alpha 0.0 zoom 1.0
+  easein 1.0 xalign 0.3 yalign -0.2 alpha 1.0
+with Dissolve(0.5)
+
+show dad P2_E2:
+  xalign 1.0 yalign 0.4 alpha 0.0 zoom 1.0
+  easein 1.0 xalign 0.7 yalign 0.4 alpha 1.0
 with Dissolve(0.5)
 #--#
 
@@ -67,9 +72,8 @@ mom "\"Isn't this building pretty, Erik? This is where you'll be going for class
 erik "\"It's nice. I like older buildings like this. It’s kind of like the old church back at home.\""
 
 #-# >Screen Shake
-image Entrance1:
-  im.Scale("images/Backgrounds/MainBuilding.png", config.screen_width, config.screen_height)
-scene Entrance1
+
+scene entrance1
 with hpunch
 #--#
 
@@ -88,8 +92,8 @@ n "I tilt my head disbelievingly toward the man."
 dad "\"...Yes.\""
 
 #-# >Bosworth enter right
-image Bosworth Neutral = im.FactorScale("images/Sprites/Side Characters/Principal Bosworth/Bosworth_P1_E2.png", 0.5)
-show Bosworth Neutral:
+
+show bosworth P1_E2:
   offscreenright
   alpha 0.0 xalign 0.9 yalign 0.0
   easein 1.0 xalign 0.8 alpha 1.0
@@ -122,13 +126,12 @@ bosworth "\"Kidding, kidding!\""
 n "He herds us inside with a jolly laugh."
 
 #-# >Fade to interior building
-image MainLobby:
-  im.Scale("images/Backgrounds/MainLobby.png", config.screen_width, config.screen_height)
-scene MainLobby
+
+scene mainlobby
 with Dissolve(0.5)
-show Bosworth Neutral:
+show bosworth P1_E2:
   xalign 0.9 yalign 0.0
-show Mum Smile:
+show mom P1_E2:
   xalign 0.3 yalign 0.0
 #--#
 
@@ -137,8 +140,9 @@ bosworth "\"If you don't mind, I'd like to begin with a short one-on-one with Er
 mom "\"We'll be right here, then.\""
 
 #-# >Fade to office (day)
+
 scene missing office (day)
-show Bosworth Neutral:
+show bosworth P1_E2:
   xalign 0.8 yalign 0.0
 #--#
 #-# >Slide across the BG as Erik inspects the room
@@ -221,9 +225,22 @@ todo "{color=#ff8c00}>door opening{/color}"
 
 #-# >Fade to interior building 2
 todo "{color=#ff8c00}>Fade to interior building 2{/color}"
-scene Entrance1
+scene mainlobby
 with Dissolve(1.0)
 #--#
+show mom P1_E2:
+  xalign 0.0 yalign -0.2 alpha 0.0 zoom 1.0
+  easein 1.0 xalign 0.1 yalign -0.2 alpha 1.0
+with Dissolve(0.5)
+
+show dad P2_E2:
+  xalign 1.0 yalign 0.4 alpha 0.0 zoom 1.0
+  easein 1.0 xalign 0.5 yalign 0.4 alpha 1.0
+with Dissolve(0.5)
+
+show bosworth P1_E2:
+  xalign 0.9 yalign 0.0
+with Dissolve(2)
 
 erik "\"Okay, all done.\""
 
@@ -242,11 +259,16 @@ bosworth "\"Ms. Claes is in her office at the end of this hallway, Erik. She'll 
 n "He guides them into the office and I'm left with Beatrice and Hilda."
 
 #-# >Beatrice and Hilda enter in from left
-show Hilda Neutral:
+
+hide dad
+hide mom
+hide bosworth
+
+show hilda P1_E5:
   offscreenleft
   alpha 0.0 xalign 0.35 yalign -0.2
   easein 1.0 xalign 0.4 alpha 1.0
-show Beatrice Neutral:
+show beatrice P1_E1:
   offscreenleft
   alpha 0.0 xalign 0.05 yalign 0.0
   easein 1.0 xalign 0.1 alpha 1.0
@@ -266,18 +288,26 @@ Voice "\"Come in.\""
 
 #-# >fade to office (day)
 todo "{color=#ff8c00}>fade to office (day){/color}"
-scene missing office (day)
+scene classroom1
 #--#
 
 n "A young woman, probably a few years older than Hilda, greets us."
 
 #-# >Claes_smile.png
-image Claes Smile = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E1.png", 0.5)
-show Claes Smile:
+
+
+show claes P1_E1:
   alpha 0.0 xalign 0.7 yalign 0.0
   easein 1.0 xalign 0.7 alpha 1.0
 #--#
-
+show hilda P1_E5:
+  offscreenleft
+  alpha 0.0 xalign 0.35 yalign -0.2
+  easein 1.0 xalign 0.4 alpha 1.0
+show beatrice P1_E1:
+  offscreenleft
+  alpha 0.0 xalign 0.05 yalign 0.0
+  easein 1.0 xalign 0.1 alpha 1.0
 
 
 n "Her voice is prim, proper, and polite – very teacher-esque."
@@ -313,11 +343,12 @@ todo "{color=#ff8c00}>knock knock 2{/color}"
 
 
 #-# >Ela enters from right
-image Ela Neutral = im.FactorScale("images/Sprites/Main Characters/Ela/Ela_P1_E1.png", 0.5)
-show Ela Neutral:
+
+
+show ela P1_E1:
   offscreenright
-  alpha 0.0 xalign 0.9 yalign -0.2
-  easein 1.0 xalign 0.8 alpha 1.0
+  alpha 0.0 xalign 0.9 yalign -0.4
+  easein 1.0 xalign 1.0 alpha 1.0
 #--#
 
 n "A young girl enters from outside."
@@ -333,15 +364,16 @@ n "Ela is a dark-skinned, slender girl, about my age. Her uniform is neatly pres
 erik "\"Nice to meet you, Ela.\""
 
 #-# >ela_smile.png
-image Ela Smile = im.FactorScale("images/Sprites/Main Characters/Ela/Ela_P1_E2.png", 0.5)
-show Ela Smile
+
+
+show ela P1_E2
 with Dissolve(0.25)
 #--#
 
 ela "\"It's nice to meet you too, Erik.\""
 
 #-# >ela_neutral.png
-show Ela Neutral
+show ela P1_E1
 with Dissolve(0.25)
 #--#
 
@@ -352,6 +384,7 @@ todo "{color=#ff8c00}>clock wipe transition{/color}"
 #--#
 
 #-# >end
+
 scene PitchBlack
 #--#
 

@@ -359,7 +359,7 @@ screen navigation:
 init -2 python:
     style.gm_nav_button.size_group = "gm_nav"
     style.gm_nav_button_text.font = "Bebas.ttf"
-    style.gm_nav_button_text.size = 36
+    style.gm_nav_button_text.size = 24
     style.gm_nav_button_text.hover_color = "#2020ffff"
     style.gm_nav_button_text.idle_color = "#0000ff"
     style.gm_nav_button_text.insensitive_color = "#000080"
@@ -384,41 +384,25 @@ init -2 python:
 # a single screen, file_picker. We then use the file_picker screen
 # from simple load and save screens.
 
-screen file_picker:
-
+screen file_picker_save:
+    
+    window:
+        style "file_picker_save_root"
+    
+        
     frame:
         style "file_picker_frame"
-
+        xalign 0.5
+        yalign 0.5
         has vbox
-
-        # The buttons at the top allow the user to pick a
-        # page of files.
-        hbox:
-            style_group "file_picker_nav"
-
-            textbutton _("Previous"):
-                action FilePagePrevious()
-
-            textbutton _("Auto"):
-                action FilePage("auto")
-
-            textbutton _("Quick"):
-                action FilePage("quick")
-
-            for i in range(1, 9):
-                textbutton str(i):
-                    action FilePage(i)
-
-            textbutton _("Next"):
-                action FilePageNext()
-
+        hbox
         $ columns = 3
         $ rows = 3
 
         # Display a grid of file slots.
+
         grid columns rows:
             transpose True
-            xfill True
             style_group "file_picker"
 
             # Display ten file slots, numbered 1 - 10.
@@ -427,7 +411,7 @@ screen file_picker:
                 # Each file slot is a button.
                 button:
                     action FileAction(i)
-                    xfill True
+
 
                     has hbox
 
@@ -443,7 +427,94 @@ screen file_picker:
                     text description
 
                     key "save_delete" action FileDelete(i)
+                    
+        # The buttons at the top allow the user to pick a
+        # page of files.
+        hbox:
+            style_group "file_picker_nav"
+            xalign 1.0
+            yalign .5
+            textbutton _("Previous"):
+                action FilePagePrevious()
 
+##            textbutton _("Auto"):
+##                action FilePage("auto")
+
+##            textbutton _("Quick"):
+##                action FilePage("quick")
+
+            for i in range(1, 9):
+                textbutton str(i):
+                    action FilePage(i)
+
+            textbutton _("Next"):
+                action FilePageNext()                    
+                
+             
+screen file_picker_load:
+    
+    window:
+        style "file_picker_load_root"
+        
+    frame:
+        style "file_picker_frame"
+        xalign 0.5
+        yalign 0.5
+        has vbox
+        hbox
+        $ columns = 3
+        $ rows = 3
+
+        # Display a grid of file slots.
+
+        grid columns rows:
+            transpose True
+            style_group "file_picker"
+
+            # Display ten file slots, numbered 1 - 10.
+            for i in range(1, columns * rows + 1):
+
+                # Each file slot is a button.
+                button:
+                    action FileAction(i)
+
+
+                    has hbox
+
+                    # Add the screenshot.
+                    add FileScreenshot(i)
+
+                    # Format the description, and add it as text.
+                    $ description = "% 2s. %s\n%s" % (
+                        FileSlotName(i, columns * rows),
+                        FileTime(i, empty=_("Empty Slot.")),
+                        FileSaveName(i))
+
+                    text description
+
+                    key "save_delete" action FileDelete(i)
+                    
+        # The buttons at the top allow the user to pick a
+        # page of files.
+        hbox:
+            style_group "file_picker_nav"
+            xalign 1.0
+            yalign .5
+            textbutton _("Previous"):
+                action FilePagePrevious()
+
+##            textbutton _("Auto"):
+##               action FilePage("auto")
+
+##            textbutton _("Quick"):
+##                action FilePage("quick")
+
+            for i in range(1, 9):
+                textbutton str(i):
+                    action FilePage(i)
+
+            textbutton _("Next"):
+                action FilePageNext()                 
 
 screen save:
 
@@ -451,7 +522,7 @@ screen save:
     tag menu
 
     use navigation
-    use file_picker
+    use file_picker_save
 
 screen load:
 
@@ -459,15 +530,25 @@ screen load:
     tag menu
 
     use navigation
-    use file_picker
-
+    use file_picker_load
+    
 init -2 python:
-    style.file_picker_frame = Style(style.menu_frame)
+    style.file_picker_load_root.background = "images/Menus/save-load/load_background.png"
+    style.file_picker_save_root.background = "images/Menus/save-load/save_background.png"
+    
+    style.file_picker_nav_button_text.font = "Bebas.ttf"
+    style.file_picker_nav_button_text.size = 18
+    style.file_picker_nav_button_text.hover_color = "#2020ffff"
+    style.file_picker_nav_button_text.idle_color = "#0000ff"
+    style.file_picker_nav_button_text.insensitive_color = "#000080"
+    style.file_picker_nav_button_text.selected_idle_color = "#4040ff"
+    
+    style.file_picker_nav_button.background = "#00000000"
 
-    style.file_picker_nav_button = Style(style.small_button)
-    style.file_picker_nav_button_text = Style(style.small_button_text)
 
-    style.file_picker_button = Style(style.large_button)
+    style.file_picker_button.idle_background = "images/Menus/save-load/save_frame_30.png"
+    style.file_picker_button.hover_background = "images/Menus/save-load/save_frame_100.png"
+    style.file_picker_button.insensitive_background = "images/Menus/save-load/save_frame_00.png"
     style.file_picker_text = Style(style.large_button_text)
 
 
@@ -480,16 +561,19 @@ init -2 python:
 
 screen preferences:
 
+  
     tag menu
 
+       
     # Include the navigation.
     use navigation
 
-    # Put the navigation columns in a three-wide grid.
+    # Put the navigation columns in a three-wide grid.    
     grid 3 1:
         style_group "prefs"
         xfill True
-
+        xalign 0.5
+        yalign 0.5
         # The left column.
         vbox:
             frame:
@@ -586,10 +670,12 @@ screen preferences:
                         style "soundtest_button"
 
 init -2 python:
+
+    
     style.pref_frame.xfill = True
     style.pref_frame.xmargin = 5
     style.pref_frame.top_margin = 5
-
+    
     style.pref_vbox.xfill = True
 
     style.pref_button.size_group = "pref"
@@ -677,8 +763,8 @@ screen quick_menu:
         xalign 1.0
         yalign 1.0
 
-        textbutton _("Q.Save") action QuickSave()
-        textbutton _("Q.Load") action QuickLoad()
+##        textbutton _("Q.Save") action QuickSave()
+##        textbutton _("Q.Load") action QuickLoad()
         textbutton _("Save") action ShowMenu('save')
         textbutton _("Skip") action Skip()
         textbutton _("Auto") action Preference("auto-forward", "toggle")

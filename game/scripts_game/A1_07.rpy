@@ -6,37 +6,45 @@ label A1_07:
 
 
 # A1_07
+
 #
 # Backgrounds:
 # School Entrance (day)
+
 #
 # Sprites:
 # Beatrice, Hilda, Mr. + Mrs. Wilhelm, Ela
+
 #
 # Music:
 # Schooltheme
+
 #
 # Sound Effects:
 # Dull thump/punch
+
+
 #
 #
 #-# >open to School Entrance (day)
-scene MainLobby
+
+scene entrance1
 with Dissolve(2)
 #--#
 #-# >Ela + sisters slide to center, as does the background to signify movement coming to a stop.
-show Hilda Neutral:
-  offscreenleft
-  alpha 0.0 xalign 0.35 yalign -0.2
-  easein 1.0 xalign 0.4 alpha 1.0
-show Ela Neutral:
-  offscreenleft
-  alpha 0.0 xalign 0.55 yalign -0.2
-  easein 1.0 xalign 0.6 alpha 1.0
-show Beatrice Neutral:
-  offscreenleft
-  alpha 0.0 xalign 0.15 yalign -0.2
-  easein 1.0 xalign 0.2 alpha 1.0
+
+show hilda P3_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.4 yalign -0.3 alpha 1.0
+show ela P1_E1:
+  xalign 0.55 yalign -0.4 alpha 0.0
+  easein 1.0 xalign 0.7 yalign -0.4 alpha 1.0
+show beatrice P2_E5:
+  xalign 0.15 yalign 0 alpha 0.0
+  easein 1.0 xalign 0.1 yalign 0 alpha 1.0
+show irene U_P1_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.95 yalign -0.3 alpha 1.0
 #--#
 
 n "We come to a stop in front of the large building that holds the offices."
@@ -62,29 +70,35 @@ erik "\"Sure, thanks.\""
 n "Ela leaves with a wave and a smile. I offer a half-hearted wave back, but it seems like she’s turned around by the time my hand is raised. Ah."
 
 #-# >Ela out
-hide Ela
+
+hide ela
 with Dissolve(0.5)
 #--#
 
 n "Irene snickers as she notices my half-hearted wave. Before leaving, she leans towards me conspiratorially."
 
-irene "\"Let me know if you actually need info, she talks a big game but she doesn’t know the land like it do.\""
+irene "\"Let me know if you actually need info, she talks a big game but she doesn’t know the land like I do.\""
 
 erik "\"Uh, right. Thanks.\""
 
 n "Irene winks and spins on her heels just like Ela did before strutting off towards the forest."
 
+hide irene
+with Dissolve(0.5)
+
 n "Beatrice releases a small sigh as her new best friend walks away before turning her eyes to me."
 
 #-# >Beatrice in close
-show Beatrice Happy VClose
+
+show beatrice P2_E3:
+  easein 1.0 xalign 0.65 yalign 0.0 zoom 2.0
 #--#
 #-# >Hilde in further away
+hide hilda
+
 image Hilda Neutral Far = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P1_E2.png", 0.42)
 show Hilda Neutral Far:
-  offscreenleft
-  alpha 0.0 xalign 0.35 yalign 0.5 ypos 0.8
-  easein 1.0 xalign 0.4 alpha 1.0
+  xalign 0.4 yalign 0.5 ypos 0.8 alpha 1.0
 #--#
 
 beatrice "\"Eeeeerik~\""
@@ -104,7 +118,8 @@ erik "\"...Sure.\""
 n "Beatrice:\" And what about Ire-!\""
 
 #-# >Beatrice shakes / is bumped over the screen
-show Beatrice Happy VClose:
+
+show beatrice P2_E3:
   linear 0.090 xoffset -10 #-offset to keep Character in place
   linear 0.090 xoffset +0 #+offset to move Character
   repeat 4 #Repeats
@@ -114,7 +129,16 @@ todo "{color=#ff8c00}>Dull thump/punch SFX{/color}"
 #--#
 
 n "Hilde offers an aggressive elbow into Beatrice’s side, almost knocking her off her feet. Thanks Bea."
+hide Hilda
 
+show hilda P3_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.4 yalign -0.3 alpha 1.0
+
+show beatrice P2_E5:
+  xalign 0.15 yalign 0 alpha 0.0 zoom 1.0
+  easein 1.0 xalign 0.1 yalign 0 alpha 1.0
+  
 hilde "\"Think you’ll get lost much?\""
 
 erik "\"No doubt. I’m pretty sure they gave me a map in my welcome pack though.\""
@@ -140,16 +164,24 @@ beatrice "\"Yes! He understands!\""
 n "This casual conversation is calming after the whirlwind that my tour turned out to be. I expected today to turn out very differently."
 
 #-# >Mom + Dad in center
-show Mum Smile:
+scene MainGate
+with Dissolve(2)
+
+show hilda P3_E4:
+  xalign 0.4 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.2 yalign -0.3 alpha 1.0
+
+show beatrice P2_E5:
+  xalign 0.10 yalign 0 alpha 0.0 zoom 1.0
+  easein 1.0 xalign 0.0 yalign 0 alpha 1.0
+
+show mom P1_E2:
   xalign 0.65 yalign -0.2
-show Dad Neutral2:
-  xalign 0.85 yalign -0.2
+show dad P2_E2:
+  xalign 1.0 yalign 0.0
 #--#
 #-# >Sisters slide over to the left
-show Beatrice Neutral:
-  easein 1.0 xalign 0.1
-show Hilda Neutral:
-  easein 1.0 xalign 0.25
+
 #--#
 
 mom "\"Ah, we escaped!\""
@@ -208,7 +240,7 @@ erik "\"... Okay.\""
 
 n "Aside from the fact I’m in a school for the mentally impaired, who knows who could be waiting around the next corner."
 
-mom "\"Alright, come on girls, let’s go and get some dinner before the restraunts close!\""
+mom "\"Alright, come on girls, let’s go and get some dinner before the restaurants close!\""
 
 n "Her usual peppiness returns as the ‘Gustav’ issue is sidestepped completely."
 
@@ -224,9 +256,16 @@ beatrice "\"We love you lots!\""
 
 n "Both sisters move in for a hug, and then are quickly herded towards the car while Mom fusses over them."
 
+hide hilda
+hide beatrice
+hide dad
+hide mom
+
 n "And now I’m alone."
 
+
 #-# >END
+
 #
 #--#
 

@@ -10,14 +10,17 @@ label A1_08:
 # 
 # Requirements stolen from another script, will fill in later.
 # Backgrounds:
-# Apartment Interior(day)
-# School Entrance (day)
-# Office (day)
-# Classroom (day)
+# Dorm Hall
+# Bedroom
+# Outside Dorm
+# Something to do with a bush?
 
 # 
 # Sprites:
 # Lena
+# Irene
+# Isolda
+# Katja
 
 # 
 # Music:
@@ -26,23 +29,39 @@ label A1_08:
 # 
 # Sound Effects:
 # door closing
+# 4th wall breaking
+# 4th wall reassembles
 
 # 
 #-# >Sound of the 4th wall being demolished
 todo "{color=#ff8c00}>Sound of the 4th wall being demolished{/color}"
 #--#
+scene bg black
+with Dissolve(2)
+
+show irene U_P1_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.5 yalign -0.3 alpha 1.0
+  
 
 irene "\"Hey reader! Just so you know, this scene isn’t going to show up at all in the final game - it exists purely to show off some more sprites we already have for characters that wouldn’t appear in the alpha otherwise. Please enjoy!\""
 
 #-# >4th wall is reassembled. Thanks Trump.
 todo "{color=#ff8c00}>4th wall is reassembled. Thanks Trump.{/color}"
+hide irene
+
 #--#
+scene MainGate
+with Dissolve(2)
 
 n "I watch my family as they get into the car and wave one last time. It still feels sort of unreal."
 
-n "Get ahold of yourself, Erik. You’re a grown man."
+n "Get a hold of yourself, Erik. You’re a grown man."
 
 n "As the car pulls away I take a deep breath and turn, making my way along the path that leads around the side of the school’s main building towards the dormitories."
+
+scene outsidemaledorm
+with Dissolve(2)
 
 n "When I get to the steps in front of the boy’s dorm I stop for a moment to take it in, squinting in the sun as I look up at the building."
 
@@ -55,6 +74,8 @@ n "I head inside."
 #-# >Transition to Dorm Interior
 todo "{color=#ff8c00}>Transition to Dorm Interior{/color}"
 #--#
+scene dormhall
+with Dissolve(2)
 
 n "The corridor I find myself in has that familiar musty smell that this sort of place always has."
 
@@ -73,6 +94,9 @@ todo "{color=#ff8c00}>Transition to Erik’s Room{/color}"
 n "The flight of stairs up to the first floor tires me out more than I’d care to admit. After pausing for a second to catch my breath, I finally reach door number 101, open it, and stand for a moment in the doorway of the uninhabited room."
 
 n "My room. Gotta think of it as my room now. Weird."
+
+scene bedroom
+with Dissolve(2)
 
 n "Stepping inside, the door swings shut behind me."
 
@@ -115,6 +139,8 @@ n "Feeling somehow self-conscious about leaving my room less than a minute after
 #-# >Transition to (OutsideDorms)
 todo "{color=#ff8c00}>Transition to (OutsideDorms){/color}"
 #--#
+scene outsidemaledorm
+with Dissolve(2)
 
 n "It’s only as I get outside that I realise I left the map behind."
 
@@ -134,6 +160,9 @@ n "After all, everybody knows as soon as a man gets within fifty feet of a woman
 
 n "Nevertheless I decide to head in that direction, thinking I’ll roughly follow the treeline to my left that borders the grounds. I make my way across the lawn between the two dormitories."
 
+scene outsidefemaledorm
+with Dissolve(2)
+
 n "In the centre of the lawn are a few benches and a small fountain, whose single lacklustre spout dribbles unimpressively. It pales in comparison to the spectacular water feature in front of the main building - the one the parents see. I wonder how often the students actually congregate here, if ever."
 
 n "As I pass, a few pigeons that I hadn’t noticed pecking around on the floor take flight, rushing into the air towards the forest. My gaze following the birds, I lose sight of them as they vanish beyond the forest’s border. It must be nice to be able to just take flight like that and disappear whenever you want."
@@ -149,6 +178,9 @@ n "Irene. She seems to be in very high spirits. She spots me almost immediately 
 #-# >Ms. Holmes, I presume? (enter Irene)
 todo "{color=#ff8c00}>Ms. Holmes, I presume? (enter Irene){/color}"
 #--#
+show irene U_P1_E2:
+  alpha 0.0 xalign 0.0 yalign -0.3
+  easein 1.0 xalign 0.5 alpha 1.0
 
 irene "\"Erik, long time no see!\""
 
@@ -197,7 +229,10 @@ erik "\"What?! Irene, hold on, what’s she going to -\""
 #-# >The game is afoot (exit Irene)
 todo "{color=#ff8c00}>The game is afoot (exit Irene){/color}"
 #--#
-
+show irene U_P1_E2:
+  alpha 1.0 xalign 0.5 yalign -0.3
+  easeout 1.0 xalign 1.0 alpha 0.0
+  
 n "But I blink and she’s gone. I see the hem of her skirt flitting out of sight around the corner of the girl’s dorm building."
 
 n "My mind fills with blind panic as I hear the the dorm’s doors opening once more."
@@ -207,7 +242,11 @@ n "It has to be Katja. Who is this terrible person who can strike fear even into
 #-# > Enter Lena
 todo "{color=#ff8c00}> Enter Lena{/color}"
 #--#
+show lena U_M_P1_E6:
+  alpha 0.0, xalign 1.0 yalign -0.4
+  easein 1.0 xalign 0.5 alpha 1.0
 
+  
 n "Dear God. That’s it, I’m dead. I’m not going to survive this."
 
 maskedgirl "\"Yo.\""
@@ -215,7 +254,7 @@ maskedgirl "\"Yo.\""
 
 n "Death, I embrace - wait, what?"
 
-"This masked girl doesn’t seem in the least bit like she wants to kill the first person she sees. Something tells me this isn’t Katja."
+n "This masked girl doesn’t seem in the least bit like she wants to kill the first person she sees. Something tells me this isn’t Katja."
 
 erik "\"...You aren’t Katja, are you?\""
 
@@ -302,10 +341,21 @@ n "My confusion is resolved immediately, however, as one of the bushes to our le
 #-# >Have Irene’s head poking in from the left side of the screen at like a 45 degree angle because comedy
 todo "{color=#ff8c00}>Have Irene’s head poking in from the left side of the screen at like a 45 degree angle because comedy{/color}"
 #--#
-
+show irene U_P1_E4:
+  rotate 45
+  alpha 0.0 xalign -1.3 yalign -0.4 
+  easein 1.0 alpha 1.0
 irene "\"Were you guys talking about me?\""
 
 lena "\"Oh, hi Irene.\""
+
+show lena U_M_P1_E6:
+  xalign 0.5
+  easein 1.0 xalign 0.7
+  
+show irene U_P1_E4:
+  xalign -1.3 yalign -0.4 
+  easein 1.0 rotate 0 xalign 0.2 yalign -0.3
 
 n "Lena doesn’t seem at all surprised to see Irene’s face appear out of a bush. Apparently this is totally normal behaviour, at least for her."
 
@@ -335,6 +385,14 @@ erik "\"‘Get in here’?! Irene, you’re inside a - AUCH.\""
 
 n "My voice is cut off as I’m pulled into the bush by my collar."
 
+hide lena U_M_P1_E6
+
+scene inabush
+with Dissolve(2)
+
+show irene U_P1_E4:
+  xalign 0.5 yalign 0.1 zoom 3.0
+
 #-# >SUPER CLOSE UP OF IRENE lets seem dem freckles
 todo "{color=#ff8c00}>SUPER CLOSE UP OF IRENE lets seem dem freckles{/color}"
 #--#
@@ -349,6 +407,13 @@ n "To my surprise, Lena also forces her way into the bush without any persuasion
 todo "{color=#ff8c00}>now we’re seeing them BOTH super close up{/color}"
 #--#
 
+show lena U_M_P3_E4:
+  easein 1.0 xalign 0.0 yalign 0.05 zoom 2.0
+
+show irene U_P1_E4:
+  easein 1.0 xalign 1.0 yalign 0.1 zoom 2.0
+
+
 n "I look at her disbelievingly."
 
 lena "\"You’ll be thanking Irene later.\""
@@ -356,6 +421,9 @@ lena "\"You’ll be thanking Irene later.\""
 erik "\"I doubt -\""
 
 lena "\"She’s coming, shut up.\""
+hide lena 
+hide irene
+
 
 n "I fall silent and strain my ears. From outside the bush, I can hear the sound of heavy footfalls approaching - but, to my surprise, no shouting. Given how angry Katja had been just a few minutes earlier, I would have thought I’d be able to hear her coming from a mile off."
 
@@ -368,6 +436,15 @@ n "Simultaneously we draw a long, slow, silent breath, holding it as she comes i
 #-# >do the real big visual introduction of Katja right here the sprite isn’t ideal for this situation but i can make it work
 todo "{color=#ff8c00}>do the real big visual introduction of Katja right here the sprite isn’t ideal for this situation but i can make it work{/color}"
 #--#
+todo "KATJA SPRITES?"
+
+scene outsidefemaledorm
+with Dissolve(2)
+
+show katja:
+  xalign 0.5 yalign -0.3
+  
+##show Katja
 
 n "Her face is not contorted with rage as I expected it to be. Instead, it is overcome with an expression of forced calm that somehow still looks frighteningly intense."
 
@@ -389,9 +466,25 @@ n "Even Irene seems to understand the gravity of our situation, though - I suspe
 
 n "After a few more tense seconds that seem to drag on forever, Katja takes one more suspicious look around and finally moves on."
 
+##hide Katja
+
 n "It strikes me as odd that she chose to stop here in the first place. There’s nothing particularly suspicious about the area. Could she... sense us?"
 
 n "For a few seconds we remain silent, allowing the last vestiges of dread to dissipate."
+
+##back to the bush
+##show irene
+##show lena
+hide katja
+
+scene inabush
+with Dissolve(2)
+
+show lena U_M_P3_E4:
+  easein 1.0 xalign 0.0 yalign 0.05 zoom 2.0
+
+show irene U_P1_E2:
+  easein 1.0 xalign 1.0 yalign 0.1 zoom 2.0
 
 irene "\"...Holy shit that was hot.\""
 
@@ -431,12 +524,18 @@ n "Steeling myself and inhaling deeply what might be my last breath, I part some
 
 #-# >Background: Back outside the bush
 todo "{color=#ff8c00}>Background: Back outside the bush{/color}"
-scene missing
+scene outsidefemaledorm
+with Dissolve(2)
 #--#
 
 #-# >and then Isolda appears because it seems as good a time as any to introduce her.
 todo "{color=#ff8c00}>and then Isolda appears because it seems as good a time as any to introduce her.{/color}"
 #--#
+##show isolda
+
+show isolda U_P1_E8:
+  xalign -1.3 yalign -0.4 
+  easein 1.0 xalign 0.5 yalign -0.3
 
 n "I flinch on impulse and almost retract my head when I see someone outside of the bush - but I quickly realise that it isn’t Katja."
 
@@ -458,7 +557,17 @@ todo "{color=#ff8c00}>Lena and Irene stick their heads out too{/color}"
 #--#
 
 n "At this point, Lena and Irene decided the coast is clear and make their presence known, sticking their heads out of the bush either side of me."
+##show lena
+##show irene
 
+show lena U_M_P1_E6:
+  xalign 1.0 alpha 0.0 yalign -0.3
+  easein 1.0 xalign 0.7 alpha 1.0
+  
+show irene U_P1_E4:
+  xalign -1.3 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.2 yalign -0.3 alpha 1.0
+  
 n "The girl jumps slightly in shock at the unexpected company."
 
 irene "\"Oh, hey Isolda!\""
@@ -499,7 +608,7 @@ isolda "\"I was actually going to look for Jeanne. Have you all seen her?\""
 
 n "Everyone shakes their head, leaving the girl with an even more pained expression."
 
-isolda "\" I need to find Jeanne. The atmosphere in the dorm is... fractious, to say the least.\""
+isolda "\"I need to find Jeanne. The atmosphere in the dorm is... fractious, to say the least.\""
 
 lena "\"How come?\""
 
@@ -516,6 +625,11 @@ irene "\"Really?! I gotta see this. Later!\""
 #-# >Irene away
 todo "{color=#ff8c00}>Irene away{/color}"
 #--#
+##hide irene
+
+show irene U_P1_E4:
+  xalign 0.2 yalign -0.3 alpha 1.0
+  easein 1.0 xalign 1.5 yalign -0.3 alpha 0.0
 
 n "And, flashing a boyish grin in our direction, she heads back to the dorm."
 
@@ -530,6 +644,11 @@ lena "\"My report! I left it open on my desk!\""
 #-# >Lena pls go
 todo "{color=#ff8c00}>Lena pls go{/color}"
 #--#
+##hide lena
+
+show lena U_M_P1_E6:
+  xalign 0.7 alpha 1.0 yalign -0.3
+  easein 1.0 xalign -.5 alpha 0.0
 
 n "Without a backwards glance, she shoots off in the same direction as Irene about as quickly as I’ve ever seen a human move."
 
@@ -580,6 +699,10 @@ n "Wait, who’s Jeanne?"
 #-# >Isolda fucks off.
 todo "{color=#ff8c00}>Isolda fucks off.{/color}"
 #--#
+##hide isolda
+show isolda U_P1_E8:
+  xalign 0.5 yalign -0.4 alpha 1.0
+  easein 1.0 xalign -0.3 yalign -0.3 alpha 0.0
 
 n "Without any further ado, she departs."
 
@@ -587,13 +710,26 @@ n "It might have been an, eh, eventful introduction to the place, but at least i
 
 n "I think I’m gonna like it here."
 
+scene bg black
+with Dissolve(2)
+show irene U_P1_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.5 yalign -0.3 alpha 1.0
+
 #-# >Hostess Irene pops up one last time.
 todo "{color=#ff8c00}>Hostess Irene pops up one last time.{/color}"
 #--#
-
+##shatter the wall.  again.
 irene "\"Wow, Erik, that was a cheesy last line, huh? But wait... breaking the fourth wall is even cheesier! I just made it worse! And is it now even worse that I broke the- uh, what’s the word for the wall that’s in front of the fourth wall? Is there a word for that? Whatever it is, I’ve broken that too.\""
 
 irene "\"Anyway, thanks for reading this tiny, tiny peek into the world of St. Dymphna’s. We’ll see each other again soon!\""
+
+##fade all to black.
+hide irene
+
+pause 3.0
+
+##pause
 #-# APPEND
 # End of Act 1
 $config.allow_skipping = False

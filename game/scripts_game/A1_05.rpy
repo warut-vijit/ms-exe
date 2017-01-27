@@ -8,6 +8,8 @@ label A1_05:
 #-# >open to school hallway
 todo "{color=#ff8c00}>open to school hallway{/color}"
 #--#
+scene classroomhall
+with Dissolve(2)
 
 #-# >Brunhilde neutral
 todo "{color=#ff8c00}>Brunhilde neutral{/color}"
@@ -23,6 +25,16 @@ todo "{color=#ff8c00}>Ela smile{/color}"
 todo "{color=#ff8c00}>The sisters on the right, Ela on the left{/color}"
 #--#
 
+show hilda P3_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0 zoom 1.0
+  easein 1.0 xalign 0.4 yalign -0.3 alpha 1.0
+show ela P1_E1:
+  xalign 0.55 yalign -0.4 alpha 0.0 zoom 1.0
+  easein 1.0 xalign 0.7 yalign -0.4 alpha 1.0
+show beatrice P2_E5:
+  xalign 0.15 yalign 0 alpha 0.0 zoom 1.0
+  easein 1.0 xalign 0.1 yalign 0 alpha 1.0
+
 n "The tour is nothing out of the ordinary, even if the school is."
 
 ela "\"...This hallway houses most of the art and music rooms, where elective classes and after-hour clubs are held.\""
@@ -36,6 +48,7 @@ n "If Hilda has caught on, she’s kept her mouth shut, mirroring my quiet conce
 #-# >Beatrice excited
 todo "{color=#ff8c00}>Beatrice excited{/color}"
 #--#
+show beatrice P2_E3
 
 beatrice "\"Oh my God! The ceilings here go on forever! Erik, check out the rafters! It’s like something out of Hogwarts!\""
 
@@ -48,13 +61,13 @@ beatrice "\"It’s so cool! It’s like a castle!\""
 #-# >Ela happy
 todo "{color=#ff8c00}>Ela happy{/color}"
 #--#
-
+show ela P1_E2
 ela "\"It is rather spacious, isn’t it? Mr. Bosworth likes to sell the historical significance and ‘architectural richness’ of the place, but I’m sure you’re not interested in all that canned stuff…\""
 
 #-# >Brunhilde happy
 todo "{color=#ff8c00}>Brunhilde happy{/color}"
 #--#
-
+show hilda P1_E2
 n "From her face, I can tell that Hilda actually would want to hear it, but she doesn’t speak up."
 
 ela "\"...so I’ll just stick to the basics. The floor above us is reserved for assorted odds and ends, some offices, storage rooms, nothing very impressive. The view is nice, though. Let’s just head through to the next building, shall we?\""
@@ -62,15 +75,18 @@ ela "\"...so I’ll just stick to the basics. The floor above us is reserved for
 #-# >Brunhilde default
 todo "{color=#ff8c00}>Brunhilde default{/color}"
 #--#
+
+show hilda P1_E1
 #-# >Beatrice frown
 todo "{color=#ff8c00}>Beatrice frown{/color}"
 #--#
-
+show beatrice P1_E8
 n "Beatrice gives the stairs a longing glance, but reluctantly follows."
 
 #-# >Transition to different building
 todo "{color=#ff8c00}>Transition to different building{/color}"
 #--#
+scene hallway3
 
 #-# >Beatrice default
 todo "{color=#ff8c00}>Beatrice default{/color}"
@@ -78,7 +94,17 @@ todo "{color=#ff8c00}>Beatrice default{/color}"
 #-# >Ela default
 todo "{color=#ff8c00}>Ela default{/color}"
 #--#
+show hilda P3_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.4 yalign -0.3 alpha 1.0
+show ela P1_E1:
+  xalign 0.55 yalign -0.4 alpha 0.0
+  easein 1.0 xalign 0.7 yalign -0.4 alpha 1.0
+show beatrice P2_E5:
+  xalign 0.15 yalign 0 alpha 0.0
+  easein 1.0 xalign 0.1 yalign 0 alpha 1.0
 
+  
 erik "\"So… Ela. How long have you been here?\""
 
 ela "\"Three years. Transfer students are very common, but St. D’s has been my only high school.\""
@@ -92,12 +118,13 @@ erik "\"It looks nice.\""
 #-# >Ela smile 2
 todo "{color=#ff8c00}>Ela smile 2{/color}"
 #--#
-
+show ela P1_E5
 ela "\"It is.\""
 
 #-# >Brunhilde frown
 todo "{color=#ff8c00}>Brunhilde frown{/color}"
 #--#
+show hilda P2_E5
 
 n "Hilda shoots me a worried glance, but Ela speaks up before the silence has a chance to entrench itself, gesturing past the hallway windows."
 
@@ -108,6 +135,17 @@ n "True to her word, there’s a lake, a pair of wooden benches at it’s edge. 
 #-# >Transition to outside chapel
 todo "{color=#ff8c00}>Transition to outside chapel{/color}"
 #--#
+scene entrance4
+
+show hilda P3_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.4 yalign -0.3 alpha 1.0
+show ela P1_E1:
+  xalign 0.55 yalign -0.4 alpha 0.0
+  easein 1.0 xalign 0.7 yalign -0.4 alpha 1.0
+show beatrice P2_E5:
+  xalign 0.15 yalign 0 alpha 0.0
+  easein 1.0 xalign 0.1 yalign 0 alpha 1.0
 
 n "As we descend the stairs and emerge from the building into the blinding sunlight, Ela points towards the small structure to the right."
 
@@ -123,6 +161,17 @@ todo "{color=#ff8c00}>Transition to inside main building{/color}"
 #-# >Beatrice happy
 todo "{color=#ff8c00}>Beatrice happy{/color}"
 #--#
+scene mainlobby
+
+show hilda P3_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.4 yalign -0.3 alpha 1.0
+show ela P1_E1:
+  xalign 0.55 yalign -0.4 alpha 0.0
+  easein 1.0 xalign 0.7 yalign -0.4 alpha 1.0
+show beatrice P2_E5:
+  xalign 0.15 yalign 0 alpha 0.0
+  easein 1.0 xalign 0.1 yalign 0 alpha 1.0
 
 n "Ela leads us straight forward, pushing open larger-than-average double doors into the main building, central to the campus. Beatrice gasps audibly."
 
@@ -139,18 +188,29 @@ n "As impressed as I ought to be, once again, doubt colors my thoughts."
 #-# >Ela big smile
 todo "{color=#ff8c00}>Ela big smile{/color}"
 #--#
-
+show ela P1_E2
 n "Ela takes my silence for awe, and gives me a knowing smile that feels entirely out of place, given my circumstances."
 
 #-# >Ela regular smile
 todo "{color=#ff8c00}>Ela regular smile{/color}"
 #--#
-
+show ela P1_E1
 ela "\"Yeah, it has that effect on people, doesn’t it? Well, the classrooms aren’t nearly as impressive. They’re pretty standard, actually.\""
 
 n "So let’s skip those, right?"
 
 n "After giving us another moment to appreciate the decour, Ela turns to hold the door for us, and I obediently follow my sisters back outside."
+scene mainbuilding
+
+show hilda P3_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.4 yalign -0.3 alpha 1.0
+show ela P1_E1:
+  xalign 0.55 yalign -0.4 alpha 0.0
+  easein 1.0 xalign 0.7 yalign -0.4 alpha 1.0
+show beatrice P2_E5:
+  xalign 0.15 yalign 0 alpha 0.0
+  easein 1.0 xalign 0.1 yalign 0 alpha 1.0
 
 n "Ela regains the lead, and begins to direct us to the dorms."
 
@@ -163,9 +223,14 @@ todo "{color=#ff8c00}>Pause{/color}"
 #-# >Beatrice frown 2
 todo "{color=#ff8c00}>Beatrice frown 2{/color}"
 #--#
+
+show beatrice P1_E7
+
 #-# >Ela frown
 todo "{color=#ff8c00}>Ela frown{/color}"
 #--#
+
+show ela P1_E3
 
 n "After a moment, I feel an elbow in my ribs, and glance up to find Beatrice attached to it, an impatient glare on her face. Behind her, Ela’s adopted a slightly worried expression."
 
@@ -174,7 +239,7 @@ erik "\"Er, yeah. It’s fine. It looks good.\""
 #-# >Beatrice smile 2
 todo "{color=#ff8c00}>Beatrice smile 2{/color}"
 #--#
-
+show beatrice P2_E2
 beatrice "\"Good? Lighten up, Erik, this place is amazing!\""
 
 n "Yeah, the parts they’re showing us."
@@ -184,12 +249,14 @@ erik "\"Yeah, I know. I’m just… kind of shocked, I guess.\""
 #-# >Ela frowns harder
 todo "{color=#ff8c00}>Ela frowns harder{/color}"
 #--#
+show ela P1_E7
 
 n "Another moment of uncomfortable tension later, Ela sighs, slowing to a halt, her smile fading into a look of empathy. Her ‘tour guide’ voice drops to something more subdued, but sincere."
 
 #-# >Ela natural
 todo "{color=#ff8c00}>Ela natural{/color}"
 #--#
+show ela P1_E6
 
 ela "\"...Listen, I know how this all looks. It looks like a prison. New students usually think that way. I thought that way.\""
 
@@ -198,6 +265,7 @@ ela "\"You’re thinking this school is like a warehouse for damaged goods, like
 #-# >Ela worried
 todo "{color=#ff8c00}>Ela worried{/color}"
 #--#
+show ela P1_E7
 
 ela "\"You’re here because there’s something wrong with you, and right now it feels like it’s taking your future away from you.\""
 
@@ -206,7 +274,7 @@ n "That’s… probably a little more dramatic than I would have put it, but she
 #-# >CG
 todo "{color=#ff8c00}>CG{/color}"
 #--#
-
+scene MISSINGCG
 ela "\"If you’re looking at it that way, that’s all you’re going to see. Perspective is everything.\""
 
 ela "\"So take it from someone who’s been in your shoes: St. D’s is just like us. It’s easy to put a label on it and jump to conclusions about it, but that’s not the whole package.\""
@@ -226,30 +294,51 @@ erik "\"Now I kinda feel like a jerk for treating this place like a loony bin. Y
 #-# >CG END
 todo "{color=#ff8c00}>CG END{/color}"
 #--#
+scene mainbuilding
 
-"Crack"
+show hilda P3_E4:
+  easein 1.0 xalign 0.4 yalign -0.3 alpha 1.0
+show ela P1_E1:
+  easein 1.0 xalign 0.7 yalign -0.4 alpha 1.0
+show beatrice P2_E5:
+  easein 1.0 xalign 0.1 yalign 0 alpha 1.0
+
+todo "Crack"
 #-# >Irene sprite tumbles from top of screen to bottom?
 todo "{color=#ff8c00}>Irene sprite tumbles from top of screen to bottom?{/color}"
 #--#
 #-# >Ela shocked
 todo "{color=#ff8c00}>Ela shocked{/color}"
 #--#
+
+show ela P1_E4
 #-# >Beatrice shocked
 todo "{color=#ff8c00}>Beatrice shocked{/color}"
 #--#
+show beatrice P2_E8
 #-# >Brunhilde shocked
 todo "{color=#ff8c00}>Brunhilde shocked{/color}"
 #--#
-
+show hilda P2_E4
 #-# >Beatrice and Brunhilde slide closer to Ela, Beatrice behind Brunhilde
 todo "{color=#ff8c00}>Beatrice and Brunhilde slide closer to Ela, Beatrice behind Brunhilde{/color}"
 #--#
 
+
+show beatrice P2_E5 behind hilda:
+  easein 1.0 xalign 0.0 yalign 0 alpha 1.0
+show hilda P3_E4:
+  easein 1.0 xalign 0.1 yalign -0.3 alpha 1.0
+show ela P1_E1:
+  easein 1.0 xalign 0.4 yalign -0.4 alpha 1.0
 n "The sound of splitting wood and rustling leaves interrupts me, causing all of us to instinctively jump closer to Ela, away from the crashing bough."
 
 n "Before I even have time to register the event, a student rises from the debris, dusting herself off and initiating a conversation as casually as one might wave hello."
 Voice "\"Oh hey Ela, didn’t see you there, don’t mind me. Pro tip, that tree is a bit iffy! And you must be Erik!\""
 
+show irene U_P1_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.95 yalign -0.3 alpha 1.0
 #-# >Irene smile
 todo "{color=#ff8c00}>Irene smile{/color}"
 #--#
@@ -273,7 +362,7 @@ irene "\"Huh? Oh. It was kind of a lucky guess? I figured it was either that or 
 #-# >Irene open mouth smile
 todo "{color=#ff8c00}>Irene open mouth smile{/color}"
 #--#
-
+show irene U_P1_E2
 n "Irene throws her arms in a wide gesture, the expanse of the campus behind her. A thin line of blood seeps from a fresh cut on her cheekbone."
 
 n "Ela’s face has completely drained of color. Hilda’s jaw hangs slightly agape. At some point Beatrice has taken the opportunity to take cover behind Hilda in case Irene were to spontaneously combust, which doesn’t seem terribly far-fetched. None of them seem eager to join this conversation."
@@ -293,16 +382,20 @@ n "Ela finds her voice, maybe an octave higher than when she lost it."
 #-# >Ela angry
 todo "{color=#ff8c00}>Ela angry{/color}"
 #--#
+
+show ela P1_E7
 #-# >Irene shocked
 todo "{color=#ff8c00}>Irene shocked{/color}"
 #--#
+show irene U_P1_E1
+
 
 ela "\"We’re fine! It’s fine! You probably have stuff to do, right? Please?\""
 
 #-# >Irene smile 3
 todo "{color=#ff8c00}>Irene smile 3{/color}"
 #--#
-
+show irene U_P1_E2
 irene "\"Nope! Totally open today! Just doing my rounds, nothing really happening around here -except Erik, of course!- so I figure I might as well drop in. Ha! Drop in! I didn’t even mean to do that.\""
 
 n "Beatrice peeks from around Hilda’s shoulder."
@@ -330,6 +423,7 @@ irene "\"Oh. Oh! Hey, listen, they don’t use that stuff unless shit’s, like,
 #-# >Brundhilde angry
 todo "{color=#ff8c00}>Brundhilde angry{/color}"
 #--#
+show hilda P2_E5
 
 hilda "\"What were you doing in a tree?\""
 
@@ -342,7 +436,7 @@ irene "\"Oh, you know, basic recon, information gathering, stuff like that. It�
 #-# >Beatrice excited, moves out from behind Brunhilde
 todo "{color=#ff8c00}>Beatrice excited, moves out from behind Brunhilde{/color}"
 #--#
-
+show beatrice P1_E3
 n "Beatrice breaks from her cover, a look of excitement on her face."
 
 beatrice "\"You have a laser microphone?!\""
@@ -366,7 +460,7 @@ n "She turns to me, suddenly intense."
 #-# >Irene furrowed brow
 todo "{color=#ff8c00}>Irene furrowed brow{/color}"
 #--#
-
+show irene U_P1_E4
 irene "\"Is your name a big secret, though? Because that would be awesome.\""
 
 erik "\"Er, no. Just Erik.\""
@@ -386,7 +480,7 @@ irene "\"Damn. That’s a shame. I mean, not your name, that’s fine. Secret na
 #-# >Ela angry 2
 todo "{color=#ff8c00}>Ela angry 2{/color}"
 #--#
-
+show ela P1_E7
 ela "\"Nobody has one!\""
 
 irene "\"Well, of course you’d think that, they’re secrets.\""
@@ -396,7 +490,7 @@ n "I don’t think this place is going to be good for my mental health."
 #-# >Ela neutral
 todo "{color=#ff8c00}>Ela neutral{/color}"
 #--#
-
+show ela P1_E3
 irene "\"Anyway, it’s nice to meet you guys! I guess you need some time to, like, adjust, but don’t worry, everyone here is really cool. And I’d know! So don’t worry about it, ‘kay?\""
 
 erik "\"Um, sure? It’s nice to meet you, too. These are my sisters, Hilda and Beatrice.\""
@@ -410,9 +504,11 @@ hilda "\"...I apologize for my earli-\""
 #-# >Brunhilde shocked 2
 todo "{color=#ff8c00}>Brunhilde shocked 2{/color}"
 #--#
+show hilda P2_E3
 #-# >Beatrice excited 2
 todo "{color=#ff8c00}>Beatrice excited 2{/color}"
 #--#
+
 
 beatrice "\"-please tell me you actually have a laser mic.\""
 

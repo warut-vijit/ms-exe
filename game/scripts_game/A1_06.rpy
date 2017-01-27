@@ -20,9 +20,23 @@ label A1_06:
 # TBD
 # 
 #-# <Shot of the beautiful campus of St. Dymphna>
+
 scene MainBuilding
 with Dissolve(2)
 #--#
+
+show hilda P3_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.4 yalign -0.3 alpha 1.0
+show ela P1_E1:
+  xalign 0.55 yalign -0.4 alpha 0.0
+  easein 1.0 xalign 0.7 yalign -0.4 alpha 1.0
+show beatrice P2_E5:
+  xalign 0.15 yalign 0 alpha 0.0
+  easein 1.0 xalign 0.1 yalign 0 alpha 1.0
+show irene U_P1_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.95 yalign -0.3 alpha 1.0
 
 n "With Irene at the helm, the tour recommences, Ela seemingly resigned to her inclusion. Although calling it a ‘tour’ at this point isn’t exactly accurate."
 
@@ -63,9 +77,23 @@ beatrice "\"Okay, but is there anything interesting out here?\""
 irene "\"No tunnel system that I could find. No murders either, as far as I’m aware. The trees are a nice vantage point for the west side of the building, though.\""
 
 #-# <CG of the school as a whole? Otherwise a wide-angle background>
+
 scene MainGate
 with Dissolve(2)
 #--#
+
+show hilda P3_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.4 yalign -0.3 alpha 1.0
+show ela P1_E1:
+  xalign 0.55 yalign -0.4 alpha 0.0
+  easein 1.0 xalign 0.7 yalign -0.4 alpha 1.0
+show beatrice P2_E5:
+  xalign 0.15 yalign 0 alpha 0.0
+  easein 1.0 xalign 0.1 yalign 0 alpha 1.0
+show irene U_P1_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.95 yalign -0.3 alpha 1.0
 
 n "Well, it’s a beautiful school, if nothing else."
 
@@ -179,6 +207,19 @@ n "My heart rate continues to accelerate, exacerbated by the multiple pairs of e
 
 n "It’s hard to keep myself standing at this point, my leg joining the rebellion currently in progress, and I sit on the curb before it gives out entirely."
 
+show hilda P3_E4:
+  xalign 0.4 yalign -0.3 
+  easein 1.0 xalign 0.4 yalign -0.3 zoom 1.1
+show ela P1_E1:
+  xalign 0.7 yalign -0.4 
+  easein 1.0 xalign 0.7 yalign -0.4 zoom 1.1
+show beatrice P2_E5:
+  xalign 0.1 yalign 0 
+  easein 1.0 xalign 0.1 yalign 0.0 zoom 1.1
+show irene U_P1_E4:
+  xalign .95 yalign -0.3 
+  easein 1.0 xalign 0.95 yalign -2.0 zoom 0.9
+
 n "Ela quickly finds her way next time me, alongside Hilda and Beatrice who are on me in a flash."
 
 ela "\"Erik, it’s okay. This kind of nervousness is completely normal to a first year St. Dymphna student.\""
@@ -214,6 +255,18 @@ erik "\"...composed?\""
 ela "\"Years of practice, though I guess it’s fair to say it comes with the territory.\""
 
 erik "\"Well I’m sure everyone wouldn’t want to…\""
+
+hide irene
+
+show hilda P3_E4:
+  easein 1.0 xalign 0.4 yalign -0.3 zoom 1.0
+show ela P1_E1:
+  easein 1.0 xalign 0.7 yalign -0.4 zoom 1.0
+show beatrice P2_E5:
+  easein 1.0 xalign 0.1 yalign 0 zoom 1.0
+show faber P1_E1:
+  xalign 0.0 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.95 yalign -0.3 alpha 1.0
 
 Voice "\"Ela?\""
 
@@ -291,6 +344,12 @@ n "Giving one last nod Dr. Faber turns and walks opposite of the administration 
 
 irene "\"I dislike him.\""
 
+hide faber
+
+show irene U_P1_E4:
+  xalign 0.0 yalign -0.3 alpha 0.0 zoom 1.0
+  easein 1.0 xalign 0.95 yalign -0.3 alpha 1.0
+
 n "In moments Irene is next to us once again, though still has her eyes solely fixed on the back of Faber’s head."
 
 hilda "\"That was…\""
@@ -339,6 +398,7 @@ n "Who I will meet and how I will act at that this point is all up to me."
 todo "{color=#ff8c00}>transition start{/color}"
 #--#
 #-# <end>
+
 #
 #--#
 
