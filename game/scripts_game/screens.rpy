@@ -55,7 +55,8 @@ screen say:
         add SideImage() xalign 0.0 yalign 1.0
 
     # Use the quick menu.
-    use quick_menu
+    use quick_menu1
+    use quick_menu2
 
 
 ##############################################################################
@@ -91,6 +92,7 @@ screen choice:
 init -2 python:
     config.narrator_menu = True
 
+    style.menu_window.background = "#000000d0"
     style.menu_window.set_parent(style.default)
     style.menu_choice.set_parent(style.button_text)
     style.menu_choice.clear()
@@ -568,7 +570,10 @@ screen preferences:
     # Include the navigation.
     use navigation
 
-    # Put the navigation columns in a three-wide grid.    
+    window:
+        style "pref_root"
+
+    # Put the navigation columns in a three-wide grid.
     grid 3 1:
         style_group "prefs"
         xfill True
@@ -670,6 +675,7 @@ screen preferences:
                         style "soundtest_button"
 
 init -2 python:
+    style.pref_root.background = Frame("images/Menus/preferencesmenu/settings_background.png", left=0, top=0, right=None, bottom=None, tile=False)
 
     
     style.pref_frame.xfill = True
@@ -754,20 +760,41 @@ init -2 python:
 #
 # A screen that's included by the default say screen, and adds quick access to
 # several useful functions.
-screen quick_menu:
+screen quick_menu1:
 
     # Add an in-game quick menu.
     hbox:
         style_group "quick"
 
-        xalign 1.0
-        yalign 1.0
+        xalign 0.1
+        yalign 0.975
+
+##        textbutton _("Q.Save") action QuickSave()
+##        textbutton _("Q.Load") action QuickLoad()
+        textbutton _("Auto") action Preference("auto-forward", "toggle")
+        textbutton _("Skip") action Skip()
+        if persistent.show_girl_totals:
+          if persistent.am_tot == 0:
+            text ("{size=11}{color=#FF0000} Annaliese:[persistent.a_tot] Isolda:[persistent.i_tot] Jeanne:[persistent.j_tot] Lena:[persistent.l_tot] Katja:[persistent.k_tot] Twins:[persistent.nh_tot] {/color}{/size}")
+          else:
+            text ("{size=11}{color=#FF0000} Annaliese:[persistent.a_tot] Isolda:[persistent.i_tot] Jeanne:[persistent.j_tot] Lena:[persistent.l_tot] Katja:[persistent.k_tot] Twins:[persistent.nh_tot] Anne-Marie:[persistent.am_tot]{/color}{/size}")
+        if persistent.show_scene_number:
+            text ("{size=11}{color=#FF0000} [persistent.scene_number]{/color}{/size}")
+            
+            
+screen quick_menu2:
+
+    # Add an in-game quick menu.
+    hbox:
+        style_group "quick"
+
+        xalign 0.9
+        yalign 0.975
 
 ##        textbutton _("Q.Save") action QuickSave()
 ##        textbutton _("Q.Load") action QuickLoad()
         textbutton _("Save") action ShowMenu('save')
-        textbutton _("Skip") action Skip()
-        textbutton _("Auto") action Preference("auto-forward", "toggle")
+        textbutton _("Load") action ShowMenu('load')
         textbutton _("Prefs") action ShowMenu('preferences')
         if persistent.show_girl_totals:
           if persistent.am_tot == 0:
@@ -784,12 +811,11 @@ init -2 python:
     style.quick_button.xpadding = 5
 
     style.quick_button_text.set_parent('default')
-    style.quick_button_text.size = 12
-    style.quick_button_text.idle_color = "#8888"
-    style.quick_button_text.hover_color = "#ccc"
-    style.quick_button_text.selected_idle_color = "#cc08"
-    style.quick_button_text.selected_hover_color = "#cc0"
-    style.quick_button_text.insensitive_color = "#4448"
+    style.quick_button_text.size = 24
+    style.quick_button_text.idle_color = "#2020ff"
+    style.quick_button_text.hover_color = "#6060ff"
+    style.quick_button_text.selected_idle_color = "#4040ff"
+    style.quick_button_text.insensitive_color = "#000080"
 
     # Set a default value for the auto-forward time, and note that AFM is
     # turned off by default.
