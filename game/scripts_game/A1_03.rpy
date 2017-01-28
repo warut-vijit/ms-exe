@@ -126,7 +126,7 @@ if (persistent.skip_menus):
   "{color=#ff8c00}<if menu choice 1>{/color}"
   "{color=#ff8c00}[[1] \"...just wanted to get back into school.\" (+1 Lena, Jeanne, Twins){/color}"
 #--#
-erik "\"I just wanted to get back into school. Mom and Dad approved; they think the environment here is a good thing.\""
+erik "\"I just wanted to get back into school. Mum and Dad approved; they think the environment here is a good thing.\""
 
 hilda "\"Really?\""
 
@@ -207,7 +207,7 @@ show beatrice P1_E2
 with Dissolve(0.25)
 #-#
 
-beatrice "\"Lots of dishes, plus Mom wanted to talk.\""
+beatrice "\"Lots of dishes, plus Mum wanted to talk.\""
 
 erik "\"Anything important?\""
 
@@ -568,7 +568,7 @@ show beatrice P1_E5
 with Dissolve(0.25)
 #--#
 
-beatrice "\"Sadly, this concludes our regrettably brief tour of Vienna. We need to meet back with Mom and Dad for dinner.\""
+beatrice "\"Sadly, this concludes our regrettably brief tour of Vienna. We need to meet back with Mum and Dad for dinner.\""
 
 #-# >Hilda_neutral.png 2
 show hilda P2_E1
