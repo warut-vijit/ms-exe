@@ -438,13 +438,6 @@ with Dissolve (0.25)
 
 beatrice "\"This is the best school ever.\""
 
-#-# >transition start
-todo "{color=#ff8c00}>transition start{/color}"
-#--#
-#-# <end>
-todo "{color=#ff8c00}<end>{/color}"
-#--#
-
 
 ########
 

@@ -23,9 +23,6 @@ label A1_03:
 # city noises (loop)
 # bell tinkle
 # 
-#-# >transition_end
-todo "{color=#ff8c00}>transition_end{/color}"
-#--#
 #-# >open to Apartment Exterior (day)
 image SistersAppartment_Outside:
   im.Scale("images/Backgrounds/SistersAppartment_Outside.png", config.screen_width, config.screen_height)
