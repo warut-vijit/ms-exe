@@ -243,6 +243,8 @@ label start0:
   image MISSINGCG = "images/CG/MISSINGCG.png"
   #Sprites
 
+  #main characters
+
   image ela P1_E1 = im.FactorScale("images/Sprites/Main Characters/Ela/Ela_P1_E1.png", 0.69)
   image ela P1_E2 = im.FactorScale("images/Sprites/Main Characters/Ela/Ela_P1_E2.png", 0.69)
   image ela P1_E3 = im.FactorScale("images/Sprites/Main Characters/Ela/Ela_P1_E3.png", 0.69)
@@ -337,6 +339,25 @@ label start0:
   image lena U_N_P3_E7 = im.FactorScale("images/Sprites/Main Characters/Lena/Uniform/Lena_uniformNomask_P3_E7.png", 0.635)
   image lena U_N_P3_E8 = im.FactorScale("images/Sprites/Main Characters/Lena/Uniform/Lena_uniformNomask_P3_E8.png", 0.635)
   
+  #side characters
+
+  image beatrice P1_E1 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E1.png", 0.64)
+  image beatrice P1_E2 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 0.64)
+  image beatrice P1_E3 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E3.png", 0.64)
+  image beatrice P1_E4 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E4.png", 0.64)
+  image beatrice P1_E5 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E5.png", 0.64)
+  image beatrice P1_E6 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E6.png", 0.64)
+  image beatrice P1_E7 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E7.png", 0.64)
+  image beatrice P1_E8 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E8.png", 0.64)
+  image beatrice P2_E1 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E1.png", 0.64)
+  image beatrice P2_E2 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E2.png", 0.64)
+  image beatrice P2_E3 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E3.png", 0.64)
+  image beatrice P2_E4 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E4.png", 0.64)
+  image beatrice P2_E5 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E5.png", 0.64)
+  image beatrice P2_E6 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E6.png", 0.64)
+  image beatrice P2_E7 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E7.png", 0.64)
+  image beatrice P2_E8 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E8.png", 0.64)
+
   image hilda P1_E1 = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P1_E1.png", 0.75)
   image hilda P1_E2 = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P1_E2.png", 0.75)
 ##  image hilda P1_E3 = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P1_E3.png", 0.75)
@@ -355,31 +376,26 @@ label start0:
   image hilda P3_E5 = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P3_E5.png", 0.75)
   image hilda P3_E6 = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P3_E6.png", 0.75)
   
-  image beatrice P1_E1 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E1.png", 0.64)
-  image beatrice P1_E2 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 0.64)
-  image beatrice P1_E3 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E3.png", 0.64)
-  image beatrice P1_E4 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E4.png", 0.64)
-  image beatrice P1_E5 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E5.png", 0.64)
-  image beatrice P1_E6 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E6.png", 0.64)
-  image beatrice P1_E7 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E7.png", 0.64)
-  image beatrice P1_E8 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E8.png", 0.64)
-  image beatrice P2_E1 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E1.png", 0.64)
-  image beatrice P2_E2 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E2.png", 0.64)
-  image beatrice P2_E3 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E3.png", 0.64)
-  image beatrice P2_E4 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E4.png", 0.64)
-  image beatrice P2_E5 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E5.png", 0.64)
-  image beatrice P2_E6 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E6.png", 0.64)
-  image beatrice P2_E7 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E7.png", 0.64)
-  image beatrice P2_E8 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P2_E8.png", 0.64)
+  image faber P1_E1 = im.FactorScale("images/Sprites/Side Characters/Dr. Faber/Faber_P1_E1.png", 0.666)
+  image faber P1_E2 = im.FactorScale("images/Sprites/Side Characters/Dr. Faber/Faber_P1_E2.png", 0.666)
+ 
+  image claes P1_E1 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E1.png", 0.64)
+  image claes P1_E2 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E2.png", 0.64)
+  image claes P1_E3 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E3.png", 0.64)
+  image claes P1_E4 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E4.png", 0.64) 
+ 
+  image fathermax P1_E1 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P1_E1", 0.666)
+  image fathermax P1_E2 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P1_E2", 0.666)
+  image fathermax P1_E3 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P1_E3", 0.666)
+  image fathermax P1_E4 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P1_E4", 0.666)
+  image fathermax P2_E1 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P2_E1", 0.666)
+  image fathermax P2_E2 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P2_E2", 0.666)
+  image fathermax P2_E3 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P2_E3", 0.666)
+  image fathermax P2_E4 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P2_E4", 0.666)
+  
+  image fritz P1_E2 = im.FactorScale("images/Sprites/Side Characters/Fritz/Fritz_P1_E2", 0.666)
+  image fritz P1_E4 = im.FactorScale("images/Sprites/Side Characters/Fritz/Fritz_P1_E4", 0.666)
 
-  
-  image mum P1_E1 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E1.png", 0.68)
-  image mum P1_E2 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E2.png", 0.68)
-  image mum P1_E4 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E4.png", 0.68)
-  image mum P1_E5 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E5.png", 0.68)
-  image mum P1_E7 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E7.png", 0.68)
-  image mum P1_E8 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E8.png", 0.68)
-  
   image dad P1_E1 = im.FactorScale("images/Sprites/Side Characters/Mr Wilhelm/MrWilhelm_P1_E1.png", 0.57)
   image dad P1_E2 = im.FactorScale("images/Sprites/Side Characters/Mr Wilhelm/MrWilhelm_P1_E2.png", 0.57)
   image dad P1_E4 = im.FactorScale("images/Sprites/Side Characters/Mr Wilhelm/MrWilhelm_P1_E4.png", 0.57)
@@ -393,15 +409,16 @@ label start0:
   image dad P2_E7 = im.FactorScale("images/Sprites/Side Characters/Mr Wilhelm/MrWilhelm_P2_E7.png", 0.57)
   image dad P2_E9 = im.FactorScale("images/Sprites/Side Characters/Mr Wilhelm/MrWilhelm_P2_E9.png", 0.57)
 
-  image faber P1_E1 = im.FactorScale("images/Sprites/Side Characters/Dr. Faber/Faber_P1_E1.png", 0.666)
+  image mum P1_E1 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E1.png", 0.68)
+  image mum P1_E2 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E2.png", 0.68)
+  image mum P1_E4 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E4.png", 0.68)
+  image mum P1_E5 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E5.png", 0.68)
+  image mum P1_E7 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E7.png", 0.68)
+  image mum P1_E8 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E8.png", 0.68)
   
   image bosworth P1_E2 = im.FactorScale("images/Sprites/Side Characters/Principal Bosworth/Bosworth_P1_E2.png", 0.665)
   image bosworth P1_E4 = im.FactorScale("images/Sprites/Side Characters/Principal Bosworth/Bosworth_P1_E4.png", 0.665)
   
-  image claes P1_E1 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E1.png", 0.64)
-  image claes P1_E2 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E2.png", 0.64)
-  image claes P1_E3 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E3.png", 0.64)
-  image claes P1_E4 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E4.png", 0.64)
   
   # flag that game has been started
   $ persistent.started = 1
