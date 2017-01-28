@@ -121,7 +121,8 @@ screen input:
         text prompt
         input id "input"
 
-    use quick_menu
+    use quick_menu1
+    use quick_menu2
 
 ##############################################################################
 # Nvl
@@ -172,7 +173,8 @@ screen nvl:
 
     add SideImage() xalign 0.0 yalign 1.0
 
-    use quick_menu
+    use quick_menu1
+    use quick_menu2
 
 ##############################################################################
 # Main Menu
