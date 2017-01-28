@@ -21,22 +21,25 @@ label A1_06:
 # 
 #-# <Shot of the beautiful campus of St. Dymphna>
 
-scene MainBuilding
+scene entrance1
 with Dissolve(2)
 #--#
 
-show hilda P3_E4:
-  xalign 0.0 yalign -0.3 alpha 0.0
-  easein 1.0 xalign 0.4 yalign -0.3 alpha 1.0
-show ela P1_E1:
-  xalign 0.55 yalign -0.4 alpha 0.0
-  easein 1.0 xalign 0.7 yalign -0.4 alpha 1.0
-show beatrice P2_E5:
-  xalign 0.15 yalign 0 alpha 0.0
-  easein 1.0 xalign 0.1 yalign 0 alpha 1.0
-show irene U_P1_E4:
-  xalign 0.0 yalign -0.3 alpha 0.0
-  easein 1.0 xalign 0.95 yalign -0.3 alpha 1.0
+show hilda P2_E5:
+  xalign -0.1 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.0 alpha 1.0
+  
+show beatrice P2_E1 behind hilda:
+  xalign 0.15 yalign 1.0 alpha 0.0
+  easein 1.0 xalign 0.25 alpha 1.0
+  
+show ela P1_E3:
+  xalign 0.9 yalign -0.4 alpha 0.0
+  easein 1.0 xalign 1.0 alpha 1.0
+
+show irene U_P1_E1:
+  xalign 0.5 yalign -6.5 alpha 0.0
+  easein 1.0 xalign 0.6 alpha 1.0
 
 n "With Irene at the helm, the tour recommences, Ela seemingly resigned to her inclusion. Although calling it a ‘tour’ at this point isn’t exactly accurate."
 
@@ -55,6 +58,9 @@ hilda "\"What’s the building used for,  if I might ask?\""
 irene "\"Huh? I dunno, like exercise and stuff. They’ve got a gym in there. It’s not very interesting.\""
 
 ela "\"You were talking about brickwork before.\""
+
+show irene U_P1_E4
+with Dissolve (0.25)
 
 irene "\"Look, when I find nazi gold hidden in a wall, you’re gonna feel like an idiot, is all I’m saying.\""
 

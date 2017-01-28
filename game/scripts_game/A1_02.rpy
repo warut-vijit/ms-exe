@@ -131,8 +131,7 @@ n "She whips the covers off my bed in one last-ditch effort for me to finally ge
 erik "\"Okay, okay, you win. At least let me wash up first.\""
 
 #-# >Beatrice_laugh.png
-image beatrice Laugh Close2 = im.Flip(im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E3.png", 0.66), horizontal=True)
-show beatrice Laugh Close2:
+show beatrice P1_E3:
   easein 1.0 xalign 0.0 alpha 0.0
 #--#
 
