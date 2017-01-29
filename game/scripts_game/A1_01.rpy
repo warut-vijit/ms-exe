@@ -38,8 +38,18 @@ scene PitchBlack
 #
 #--#
 
+n "Welcome to the Missing Stars alpha."
+
+n "This alpha's purpose is to attract new artists."
+
+n "As such, this alpha is non-final and not representative of the final product. Please refrain from uploading it anywhere or sharing it."
+
+n "Please enjoy."
+
+$ renpy.pause (5.0)
+
 #-# >discordant noise
-play sound "music/Swampie/Panic Attack Sounds.mp3" fadein 1.0 loop
+play sound "music/Panic Attack Sounds.mp3" fadein 1.0 loop
 $ renpy.sound.set_volume(0.5)
 #--#
 
