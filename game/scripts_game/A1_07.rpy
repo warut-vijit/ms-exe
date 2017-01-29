@@ -33,19 +33,21 @@ with Dissolve(2)
 #--#
 #-# >Ela + sisters slide to center, as does the background to signify movement coming to a stop.
 
-show hilda P3_E4:
-  xalign 0.0 yalign -0.3 alpha 0.0
-  easein 1.0 xalign 0.4 yalign -0.3 alpha 1.0
+show hilda P2_E2:
+  xalign -0.1 yalign -0.3 alpha 0.0
+  easein 1.0 xalign 0.0 alpha 1.0
+  
+show beatrice P1_E1 behind hilda:
+  xalign 0.15 yalign 1.0 alpha 0.0
+  easein 1.0 xalign 0.25 alpha 1.0
+  
 show ela P1_E1:
-  xalign 0.55 yalign -0.4 alpha 0.0
-  easein 1.0 xalign 0.7 yalign -0.4 alpha 1.0
-show beatrice P2_E5:
-  xalign 0.15 yalign 0 alpha 0.0
-  easein 1.0 xalign 0.1 yalign 0 alpha 1.0
-show irene U_P1_E4:
-  xalign 0.0 yalign -0.3 alpha 0.0
-  easein 1.0 xalign 0.95 yalign -0.3 alpha 1.0
-#--#
+  xalign 0.9 yalign -0.4 alpha 0.0
+  easein 1.0 xalign 1.0 alpha 1.0
+
+show irene U_P1_E1:
+  xalign 0.5 yalign -6.5 alpha 0.0
+  easein 1.0 xalign 0.6 alpha 1.0
 
 n "We come to a stop in front of the large building that holds the offices."
 
