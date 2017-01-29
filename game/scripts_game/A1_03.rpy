@@ -183,15 +183,17 @@ hilda "\"You ruin everything, you know.\""
 label A1_03c:
 #--#
 
-#-# >door open
-todo "{color=#ff8c00}>door open{/color}"
-#--#
 #-# >Beatrice_smile.png enter left
 show beatrice P2_E4:
   offscreenleft
   alpha 0.0 xalign 0.15 yalign 1.0
   easein 1.0 xalign 0.2 yalign 1.0 alpha 1.0
 #--#
+
+play sound "music/effects/door open and close.mp3"
+
+play music "music/Ditzy.mp3" fadein 1.0 loop
+$ renpy.music.set_volume(0.75)
 
 beatrice "\"Sorry to keep you waiting!\""
 
@@ -267,9 +269,6 @@ image ViennaStreet1:
   im.Scale("images/Backgrounds/ViennaStreet_1.png", config.screen_width, config.screen_height)
 scene ViennaStreet1
 with Dissolve(2)
-#--#
-#-# >Town Theme
-todo "{color=#ff8c00}>Town Theme{/color}"
 #--#
 
 #-# > fade through other bgs
@@ -514,7 +513,6 @@ n "How much of those are allowed at St. Dymphna’s? No clue."
 n "The rest of our lunch is more playful banter, teasing Beatrice, and enjoying time with my family."
 
 #-# >timeskip
-todo "{color=#ff8c00}>timeskip{/color}"
 scene ViennaStreet3
 with Dissolve(0.5)
 #--#
@@ -551,7 +549,7 @@ beatrice "\"We'd never turn you away! You mean so much to us, Erik.\""
 n "My sisters may be overly doting, but it's definitely sincere."
 
 #-# >ping
-todo "{color=#ff8c00}>ping{/color}"
+play sound "music/effects/Phone alert.mp3"
 #--#
 #-# >Beatrice_neutral.png
 show beatrice P1_E1
@@ -583,10 +581,12 @@ beatrice "\"Yeah. We need to catch the U-Bahn back to our place. Let's go!\""
 
 n "We make a dash back to the station, almost missing the next tram back home."
 
+stop music fadeout 3.0
+
 #-# >fade to black
 image PitchBlack3 = Solid("#000")
 show PitchBlack3
-with Dissolve(2.0)
+with Dissolve(3.0)
 #--#
 
 #-# <end>

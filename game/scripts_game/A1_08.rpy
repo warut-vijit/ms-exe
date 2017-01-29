@@ -33,9 +33,6 @@ label A1_08:
 # 4th wall reassembles
 
 # 
-#-# >Sound of the 4th wall being demolished
-todo "{color=#ff8c00}>Sound of the 4th wall being demolished{/color}"
-#--#
 scene bg black
 with Dissolve(2)
 
@@ -52,13 +49,12 @@ show irene U_P1_E4:
   xalign 0.5 yalign -6.5 alpha 1.0
   easein 1.0 xalign 0.5 yalign -20.0 alpha 0.0
 
-#-# >4th wall is reassembled. Thanks Trump.
-todo "{color=#ff8c00}>4th wall is reassembled. Thanks Trump.{/color}"
-hide irene
-
 #--#
 scene MainGate
 with Dissolve(2)
+
+$ renpy.music.set_volume(0.5)
+play music "music/Be Green Afternoon.mp3" fadein 1.0 loop
 
 n "I watch my family as they get into the car and wave one last time. It still feels sort of unreal."
 
@@ -171,10 +167,6 @@ n "The feeling sends a chill down my spine. Right on cue, the building’s doubl
 
 n "Irene. She seems to be in very high spirits. She spots me almost immediately and jogs over across the grass almost skipping in excitement, grinning broadly."
 
-#-# >Ms. Holmes, I presume? (enter Irene)
-todo "{color=#ff8c00}>Ms. Holmes, I presume? (enter Irene){/color}"
-#--#
-
 show irene U_P1_E2:
   alpha 0.0 xalign 0.0 yalign -6.5
   easein 1.0 xalign 0.5 alpha 1.0
@@ -247,12 +239,10 @@ irene "\"And I plan on keeping it that way. Try and distract her for me, would y
 
 erik "\"What?! Irene, hold on, what’s she going to -\""
 
-#-# >The game is afoot (exit Irene)
-todo "{color=#ff8c00}>The game is afoot (exit Irene){/color}"
-#--#
-
 show irene U_P1_E2:
   easeout 1.0 xalign 1.0 alpha 0.0
+  
+stop music fadeout 3.0
   
 n "But I blink and she’s gone. I see the hem of her skirt flitting out of sight around the corner of the girl’s dorm building."
 
@@ -260,19 +250,18 @@ n "My mind fills with blind panic as I hear the the dorm’s doors opening once 
 
 n "It has to be Katja. Who is this terrible person who can strike fear even into the heart of Irene? For whom such violent rage seems to be commonplace? What kind of a monster am I doing to see emerge from that doorway?"
 
-#-# > Enter Lena
-todo "{color=#ff8c00}> Enter Lena{/color}"
-#--#
 show lena U_M_P1_E6:
   alpha 0.0, xalign 1.0 yalign -0.75
   easein 1.0 xalign 0.5 alpha 1.0
-
   
 n "Dear God. That’s it, I’m dead. I’m not going to survive this."
 
 maskedgirl "\"Yo.\""
 
 n "Death, I embrace - wait, what?"
+
+play music "music/Library Themeloopable.mp3" fadein 1.0 loop
+$ renpy.music.set_volume(0.75)
 
 n "This masked girl doesn’t seem in the least bit like she wants to kill the first person she sees. Something tells me this isn’t Katja."
 
@@ -432,19 +421,11 @@ show irene U_P1_E4:
   xalign 0.5 yalign -0.5 zoom 3.0
   easein 1.0 yalign -0.1
 
-#-# >SUPER CLOSE UP OF IRENE lets seem dem freckles
-todo "{color=#ff8c00}>SUPER CLOSE UP OF IRENE lets seem dem freckles{/color}"
-#--#
-
 erik "\"What the hell?\""
 
 irene "\"You’ll thank me later.\""
 
 n "To my surprise, Lena also forces her way into the bush without any persuasion."
-
-#-# >now we’re seeing them BOTH super close up
-todo "{color=#ff8c00}>now we’re seeing them BOTH super close up{/color}"
-#--#
 
 show lena U_M_P3_E4:
   yalign 0.05 zoom 3.0 xalign -10.0
@@ -461,22 +442,29 @@ erik "\"I doubt -\""
 
 lena "\"She’s coming, shut up.\""
 
+stop music fadeout 1.0
+
 hide lena 
 with Dissolve (0.25)
 hide irene
 with Dissolve (0.25)
 
+$ renpy.music.set_volume(0.25)
+play music "music/Panic Attack Sounds.mp3" fadein 1.0 loop
+
 n "I fall silent and strain my ears. From outside the bush, I can hear the sound of heavy footfalls approaching - but, to my surprise, no shouting. Given how angry Katja had been just a few minutes earlier, I would have thought I’d be able to hear her coming from a mile off."
+
+$ renpy.music.set_volume(0.30)
 
 n "Instead, aside from the sound of dull footsteps in the grass, she approaches silently as a trained assassin."
 
+$ renpy.music.set_volume(0.5)
+
 n "The mounting feeling of dread inside the bush is palpable. Our breath seems to hang in the air in clouds and our sweat streaming from our every pore turns to icicles as she draws nearer."
 
-n "Simultaneously we draw a long, slow, silent breath, holding it as she comes into view."
+$ renpy.music.set_volume(0.7)
 
-#-# >do the real big visual introduction of Katja right here the sprite isn’t ideal for this situation but i can make it work
-todo "{color=#ff8c00}>do the real big visual introduction of Katja right here the sprite isn’t ideal for this situation but i can make it work{/color}"
-#--#
+n "Simultaneously we draw a long, slow, silent breath, holding it as she comes into view."
 
 scene outsidefemaledorm
 with Dissolve(2)
@@ -487,6 +475,8 @@ show katja:
 n "Her face is not contorted with rage as I expected it to be. Instead, it is overcome with an expression of forced calm that somehow still looks frighteningly intense."
 
 n "It’s the one visible eye that give it away. A cold dead stare straight ahead, fixated on something in her mind’s eye - as she looks she doesn’t move her eye, instead rotating her entire head."
+
+$ renpy.music.set_volume(0.8)
 
 n "We become somehow even more motionless as she stops by our bush, just a few feet from us."
 
@@ -510,6 +500,8 @@ n "For a few seconds we remain silent, allowing the last vestiges of dread to di
 
 hide katja
 
+stop music fadeout 2.0
+
 scene inabush
 with Dissolve(2)
 
@@ -522,6 +514,9 @@ show irene U_P1_E2:
   easein 1.0 yalign -0.1
 
 irene "\"...Holy shit, that was hot.\""
+
+$ renpy.music.set_volume(0.5)
+play music "music/Be Green Afternoon.mp3" fadein 1.0 loop
 
 erik "\"What?\""
 
@@ -572,11 +567,6 @@ n "Steeling myself and inhaling deeply what might be my last breath, I part some
 scene outsidefemaledorm
 with Dissolve(2)
 
-#-# >and then Isolda appears because it seems as good a time as any to introduce her.
-todo "{color=#ff8c00}>and then Isolda appears because it seems as good a time as any to introduce her.{/color}"
-#--#
-##show isolda
-
 show isolda U_P1_E8:
   xalign 0.4 yalign -1.0 alpha 0.0
   easein 1.0 xalign 0.5 alpha 1.0
@@ -603,10 +593,6 @@ show isolda U_P1_E6
 with Dissolve (0.25)
 
 brunettegirl "\"Why are you in a bu- \""
-
-#-# >Lena and Irene stick their heads out too
-todo "{color=#ff8c00}>Lena and Irene stick their heads out too{/color}"
-#--#
 
 n "At this point, Lena and Irene decided the coast is clear and make their presence known, sticking their heads out of the bush either side of me."
 ##show lena
@@ -721,11 +707,6 @@ n "Lena slaps her palm to her forehead."
 
 lena "\"My report! I left it open on my desk!\""
 
-#-# >Lena pls go
-todo "{color=#ff8c00}>Lena pls go{/color}"
-#--#
-##hide lena
-
 show lena U_M_P1_E6:
   easein 1.0 xalign -0.5 alpha 0.0
 
@@ -796,10 +777,6 @@ erik "\"Right. See ya.\""
 
 n "Wait, who’s Jeanne?"
 
-#-# >Isolda fucks off.
-todo "{color=#ff8c00}>Isolda fucks off.{/color}"
-#--#
-
 show isolda U_P2_E1:
    alpha 1.0
    easein 1.0 xalign -0.3 alpha 0.0
@@ -810,17 +787,14 @@ n "It might have been an, eh, eventful introduction to the place, but at least i
 
 n "I think I’m gonna like it here."
 
+stop music fadeout 2.0
+
 scene bg black
 with Dissolve(2)
 
 show irene U_P1_E4:
   xalign 0.5 yalign -20.0 alpha 0.0
   easein 1.0 xalign 0.5 yalign -6.5 alpha 1.0
-
-#-# >Hostess Irene pops up one last time.
-todo "{color=#ff8c00}>Hostess Irene pops up one last time.{/color}"
-#--#
-##shatter the wall.  again.
 
 irene "\"Wow, Erik, that was a cheesy last line, huh? But wait... breaking the fourth wall is even cheesier! I just made it worse! And is it now even worse that I broke the- uh, what’s the word for the wall that’s in front of the fourth wall? Is there a word for that? Whatever it is, I’ve broken that too.\""
 

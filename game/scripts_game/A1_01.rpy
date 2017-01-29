@@ -49,7 +49,7 @@ n "Please enjoy."
 $ renpy.pause (5.0)
 
 #-# >discordant noise
-play sound "music/Swampie/Panic Attack Sounds.mp3" fadein 1.0 loop
+play sound "music/Panic Attack Sounds.mp3" fadein 1.0 loop
 $ renpy.sound.set_volume(0.5)
 #--#
 

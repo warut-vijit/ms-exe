@@ -27,6 +27,9 @@ scene mainbuilding
 with Dissolve(0.5)
 #--#
 
+$ renpy.music.set_volume(0.5)
+play music "music/effects/City Night Ambience.mp3" fadein 1.0 loop
+
 n "Morning comes almost too quickly. I thought days like this were supposed to take forever to get to, like Christmas morning, or the day after a hard test."
 
 n "I zone out through breakfast, the entire car ride, and up to our arrival at the main gate."
@@ -72,7 +75,12 @@ n "Mum nods in understanding and pats me on the shoulder."
 
 mum "\"Just tell me if you don't feel good and we'll go somewhere so you can take a break.\""
 
+stop music fadeout 1.0
+
 erik "\"Sure.\""
+
+$ renpy.music.set_volume(1.0)
+play music "music/Be Green Afternoon.mp3" fadein 1.0 loop
 
 n "The main building we're approaching is the largest on campus; it's three stories tall, and definitely very old. A mass of ivy coats the entrance, adding a natural green patina to the stonework."
 
@@ -163,17 +171,9 @@ image BosworthOffice:
 scene BosworthOffice
 with Dissolve (0.5)
 
-#-# >Slide across the BG as Erik inspects the room
-todo "{color=#ff8c00}>Slide across the BG as Erik inspects the room{/color}"
-#--#
-
 n "Bosworth's office is very organized – bookshelves containing dozens of volumes, paperwork neatly stacked, and a desk polished to a mirror shine. It's almost intimidatingly perfect."
 
 n "He settles into his massive desk chair and shuffles a few papers. Gesturing to the chair opposite his, he offers me a seat."
-
-#-# >Return to full BG
-todo "{color=#ff8c00}>Return to full BG{/color}"
-#--#
 
 show bosworth P1_E2:
   xalign 0.8 yalign 0.0 alpha 0.0
@@ -254,9 +254,7 @@ bosworth "\"Wonderful! I'll give her a call. In the meantime, why don't you let 
 
 erik "\"Sure.\""
 
-#-# >door opening
-todo "{color=#ff8c00}>door opening{/color}"
-#--#
+play sound "music/effects/door open and close.mp3"
 
 #-# >Fade to interior building 2
 scene mainlobby
@@ -338,17 +336,16 @@ erik "\"Well, shall we?\""
 
 n "My sisters nod in agreement."
 
-n "I lead the way down to Ms. Claes' office and knock gingerly on the door a few times."
+play sound "music/effects/Knock Knock.mp3"
 
-#-# >knock knock
-todo "{color=#ff8c00}>knock knock{/color}"
-#--#
+n "I lead the way down to Ms. Claes' office and knock gingerly on the door a few times."
 
 Voice "\"Come in.\""
 
 #-# >fade to office (day)
 scene classroom1
 with Dissolve (0.5)
+play sound "music/effects/door open and close.mp3"
 #--#
 
 show claes P1_E1:
@@ -392,9 +389,7 @@ claes "\"Have you taken the tour of the campus yet?\""
 
 erik "\"Not yet – we'll be going after my parents finish up some paperwork with Dr. Bosworth.\""
 
-#-# >knock knock 2
-todo "{color=#ff8c00}>knock knock 2{/color}"
-#--#
+play sound "music/effects/door open and close.mp3"
 
 #-# >Ela enters from right
 show ela P1_E1:
@@ -427,9 +422,7 @@ ela "\"It's nice to meet you too, Erik.\""
 
 ela "\"Now, let's get started, shall we? Right this way, please!\""
 
-#-# >clock wipe transition
-todo "{color=#ff8c00}>clock wipe transition{/color}"
-#--#
+stop music fadeout 1.0
 
 #-# >end
 

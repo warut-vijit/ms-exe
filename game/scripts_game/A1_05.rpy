@@ -7,6 +7,12 @@ label A1_05:
 
 #-# >open to school hallway
 #--#
+
+stop music fadeout 1.0
+
+$ renpy.music.set_volume(0.75)
+play music "music/New Beginnings Arise from Old Endings.mp3" fadein 1.0 loop
+
 scene classroomhall
 with Dissolve(1)
 
@@ -200,7 +206,12 @@ erik "\"Yeah, I know. I’m just… kind of shocked, I guess.\""
 show ela P1_E6
 with Dissolve (0.25)
 
+stop music fadeout 5.0
+
 n "Another moment of uncomfortable tension later, Ela sighs, slowing to a halt, her smile fading into a look of empathy. Her ‘tour guide’ voice drops to something more subdued, but sincere."
+
+$ renpy.music.set_volume(0.75)
+play music "music/Reflections.mp3" fadein 1.0 loop
 
 show ela P1_E3
 with Dissolve (0.25)
@@ -213,6 +224,9 @@ show ela P1_E6
 with Dissolve (0.25)
 
 ela "\"You’re here because there’s something wrong with you, and right now it feels like it’s taking your future away from you.\""
+
+$ renpy.sound.set_volume(0.1)
+play sound "music/effects/Branch1.mp3"
 
 n "That’s… probably a little more dramatic than I would have put it, but she’s not wrong. Ela leans against the trunk of a tree, hands clasped behind her back."
 
@@ -234,6 +248,11 @@ erik "\"...thanks, Ela, that’s… actually really good advice.\""
 n "I give a nervous laugh, rubbing the back of my head sheepishly."
 
 erik "\"Now I kinda feel like a jerk for treating this place like a loony bin. You’re right. There’s nothing-\""
+
+stop music fadeout 1.0
+
+$ renpy.sound.set_volume(1.0)
+play sound "music/effects/Branch2.mp3"
 
 scene mainbuilding
 with hpunch
@@ -257,6 +276,9 @@ show irene U_FALLING:
 n "The sound of splitting wood and rustling leaves interrupts me, causing all of us to instinctively jump closer to Ela, away from the crashing bough."
 
 n "Before I even have time to register the event, a student rises from the debris, dusting herself off and initiating a conversation as casually as one might wave hello."
+
+$ renpy.music.set_volume(0.5)
+play music "music/Library Themeloopable.mp3" fadein 1.0 loop
 
 show irene U_P1_E1:
   xalign 0.5 yalign -25.0

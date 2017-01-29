@@ -103,7 +103,12 @@ n "Irene winks and spins on her heels just like Ela did before strutting off tow
 hide irene
 with Dissolve(0.5)
 
+stop music fadeout 1.0
+
 n "Beatrice releases a small sigh as her new best friend walks away before turning her eyes to me."
+
+play music "music/Ditzy.mp3" fadein 1.0 loop
+$ renpy.music.set_volume(0.75)
 
 #-# >Beatrice in close
 
@@ -126,7 +131,7 @@ erik "\"That means it’s definitely something.\""
 show beatrice P2_E4
 with Dissolve (0.25)
 
-beatrice "\"I mean… Ela was cute, riiiight?\""
+beatrice "\"I mean… Ela was cute, {i}riiiight?{/i}\""
 
 n "A loaded question aimed right at me. Gulp."
 
@@ -144,9 +149,10 @@ with hpunch
 
 show beatrice P1_E5:
   easein 0.5 xalign 0.75
-#--#
+
 #-# >Dull thump/punch SFX
-todo "{color=#ff8c00}>Dull thump/punch SFX{/color}"
+$ renpy.sound.set_volume(0.5)
+play sound "music/effects/Punch.mp3"
 #--#
 
 n "Hilde offers an aggressive elbow into Beatrice’s side, almost knocking her off her feet. Thanks Hilde."
@@ -244,7 +250,7 @@ with Dissolve (0.25)
 
 dad "\"Just be sure to be careful, It looks like the weather is going to get worse later on.\""
 
-todo "music stops."
+stop music fadeout 2.5
 
 erik "\"There’s no such thing as bad weather, just inappropriate clothing.\""
 
@@ -254,6 +260,9 @@ show beatrice P1_E2
 with Dissolve (0.25)
 
 beatrice "\"Doesn’t Gustav say that all the time?\""
+
+$ renpy.music.set_volume(0.5)
+play music "music/Muted Past.mp3" fadein 1.0 loop
 
 show mum P1_E7
 with Dissolve (0.25)
@@ -302,6 +311,8 @@ with Dissolve (0.25)
 n "She pulls me into a hug and almost breaks my ribs as she squeezes. Dad follows shortly after, though with a much more relaxed handshake."
 
 mum "\"Well, we better be off. Make sure to relax a little, okay?\""
+
+stop music fadeout 2.5
 
 mum "\"You’ve got nothing to worry about here.\""
 

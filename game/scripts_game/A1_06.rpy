@@ -154,6 +154,9 @@ erik "\"So Ela, what do we have left to visit before this tour ends?\""
 
 beatrice "\"Getting bored already, Erik? Even while being led by a pair of attracti-\""
 
+$ renpy.sound.set_volume(0.5)
+play sound "music/effects/punch.mp3"
+
 show hilda P3_E3
 with hpunch
 
@@ -186,6 +189,8 @@ with Dissolve (0.25)
 
 erik "\"Saving the best for last?\""
 
+stop music fadeout 1.0
+
 show hilda P3_E1
 with Dissolve (0.25)
 
@@ -195,6 +200,9 @@ image PitchBlack = Solid("#000")
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.0
   easein 2.0 alpha 0.1
+  
+$ renpy.sound.set_volume(0.1)
+play music "music/Panic Attack Sounds.mp3" fadein 1.0 loop
 
 n "Almost immediately the comment feels like a punch in the gut. Another reminder. Ela continues, seemingly oblivious."
 
@@ -219,6 +227,7 @@ hilda "\"Is it normal for these sessions to be scheduled often?\""
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.2
   easein 2.0 alpha 0.3
+$ renpy.music.set_volume(0.3)
 
 irene "\"Pretty much. I mean, once a week is the minimum after all.\""
 
@@ -233,6 +242,7 @@ n "I just…"
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.3
   easein 2.0 alpha 0.4
+$ renpy.music.set_volume(0.4)
 
 n "My heartbeat is picking up, and I struggle to focus on my breathing before it becomes noticeable."
 
@@ -248,6 +258,7 @@ erik "\"I think I’ve pretty much gotten an understanding of the campus, is all
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.4
   easein 2.0 alpha 0.5
+$ renpy.music.set_volume(0.5)
 
 n "I try to cover it with a laugh, but even I can tell it sounds off. My sisters eye me with concern, but Ela doesn’t seem to have picked up on it quite as easily."
 
@@ -264,6 +275,7 @@ n "…can’t do this."
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.5
   easein 2.0 alpha 0.6
+$ renpy.music.set_volume(0.6)
   
 show beatrice P2_E5
 with Dissolve (0.25)
@@ -284,6 +296,7 @@ n "My heart rate continues to accelerate, exacerbated by the multiple pairs of e
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.6
   easein 2.0 alpha 0.7
+$ renpy.music.set_volume(0.7)
 
 n "It’s hard to keep myself standing at this point, my leg joining the rebellion currently in progress, and I sit on the curb before it gives out entirely."
   
@@ -300,6 +313,7 @@ ela "\"Erik, it’s okay. This kind of nervousness is completely normal to a fir
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.7
   easein 2.0 alpha 0.8
+$ renpy.music.set_volume(0.8)
 
 erik "\"No, I know, it’s just-\""
 
@@ -312,24 +326,28 @@ n "Breathe…"
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.8
   easein 2.0 alpha 0.7
+$ renpy.music.set_volume(0.7)
 
 n "Just breathe…"
 
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.7
   easein 2.0 alpha 0.5
+$ renpy.music.set_volume(0.5)
 
 n "In….out…."
 
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.5
   easein 2.0 alpha 0.3
+$ renpy.music.set_volume(0.3)
 
 n "….."
 
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.3
   easein 2.0 alpha 0.0
+stop music fadeout 3.0
 
 n "It takes me a few moments, but soon I can control my thoughts a little better. I’m far from fine, but I can do my best to alleviate some concerned faces."
 
@@ -354,6 +372,9 @@ erik "\"Well I’m sure everyone wouldn’t want to…\""
 
 show irene U_P1_E3:
   easein 1.0 xalign 1.5
+  
+$ renpy.music.set_volume(0.5)
+play music "music/Unknown Past.mp3" fadein 3.0 loop
 
 Voice "\"Ela?\""
 
@@ -446,14 +467,16 @@ erik "\"Er…thanks.\""
 show faber P1_E1:
   yalign -0.5 xalign 1.0 alpha 1.0
   easein 2.0 xalign 1.1 yalign -0.5 alpha 0.0
+  
+stop music fadeout 5.0
 
 n "Giving one last nod Dr. Faber turns and walks opposite of the administration building, towards what I can assume are the medical facilities on campus."
-
-irene "\"I dislike him.\""
 
 show irene U_P1_E1:
   xalign 1.0 yalign -6.5 alpha 0.0
   easein 1.0 xalign 0.9 alpha 1.0
+
+irene "\"I dislike him.\""
 
 n "In moments Irene is next to us once again, though still has her eyes solely fixed on the back of Faber’s head."
 
@@ -461,6 +484,9 @@ hilda "\"That was…\""
 
 show beatrice P2_E2
 with Dissolve (0.25)
+
+$ renpy.music.set_volume(0.75)
+play music "music/New Beginnings Arise from Old Endings.mp3" fadein 1.0 loop
 
 beatrice "\"…kinda cool actually.\""
 

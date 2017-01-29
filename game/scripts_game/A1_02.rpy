@@ -462,6 +462,8 @@ erik "\"Uh, sure. Sounds good.\""
 
 n "I hand over my empty plate and mug to Mum and prepare to head outside."
 
+stop music fadeout 3.0
+
 #-# >transition_start
 show PitchBlack
 with Dissolve(3.0)
