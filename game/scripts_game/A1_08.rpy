@@ -810,13 +810,7 @@ hide irene
 
 pause 3.0
 
-##pause
-#-# APPEND
-# End of Act 1
-$config.allow_skipping = False
-"{size=24}{color=#FFFFFF}Annaliese=[persistent.a_tot] Isolda=[persistent.i_tot]\nJeanne=[persistent.j_tot] Lena=[persistent.l_tot]\nKatja=[persistent.k_tot] Twins=[persistent.nh_tot]\nAnne-Marie=[persistent.am_tot]{/color}{/size}"
 return
-#--#
 
 ########
 
