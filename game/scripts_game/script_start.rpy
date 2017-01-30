@@ -240,7 +240,8 @@ label start0:
   image classroom1 = im.Scale("backgrounds/Classroom_1.png", 1920, 1080)
   
   #CG
-  image MISSINGCG = "images/CG/MISSINGCG.png"
+  image CG01 = im.Scale("images/CG/CG01.png", config.screen_width, config.screen_height)
+  image CG02 = im.Scale("images/CG/CG02.png", config.screen_width, config.screen_height)
   #Sprites
 
   #main characters

@@ -235,8 +235,6 @@ mum "\"Come here. It's going to be fine.\""
 
 #-# >CG1
 
-image CG01:
-  im.Scale("images/CG/CG01.png", config.screen_width, config.screen_height)
 show CG01
 with Dissolve(2)
 

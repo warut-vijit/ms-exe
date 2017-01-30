@@ -230,7 +230,7 @@ play sound "music/effects/Branch1.mp3"
 
 n "That’s… probably a little more dramatic than I would have put it, but she’s not wrong. Ela leans against the trunk of a tree, hands clasped behind her back."
 
-scene MISSINGCG
+scene CG02
 with Dissolve (1.0)
 
 ela "\"If you’re looking at it that way, that’s all you’re going to see. Perspective is everything.\""
