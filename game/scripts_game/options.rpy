@@ -34,7 +34,7 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Missing Stars"
-    config.version = "20Jul2016NoMenus"
+    config.version = "2017-1-30-Swampie"
 
     #########################################
     # Themes
