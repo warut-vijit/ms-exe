@@ -180,7 +180,7 @@ show bosworth P1_E2:
   easein 0.5 alpha 1.0
   
 
-n "…"
+n "..."
 
 n "It’s incredibly comfortable. Clearly, this school spares no expense."
 
@@ -267,8 +267,8 @@ show mum P1_E2:
 with Dissolve(0.5)
 
 show dad P2_E2:
-  xalign 0.2 yalign 0.4 alpha 0.0 zoom 1.0
-  easein 1.0 xalign 0.3 yalign 0.4 alpha 1.0
+  xalign 0.2 yalign 1 alpha 0.0 zoom 1.0
+  easein 1.0 xalign 0.3 yalign 1 alpha 1.0
 with Dissolve(0.5)
 
 show hilda P2_E2:

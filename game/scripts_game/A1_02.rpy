@@ -38,7 +38,7 @@ $ renpy.music.set_volume(0.75)
 
 voice "\"Erik? Are you up yet?\""
 
-n "…"
+n "..."
 
 #-# >iris open
 image SisAptMorning:
@@ -51,7 +51,13 @@ with irisout
 #--#
 n "I crack open my eyes. Daylight streams through the open window."
 
+$ renpy.sound.set_volume(0.75)
+play sound "music/effects/BeatriceRunning.mp3"
+
 n "Before I can even respond I hear the door open, footsteps rushing in to greet me."
+
+stop sound
+play sound "music/effects/BeatriceRunning.mp3"
 
 #-# >Beatrice_happy.png, very close
 image beatrice Happy VClose = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 1.5)
@@ -67,7 +73,7 @@ n "A girl is inches away from my face, cheerfully greeting me."
 
 n "It's a face I know all too well."
 
-erik "\"Morning Beatrice…\""
+erik "\"Morning Beatrice...\""
 
 #-# >Beatrice_happy.png, very close
 image beatrice VHappy VClose = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E3.png", 1.5)
@@ -221,7 +227,7 @@ with Dissolve(0.25)
 
 hilda "\"It’s understandable. Making a trip out to Vienna isn’t something you can do on a whim. If anything, it would be more feasible for us to come visit you.\""
 
-erik "\"Well, it’s the thought that counts, right? I don’t think any of us have as much spare time as we used to…\""
+erik "\"Well, it’s the thought that counts, right? I don’t think any of us have as much spare time as we used to...\""
 
 erik "\"Speaking of which, where's Dad?\""
 
@@ -314,7 +320,7 @@ with Dissolve(0.25)
 
 mum "\"Enough, girls, cut your brother some slack. At least for today.\""
 
-n "We’re in their house and already my mother has taken control of the situation. In a way this treatment does feel kind of… wrong."
+n "We’re in their house and already my mother has taken control of the situation."
 
 #-# >Beatrice_happy.png exit right 2
 image beatrice Happy = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E2.png", 0.66)

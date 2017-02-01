@@ -61,7 +61,7 @@ n "There's no use evading the question or brushing her off. I know that look in 
 
 erik "\"Well, it's fine, I guess. It's still attached and all.\""
 
-hilda "\"That's not what I meant! Is it still… numb?\""
+hilda "\"That's not what I meant! Is it still... numb?\""
 
 n "I mean, I could go on about how it kept me up last night, or how it keeps reminding me of the accident, or how it sometimes decides to stop working entirely."
 
@@ -82,7 +82,7 @@ hilda "\"...I see.\""
 
 n "Silence. When is Beatrice coming out? She's taking her time..."
 
-hilda "\"I know this isn't my place to say this, but…\""
+hilda "\"I know this isn't my place to say this, but...\""
 
 erik "\"But?\""
 
@@ -90,7 +90,7 @@ hilda "\"...Wouldn't it be better for you to work with a physical therapist back
 
 n "Her question cuts to the heart of the conversation I'm pretty sure she’s wanted to have with me for a while. While in most cases she'd be correct, there's something else that's been driving my motivations to come here."
 
-erik "\"I…\""
+erik "\"I...\""
 
 label A1_03_menu:
 label MENu1:
@@ -322,7 +322,7 @@ show hilda P1_E2:
 
 hilda "\"Anywhere you want to see, Erik? We don't have to follow Beatrice all day, you know.\""
 
-erik "\"Hmm, I am interested in Stadtpark… Beatrice said that's on this route, right?\""
+erik "\"Hmm, I am interested in Stadtpark... Beatrice said that's on this route, right?\""
 
 hilda "\"Yes, it's just a few stops from here.\""
 
@@ -409,7 +409,7 @@ show hilda P2_E1
 with Dissolve(0.25)
 #-#
 
-hilda "\"What’s your special occasion…?\""
+hilda "\"What’s your special occasion...?\""
 
 #-#
 show beatrice P2_E2
@@ -443,7 +443,7 @@ show beatrice P1_E1
 with Dissolve(0.25)
 #-#
 
-beatrice "\"I’ve been prepping for my final year at MDW. Gonna’ be a long year with all the papers I have to write…\""
+beatrice "\"I’ve been prepping for my final year at MDW. Gonna’ be a long year with all the papers I have to write...\""
 
 erik "\"Music theory is that intensive?\""
 

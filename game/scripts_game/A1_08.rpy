@@ -355,7 +355,7 @@ n "My confusion is resolved immediately, however, as one of the bushes to our le
 
 show irene U_P1_E4:
   rotate 45
-  alpha 0.0 xalign -1.5 yalign -0.4 
+  alpha 0.0 xalign -1.5 yalign -1.5
   easein 1.0 alpha 1.0 xalign -1.0
   
 irene "\"Were you guys talking about me?\""
@@ -366,7 +366,6 @@ show lena U_M_P1_E6:
   easein 1.0 xalign 0.7
   
 show irene U_P1_E4:
-  xalign -1.3 yalign -0.4 
   easein 1.0 rotate 0 xalign 0.2 yalign -1.5
 
 n "Lena doesn’t seem at all surprised to see Irene’s face appear out of a bush. Apparently this is totally normal behaviour, at least for her."
@@ -700,7 +699,7 @@ with Dissolve (0.25)
 
 isolda "\"They did.\""
 
-show lena U_M_P1_E5
+show lena U_M_P5_E8
 with Dissolve (0.25)
 
 n "Lena slaps her palm to her forehead."

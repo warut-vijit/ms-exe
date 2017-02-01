@@ -50,7 +50,7 @@ beatrice "\"It’s so cool! It’s like a castle!\""
 show ela P1_E2
 with Dissolve (0.25)
 
-ela "\"It is rather spacious, isn’t it? Mr. Bosworth likes to sell the historical significance and ‘architectural richness’ of the place, but I’m sure you’re not interested in all that canned stuff…\""
+ela "\"It is rather spacious, isn’t it? Mr. Bosworth likes to sell the historical significance and ‘architectural richness’ of the place, but I’m sure you’re not interested in all that canned stuff...\""
 
 show hilda P2_E2
 with Dissolve (0.25)
@@ -80,7 +80,7 @@ show ela P1_E1:
   xalign 0.1 yalign -0.4 alpha 0.0 zoom 1.0
   easein 1.0 xalign 0.2 yalign -0.4 alpha 1.0
   
-erik "\"So… Ela. How long have you been here?\""
+erik "\"So... Ela. How long have you been here?\""
 
 ela "\"Three years. Transfer students are very common, but St. D’s has been my only high school.\""
 
@@ -126,7 +126,7 @@ ela "\"The chapel is always open, though not always ‘staffed’. Services are 
 
 n "She switches to her left."
 
-ela "\"...and the dorms are across the way. We’ll head there in a moment, but for now…\""
+ela "\"...and the dorms are across the way. We’ll head there in a moment, but for now...\""
 
 scene mainlobby
 with Dissolve (1)
@@ -201,7 +201,7 @@ beatrice "\"Good? Lighten up, Erik, this place is amazing!\""
 
 n "{i}Yeah, the parts they’re showing us.{/i}"
 
-erik "\"Yeah, I know. I’m just… kind of shocked, I guess.\""
+erik "\"Yeah, I know. I’m just... kind of shocked, I guess.\""
 
 show ela P1_E6
 with Dissolve (0.25)
@@ -213,25 +213,19 @@ n "Another moment of uncomfortable tension later, Ela sighs, slowing to a halt, 
 $ renpy.music.set_volume(0.75)
 play music "music/Reflections.mp3" fadein 1.0 loop
 
-show ela P1_E3
-with Dissolve (0.25)
+scene CG02
+with Dissolve (1.0)
 
 ela "\"...Listen, I know how this all looks. It looks like a prison. New students usually think that way. I thought that way.\""
 
 ela "\"You’re thinking this school is like a warehouse for damaged goods, like no one trusts you to make your own decisions.\""
-
-show ela P1_E6
-with Dissolve (0.25)
 
 ela "\"You’re here because there’s something wrong with you, and right now it feels like it’s taking your future away from you.\""
 
 $ renpy.sound.set_volume(0.1)
 play sound "music/effects/Branch1.mp3"
 
-n "That’s… probably a little more dramatic than I would have put it, but she’s not wrong. Ela leans against the trunk of a tree, hands clasped behind her back."
-
-scene CG02
-with Dissolve (1.0)
+n "That’s... probably a little more dramatic than I would have put it, but she’s not wrong. Ela leans against the trunk of a tree, hands clasped behind her back."
 
 ela "\"If you’re looking at it that way, that’s all you’re going to see. Perspective is everything.\""
 
@@ -243,7 +237,7 @@ n "A heavy silence settles in, one I’m not sure how to break. I understand wha
 
 n "Glancing to my side, I see Hilda has a ghost of a smile, and Beatrice looks at me with watery eyes."
 
-erik "\"...thanks, Ela, that’s… actually really good advice.\""
+erik "\"...thanks, Ela, that’s... actually really good advice.\""
 
 n "I give a nervous laugh, rubbing the back of my head sheepishly."
 
@@ -291,7 +285,7 @@ with Dissolve (0.25)
 
 n "She thrusts a hand in my direction, a thousand watt smile on her face."
 
-erik "\"Uh. Yeah. It’s nice to meet you…\""
+erik "\"Uh. Yeah. It’s nice to meet you...\""
 
 n "Ela seems to have shorted out, staring at the girl with a mixture of despair and panic."
 
@@ -303,7 +297,7 @@ irene "\"Irene! Irene Ross, at your service!\""
 show irene U_P1_E1
 with Dissolve (0.25)
 
-erik "\"Nice to meet you, Irene. I’m… Erik… hang on, where did you hear my name before?\""
+erik "\"Nice to meet you, Irene. I’m... Erik... hang on, where did you hear my name before?\""
 
 show irene U_P1_E4
 with Dissolve (0.25)

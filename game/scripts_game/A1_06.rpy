@@ -80,7 +80,7 @@ n "Our unfortunate guide wrestles with herself before letting the comment go unc
 
 n "As we explore the more mundane aspects of the campus, ironically, I find myself relaxing more. Although Ela seemed concerned I might think badly of them, the truth is that my imagination had far worse ideas."
 
-n "Really, it’s those small touches of personalization, imperfections, that make it feel… normal."
+n "Really, it’s those small touches of personalization, imperfections, that make it feel... normal."
 
 show ela P1_E1
 with Dissolve (0.25)
@@ -201,7 +201,7 @@ show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.0
   easein 2.0 alpha 0.1
   
-$ renpy.sound.set_volume(0.1)
+$ renpy.music.set_volume(0.1)
 play music "music/Panic Attack Sounds.mp3" fadein 1.0 loop
 
 n "Almost immediately the comment feels like a punch in the gut. Another reminder. Ela continues, seemingly oblivious."
@@ -218,7 +218,10 @@ show PitchBlack behind beatrice, hilda, ela, irene:
 
 n "The thought pounds against my head like a migraine."
 
-erik "\"How… how often would that be?\""
+erik "\"How... how often would that be?\""
+
+$ renpy.sound.set_volume(0.05)
+play sound "music/Effects/RingingEars.mp3" fadein 30.0 loop
 
 ela "\"Once a week is generally common, but it usually depends on the situation that you and the doctor you’ll be meeting with mutually decide on.\""
 
@@ -237,7 +240,7 @@ ela "\"You could serve to take them a little more seriously.\""
 
 irene "\"Yeah, yeah, I get that enough from them, thank you.\""
 
-n "I just…"
+n "I just..."
 
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.3
@@ -246,7 +249,7 @@ $ renpy.music.set_volume(0.4)
 
 n "My heartbeat is picking up, and I struggle to focus on my breathing before it becomes noticeable."
 
-erik "\"Could I… pass on this part of the tour?\""
+erik "\"Could I... pass on this part of the tour?\""
 
 show ela P1_E4
 with Dissolve (0.25)
@@ -262,15 +265,15 @@ $ renpy.music.set_volume(0.5)
 
 n "I try to cover it with a laugh, but even I can tell it sounds off. My sisters eye me with concern, but Ela doesn’t seem to have picked up on it quite as easily."
 
-ela "\"I mean… you should be able to locate the different facilities your first week. Are you-\""
+ela "\"I mean... you should be able to locate the different facilities your first week. Are you-\""
 
 erik "\"I’m fine.\""
 
 n "I shoot my hands up in defense and flash a smile, but I can feel myself breaking into a cold sweat.."
 
-erik "\"I just…\""
+erik "\"I just...\""
 
-n "…can’t do this."
+n "...can’t do this."
 
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.5
@@ -283,9 +286,9 @@ with Dissolve (0.25)
 show hilda P2_E1
 with Dissolve (0.25)
 
-erik "\"Sorry- Sorry I just need to sit down, I just…need to…\""
+erik "\"Sorry- Sorry I just need to sit down, I just...need to...\""
 
-n "…leave."
+n "...leave."
 
 n "I want to say it so badly, just spit it out and head back to my sister’s apartment. Head back to the bedroom and sleep away any inclination of what’s happening."
 
@@ -321,28 +324,30 @@ n "Please stop-"
 
 n "I can’t-"
 
-n "Breathe…"
+n "Breathe..."
+
+stop sound fadeout 5.0
 
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.8
   easein 2.0 alpha 0.7
 $ renpy.music.set_volume(0.7)
 
-n "Just breathe…"
+n "Just breathe..."
 
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.7
   easein 2.0 alpha 0.5
 $ renpy.music.set_volume(0.5)
 
-n "In….out…."
+n "In....out...."
 
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.5
   easein 2.0 alpha 0.3
 $ renpy.music.set_volume(0.3)
 
-n "….."
+n "....."
 
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.3
@@ -355,7 +360,7 @@ erik "\"I’m okay, just... feeling a little winded from the tour, is all.\""
 
 ela "\"Well, rest as long as you need to.\""
 
-erik "\"Ela, why are you so…\""
+erik "\"Ela, why are you so...\""
 
 n "{i}Normal.{/i}"
 
@@ -368,7 +373,7 @@ with Dissolve (0.25)
 
 ela "\"Years of practice, though I guess it’s fair to say it comes with the territory.\""
 
-erik "\"Well I’m sure everyone wouldn’t want to…\""
+erik "\"Well I’m sure everyone wouldn’t want to...\""
 
 show irene U_P1_E3:
   easein 1.0 xalign 1.5
@@ -378,7 +383,7 @@ play music "music/Unknown Past.mp3" fadein 3.0 loop
 
 Voice "\"Ela?\""
 
-n "An aged voice calls out to our tour guide, who immediately turns over to the man in recognition. Now a bit closer he looks…"
+n "An aged voice calls out to our tour guide, who immediately turns over to the man in recognition. Now a bit closer he looks..."
 
 n "Refined. Standing tall the man is not only dressed well but carries himself in an air of intelligence and ability unlike anyone I’ve seen outside my brother."
 
@@ -392,7 +397,7 @@ n "The man nods at the title, glancing around at the three of us currently on th
 
 faber "\"Am I interrupting your tour? I didn’t know Bosworth still had you working on these.\""
 
-ela "\"No, not at all, we were just…\""
+ela "\"No, not at all, we were just...\""
 
 show ela P1_E6
 with Dissolve (0.25)
@@ -462,7 +467,7 @@ n "His face is intense but his eyes are warm and inviting. I shouldn’t feel ne
 
 n "Just what kind of doctor is he?"
 
-erik "\"Er…thanks.\""
+erik "\"Er...thanks.\""
 
 show faber P1_E1:
   yalign -0.5 xalign 1.0 alpha 1.0
@@ -480,7 +485,7 @@ irene "\"I dislike him.\""
 
 n "In moments Irene is next to us once again, though still has her eyes solely fixed on the back of Faber’s head."
 
-hilda "\"That was…\""
+hilda "\"That was...\""
 
 show beatrice P2_E2
 with Dissolve (0.25)
@@ -488,7 +493,7 @@ with Dissolve (0.25)
 $ renpy.music.set_volume(0.75)
 play music "music/New Beginnings Arise from Old Endings.mp3" fadein 1.0 loop
 
-beatrice "\"…kinda cool actually.\""
+beatrice "\"...kinda cool actually.\""
 
 n "In a way it kind of was, and already my mind is already far from the small panic attack just moments ago. Hopefully it was off everyone else’s mind too."
 
@@ -496,7 +501,7 @@ ela "\"Well then, if you’re not-\""
 
 n "I can hear Ela begin to say something, though it cuts off as she begins to work her way back towards where we started our tour."
 
-ela "\"Well we’ve covered everything then. Any other confusion and… there’s always someone you can ask around if you get lost.\""
+ela "\"Well we’ve covered everything then. Any other confusion and... there’s always someone you can ask around if you get lost.\""
 
 n "Ela gives a knowing smile towards me, though at this point it doesn’t feel so bad to accept it."
 
@@ -506,7 +511,7 @@ n "I nod towards my sister, proceeding to turn back towards Ela for a very well 
 
 ela "\"Don’t mention it, I was happy to help out.\""
 
-erik "\"So I guess…we head back now right?\""
+erik "\"So I guess...we head back now right?\""
 
 show ela P1_E2
 with Dissolve (0.25)

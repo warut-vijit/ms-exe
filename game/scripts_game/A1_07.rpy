@@ -131,7 +131,7 @@ erik "\"That means it’s definitely something.\""
 show beatrice P2_E4
 with Dissolve (0.25)
 
-beatrice "\"I mean… Ela was cute, {i}riiiight?{/i}\""
+beatrice "\"I mean... Ela was cute, {i}riiiight?{/i}\""
 
 n "A loaded question aimed right at me. Gulp."
 
@@ -254,7 +254,7 @@ stop music fadeout 2.5
 
 erik "\"There’s no such thing as bad weather, just inappropriate clothing.\""
 
-n "…"
+n "..."
 
 show beatrice P1_E2
 with Dissolve (0.25)
@@ -339,7 +339,7 @@ n "In a matter of seconds Beatrice forgets what we were talking about. Hilde loo
 show hilda P1_E1
 with Dissolve (0.25)
 
-hilde "\"Well then… Take care, Erik.\""
+hilde "\"Well then... Take care, Erik.\""
 
 beatrice "\"We love you lots!\""
 

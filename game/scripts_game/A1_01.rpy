@@ -98,7 +98,7 @@ n "Okay, Erik, try to think back. Remember what the doctors told you. Breathe in
 
 n "I inhale, or at least try to. Hyperventilation works just as well, right?"
 
-n "...and breathe out…"
+n "...and breathe out..."
 
 n "I wheeze out as much as my panicked body allows and try to repeat the process."
 
@@ -167,13 +167,13 @@ n "My older sisters, Beatrice and Hilda, are hosting me and my parents for the w
 
 n "I should get back to bed. Maybe the cool air will help."
 
-erik "\"Ah…\""
+erik "\"Ah...\""
 
 stop sound fadeout 5.0
 
 n "However, my right leg refuses to cooperate."
 
-erik "\"Come on, you…\""
+erik "\"Come on, you...\""
 
 n "I hammer at it a few times in a frustrated attempt to get it to move, but it just hangs limply from my body."
 
@@ -245,7 +245,7 @@ n "She sits on the edge of the bed, beckoning me over with open arms. Helpless, 
 
 mum "\"Erik, you’re covered in sweat, are you feeling ill?\""
 
-erik "\"No, no. It was just the dream.\""
+erik "\"No, no. It was just a dream.\""
 
 mum "\"Is your leg giving you much trouble? Could you get up ok?\""
 
@@ -263,7 +263,7 @@ n "A colleague of my father suggested that I attend a specialty school for treat
 
 n "St. Dymphna’s Privatgymnasium."
 
-n "A school for… people like me."
+n "A school for... people like me."
 
 erik "\"A little bit, I think... I really don't know.\""
 
@@ -302,7 +302,7 @@ stop music fadeout 10.0
 play sound "music/effects/City Night Ambience.mp3" fadein 2.0 loop
 $ renpy.sound.set_volume(0.1)
 
-erik "\"Mum… thanks.\""
+erik "\"Mum... thanks.\""
 
 mum "\"Anytime.\""
 
@@ -324,7 +324,7 @@ mum "\"Now, your sisters have been dying to show you the city tomorrow. Are you 
 
 n "I’m tempted to ask for water, but at this point I doubt it would do much to steady my nerves."
 
-erik "\"I’m…okay. I really appreciate the checkup.\""
+erik "\"I’m...okay. I really appreciate the checkup.\""
 
 mum "\"It’s my job as a mother. Come on.\""
 
@@ -355,7 +355,7 @@ $ renpy.sound.set_volume(0.5)
 
 n "She leaves my bedroom, and I'm alone once again."
 
-n "As before, my mind drifts to my condition but…"
+n "As before, my mind drifts to my condition but..."
 
 n "But I guess I’m luckier than most. I’m lucky that my condition isn’t worse. I’m lucky that I have a family just a shout down the hall. I’m lucky to still have a leg, really."
 
