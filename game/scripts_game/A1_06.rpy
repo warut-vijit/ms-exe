@@ -196,7 +196,7 @@ with Dissolve (0.25)
 
 ela "\"It’s the medical facilities, actually.\""
 
-image PitchBlack = Solid("#000")
+image PitchBlack = Solid("#060a13")
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.0
   easein 2.0 alpha 0.1

@@ -30,7 +30,7 @@ label A1_01:
 #
 #--#
 #-# <apartment bedroom>
-image PitchBlack = Solid("#000")
+image PitchBlack = Solid("#060a13")
 scene PitchBlack
 #--#
 
