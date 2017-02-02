@@ -306,15 +306,15 @@ screen main_menu_kev:
         yalign .50
 
         has vbox
-        textbutton _("Start") action Start()
-        textbutton _("Resume") action Start("start0")
-        # textbutton _("Resume") action ShowMenu("resume")
-        textbutton _("Load") action ShowMenu("load")
-        textbutton _("Options") action ShowMenu("preferences")
-        textbutton _("Extras") action ShowMenu("preferences")
-        textbutton _("Set UI") action Jump("reset_ui")
-        # textbutton _("Help") action Help()
-        textbutton _("Quit") action Quit(confirm=False)
+        textbutton _("START") action Start()
+        textbutton _("RESUME") action Start("start0")
+        # textbutton _("RESUME") action ShowMenu("resume")
+        textbutton _("LOAD") action ShowMenu("load")
+        textbutton _("OPTIONS") action ShowMenu("preferences")
+        textbutton _("EXTRAS") action ShowMenu("preferences")
+        textbutton _("SETUI") action Jump("reset_ui")
+        # textbutton _("HELP") action Help()
+        textbutton _("QUIT") action Quit(confirm=False)
 
 
 
@@ -323,7 +323,7 @@ init -2 python:
     # Make all the main menu buttons be the same size.
     
     style.mm_button.size_group = "mm"
-    style.mm_button_text.font = "Bebas.ttf"
+    style.mm_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
     style.mm_button_text.size = 36
     style.mm_button.idle_background = "/images/Buttons/idle_menubutton.png"
     style.mm_button.hover_background = LiveComposite(
@@ -362,12 +362,12 @@ screen navigation:
 
 init -2 python:
     style.gm_nav_button.size_group = "gm_nav"
-    style.gm_nav_button_text.font = "Bebas.ttf"
+    style.gm_nav_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
     style.gm_nav_button_text.size = 24
-    style.gm_nav_button_text.hover_color = "#2020ffff"
-    style.gm_nav_button_text.idle_color = "#0000ff"
-    style.gm_nav_button_text.insensitive_color = "#000080"
-    style.gm_nav_button_text.selected_idle_color = "#4040ff"
+    style.gm_nav_button_text.hover_color = "#2e89ff"
+    style.gm_nav_button_text.idle_color = "#2e89ff80"
+    style.gm_nav_button_text.insensitive_color = "#ffffff26"
+    style.gm_nav_button_text.selected_idle_color = "#2e89ff"
     style.gm_nav_button.idle_background = "/images/Buttons/idle_menubutton.png"
     style.gm_nav_button.hover_background = LiveComposite(
         (250,50),
@@ -540,12 +540,12 @@ init -2 python:
     style.file_picker_load_root.background = "images/Menus/save-load/load_background.png"
     style.file_picker_save_root.background = "images/Menus/save-load/save_background.png"
     
-    style.file_picker_nav_button_text.font = "Bebas.ttf"
+    style.file_picker_nav_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
     style.file_picker_nav_button_text.size = 18
-    style.file_picker_nav_button_text.hover_color = "#2020ffff"
-    style.file_picker_nav_button_text.idle_color = "#0000ff"
-    style.file_picker_nav_button_text.insensitive_color = "#000080"
-    style.file_picker_nav_button_text.selected_idle_color = "#4040ff"
+    style.file_picker_nav_button_text.hover_color = "#ffffff"
+    style.file_picker_nav_button_text.idle_color = "#2e89ff80"
+    style.file_picker_nav_button_text.insensitive_color = "#ffffff26"
+    style.file_picker_nav_button_text.selected_idle_color = "#2e89ff"
     
     style.file_picker_nav_button.background = "#00000000"
 
@@ -688,12 +688,12 @@ init -2 python:
 
     style.pref_button.size_group = "pref"
     style.pref_button.xalign = 1.0
-    style.pref_button_text.font = "Bebas.ttf"
+    style.pref_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
     style.pref_button_text.size = 36    
-    style.pref_button_text.hover_color = "#2020ff"
-    style.pref_button_text.idle_color = "#0000ff"
-    style.pref_button_text.insensitive_color = "#000080"
-    style.pref_button_text.selected_idle_color = "#4040ff"
+    style.pref_button_text.hover_color = "#2e89ff"
+    style.pref_button_text.idle_color = "#2e89ff80"
+    style.pref_button_text.insensitive_color = "#ffffff26"
+    style.pref_button_text.selected_idle_color = "#2e89ffff"
     
     style.pref_button.background = "/images/Buttons/idle_menubutton.png"
     style.pref_button.selected_background = LiveComposite(
@@ -814,10 +814,10 @@ init -2 python:
 
     style.quick_button_text.set_parent('default')
     style.quick_button_text.size = 24
-    style.quick_button_text.idle_color = "#2020ff"
-    style.quick_button_text.hover_color = "#6060ff"
-    style.quick_button_text.selected_idle_color = "#4040ff"
-    style.quick_button_text.insensitive_color = "#000080"
+    style.quick_button_text.idle_color = "#2e89ff80"
+    style.quick_button_text.hover_color = "#ffffffff"
+    style.quick_button_text.selected_idle_color = "#2e89ff"
+    style.quick_button_text.insensitive_color = "ffffff26"
 
     # Set a default value for the auto-forward time, and note that AFM is
     # turned off by default.

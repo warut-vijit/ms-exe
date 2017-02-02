@@ -34,7 +34,6 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Missing Stars"
-    config.version = "2017-1-30-Swampie"
 
     #########################################
     # Themes
@@ -169,9 +168,9 @@ init -1 python hide:
     ## Padding is space inside the window, where the background is
     ## drawn.
 
-    style.window.left_padding = 210
+    style.window.left_padding = 220
     style.window.right_padding = 150
-    style.window.top_padding = 790
+    style.window.top_padding = 780
     style.window.bottom_padding = 0
 
     ## This is the minimum height of the window, including the margins
@@ -323,7 +322,7 @@ init -1 python hide:
     #########################################
     ## More customizations can go here.
 
-    style.say_label.font = "ui/Fonts/TrebuchetMS-RegularStraightened.otf"
+    style.say_label.font = "ui/Fonts/GillSans-LightTrebufied.otf"
     style.say_label.ypos = -30
     style.say_label.xpos = -90
     style.say_thought.ypos = 37

@@ -128,7 +128,7 @@ label start0:
   transform spin1:
     xanchor 0.5 yanchor 0.5
     rotate 0
-    linear 4.0 rotate 360
+    linear 8.0 rotate 360
     repeat
     
   image animatedstar = At("images/Buttons/button_star.png", spin1)
@@ -240,8 +240,7 @@ label start0:
   image classroom1 = im.Scale("backgrounds/Classroom_1.png", 1920, 1080)
   
   #CG
-  image CG01 = im.Scale("images/CG/CG01.png", config.screen_width, config.screen_height)
-  image CG02 = im.Scale("images/CG/CG02.png", config.screen_width, config.screen_height)
+  image MISSINGCG = "images/CG/MISSINGCG.png"
   #Sprites
 
   #main characters
