@@ -68,14 +68,18 @@ screen say:
 screen choice:
 
     window:
-        style "menu_window"
+        style "menu_window_root"
         xalign 0.5
         yalign 0.5
+        
+    frame:
+        style_group "menu_window"
+        xalign .50
+        yalign .50
 
         vbox:
             style "menu"
             spacing 2
-
             for caption, action, chosen in items:
 
                 if action:
@@ -92,7 +96,7 @@ screen choice:
 init -2 python:
     config.narrator_menu = True
 
-    style.menu_window.background = "#000000d0"
+    style.menu_window_root.background = "images/Menus/choicesmenu/ChoiceMenu_Background.png"
     style.menu_window.set_parent(style.default)
     style.menu_choice.set_parent(style.button_text)
     style.menu_choice.clear()
@@ -305,6 +309,7 @@ screen main_menu_kev:
         xalign .85
         yalign .50
 
+
         has vbox
         textbutton _("START") action Start()
         textbutton _("RESUME") action Start("start0")
@@ -325,6 +330,7 @@ init -2 python:
     style.mm_button.size_group = "mm"
     style.mm_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
     style.mm_button_text.size = 36
+    style.mm_button_text.xalign = 0.0
     style.mm_button.idle_background = "/images/Buttons/idle_menubutton.png"
     style.mm_button.hover_background = LiveComposite(
         (250,50),
@@ -372,7 +378,7 @@ init -2 python:
     style.gm_nav_button.hover_background = LiveComposite(
         (250,50),
         (0,0), "/images/Buttons/idle_menubutton.png",
-        (-20,10), "images/Menus/preferencesmenu/blue_arrow.png"
+        (-20,2), "images/Menus/preferencesmenu/blue_arrow.png"
         )
 
 
@@ -576,124 +582,167 @@ screen preferences:
         style "pref_root"
 
     # Put the navigation columns in a three-wide grid.
-    grid 3 1:
+    grid 5 1:
         style_group "prefs"
         xfill True
-        xalign 0.5
-        yalign 0.5
+        xalign 0.0 xpos 0.0
+        yalign 0.0 ypos 0.25
+        spacing 50
         # The left column.
+        
+        vbox:
+            frame:
+                style_group "pref"
+                has vbox
+        
+        vbox:
+            frame:
+                style_group "pref"
+                has vbox
+                label _("Display"):
+                    xpos -0.12
+                textbutton _("Window") action Preference("display", "window"):
+                    text_align 0.0
+                textbutton _("Fullscreen") action Preference("display", "fullscreen"):
+                    text_align 0.0
+
+            frame:
+                style_group "pref"
+                has vbox
+
+                label _("Transitions"):
+                    xpos -0.12
+                textbutton _("All") action Preference("transitions", "all"):
+                    text_align 0.0
+                textbutton _("None") action Preference("transitions", "none"):
+                    text_align 0.0
+
+            frame:
+                style_group "pref"
+                has vbox
+                
+                label _("Mature Content"):
+                    xpos -0.12
+                textbutton _("Enable"):
+                    text_align 0.0
+                textbutton _("Disable"):
+                    text_align 0.0
+
+
+##            frame:
+##                style_group "pref"
+##                has vbox
+##
+##                textbutton _("Joystick...") action Preference("joystick")
+
         vbox:
             frame:
                 style_group "pref"
                 has vbox
 
-                label _("Display")
-                textbutton _("Window") action Preference("display", "window")
-                textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                label _("Skip"):
+                    xpos -0.12
+                textbutton _("Seen Messages") action Preference("skip", "seen"):
+                    text_align 0.0
+                textbutton _("All Messages") action Preference("skip", "all"):
+                    text_align 0.0
 
+##            frame:
+##                style_group "pref"
+##                has vbox
+##
+##                textbutton _("Begin Skipping") action Skip()
+##
             frame:
                 style_group "pref"
                 has vbox
 
-                label _("Transitions")
-                textbutton _("All") action Preference("transitions", "all")
-                textbutton _("None") action Preference("transitions", "none")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                textbutton _("Joystick...") action Preference("joystick")
-
-        vbox:
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Skip")
-                textbutton _("Seen Messages") action Preference("skip", "seen")
-                textbutton _("All Messages") action Preference("skip", "all")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                textbutton _("Begin Skipping") action Skip()
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("After Choices")
-                textbutton _("Stop Skipping") action Preference("after choices", "stop")
-                textbutton _("Keep Skipping") action Preference("after choices", "skip")
+                label _("After Choices"):
+                    xpos -0.12
+                textbutton _("Stop Skipping") action Preference("after choices", "stop"):
+                    text_align 0.0
+                textbutton _("Keep Skipping") action Preference("after choices", "skip"):
+                    text_align 0.0
 
 
         vbox:
             frame:
                 style_group "pref"
                 has vbox
-
-                label _("Text Speed")
+                spacing 20
+                label _("Text Speed") xpos -0.15
                 bar value Preference("text speed")
                 
 
             frame:
                 style_group "pref"
                 has vbox
-
-                label _("Auto-Forward Time")
+                spacing 20
+                label _("Auto-Forward Time") xpos -0.15
                 bar value Preference("auto-forward time")
 
             frame:
                 style_group "pref"
                 has vbox
-
-                label _("Music Volume")
+                spacing 20
+                label _("Music Volume") xpos -0.15
                 bar value Preference("music volume")
 
             frame:
                 style_group "pref"
                 has vbox
-
-                label _("Sound Volume")
+                spacing 20
+                label _("Sound Volume") xpos -0.15
                 bar value Preference("sound volume")
 
                 if config.sample_sound:
                     textbutton "Test":
                         action Play("sound", config.sample_sound)
                         style "soundtest_button"
-
+                        
             frame:
                 style_group "pref"
                 has vbox
-
-                label _("Voice Volume")
-                bar value Preference("voice volume")
-
-                if config.sample_voice:
-                    textbutton "Test":
-                        action Play("voice", config.sample_voice)
-                        style "soundtest_button"
+                spacing 20
+                label _("")
+                textbutton _("Mute"):
+                    xpos 0.5
+        vbox:
+            frame:
+                style_group "pref"
+                has vbox
+##
+##                label _("Voice Volume")
+##                bar value Preference("voice volume")
+##
+##                if config.sample_voice:
+##                    textbutton "Test":
+##                        action Play("voice", config.sample_voice)
+##                        style "soundtest_button"
+                        
+                        
 
 init -2 python:
     style.pref_root.background = Frame("images/Menus/preferencesmenu/settings_background.png", left=0, top=0, right=None, bottom=None, tile=False)
 
     
-    style.pref_frame.xfill = True
+    style.pref_frame.xfill = False
     style.pref_frame.xmargin = 5
     style.pref_frame.top_margin = 5
     
     style.pref_vbox.xfill = True
 
     style.pref_button.size_group = "pref"
-    style.pref_button.xalign = 1.0
+    style.pref_button.xanchor = 0.0
+    style.pref_button.xalign = 0.0
     style.pref_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
-    style.pref_button_text.size = 36    
+    style.pref_button_text.size = 30  
+    style.pref_button_text.xalign = 0.0
     style.pref_button_text.hover_color = "#2e89ff"
     style.pref_button_text.idle_color = "#2e89ff80"
     style.pref_button_text.insensitive_color = "#ffffff26"
     style.pref_button_text.selected_idle_color = "#2e89ffff"
+    style.pref_label_text.size = 36
     
     style.pref_button.background = "/images/Buttons/idle_menubutton.png"
     style.pref_button.selected_background = LiveComposite(
@@ -701,9 +750,10 @@ init -2 python:
         (80,0), "/images/Buttons/idle_menubutton.png",
         (-40,12), "images/Menus/preferencesmenu/blue_arrow.png"
         )
-    
     style.pref_slider.xmaximum = 340
-    style.pref_slider.xalign = 0.5
+    style.pref_slider.xminimum = 340
+    style.pref_slider.xalign = 0.0
+    style.pref_slider.yalign = 1.0
     style.pref_slider.left_bar = "gui/slider/bar_full.png"
     style.pref_slider.right_bar = "gui/slider/bar_empty.png"
     style.soundtest_button.xalign = 1.0
@@ -720,41 +770,44 @@ screen yesno_prompt:
     modal True
 
     window:
-        style "gm_root"
+        style "yesno_root"
 
     frame:
         style_group "yesno"
 
         xfill True
         xmargin .05
-        ypos .1
+        ypos .4
         yanchor 0
         ypadding .05
 
         has vbox:
             xalign .5
             yalign .5
-            spacing 30
+            spacing 27
 
         label _(message):
             xalign 0.5
 
         hbox:
             xalign 0.5
-            spacing 100
+            spacing 320
 
             textbutton _("Yes") action yes_action
             textbutton _("No") action no_action
 
 
 init -2 python:
+    style.yesno_root.background = "images/Menus/yesnomenu/Confirmation_Background.png"
     style.yesno_button.size_group = "yesno"
     style.yesno_label_text.text_align = 0.5
+    style.yesno_label_text.size = 36
+    style.yesno_button_text.size = 36
     style.yesno_button.background = "/images/Buttons/idle_menubutton.png"
     style.yesno_button.hover_background = LiveComposite(
         (300,50),
         (80,0), "/images/Buttons/idle_menubutton.png",
-        (-40,2), "images/Menus/preferencesmenu/blue_arrow.png"
+        (-40,13), "images/Menus/preferencesmenu/blue_arrow.png"
         )
 
 ##############################################################################
@@ -931,3 +984,7 @@ label rez_2560_1440:
     $ renpy.call_in_new_context("_save_reload_game")
     return False
 
+## changing confirmation messages
+translate None strings:
+    old "Are you sure you want to quit?"
+    new "Are you sure that you want to quit the game? \n This will lose unsaved progress."
