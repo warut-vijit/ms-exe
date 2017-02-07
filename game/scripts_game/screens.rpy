@@ -68,12 +68,15 @@ screen say:
 transform appear:
     on show:
         alpha 0.0
+        easein 0.5 alpha 1.0
         
     on replace:
         alpha 0.0
+        easein 0.5 alpha 1.0
         
     on hide:
         alpha 1.0
+        easein 0.25 alpha 0.0
 
 screen choice:
 
@@ -112,6 +115,7 @@ init -2 python:
     style.menu_window.set_parent(style.default)
     style.menu_choice.set_parent(style.button_text)
     style.menu_choice.clear()
+    style.menu_choice.size = 35
     style.menu_choice_button.set_parent(style.button)
     style.menu_choice_button.xminimum = int(config.screen_width * 0.75)
     style.menu_choice_button.xmaximum = int(config.screen_width * 0.75)
@@ -119,7 +123,7 @@ init -2 python:
     style.menu_choice_button.hover_background = LiveComposite(
         (250,50),
         (0,0), "/images/Buttons/idle_menubutton.png",
-        (250,0), "images/Menus/preferencesmenu/blue_arrow.png"
+        (150,0), "images/Menus/preferencesmenu/blue_arrow.png"
         )
 
 
