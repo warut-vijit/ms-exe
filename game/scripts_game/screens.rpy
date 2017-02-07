@@ -65,12 +65,24 @@ screen say:
 # Screen that's used to display in-game menus.
 # http://www.renpy.org/doc/html/screen_special.html#choice
 
+transform appear:
+    on show:
+        alpha 0.0
+        
+    on replace:
+        alpha 0.0
+        
+    on hide:
+        alpha 1.0
+
 screen choice:
 
     window:
         style "menu_window_root"
         xalign 0.5
         yalign 0.5
+
+        at appear
         
     frame:
         style_group "menu_window"
