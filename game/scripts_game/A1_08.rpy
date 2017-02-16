@@ -504,7 +504,7 @@ stop music fadeout 2.0
 scene inabush
 with Dissolve(2)
 
-show lena HDHD_P3_E2:
+show lena HD_P3_E2:
   yalign -0.5 xalign -0.1 
   easein 1.0 xalign -0.1 yalign 0.05
 
