@@ -259,7 +259,11 @@ label start0:
   image irene U_P1_E2 = im.FactorScale("images/Sprites/Main Characters/Irene/Uniform/Irene_Uniform_P1_E2.png", 0.58)
   image irene U_P1_E3 = im.FactorScale("images/Sprites/Main Characters/Irene/Uniform/Irene_Uniform_P1_E3.png", 0.58)
   image irene U_P1_E4 = im.FactorScale("images/Sprites/Main Characters/Irene/Uniform/Irene_Uniform_P1_E4.png", 0.58)
-  image irene U_FALLING = im.FactorScale("images/Sprites/Main Characters/Irene/Uniform/Irene_Uniform_P1_E2_SIDE.png", 0.58)  
+  image irene U_FALLING = im.FactorScale("images/Sprites/Main Characters/Irene/Uniform/Irene_Uniform_P1_E2_SIDE.png", 0.58) 
+
+  image irene HD_P1_E1 = im.FactorScale("images/Sprites/HD/IreneHD_E1.png", 0.58)
+  image irene HD_P1_E2 = im.FactorScale("images/Sprites/HD/IreneHD_E2.png", 0.58)
+  image irene HD_P1_E4 = im.FactorScale("images/Sprites/HD/IreneHD_E4.png", 0.58)
   
   image isolda U_P1_E1 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P1_E1.png", 0.65)
   image isolda U_P1_E2 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P1_E2.png", 0.65)
@@ -339,6 +343,9 @@ label start0:
   image lena U_N_P3_E6 = im.FactorScale("images/Sprites/Main Characters/Lena/Uniform/Lena_uniformNomask_P3_E6.png", 0.635)
   image lena U_N_P3_E7 = im.FactorScale("images/Sprites/Main Characters/Lena/Uniform/Lena_uniformNomask_P3_E7.png", 0.635)
   image lena U_N_P3_E8 = im.FactorScale("images/Sprites/Main Characters/Lena/Uniform/Lena_uniformNomask_P3_E8.png", 0.635)
+  
+  image lena HD_P3_E2 = im.FactorScale("images/Sprites/HD/LenaHD_P3_E2.png", 0.635)
+  image lena HD_P3_E4 = im.FactorScale("images/Sprites/HD/LenaHD_P3_E4.png", 0.635)
   
   #side characters
 

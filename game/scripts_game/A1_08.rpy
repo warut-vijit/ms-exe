@@ -416,8 +416,8 @@ hide lena U_M_P1_E6
 scene inabush
 with Dissolve(2)
 
-show irene U_P1_E4:  
-  xalign 0.5 yalign -0.5 zoom 3.0
+show irene HD_P1_E4:  
+  xalign 0.5 yalign -0.5
   easein 1.0 yalign -0.1
 
 erik "\"What the hell?\""
@@ -426,12 +426,12 @@ irene "\"You’ll thank me later.\""
 
 n "To my surprise, Lena also forces her way into the bush without any persuasion."
 
-show lena U_M_P3_E4:
-  yalign 0.05 zoom 3.0 xalign -10.0
+show lena HD_P3_E4:
+  yalign 0.05 xalign -10.0
   easein 1.0 xalign -0.1 
 
-show irene U_P1_E4:
-  easein 1.0 xalign 1.1 yalign -0.1 zoom 3.0
+show irene HD_P1_E4:
+  easein 1.0 xalign 1.1 yalign -0.1
 
 n "I look at her disbelievingly."
 
@@ -504,12 +504,12 @@ stop music fadeout 2.0
 scene inabush
 with Dissolve(2)
 
-show lena U_M_P3_E2:
-  yalign -0.5 zoom 3.0 xalign -0.1 
+show lena HDHD_P3_E2:
+  yalign -0.5 xalign -0.1 
   easein 1.0 xalign -0.1 yalign 0.05
 
-show irene U_P1_E2:  
-  xalign 1.1 yalign -0.5 zoom 3.0
+show irene HD_P1_E2:  
+  xalign 1.1 yalign -0.5
   easein 1.0 yalign -0.1
 
 irene "\"...Holy shit, that was hot.\""
@@ -519,7 +519,7 @@ play music "music/Be Green Afternoon.mp3" fadein 1.0 loop
 
 erik "\"What?\""
 
-show irene U_P1_E1
+show irene HD_P1_E1
 with Dissolve (0.25)
 
 irene "\"I mean fun. Not hot.\""
@@ -530,7 +530,7 @@ irene "\"You have no proof of that.\""
 
 lena "\"But you aren’t going to deny it, are you?\""
 
-show irene U_P1_E4
+show irene HD_P1_E4
 with Dissolve (0.25)
 
 irene "\"Well now you’re just being rude.\""
@@ -543,7 +543,7 @@ irene "\"Erik, stick your head out and make sure the coast is clear.\""
 
 erik "\"Why me?\""
 
-show irene U_P1_E2
+show irene HD_P1_E2
 with Dissolve (0.25)
 
 irene "\"Because I don’t want Katja to kill me, and in the interest of maintaining a healthy relationship with someone who lives in the same building as me I have to pretend I don’t want her to kill Lena either.\""
@@ -554,7 +554,7 @@ erik "\"What, and you wouldn’t care if she tore my head off?\""
 
 n "Lena and Irene exchange a quick but meaningful glance before turning back to me."
 
-show irene U_P1_E1
+show irene HD_P1_E1
 with Dissolve (0.25)
 
 irene "\"Not as… much?\""
