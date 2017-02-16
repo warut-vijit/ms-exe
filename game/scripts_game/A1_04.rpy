@@ -287,7 +287,7 @@ mum "\"How did it go, Erik?\""
 
 beatrice "\"Is he nice?\""
 
-erik "\"It went well, and yeah, Mr. Bosworth is actually pretty nice.\""
+erik "\"It went well, and yeah, Dr. Bosworth is actually pretty nice.\""
 
 bosworth "\"I'm glad to hear!\""
 
@@ -398,7 +398,7 @@ show ela P1_E1:
   easein 1.0 xalign 1.0 alpha 1.0
 #--#
 
-n "A young girl enters from outside."
+n "Suddenly, a young girl enters from outside."
 
 Voice "\"Is Erik here?\""
 

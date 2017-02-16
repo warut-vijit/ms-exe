@@ -59,7 +59,7 @@ n "It's here again."
 $ renpy.sound.set_volume(0.75)
 #--#
 
-n "That sound."
+n "That {i}sound{/i}."
 
 n "I can feel it seeping into me, filling my body with a cold chill and crushing pressure."
 
@@ -207,7 +207,7 @@ n "I can hear the voice of my mother from outside the room, taking me a little o
 
 erik "\"Y-yeah?\""
 
-mum "\"Are you okay? I heard banging from downstairs...\""
+mum "\"Are you okay? I heard banging from down the hall...\""
 
 erik "\"I'm okay... just had a bad dream.\""
 
@@ -287,7 +287,7 @@ n "I know they have the best intentions, at least. As for where that road leads,
 
 n "What I do know is that I'm incredibly exhausted and feeling more on edge than I have since the accident."
 
-n "It feels like I’m being introduced to new sights, new smells, new everything."
+n "It feels like I’m being introduced to new sights, new smells, new {i}everything{/i}."
 
 n "I want to be excited, but all I can think of is how easily it can all go wrong. Everything is a potential threat."
 
@@ -334,7 +334,7 @@ erik "\"Mum, really?\""
 
 n "She grins."
 
-mum "\"All part of my job, sweetie. You want your window closed?\""
+mum "\"All part of the job, sweetie. You want your window closed?\""
 
 n "I shake my head, the air and faint urban sounds now becoming a little more comforting to me."
 

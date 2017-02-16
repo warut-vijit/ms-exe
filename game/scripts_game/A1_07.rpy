@@ -155,7 +155,7 @@ $ renpy.sound.set_volume(0.5)
 play sound "music/effects/Punch.mp3"
 #--#
 
-n "Hilde offers an aggressive elbow into Beatrice’s side, almost knocking her off her feet. Thanks Hilde."
+n "Hilda offers an aggressive elbow into Beatrice’s side, almost knocking her off her feet. Thanks, Hilda."
 
 show hilda P3_E4
 with Dissolve (0.25)
@@ -163,11 +163,11 @@ with Dissolve (0.25)
 show beatrice P1_E1
 with Dissolve (0.25)
   
-hilde "\"Think you’ll get lost much?\""
+hilda "\"Think you’ll get lost much?\""
 
 erik "\"No doubt. I’m pretty sure they gave me a map in my welcome pack though.\""
 
-hilde "\"Good. It looks like a very nice campus.\""
+hilda "\"Good. It looks like a very nice campus.\""
 
 show beatrice P1_E2
 with Dissolve (0.25)
@@ -181,7 +181,7 @@ beatrice "\"And the teachers are nicer too.\""
 
 n "She punctuates her sentence with a drawn out sigh. I don’t think there’s a teacher on this planet that Beatrice could get along with."
 
-hilde "\"Your lecturers are perfectly fine, it’s just that you keep arguing with them.\""
+hilda "\"Your lecturers are perfectly fine, it’s just that you keep arguing with them.\""
 
 show beatrice P1_E8
 with Dissolve (0.25)
@@ -191,7 +191,7 @@ beatrice "\"Can you blame me with the amount of work they give out?\""
 show hilda P3_E2
 with Dissolve (0.25)
 
-hilde "\"You’re a university student, what did you expect?\""
+hilda "\"You’re a university student, what did you expect?\""
 
 erik "\"Less homework, clearly.\""
 
@@ -292,13 +292,17 @@ n "This time Hilda freezes, a sour look on her face."
 show hilda P1_E5
 with Dissolve (0.25)
 
-hilda "\"Mum, If we keep ignoring it then you’re just wasting his time here!\""
+hilda "\"Mum, if we keep ignoring it then you’re just wasting his time here!\""
 
 n "That calming feeling is torn from my body almost as quick as it arrived. The last thing I wanted was for my family to fight about this."
 
 mum "\"Oh, don’t worry about that, Erik. It’s going to be fantastic here, right?\""
 
 n "Dad nods along with his usual deadpan expression. I guess that’s what being a financial analyst does to you."
+
+n "My family hasn't mentioned Gustav's name directly for a long time, probably for my sake."
+
+n "I try to find the words that I really want to say, but they don't come."
 
 show mum P1_E1
 with Dissolve (0.25)
@@ -316,30 +320,38 @@ stop music fadeout 2.5
 
 mum "\"You’ve got nothing to worry about here.\""
 
+n "I finally muster a quiet reply."
+
 erik "\"... Okay.\""
 
 n "Aside from the fact I’m in a school for the mentally impaired, who knows who could be waiting around the next corner."
 
+n "But still, I have to try. For my family... and for myself."
+
+n "For now, I guess I can be 'okay'."
+
 mum "\"Alright, come on girls, let’s go and get some dinner before the restaurants close!\""
 
-n "Her usual peppiness returns as the ‘Gustav’ issue is sidestepped completely."
+n "Her usual peppiness returns as the ‘Gustav’ issue is sidestepped completely. At least, for now."
 
 show hilda P1_E4
 with Dissolve (0.25)
 
-hilde "\"Mother, come on.\""
+hilde "\"Mother...\""
 
 show beatrice P1_E4
 with Dissolve (0.25)
 
-beatrice "\"Oh, where do you wanna’ go?\""
+beatrice "\"Oh, where do you wanna go?\""
 
-n "In a matter of seconds Beatrice forgets what we were talking about. Hilde looks sour for a second, but folds to mum’s overwhelming social power with a sigh."
+n "In a matter of seconds Beatrice forgets what we were talking about. Hilda looks sour for a second, but folds to mum’s overwhelming social power with a sigh."
+
+n "We share a glance, and she quiets down, keeping her concerns to herself."
 
 show hilda P1_E1
 with Dissolve (0.25)
 
-hilde "\"Well then... Take care, Erik.\""
+hilde "\"Well then... Take care, Erik. Study hard.\""
 
 beatrice "\"We love you lots!\""
 

@@ -179,7 +179,7 @@ erik "\"Good. Kind of hungry now that I see what you and Beatrice have been up t
 
 n "There's a delicious-looking spread of eggs, toast, bacon, and fresh pastries almost overflowing from the small table everyone is seated at."
 
-n "My mouth starts to water; I realize that I haven't really eaten since I left home."
+n "My mouth starts to water; I realize that I haven't really eaten much since I left home."
 
 Voice "\"Well, I'm glad to see that our baby brother is still easily swayed by some home cooking.\""
 
@@ -383,7 +383,7 @@ show dad P1_E1
 with Dissolve(0.25)
 #--#
 
-dad "\"Most of it, anyway. I was just talking to Dr. Bosworth to confirm that we're meeting him today. But he's...well, quite the talker.\""
+dad "\"Most of it, anyway. I was just talking to Dr. Bosworth to confirm that we're meeting him today. But he's... well, quite the talker.\""
 
 n "My dad was never one for drawn out conversations. His job as a financial analyst revolves around lots of paperwork, approving new product types and building assessment tools for credit scoring."
 

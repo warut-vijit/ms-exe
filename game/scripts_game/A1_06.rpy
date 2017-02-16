@@ -249,6 +249,8 @@ $ renpy.music.set_volume(0.4)
 
 n "My heartbeat is picking up, and I struggle to focus on my breathing before it becomes noticeable."
 
+n "I really don't want to think about this right now."
+
 erik "\"Could I... pass on this part of the tour?\""
 
 show ela P1_E4
@@ -311,14 +313,14 @@ with Dissolve (0.25)
 
 n "Ela quickly finds her way next time me, alongside Hilda and Beatrice who are on me in a flash."
 
-ela "\"Erik, it’s okay. This kind of nervousness is completely normal to a first year St. Dymphna student.\""
+ela "\"Erik, it’s okay. This kind of nervousness is completely normal for a new St. Dymphna student.\""
 
 show PitchBlack behind beatrice, hilda, ela, irene:
   alpha 0.7
   easein 2.0 alpha 0.8
 $ renpy.music.set_volume(0.8)
 
-erik "\"No, I know, it’s just-\""
+erik "\"No, I figured, it’s just-\""
 
 n "Please stop-"
 
@@ -419,7 +421,7 @@ n "It could be a start."
 
 faber "\"And so you’re-\""
 
-erik "\"My name is Erik.\""
+erik "\"My name is Erik. Erik Wilhelm.\""
 
 n "The interruption comes naturally while my smile doesn’t, giving off an attitude far more rude than I was intending."
 
@@ -445,6 +447,8 @@ n "I answer truthfully."
 erik "\"I don’t know.\""
 
 n "He gives another short nod, as if that was the answer he was expecting all along."
+
+faber "\"Well, I'm sure you will figure out that answer soon enough.\""
 
 n "Giving one final look at everyone he then rests his eyes on Ela."
 

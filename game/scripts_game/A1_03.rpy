@@ -397,6 +397,8 @@ erik "\"Thanks for lunch.\""
 
 hilda "\"No problem! It’s my sisterly duty to treat my little brother on special occasions like this.\""
 
+n "Now she's doing it, too?"
+
 #-#
 show beatrice P1_E3
 with Dissolve(0.25)
@@ -423,7 +425,7 @@ show hilda P2_E2
 with Dissolve(0.25)
 #-#
 
-hilda "\"Just the one sandwich, thank you.\""
+hilda "\"For the whole family, not me. Better luck next time, dear sister.\""
 
 #-#
 show beatrice P1_E8
@@ -432,9 +434,9 @@ with Dissolve(0.25)
 
 beatrice "\"...Seems like a double standard, that’s all I’m saying...\""
 
-n "It sounds like they that same complex dynamic that still eludes me."
+n "It sounds like they that same complex sibling dynamic that still eludes me."
 
-n "With Beatrice being able to cook so well, it seems that she has a lot of influence."
+n "With Beatrice being able to cook so well, it seems that she has a lot of influence in affairs that aren't sandwich-related."
 
 n "As we sit down, the two sisters talk about what they’ve been up to in the months since I last saw them at home."
 
@@ -472,6 +474,8 @@ n "She does nothing but glower in my direction as she sips her drink - which is,
 hilda "\"Erik, be nice.\""
 
 erik "\"It’s my brotherly duty to annoy Beatrice, though. Gotta do it.\""
+
+n "Oh God, now {i}I'm{/i} doing it."
 
 n "Beatrice’s glowering continues as I take a bite out of my sandwich."
 
@@ -517,7 +521,9 @@ scene ViennaStreet3
 with Dissolve(0.5)
 #--#
 
-n "Despite the allegedly light fare, the sandwich is actually pretty filling. Cleaning up the table, all of us head back into the city."
+n "Despite the allegedly light fare, the sandwich is actually pretty filling. Cleaning up the table, all of us head back into the city for the afternoon."
+
+n "Beatrice continues to show more and more stores, musuems, landmarks, and restaurants to me, while Hilda does her best to give details as best she can."
 
 #-#
 show hilda P2_E1:
@@ -570,7 +576,7 @@ show hilda P2_E1
 with Dissolve(0.25)
 #--#
 
-hilda "\"Really? It's that late?\""
+hilda "\"Really? It's that late already?\""
 
 #-# >Beatrice_neutral.png 2
 show beatrice P1_E1
@@ -578,6 +584,8 @@ with Dissolve(0.25)
 #--#
 
 beatrice "\"Yeah. We need to catch the U-Bahn back to our place. Let's go!\""
+
+n "Time flies, I guess."
 
 n "We make a dash back to the station, almost missing the next tram back home."
 

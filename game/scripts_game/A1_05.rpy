@@ -50,7 +50,7 @@ beatrice "\"It’s so cool! It’s like a castle!\""
 show ela P1_E2
 with Dissolve (0.25)
 
-ela "\"It is rather spacious, isn’t it? Mr. Bosworth likes to sell the historical significance and ‘architectural richness’ of the place, but I’m sure you’re not interested in all that canned stuff...\""
+ela "\"It is rather spacious, isn’t it? Dr. Bosworth likes to sell the historical significance and ‘architectural richness’ of the place, but I’m sure you’re not interested in all that canned stuff...\""
 
 show hilda P2_E2
 with Dissolve (0.25)
@@ -180,7 +180,7 @@ show ela P1_E1:
 
 n "Ela regains the lead, and begins to direct us to the dorms."
 
-ela "\"And that’s pretty much the tour. I’m not the best at this, I know, but hopefully I’ve managed to highlight some of the more interesting spots for you.\""
+ela "\"And that’s pretty much the important parts of the tour. I’m not the best at this, I know, but hopefully I’ve managed to highlight some of the more interesting spots for you.\""
 
 $ renpy.pause (1.0)
 
