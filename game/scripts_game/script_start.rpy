@@ -134,6 +134,9 @@ label start0:
   image animatedstar = At("images/Buttons/button_star.png", spin1)
   image ctcstar = At("images/Buttons/button_star.png", spin)
   
+##define pause menu
+  $ _game_menu_screen = "game_menu"
+  
 ##define characters
 
   #narrator

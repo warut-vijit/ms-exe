@@ -369,33 +369,25 @@ screen navigation:
     # The various buttons.
     frame:
         style_group "gm_nav"
-        xalign .98
-        yalign .98
+        xalign .50
+        yalign .83
 
         has vbox
 
-        textbutton _("Return") action Return()
-        textbutton _("Preferences") action ShowMenu("preferences")
-        textbutton _("Save Game") action ShowMenu("save")
-        textbutton _("Load Game") action ShowMenu("load")
-        textbutton _("Main Menu") action MainMenu()
-        textbutton _("Help") action Help()
-        textbutton _("Quit") action Quit()
+        textbutton _("BACK") action Return()
+##        textbutton _("Preferences") action ShowMenu("preferences")
+##        textbutton _("Save Game") action ShowMenu("save")
+##        textbutton _("Load Game") action ShowMenu("load")
+##        textbutton _("Main Menu") action MainMenu()
+##        textbutton _("Help") action Help()
+##        textbutton _("Quit") action Quit()
 
 init -2 python:
     style.gm_nav_button.size_group = "gm_nav"
     style.gm_nav_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
-    style.gm_nav_button_text.size = 24
-    style.gm_nav_button_text.hover_color = "#2e89ff"
-    style.gm_nav_button_text.idle_color = "#2e89ff80"
-    style.gm_nav_button_text.insensitive_color = "#ffffff26"
-    style.gm_nav_button_text.selected_idle_color = "#2e89ff"
-    style.gm_nav_button.idle_background = "/images/Buttons/idle_menubutton.png"
-    style.gm_nav_button.hover_background = LiveComposite(
-        (250,50),
-        (0,0), "/images/Buttons/idle_menubutton.png",
-        (-20,2), "images/Menus/preferencesmenu/blue_arrow.png"
-        )
+    style.gm_nav_button_text.size = 30
+    style.gm_nav_button_text.color = "#ffffff"
+    style.gm_nav_button.background = "/images/Buttons/idle_menubutton.png"
 
 
 
@@ -999,8 +991,52 @@ label rez_2560_1440:
     $ renpy.set_physical_size((2560,1440))
     $ renpy.call_in_new_context("_save_reload_game")
     return False
-
+#####################################################
 ## changing confirmation messages
 translate None strings:
     old "Are you sure you want to quit?"
     new "Are you sure that you want to quit the game? \n This will lose unsaved progress."
+    
+    
+###################################################
+## pause menu
+screen game_menu:
+    tag menu
+    window:
+        style "gamemenu_root"
+        
+    # The main menu buttons.
+    frame:
+        style_group "gamemenu"
+        xalign .90
+        yalign .50
+
+
+        has vbox
+        spacing 10
+        textbutton _("RETURN") action Return()
+        textbutton _("SAVE") action ShowMenu("save")
+        textbutton _("LOAD") action ShowMenu("load")
+        textbutton _("SETTINGS") action ShowMenu("preferences")
+        textbutton _("MAIN MENU") action MainMenu()
+        textbutton _("QUIT") action Quit()
+
+
+
+init -2 python:
+
+    style.gamemenu_root.background = "images/Menus/pausemenu/PauseMenu_Background.png"
+
+    # Make all the main menu buttons be the same size.
+    
+    style.gamemenu_button.size_group = "gamemenu"
+    style.gamemenu_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
+    style.gamemenu_button_text.size = 36
+    style.gamemenu_button_text.xalign = 0.0
+    style.gamemenu_button.idle_background = "/images/Buttons/idle_menubutton.png"
+    style.gamemenu_button.hover_background = LiveComposite(
+        (250,50),
+        (0,0), "/images/Buttons/idle_menubutton.png",
+        (205,-9), "animatedstar"
+        )
+
