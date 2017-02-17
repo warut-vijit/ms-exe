@@ -1,6 +1,19 @@
 ﻿# This file is in the public domain. Feel free to modify it as a basis
 # for your own screens.
 
+transform appear:
+    on show:
+        alpha 0.0
+        easein 0.5 alpha 1.0
+        
+    on replace:
+        alpha 1.0
+        easein 0.5 alpha 1.0
+        
+    on hide:
+        alpha 1.0
+        easein 0.25 alpha 0.0
+
 ##############################################################################
 # Say
 #
@@ -65,19 +78,6 @@ screen say:
 # Screen that's used to display in-game menus.
 # http://www.renpy.org/doc/html/screen_special.html#choice
 
-transform appear:
-    on show:
-        alpha 0.0
-        easein 0.5 alpha 1.0
-        
-    on replace:
-        alpha 0.0
-        easein 0.5 alpha 1.0
-        
-    on hide:
-        alpha 1.0
-        easein 0.25 alpha 0.0
-
 screen choice:
 
     window:
@@ -141,6 +141,8 @@ screen input:
         text prompt
         input id "input"
 
+        at appear
+
     use quick_menu1
     use quick_menu2
 
@@ -201,7 +203,9 @@ screen nvl:
 #
 # Screen that's used to display the main menu, when Ren'Py first starts
 # http://www.renpy.org/doc/html/screen_special.html#main-menu
+
 label main_menu_reset:
+
 screen main_menu:
 
   # This ensures that any other menu screen is replaced.
@@ -213,6 +217,7 @@ screen main_menu:
     # The background of the main menu.
     window:
         style "mm_root"
+        at appear
 
     python:
       # BG stars
@@ -365,6 +370,7 @@ screen navigation:
     # The background of the game menu.
     window:
         style "gm_root"
+        at appear
 
     # The various buttons.
     frame:
@@ -406,6 +412,7 @@ screen file_picker_save:
     
     window:
         style "file_picker_save_root"
+        at appear
     
         
     frame:
@@ -473,6 +480,7 @@ screen file_picker_load:
     
     window:
         style "file_picker_load_root"
+        at appear
         
     frame:
         style "file_picker_frame"
@@ -588,6 +596,7 @@ screen preferences:
 
     window:
         style "pref_root"
+        at appear
 
     # Put the navigation columns in a three-wide grid.
     grid 5 1:
@@ -779,6 +788,7 @@ screen yesno_prompt:
 
     window:
         style "yesno_root"
+        at appear
 
     frame:
         style_group "yesno"
@@ -1004,7 +1014,8 @@ screen game_menu:
     tag menu
     window:
         style "gamemenu_root"
-        
+        at appear
+
     # The main menu buttons.
     frame:
         style_group "gamemenu"
