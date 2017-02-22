@@ -245,6 +245,7 @@ label start0:
   #CG
   image CG01 = im.Scale("images/CG/CG01.png", 1920, 1080)
   image CG02 = im.Scale("images/CG/CG02.png", 1920, 1080)
+  image CG03 = im.Scale("images/CG/CG03.png", 1920, 1080)
   #Sprites
 
   #main characters
