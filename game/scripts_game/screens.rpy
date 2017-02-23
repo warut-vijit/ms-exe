@@ -282,7 +282,7 @@ label main_menu:
       elif persistent.menu_ui == 6:
         #renpy.music.play("video/background720p.webm", channel="movie", loop=True)
         renpy.music.play("music/mainmenumusic.ogg", channel="music", loop=True)
-        renpy.music.set_volume(0.1, channel="music")
+        renpy.music.set_volume(0.8, channel="music")
         #ui.frame("images/Menus/mainmenu/MainMenu.png", xpos=config.screen_width/2,ypos=config.screen_height/2, xanchor='center', yanchor='center', xpadding=0, ypadding=0)
         #style.window.background = Frame("images/Menus/mainmenu/MainMenu.png", left=0, top=0, right=None, bottom=None, tile=False)
     jump main_menu_screen
