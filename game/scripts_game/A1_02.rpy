@@ -32,7 +32,7 @@ show PitchBlack
 #-# >door knocking
 $ renpy.sound.set_volume(0.75)
 play sound "music/effects/Knock Knock.mp3"
-play music "music/Be Green.mp3" fadein 2.0 loop
+play music "music/Be Green.ogg" fadein 2.0 loop
 $ renpy.music.set_volume(0.75)
 #--#
 
