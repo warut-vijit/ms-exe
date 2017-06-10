@@ -869,6 +869,7 @@ screen quick_menu2:
         textbutton _("Save") action ShowMenu('save')
         textbutton _("Load") action ShowMenu('load')
         textbutton _("Prefs") action ShowMenu('preferences')
+        textbutton _("History") action ShowMenu('history')
         if persistent.show_girl_totals:
           if persistent.am_tot == 0:
             text ("{size=11}{color=#FF0000} Annaliese:[persistent.a_tot] Isolda:[persistent.i_tot] Jeanne:[persistent.j_tot] Lena:[persistent.l_tot] Katja:[persistent.k_tot] Twins:[persistent.nh_tot] {/color}{/size}")
@@ -1051,3 +1052,29 @@ init -2 python:
         (205,-9), "animatedstar"
         )
 
+
+##############################################################################
+# History
+#
+# Dialogue history window
+
+screen history:
+
+    window:
+        style "menu_window_root"
+        #xalign 0.5
+        #yalign 0.5
+
+        at appear
+        
+        viewport id "history_scroll":
+            mousewheel True
+            draggable True
+            scrollbars "vertical"
+            
+            grid 1 len(_history_list):
+                for line in _history_list:
+                    $ prefix = line.who + ": " if line.who != " " else ""
+                    text prefix + line.what yoffset 40
+        
+        bar value XScrollValue("history_scroll")
