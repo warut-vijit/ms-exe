@@ -1059,22 +1059,46 @@ init -2 python:
 # Dialogue history window
 
 screen history:
-
     window:
-        style "menu_window_root"
+        style "menu_history_log"
         #xalign 0.5
         #yalign 0.5
 
         at appear
-        
-        viewport id "history_scroll":
-            mousewheel True
-            draggable True
-            scrollbars "vertical"
             
-            grid 1 len(_history_list):
-                for line in _history_list:
-                    $ prefix = line.who + ": " if line.who != " " else ""
-                    text prefix + line.what yoffset 40
-        
-        bar value XScrollValue("history_scroll")
+        vbox:
+            xalign .5
+            yalign .45
+            viewport id "history_scroll":
+                style "history_text"
+                scrollbars "vertical"
+                mousewheel True
+                draggable True
+                
+                vbox:
+                    #grid 1 2*len(_history_list):
+                    for line in _history_list:
+                        if line.who != " ":
+                            $ who = line.who + ":"
+                            text ("{size=36}{color=#FFFFFF}[who]{/color}{/size}")
+                        text ("{size=36}{color=#87B5F1}[line.what]{/color}{/size}")
+                        text ("{size=36}{/size}")
+        frame:
+            style_group "gm_nav"
+            xalign .50
+            yalign .83
+
+            has vbox
+
+            textbutton _("BACK") action Return()
+
+init -2 python:
+    style.menu_history_log = Style(style.default)
+    style.menu_history_log.background = Frame("images/Menus/historylogmenu/Log_Background.png", tile=False)
+    #style.who_text.color = "#87B5F1"
+    style.history_text = Style(style.default)
+    style.history_text.xsize = 1140
+    style.history_text.ysize = 640
+    #style.vscrollbar.thumb = "gui/scrollbar/vertical_idle_thumb.png"
+    #style.vscrollbar.thumb = Frame("gui/scrollbar/vertical_idle_thumb.png", tile=True)
+    style.vscrollbar.thumb = Frame("images/scrollbar/vertical_idle_thumb.png", 0, 6, tile=True)
