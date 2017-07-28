@@ -1067,7 +1067,7 @@ screen history:
         at appear
         
         frame:
-            style "exit_history_log"
+            style "fancy_pattern"
             
             vbox:
                 xalign .5
@@ -1088,29 +1088,24 @@ screen history:
                             text ("{size=36}{/size}")
             frame:
                 style_group "gm_nav"
-                xalign .475
-                yalign .87
+                xalign .50
+                yalign .86
 
                 has vbox
 
-                frame:
-                    #style "back_button"
-                    #textbutton _("") action Return()
-                    imagebutton auto "images/Buttons/back_%s.png" action Return()
+                imagebutton auto "images/Buttons/back_%s.png" action Return()
 
 init 0 python:
     style.menu_history_log = Style(style.default)
     style.menu_history_log.background = Frame("images/Menus/historylogmenu/Log_Background.png", tile=False)
-    #style.who_text.color = "#87B5F1"
+
     style.history_text = Style(style.default)
     style.history_text.xsize = 1140
     style.history_text.ysize = 640
+
     style.vscrollbar.thumb = Frame("gui/scrollbar/vertical_idle_thumb.png", 0, 6, tile=True)
     style.vscrollbar.top_bar = Frame("gui/scrollbar/vertical_idle_bar.png", 0, 6, tile=True)
     style.vscrollbar.bottom_bar = Frame("gui/scrollbar/vertical_idle_bar.png", 0, 6, tile=True)
-    style.exit_history_log = Style(style.default)
-    style.exit_history_log.background = Frame("ui/NouveauPattern.png", tile=False)
-    style.back_button = Style(style.default)
-    style.back_button.background = Frame("images/Buttons/back_idle.png", tile=False)
-    style.back_button.xsize = 123
-    style.back_button.ysize = 74
+
+    style.fancy_pattern = Style(style.default)
+    style.fancy_pattern.background = Frame("ui/NouveauPattern.png", tile=False)
