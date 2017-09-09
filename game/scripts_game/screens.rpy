@@ -5,11 +5,11 @@ transform appear:
     on show:
         alpha 0.0
         easein 0.5 alpha 1.0
-        
+
     on replace:
         alpha 1.0
         easein 0.5 alpha 1.0
-        
+
     on hide:
         alpha 1.0
         easein 0.25 alpha 0.0
@@ -86,7 +86,7 @@ screen choice:
         yalign 0.5
 
         at appear
-        
+
     frame:
         style_group "menu_window"
         xalign .50
@@ -327,18 +327,18 @@ screen main_menu_kev:
     # The main menu buttons.
     frame:
         style_group "mm"
-        xalign .85
-        yalign .50
+        xalign .89
+        yalign .51
 
 
         has vbox
-        textbutton _("START") action Start()
-        textbutton _("RESUME") action Start("start0")
+        textbutton _("NEW GAME") action Start()
+        # textbutton _("RESUME") action Start("start0")
         # textbutton _("RESUME") action ShowMenu("resume")
-        textbutton _("LOAD") action ShowMenu("load")
-        textbutton _("OPTIONS") action ShowMenu("preferences")
-        textbutton _("EXTRAS") action ShowMenu("preferences")
-        textbutton _("SETUI") action Jump("reset_ui")
+        textbutton _("LOAD GAME") action ShowMenu("load")
+        textbutton _("SETTINGS") action ShowMenu("preferences")
+        textbutton _("EXTRAS") action ShowMenu("extras")
+        # textbutton _("SETUI") action Jump("reset_ui")
         # textbutton _("HELP") action Help()
         textbutton _("QUIT") action Quit(confirm=False)
 
@@ -347,16 +347,19 @@ screen main_menu_kev:
 init -2 python:
 
     # Make all the main menu buttons be the same size.
-    
+
     style.mm_button.size_group = "mm"
     style.mm_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
-    style.mm_button_text.size = 36
+    style.mm_button_text.size = 40
     style.mm_button_text.xalign = 0.0
+    style.mm_button_text.line_spacing = 23
+    style.mm_button_text.color = "#ccccccff"
+    style.mm_button_text.hover_color = "#ffffffff"
     style.mm_button.idle_background = "/images/Buttons/idle_menubutton.png"
     style.mm_button.hover_background = LiveComposite(
         (250,50),
         (0,0), "/images/Buttons/idle_menubutton.png",
-        (205,-9), "animatedstar"
+        (280,-9), "animatedstar"
         )
 
 ##############################################################################
@@ -392,7 +395,8 @@ init -2 python:
     style.gm_nav_button.size_group = "gm_nav"
     style.gm_nav_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
     style.gm_nav_button_text.size = 30
-    style.gm_nav_button_text.color = "#ffffff"
+    style.gm_nav_button_text.color = "#ccccff"
+    style.gm_nav_button_text.hover_color = "#ffffff"
     style.gm_nav_button.background = "/images/Buttons/idle_menubutton.png"
 
 
@@ -409,12 +413,12 @@ init -2 python:
 # from simple load and save screens.
 
 screen file_picker_save:
-    
+
     window:
         style "file_picker_save_root"
         at appear
-    
-        
+
+
     frame:
         style "file_picker_frame"
         xalign 0.5
@@ -427,40 +431,38 @@ screen file_picker_save:
         # Display a grid of file slots.
 
         grid columns rows:
-            transpose True
+            transpose False
+            area (0, 0, 0.666, 0.5)
             style_group "file_picker"
 
-            # Display ten file slots, numbered 1 - 10.
+            # Display nine file slots (3x3), numbered 1 - 9, 10-18, etc.
             for i in range(1, columns * rows + 1):
 
                 # Each file slot is a button.
                 button:
                     action FileAction(i)
 
-
                     has hbox
 
                     # Add the screenshot.
-                    add FileScreenshot(i)
+                    add FileScreenshot(i) xpos 30 ypos 18
 
                     # Format the description, and add it as text.
-                    $ description = "% 2s. %s\n%s" % (
-                        FileSlotName(i, columns * rows),
-                        FileTime(i, empty=_("Empty Slot.")),
-                        FileSaveName(i))
+                    $ description = "{size=+10}%s{/size}{size=+5}\n%s{/size}" % (
+                        FileSlotName(i, columns * rows, format="%s%02d"),
+                        FileTime(i, format="%d.%m.%Y-%m-%d\n%H.%M", empty=_("Empty")))
 
-                    text description
+                    text description xpos 45 ypos 10
 
                     key "save_delete" action FileDelete(i)
-                    
+
         # The buttons at the top allow the user to pick a
         # page of files.
         hbox:
             style_group "file_picker_nav"
             xalign 1.0
-            yalign .5
-            textbutton _("Previous"):
-                action FilePagePrevious()
+            yalign 0.5
+            imagebutton idle "images/Menus/save-load/small_left_arrow_30.png" hover "images/Menus/save-load/small_left_arrow_100.png" action FilePagePrevious(max=11,wrap=True)
 
 ##            textbutton _("Auto"):
 ##                action FilePage("auto")
@@ -468,20 +470,19 @@ screen file_picker_save:
 ##            textbutton _("Quick"):
 ##                action FilePage("quick")
 
-            for i in range(1, 9):
+            for i in range(1, 12):
                 textbutton str(i):
                     action FilePage(i)
 
-            textbutton _("Next"):
-                action FilePageNext()                    
-                
-             
+            imagebutton idle "images/Menus/save-load/small_right_arrow_30.png" hover "images/Menus/save-load/small_right_arrow_100.png" action FilePageNext(max=11,wrap=True)
+
+
 screen file_picker_load:
-    
+
     window:
         style "file_picker_load_root"
         at appear
-        
+
     frame:
         style "file_picker_frame"
         xalign 0.5
@@ -494,7 +495,8 @@ screen file_picker_load:
         # Display a grid of file slots.
 
         grid columns rows:
-            transpose True
+            transpose False
+            area (0, 0, 0.666, 0.5)
             style_group "file_picker"
 
             # Display ten file slots, numbered 1 - 10.
@@ -504,30 +506,27 @@ screen file_picker_load:
                 button:
                     action FileAction(i)
 
-
                     has hbox
 
                     # Add the screenshot.
-                    add FileScreenshot(i)
+                    add FileScreenshot(i) xpos 30 ypos 18
 
                     # Format the description, and add it as text.
-                    $ description = "% 2s. %s\n%s" % (
-                        FileSlotName(i, columns * rows),
-                        FileTime(i, empty=_("Empty Slot.")),
-                        FileSaveName(i))
+                    $ description = "{size=+10}%s{/size}{size=+5}\n%s{/size}" % (
+                        FileSlotName(i, columns * rows, format="%s%02d"),
+                        FileTime(i, format="%d.%m.%Y\n%H.%M", empty=_("Empty")))
 
-                    text description
+                    text description xpos 45 ypos 10
 
                     key "save_delete" action FileDelete(i)
-                    
+
         # The buttons at the top allow the user to pick a
         # page of files.
         hbox:
             style_group "file_picker_nav"
             xalign 1.0
-            yalign .5
-            textbutton _("Previous"):
-                action FilePagePrevious()
+            yalign 0.5
+            imagebutton idle "images/Menus/save-load/small_left_arrow_30.png" hover "images/Menus/save-load/small_left_arrow_100.png" action FilePagePrevious(max=11,wrap=True)
 
 ##            textbutton _("Auto"):
 ##               action FilePage("auto")
@@ -535,12 +534,11 @@ screen file_picker_load:
 ##            textbutton _("Quick"):
 ##                action FilePage("quick")
 
-            for i in range(1, 9):
+            for i in range(1, 12):
                 textbutton str(i):
                     action FilePage(i)
 
-            textbutton _("Next"):
-                action FilePageNext()                 
+            imagebutton idle "images/Menus/save-load/small_right_arrow_30.png" hover "images/Menus/save-load/small_right_arrow_100.png" action FilePageNext(max=11,wrap=True)
 
 screen save:
 
@@ -557,18 +555,18 @@ screen load:
 
     use navigation
     use file_picker_load
-    
+
 init -2 python:
     style.file_picker_load_root.background = "images/Menus/save-load/load_background.png"
     style.file_picker_save_root.background = "images/Menus/save-load/save_background.png"
-    
+
     style.file_picker_nav_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
     style.file_picker_nav_button_text.size = 18
     style.file_picker_nav_button_text.hover_color = "#ffffff"
     style.file_picker_nav_button_text.idle_color = "#2e89ff80"
     style.file_picker_nav_button_text.insensitive_color = "#ffffff26"
     style.file_picker_nav_button_text.selected_idle_color = "#2e89ff"
-    
+
     style.file_picker_nav_button.background = "#00000000"
 
 
@@ -587,10 +585,10 @@ init -2 python:
 
 screen preferences:
 
-  
+
     tag menu
 
-       
+
     # Include the navigation.
     use navigation
 
@@ -606,19 +604,19 @@ screen preferences:
         yalign 0.0 ypos 0.25
         spacing 50
         # The left column.
-        
+
         vbox:
             frame:
                 style_group "pref"
                 has vbox
-        
+
         vbox:
             frame:
                 style_group "pref"
                 has vbox
                 label _("Display"):
                     xpos -0.12
-                textbutton _("Window") action Preference("display", "window"):
+                textbutton _("Window") action Preference("display", "any window"):
                     text_align 0.0
                 textbutton _("Fullscreen") action Preference("display", "fullscreen"):
                     text_align 0.0
@@ -637,12 +635,12 @@ screen preferences:
             frame:
                 style_group "pref"
                 has vbox
-                
+
                 label _("Mature Content"):
                     xpos -0.12
-                textbutton _("Enable"):
+                textbutton _("Enabled") action SetField(persistent, "mature", True):
                     text_align 0.0
-                textbutton _("Disable"):
+                textbutton _("Disabled") action SetField(persistent, "mature", False):
                     text_align 0.0
 
 
@@ -689,7 +687,7 @@ screen preferences:
                 spacing 20
                 label _("Text Speed") xpos -0.15
                 bar value Preference("text speed")
-                
+
 
             frame:
                 style_group "pref"
@@ -716,14 +714,23 @@ screen preferences:
                     textbutton "Test":
                         action Play("sound", config.sample_sound)
                         style "soundtest_button"
-                        
+
             frame:
                 style_group "pref"
                 has vbox
                 spacing 20
                 label _("")
-                textbutton _("Mute"):
-                    xpos 0.5
+                if _preferences.mute["music"]:
+                    textbutton _("Unmute"):
+                        action Preference("all mute", "disable")
+                        xpos 0.3
+                        ypos -1.9
+                else:
+                    textbutton _("Mute"):
+                        action Preference("all mute", "enable")
+                        xpos 0.35
+                        ypos -1.9
+
         vbox:
             frame:
                 style_group "pref"
@@ -736,31 +743,30 @@ screen preferences:
 ##                    textbutton "Test":
 ##                        action Play("voice", config.sample_voice)
 ##                        style "soundtest_button"
-                        
-                        
+
 
 init -2 python:
     style.pref_root.background = Frame("images/Menus/preferencesmenu/settings_background.png", left=0, top=0, right=None, bottom=None, tile=False)
 
-    
+
     style.pref_frame.xfill = False
     style.pref_frame.xmargin = 5
     style.pref_frame.top_margin = 5
-    
+
     style.pref_vbox.xfill = True
 
     style.pref_button.size_group = "pref"
     style.pref_button.xanchor = 0.0
     style.pref_button.xalign = 0.0
     style.pref_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
-    style.pref_button_text.size = 30  
+    style.pref_button_text.size = 30
     style.pref_button_text.xalign = 0.0
     style.pref_button_text.hover_color = "#2e89ff"
     style.pref_button_text.idle_color = "#2e89ff80"
     style.pref_button_text.insensitive_color = "#ffffff26"
     style.pref_button_text.selected_idle_color = "#2e89ffff"
     style.pref_label_text.size = 36
-    
+
     style.pref_button.background = "/images/Buttons/idle_menubutton.png"
     style.pref_button.selected_background = LiveComposite(
         (300,50),
@@ -839,13 +845,14 @@ screen quick_menu1:
     hbox:
         style_group "quick"
 
-        xalign 0.1
+        xalign 0.08
         yalign 0.975
 
 ##        textbutton _("Q.Save") action QuickSave()
 ##        textbutton _("Q.Load") action QuickLoad()
         textbutton _("Auto") action Preference("auto-forward", "toggle")
-        textbutton _("Skip") action Skip()
+        textbutton _(" Skip") action Skip()
+        textbutton _(" Mute ") action Preference("all mute", "toggle")
         if persistent.show_girl_totals:
           if persistent.am_tot == 0:
             text ("{size=11}{color=#FF0000} Annaliese:[persistent.a_tot] Isolda:[persistent.i_tot] Jeanne:[persistent.j_tot] Lena:[persistent.l_tot] Katja:[persistent.k_tot] Twins:[persistent.nh_tot] {/color}{/size}")
@@ -853,22 +860,23 @@ screen quick_menu1:
             text ("{size=11}{color=#FF0000} Annaliese:[persistent.a_tot] Isolda:[persistent.i_tot] Jeanne:[persistent.j_tot] Lena:[persistent.l_tot] Katja:[persistent.k_tot] Twins:[persistent.nh_tot] Anne-Marie:[persistent.am_tot]{/color}{/size}")
         if persistent.show_scene_number:
             text ("{size=11}{color=#FF0000} [persistent.scene_number]{/color}{/size}")
-            
-            
+
+
 screen quick_menu2:
 
     # Add an in-game quick menu.
     hbox:
         style_group "quick"
 
-        xalign 0.9
+        xalign 0.92
         yalign 0.975
 
 ##        textbutton _("Q.Save") action QuickSave()
 ##        textbutton _("Q.Load") action QuickLoad()
-        textbutton _("Save") action ShowMenu('save')
-        textbutton _("Load") action ShowMenu('load')
-        textbutton _("Prefs") action ShowMenu('preferences')
+        textbutton _(" Log") action ShowMenu('log')
+        textbutton _(" Save") action ShowMenu('save')
+        textbutton _(" Load") action ShowMenu('load')
+        textbutton _(" Prefs ") action ShowMenu('preferences')
         if persistent.show_girl_totals:
           if persistent.am_tot == 0:
             text ("{size=11}{color=#FF0000} Annaliese:[persistent.a_tot] Isolda:[persistent.i_tot] Jeanne:[persistent.j_tot] Lena:[persistent.l_tot] Katja:[persistent.k_tot] Twins:[persistent.nh_tot] {/color}{/size}")
@@ -985,7 +993,7 @@ label rez_1600_900:
     $ renpy.set_physical_size((1600,900))
     $ renpy.call_in_new_context("_save_reload_game")
     return False
-    
+
 label rez_1920_1080:
     $ persistent.menu_ui = -4
     $ persistent.screen_width = 1920
@@ -1006,8 +1014,8 @@ label rez_2560_1440:
 translate None strings:
     old "Are you sure you want to quit?"
     new "Are you sure that you want to quit the game? \n This will lose unsaved progress."
-    
-    
+
+
 ###################################################
 ## pause menu
 screen game_menu:
@@ -1026,11 +1034,11 @@ screen game_menu:
         has vbox
         spacing 10
         textbutton _("RETURN") action Return()
-        textbutton _("SAVE") action ShowMenu("save")
-        textbutton _("LOAD") action ShowMenu("load")
+        textbutton _("LOG") action ShowMenu("log")
+        textbutton _("SAVE GAME") action ShowMenu("save")
+        textbutton _("LOAD GAME") action ShowMenu("load")
         textbutton _("SETTINGS") action ShowMenu("preferences")
-        textbutton _("MAIN MENU") action MainMenu()
-        textbutton _("QUIT") action Quit()
+        textbutton _("QUIT") action MainMenu()
 
 
 
@@ -1039,15 +1047,17 @@ init -2 python:
     style.gamemenu_root.background = "images/Menus/pausemenu/PauseMenu_Background.png"
 
     # Make all the main menu buttons be the same size.
-    
+
     style.gamemenu_button.size_group = "gamemenu"
     style.gamemenu_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
-    style.gamemenu_button_text.size = 36
+    style.gamemenu_button_text.size = 40
     style.gamemenu_button_text.xalign = 0.0
+    style.gamemenu_button_text.color = "#ccccccff"
+    style.gamemenu_button_text.hover_color = "#ffffffff"
     style.gamemenu_button.idle_background = "/images/Buttons/idle_menubutton.png"
     style.gamemenu_button.hover_background = LiveComposite(
         (250,50),
         (0,0), "/images/Buttons/idle_menubutton.png",
-        (205,-9), "animatedstar"
+        (265,-9), "animatedstar"
         )
 
