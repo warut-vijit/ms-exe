@@ -450,7 +450,7 @@ screen file_picker_save:
                     # Format the description, and add it as text.
                     $ description = "{size=+10}%s{/size}{size=+5}\n%s{/size}" % (
                         FileSlotName(i, columns * rows, format="%s%02d"),
-                        FileTime(i, format="%d.%m.%Y-%m-%d\n%H.%M", empty=_("Empty")))
+                        FileTime(i, format="%d.%m.%Y\n%H.%M", empty=_("Empty")))
 
                     text description xpos 45 ypos 10
 
