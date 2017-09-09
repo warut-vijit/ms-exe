@@ -328,6 +328,10 @@ init -1 python hide:
     style.say_label.xpos = -90
     style.say_thought.ypos = 37
 
+    config.has_autosave = False
+    config.autosave_frequency = False
+    config.has_quicksave = False
+    config.default_emphasize_audio = True
 
 ## This section contains information about how to build your project into
 ## distribution files.
@@ -392,3 +396,8 @@ init python:
     build.documentation('*.html')
     build.documentation('*.txt')
 
+init python:
+
+    # Set the default value.
+    if persistent.mature == None:
+      persistent.mature = True
