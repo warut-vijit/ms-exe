@@ -31,5 +31,3 @@ label __init_variables:
 
   # Declare characters used by this game.
   return
-
-

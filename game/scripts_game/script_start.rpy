@@ -90,6 +90,7 @@ label splashscreen:
   $ renpy.movie_cutscene("video/Somnova_Intro.webm")
   show movie
   play movie "video/Somnova_Intro.webm"
+  $ persistent.loaded = False
 
   return
 
@@ -124,24 +125,24 @@ label start0:
     rotate 0
     linear 4.0 rotate 360
     repeat
-    
+
   transform spin1:
     xanchor 0.5 yanchor 0.5
     rotate 0
     linear 8.0 rotate 360
     repeat
-    
+
   image animatedstar = At("images/Buttons/button_star.png", spin1)
   image ctcstar = At("images/Buttons/button_star.png", spin)
-  
+
 ##define pause menu
   $ _game_menu_screen = "game_menu"
-  
+
 ##define characters
 
   #narrator
   define n = Character(' ', ctc="ctcstar", ctc_position="fixed")
-  
+
   #main
   define erik = Character('Erik', color="#5d5d5d", ctc="ctcstar", ctc_position="fixed")
   define isolda = Character('Isolda', color="#5ABF90", ctc="ctcstar", ctc_position="fixed")
@@ -228,7 +229,7 @@ label start0:
   image bg black="#000000"
   scene bg black
   with fade
-  
+
   image dormhall = "backgrounds/Dorm_Hall.png"
   image bedroom = im.Scale("backgrounds/bedroom.jpg", 1920, 1080)
   image outsidemaledorm = "backgrounds/MaleDormsOutside.png"
@@ -241,7 +242,7 @@ label start0:
   image entrance4 = im.Scale("backgrounds/Entrance4.jpg", 1920, 1080)
   image mainlobby = im.Scale("backgrounds/MainLobby.png", 1920, 1080)
   image classroom1 = im.Scale("backgrounds/Classroom_1.png", 1920, 1080)
-  
+
   #CG
   image CG01 = im.Scale("images/CG/CG01.png", 1920, 1080)
   image CG02 = im.Scale("images/CG/CG02.png", 1920, 1080)
@@ -257,18 +258,18 @@ label start0:
   image ela P1_E5 = im.FactorScale("images/Sprites/Main Characters/Ela/Ela_P1_E5.png", 0.69)
   image ela P1_E6 = im.FactorScale("images/Sprites/Main Characters/Ela/Ela_P1_E6.png", 0.69)
   image ela P1_E7 = im.FactorScale("images/Sprites/Main Characters/Ela/Ela_P1_E7.png", 0.69)
-  image ela P1_E8 = im.FactorScale("images/Sprites/Main Characters/Ela/Ela_P1_E8.png", 0.69)  
-  
+  image ela P1_E8 = im.FactorScale("images/Sprites/Main Characters/Ela/Ela_P1_E8.png", 0.69)
+
   image irene U_P1_E1 = im.FactorScale("images/Sprites/Main Characters/Irene/Uniform/Irene_Uniform_P1_E1.png", 0.58)
   image irene U_P1_E2 = im.FactorScale("images/Sprites/Main Characters/Irene/Uniform/Irene_Uniform_P1_E2.png", 0.58)
   image irene U_P1_E3 = im.FactorScale("images/Sprites/Main Characters/Irene/Uniform/Irene_Uniform_P1_E3.png", 0.58)
   image irene U_P1_E4 = im.FactorScale("images/Sprites/Main Characters/Irene/Uniform/Irene_Uniform_P1_E4.png", 0.58)
-  image irene U_FALLING = im.FactorScale("images/Sprites/Main Characters/Irene/Uniform/Irene_Uniform_P1_E2_SIDE.png", 0.58) 
+  image irene U_FALLING = im.FactorScale("images/Sprites/Main Characters/Irene/Uniform/Irene_Uniform_P1_E2_SIDE.png", 0.58)
 
   image irene HD_P1_E1 = im.FactorScale("images/Sprites/HD/IreneHD_E1.png", 0.58)
   image irene HD_P1_E2 = im.FactorScale("images/Sprites/HD/IreneHD_E2.png", 0.58)
   image irene HD_P1_E4 = im.FactorScale("images/Sprites/HD/IreneHD_E4.png", 0.58)
-  
+
   image isolda U_P1_E1 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P1_E1.png", 0.65)
   image isolda U_P1_E2 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P1_E2.png", 0.65)
   image isolda U_P1_E3 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P1_E3.png", 0.65)
@@ -293,7 +294,7 @@ label start0:
   image isolda U_P4_E1 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P4_E1.png", 0.65)
   image isolda U_P4_E2 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P4_E2.png", 0.65)
   image isolda U_P4_E3 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P4_E3.png", 0.65)
-  image isolda U_P4_E6 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P4_E6.png", 0.65) 
+  image isolda U_P4_E6 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P4_E6.png", 0.65)
   image isolda U_P5_E1 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P5_E1.png", 0.65)
   image isolda U_P5_E4 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P5_E4.png", 0.65)
   image isolda U_P5_E5 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P5_E5.png", 0.65)
@@ -301,11 +302,11 @@ label start0:
   image isolda U_P5_E8 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P5_E8.png", 0.65)
   image isolda U_P6_E4 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P6_E4.png", 0.65)
   image isolda U_P6_E5 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P6_E5.png", 0.65)
-  image isolda U_P6_E6 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P6_E6.png", 0.65) 
-  image isolda U_P6_E8 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P6_E8.png", 0.65) 
-  
+  image isolda U_P6_E6 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P6_E6.png", 0.65)
+  image isolda U_P6_E8 = im.FactorScale("images/Sprites/Main Characters/Isolda/Uniform/Isolda_Uniform_P6_E8.png", 0.65)
+
   image katja = im.FactorScale("images/Sprites/Main Characters/Katja/Uniform/Katja.png", 0.666)
-  
+
   image lena U_M_P1_E1 = im.FactorScale("images/Sprites/Main Characters/Lena/Uniform/Lena_uniformMask_P1_E1.png", 0.635)
   image lena U_M_P1_E2 = im.FactorScale("images/Sprites/Main Characters/Lena/Uniform/Lena_uniformMask_P1_E2.png", 0.635)
   image lena U_M_P1_E3 = im.FactorScale("images/Sprites/Main Characters/Lena/Uniform/Lena_uniformMask_P1_E3.png", 0.635)
@@ -347,10 +348,10 @@ label start0:
   image lena U_N_P3_E6 = im.FactorScale("images/Sprites/Main Characters/Lena/Uniform/Lena_uniformNomask_P3_E6.png", 0.635)
   image lena U_N_P3_E7 = im.FactorScale("images/Sprites/Main Characters/Lena/Uniform/Lena_uniformNomask_P3_E7.png", 0.635)
   image lena U_N_P3_E8 = im.FactorScale("images/Sprites/Main Characters/Lena/Uniform/Lena_uniformNomask_P3_E8.png", 0.635)
-  
+
   image lena HD_P3_E2 = im.FactorScale("images/Sprites/HD/LenaHD_P3_E2.png", 0.635)
   image lena HD_P3_E4 = im.FactorScale("images/Sprites/HD/LenaHD_P3_E4.png", 0.635)
-  
+
   #side characters
 
   image beatrice P1_E1 = im.FactorScale("images/Sprites/Side Characters/Beatrice/Beatrice_P1_E1.png", 0.64)
@@ -387,15 +388,15 @@ label start0:
   image hilda P3_E4 = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P3_E4.png", 0.75)
   image hilda P3_E5 = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P3_E5.png", 0.75)
   image hilda P3_E6 = im.FactorScale("images/Sprites/Side Characters/Brunhilde/Brunhilde_P3_E6.png", 0.75)
-  
+
   image faber P1_E1 = im.FactorScale("images/Sprites/Side Characters/Dr. Faber/Faber_P1_E1.png", 0.666)
   image faber P1_E2 = im.FactorScale("images/Sprites/Side Characters/Dr. Faber/Faber_P1_E2.png", 0.666)
- 
+
   image claes P1_E1 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E1.png", 0.64)
   image claes P1_E2 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E2.png", 0.64)
   image claes P1_E3 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E3.png", 0.64)
-  image claes P1_E4 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E4.png", 0.64) 
- 
+  image claes P1_E4 = im.FactorScale("images/Sprites/Side Characters/Edna/Edna_P1_E4.png", 0.64)
+
   image fathermax P1_E1 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P1_E1", 0.666)
   image fathermax P1_E2 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P1_E2", 0.666)
   image fathermax P1_E3 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P1_E3", 0.666)
@@ -404,7 +405,7 @@ label start0:
   image fathermax P2_E2 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P2_E2", 0.666)
   image fathermax P2_E3 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P2_E3", 0.666)
   image fathermax P2_E4 = im.FactorScale("images/Sprites/Side Characters/Father Max/FatherMax_P2_E4", 0.666)
-  
+
   image fritz P1_E2 = im.FactorScale("images/Sprites/Side Characters/Fritz/Fritz_P1_E2", 0.666)
   image fritz P1_E4 = im.FactorScale("images/Sprites/Side Characters/Fritz/Fritz_P1_E4", 0.666)
 
@@ -427,11 +428,11 @@ label start0:
   image mum P1_E5 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E5.png", 0.68)
   image mum P1_E7 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E7.png", 0.68)
   image mum P1_E8 = im.FactorScale("images/Sprites/Side Characters/Mrs Wilhelm/MamaWilhelm_P1_E8.png", 0.68)
-  
+
   image bosworth P1_E2 = im.FactorScale("images/Sprites/Side Characters/Principal Bosworth/Bosworth_P1_E2.png", 0.665)
   image bosworth P1_E4 = im.FactorScale("images/Sprites/Side Characters/Principal Bosworth/Bosworth_P1_E4.png", 0.665)
-  
-  
+
+
   # flag that game has been started
   $ persistent.started = 1
 

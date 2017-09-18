@@ -211,6 +211,8 @@ screen main_menu:
   # This ensures that any other menu screen is replaced.
   tag menu
 
+  # Force this menu
+  $ persistent.menu_ui = 6
   if (persistent.menu_ui == 6):
     use main_menu_kev
   else:
@@ -421,60 +423,168 @@ screen file_picker_save:
 
     frame:
         style "file_picker_frame"
+
         xalign 0.5
         yalign 0.5
-        has vbox
-        hbox
-        $ columns = 3
+
+        $ columns = 2
         $ rows = 3
+        $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
+
+        hbox
 
         # Display a grid of file slots.
-
         grid columns rows:
             transpose False
-            area (0, 0, 0.666, 0.5)
+            area (0.25, 0.205, 0.666, 0.508)
             style_group "file_picker"
 
-            # Display nine file slots (3x3), numbered 1 - 9, 10-18, etc.
-            for i in range(1, columns * rows + 1):
+            # Display file slots
+            for f in range(1, 8):
+                # Figure out the highest numbered save file, including "holes" for deleted files
+                $ afile = "1-%d" % (f)
+                $ filez = renpy.list_slots(afile)
+                if len(filez) > 0:
+                    $ persistent.filecount_list[f] = int(filez[len(filez)-1][3:7]) + 1
+                else:
+                    $ persistent.filecount_list[f] = 1
+                if persistent.filecount_list[f] > len(persistent.savenote_list[f]):
+                    #$ persistent.savenote_list[f].append("Pack my box with five dozen liquor jugs and the quick brown fox jumps over a lazy dog over and over and over and over and over again")
+                    #$ persistent.savenote_list[f].append("Pack my box")
+                    $ actScene = persistent.scene_number.split("_")
+                    $ act = actScene[0][1:]
+                    $ persistent.savenote_list[f].append("Act %s Scene %s" % (act, actScene[1]))
+                    $ sep = ":"
+                    $ parts = persistent.iconstring.split(sep)
+                    $ parts[f] = parts[f] + "A"
+                    $ persistent.iconstring = sep.join(parts)
+            $ timestamp = ""
+            $ startFile = min(persistent.SLStart, persistent.filecount_list[persistent.SLFolder] - 1)
+            if startFile == None or startFile == 0:
+                $ startFile = 1
+            $ persistent.SLStart = startFile
+            $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
+            for i in range(startFile, startFile + columns * rows):
+                if i >= persistent.filecount_list[persistent.SLFolder]:
+                    button:
+                        has hbox
+                else:
+                    # Each file slot is a button.
+                    button:
+                        action FileAction(i + persistent.SLFolder * 10000)
+                        has hbox
 
-                # Each file slot is a button.
-                button:
-                    action FileAction(i)
+                        # Add the screenshot.
+                        add FileScreenshot(i + persistent.SLFolder * 10000) xpos 30 ypos 18
 
-                    has hbox
+                        # Format the description, and add it as text.
+                        $ timestamp = FileTime(i + persistent.SLFolder * 10000, format="%d.%m.%Y\n%H.%M", empty=_("Empty"))
+                        $ description = "{size=+5}%s{/size}\n" % (timestamp)
+                        text description xpos 40 ypos 10
+                        key "save_delete" action [ FileSave(i + persistent.SLFolder * 10000), SetField(persistent, "SLFile", i) ]
 
-                    # Add the screenshot.
-                    add FileScreenshot(i) xpos 30 ypos 18
+        # Display the notes on each save
+        grid columns rows:
+            transpose False
+            area (0.25, 0.205, 0.666, 0.508)
+            style_group "file_picker_nav3"
 
-                    # Format the description, and add it as text.
-                    $ description = "{size=+10}%s{/size}{size=+5}\n%s{/size}" % (
-                        FileSlotName(i, columns * rows, format="%s%02d"),
-                        FileTime(i, format="%d.%m.%Y\n%H.%M", empty=_("Empty")))
+            $ persistent.SLStart = startFile
+            $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
+            for i in range(startFile, startFile + columns * rows):
+                $ sep = ":"
+                $ parts = persistent.iconstring.split(sep)
+                if i >= persistent.filecount_list[persistent.SLFolder]:
+                    button:
+                        has hbox
+                else:
+                    # Each file slot is a button.
+                    button:
+                        area (270, 80, 100, 100)
+                        $ sep = ":"
+                        $ parts = persistent.iconstring.split(sep)
+                        $ A = ord("A")
+                        $ icon = ord(parts[persistent.SLFolder][i:i+1]) - A
+                        $ mod = len(persistent.icon_list)
+                        if len(parts[persistent.SLFolder]) > i:
+                            $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + chr(((icon + mod - 1) % mod) + A) + parts[persistent.SLFolder][i+1:]
+                            $ left = sep.join(parts)
+                            $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + chr(((icon + 1) % mod) + A) + parts[persistent.SLFolder][i+1:]
+                            $ right = sep.join(parts)
+                        else:
+                            $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + chr(((icon + mod - 1) % mod) + A)
+                            $ left = sep.join(parts)
+                            $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + chr(((icon + 1) % mod) + A)
+                            $ right = sep.join(parts)
+                        imagebutton idle "images/Menus/save-load/small_left_arrow_30.png" hover "images/Menus/save-load/small_left_arrow_100.png" xoffset -55 clicked [ SetField(persistent, "iconstring", left) ]
+                        if len(parts[persistent.SLFolder]) > i:
+                            imagebutton idle persistent.icon_list[ord(persistent.iconstring.split(":")[persistent.SLFolder][i:i+1]) - A] xalign 0.5 yalign 0.5 xoffset -10 yoffset -35 clicked [  ]
+                        imagebutton idle "images/Menus/save-load/small_right_arrow_30.png" hover "images/Menus/save-load/small_right_arrow_100.png" xoffset 55 clicked [ SetField(persistent, "iconstring", right) ]
 
-                    text description xpos 45 ypos 10
+        # Display the icons on each
+        grid columns rows:
+            transpose False
+            area (0.25, 0.205, 0.666, 0.508)
+            style_group "file_picker_nav3"
 
-                    key "save_delete" action FileDelete(i)
+            for i in range(startFile, startFile + columns * rows):
+                if i >= persistent.filecount_list[persistent.SLFolder]:
+                    button:
+                        has hbox
+                else:
+                    # Each file slot is a button.
+                    button:
+                        area (360, -9, 280, 50)
+                        textbutton _(persistent.savenote_list[persistent.SLFolder][i]) xalign 0.0 yalign 0.0:
+                            clicked [ ]
 
-        # The buttons at the top allow the user to pick a
-        # page of files.
-        hbox:
+
+        # Arrows to scroll through folders
+        vbox:
+            area (0.210, 0.21, 0.025, 0.65)
             style_group "file_picker_nav"
-            xalign 1.0
-            yalign 0.5
-            imagebutton idle "images/Menus/save-load/small_left_arrow_30.png" hover "images/Menus/save-load/small_left_arrow_100.png" action FilePagePrevious(max=11,wrap=True)
+            $ maxAdj = (persistent.filecount_list[persistent.SLFolder] % columns) + 1
+            imagebutton idle "images/Menus/save-load/small_up3_arrow_30.png" hover "images/Menus/save-load/small_up3_arrow_100.png" action SetField(persistent, "SLStart", 1)
+            imagebutton idle "images/Menus/save-load/small_up2_arrow_30.png" hover "images/Menus/save-load/small_up2_arrow_100.png" action SetField(persistent, "SLStart", max(persistent.SLStart - columns * rows, 1))
+            imagebutton idle "images/Menus/save-load/small_up_arrow_30.png" hover "images/Menus/save-load/small_up_arrow_100.png" action SetField(persistent, "SLStart", max(persistent.SLStart - columns, 1))
+            imagebutton idle "images/Menus/save-load/small_down_arrow_30.png" hover "images/Menus/save-load/small_down_arrow_100.png" action SetField(persistent, "SLStart", min(persistent.SLStart + columns, persistent.filecount_list[persistent.SLFolder] - maxAdj))
+            imagebutton idle "images/Menus/save-load/small_down2_arrow_30.png" hover "images/Menus/save-load/small_down2_arrow_100.png" action SetField(persistent, "SLStart", min(persistent.SLStart + columns * rows, persistent.filecount_list[persistent.SLFolder] - maxAdj))
+            imagebutton idle "images/Menus/save-load/small_down3_arrow_30.png" hover "images/Menus/save-load/small_down3_arrow_100.png" action SetField(persistent, "SLStart", persistent.filecount_list[persistent.SLFolder] - maxAdj)
 
-##            textbutton _("Auto"):
-##                action FilePage("auto")
+        # Add a new save file at the end
+        vbox:
+            area (0.35, 0.713, 0.466, 0.1)
+            style_group "file_picker_nav2"
+            if startFile + columns * rows <= persistent.filecount_list[persistent.SLFolder]:
+                $ maxAdj = (persistent.filecount_list[persistent.SLFolder] % columns) + 1
+                $ newSLStart = persistent.filecount_list[persistent.SLFolder] + maxAdj - columns * rows
+            else:
+                $ newSLStart = persistent.SLStart
+            textbutton _("Add new save file"):
+                clicked [ FileSave(persistent.filecount_list[persistent.SLFolder] + persistent.SLFolder * 10000), SetField(persistent, "SLStart", newSLStart) ]
 
-##            textbutton _("Quick"):
-##                action FilePage("quick")
+        # Folders for save groups
+        # The folders allow the user to pick a group of files.
+        vbox:
+            spacing -44
+            area (0.15, 0.2, 0.1, 0.60)
+            style_group "file_picker_nav"
 
-            for i in range(1, 12):
-                textbutton str(i):
-                    action FilePage(i)
-
-            imagebutton idle "images/Menus/save-load/small_right_arrow_30.png" hover "images/Menus/save-load/small_right_arrow_100.png" action FilePageNext(max=11,wrap=True)
+            for f in range(1, 8):
+                if persistent.SLFolder == f:
+                    imagebutton idle "images/Menus/save-load/folder_100.png":
+                        clicked [ SetField(persistent, "SLFolder", f) ]
+                else:
+                    imagebutton idle "images/Menus/save-load/folder_30.png":
+                        clicked [ SetField(persistent, "SLFolder", f) ]
+                if persistent.filecount_list[f] > 1:
+                    $ folderNumber = "{size=+2}%d{/size}{size=-10} \n\n{/size}%s" % (persistent.filecount_list[f] - 1, persistent.folder_list[f])
+                else:
+                    $ folderNumber = "{size=+2} {/size}{size=-10} \n\n{/size}%s" % (persistent.folder_list[f])
+                $ maxAdj = (persistent.filecount_list[f] % columns) + 1
+                $ newSLStart = max(persistent.filecount_list[f] + maxAdj - columns * rows, 1)
+                textbutton _(folderNumber) ypos -24:
+                    clicked [ SetField(persistent, "SLFolder", f), SetField(persistent, "SLStart", newSLStart)  ]
 
 
 screen file_picker_load:
@@ -485,60 +595,160 @@ screen file_picker_load:
 
     frame:
         style "file_picker_frame"
+
         xalign 0.5
         yalign 0.5
-        has vbox
-        hbox
-        $ columns = 3
+
+        $ columns = 2
         $ rows = 3
+        $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
+
+        hbox
 
         # Display a grid of file slots.
-
         grid columns rows:
             transpose False
-            area (0, 0, 0.666, 0.5)
+            area (0.25, 0.205, 0.666, 0.508)
             style_group "file_picker"
 
-            # Display ten file slots, numbered 1 - 10.
-            for i in range(1, columns * rows + 1):
+            # Display file slots
+            for f in range(1, 8):
+                # Figure out the highest numbered save file, including "holes" for deleted files
+                $ afile = "1-%d" % (f)
+                $ filez = renpy.list_slots(afile)
+                if len(filez) > 0:
+                    $ persistent.filecount_list[f] = int(filez[len(filez)-1][3:7]) + 1
+                else:
+                    $ persistent.filecount_list[f] = 1
+                if persistent.filecount_list[f] > len(persistent.savenote_list[f]):
+                    #$ persistent.savenote_list[f].append("Pack my box with five dozen liquor jugs and the quick brown fox jumps over a lazy dog over and over and over and over and over again")
+                    #$ persistent.savenote_list[f].append("Pack my box")
+                    $ actScene = persistent.scene_number.split("_")
+                    $ act = actScene[0][1:]
+                    $ persistent.savenote_list[f].append("Act %s Scene %s" % (act, actScene[1]))
+                    $ sep = ":"
+                    $ parts = persistent.iconstring.split(sep)
+                    $ parts[f] = parts[f] + "A"
+                    $ persistent.iconstring = sep.join(parts)
+            $ timestamp = ""
+            $ startFile = min(persistent.SLStart, persistent.filecount_list[persistent.SLFolder] - 1)
+            if startFile == None or startFile == 0:
+                $ startFile = 1
+            $ persistent.SLStart = startFile
+            $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
+            for i in range(startFile, startFile + columns * rows):
+                if i >= persistent.filecount_list[persistent.SLFolder]:
+                    button:
+                        has hbox
+                else:
+                    # Each file slot is a button.
+                    button:
+                        action FileAction(i + persistent.SLFolder * 10000)
+                        has hbox
 
-                # Each file slot is a button.
-                button:
-                    action FileAction(i)
+                        # Add the screenshot.
+                        add FileScreenshot(i + persistent.SLFolder * 10000) xpos 30 ypos 18
 
-                    has hbox
+                        # Format the description, and add it as text.
+                        $ timestamp = FileTime(i + persistent.SLFolder * 10000, format="%d.%m.%Y\n%H.%M", empty=_("Empty"))
+                        $ description = "{size=+5}%s{/size}\n" % (timestamp)
+                        text description xpos 40 ypos 10
+                        key "save_delete" action [ FileLoad(i + persistent.SLFolder * 10000), SetField(persistent, "SLFile", i) ]
 
-                    # Add the screenshot.
-                    add FileScreenshot(i) xpos 30 ypos 18
+        # Display the notes on each save
+        grid columns rows:
+            transpose False
+            area (0.25, 0.205, 0.666, 0.508)
+            style_group "file_picker_nav3"
 
-                    # Format the description, and add it as text.
-                    $ description = "{size=+10}%s{/size}{size=+5}\n%s{/size}" % (
-                        FileSlotName(i, columns * rows, format="%s%02d"),
-                        FileTime(i, format="%d.%m.%Y\n%H.%M", empty=_("Empty")))
+            $ persistent.SLStart = startFile
+            $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
+            for i in range(startFile, startFile + columns * rows):
+                $ sep = ":"
+                $ parts = persistent.iconstring.split(sep)
+                if i >= persistent.filecount_list[persistent.SLFolder]:
+                    button:
+                        has hbox
+                else:
+                    # Each file slot is a button.
+                    button:
+                        area (270, 80, 100, 100)
+                        $ sep = ":"
+                        $ parts = persistent.iconstring.split(sep)
+                        $ A = ord("A")
+                        $ icon = ord(parts[persistent.SLFolder][i:i+1]) - A
+                        $ mod = len(persistent.icon_list)
+                        if len(parts[persistent.SLFolder]) > i:
+                            $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + chr(((icon + mod - 1) % mod) + A) + parts[persistent.SLFolder][i+1:]
+                            $ left = sep.join(parts)
+                            $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + chr(((icon + 1) % mod) + A) + parts[persistent.SLFolder][i+1:]
+                            $ right = sep.join(parts)
+                        else:
+                            $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + chr(((icon + mod - 1) % mod) + A)
+                            $ left = sep.join(parts)
+                            $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + chr(((icon + 1) % mod) + A)
+                            $ right = sep.join(parts)
+                        imagebutton idle "images/Menus/save-load/small_left_arrow_30.png" hover "images/Menus/save-load/small_left_arrow_100.png" xoffset -55 clicked [ SetField(persistent, "iconstring", left) ]
+                        if len(parts[persistent.SLFolder]) > i:
+                            imagebutton idle persistent.icon_list[ord(persistent.iconstring.split(":")[persistent.SLFolder][i:i+1]) - A] xalign 0.5 yalign 0.5 xoffset -10 yoffset -35 clicked [  ]
+                        imagebutton idle "images/Menus/save-load/small_right_arrow_30.png" hover "images/Menus/save-load/small_right_arrow_100.png" xoffset 55 clicked [ SetField(persistent, "iconstring", right) ]
 
-                    text description xpos 45 ypos 10
+        # Display the icons on each
+        grid columns rows:
+            transpose False
+            area (0.25, 0.205, 0.666, 0.508)
+            style_group "file_picker_nav3"
 
-                    key "save_delete" action FileDelete(i)
+            for i in range(startFile, startFile + columns * rows):
+                if i >= persistent.filecount_list[persistent.SLFolder]:
+                    button:
+                        has hbox
+                else:
+                    # Each file slot is a button.
+                    button:
+                        area (360, -9, 280, 50)
+                        textbutton _(persistent.savenote_list[persistent.SLFolder][i]) xalign 0.0 yalign 0.0:
+                            clicked [ SetField(persistent, "SLStart", persistent.SLStart) ]
+                            #action Show("text_input_screen")
 
-        # The buttons at the top allow the user to pick a
-        # page of files.
-        hbox:
+
+        # Arrows to scroll through folders
+        vbox:
+            area (0.210, 0.21, 0.025, 0.65)
             style_group "file_picker_nav"
-            xalign 1.0
-            yalign 0.5
-            imagebutton idle "images/Menus/save-load/small_left_arrow_30.png" hover "images/Menus/save-load/small_left_arrow_100.png" action FilePagePrevious(max=11,wrap=True)
+            $ maxAdj = (persistent.filecount_list[persistent.SLFolder] % columns) + 1
+            imagebutton idle "images/Menus/save-load/small_up3_arrow_30.png" hover "images/Menus/save-load/small_up3_arrow_100.png" action SetField(persistent, "SLStart", 1)
+            imagebutton idle "images/Menus/save-load/small_up2_arrow_30.png" hover "images/Menus/save-load/small_up2_arrow_100.png" action SetField(persistent, "SLStart", max(persistent.SLStart - columns * rows, 1))
+            imagebutton idle "images/Menus/save-load/small_up_arrow_30.png" hover "images/Menus/save-load/small_up_arrow_100.png" action SetField(persistent, "SLStart", max(persistent.SLStart - columns, 1))
+            imagebutton idle "images/Menus/save-load/small_down_arrow_30.png" hover "images/Menus/save-load/small_down_arrow_100.png" action SetField(persistent, "SLStart", min(persistent.SLStart + columns, persistent.filecount_list[persistent.SLFolder] - maxAdj))
+            imagebutton idle "images/Menus/save-load/small_down2_arrow_30.png" hover "images/Menus/save-load/small_down2_arrow_100.png" action SetField(persistent, "SLStart", min(persistent.SLStart + columns * rows, persistent.filecount_list[persistent.SLFolder] - maxAdj))
+            imagebutton idle "images/Menus/save-load/small_down3_arrow_30.png" hover "images/Menus/save-load/small_down3_arrow_100.png" action SetField(persistent, "SLStart", persistent.filecount_list[persistent.SLFolder] - maxAdj)
 
-##            textbutton _("Auto"):
-##               action FilePage("auto")
 
-##            textbutton _("Quick"):
-##                action FilePage("quick")
+        # Folders for save groups
+        # The folders allow the user to pick a group of files.
+        vbox:
+            spacing -44
+            area (0.15, 0.2, 0.1, 0.60)
+            style_group "file_picker_nav"
 
-            for i in range(1, 12):
-                textbutton str(i):
-                    action FilePage(i)
+            for f in range(1, 8):
+                if persistent.SLFolder == f:
+                    imagebutton idle "images/Menus/save-load/folder_100.png":
+                        clicked [ SetField(persistent, "SLFolder", f) ]
+                else:
+                    imagebutton idle "images/Menus/save-load/folder_30.png":
+                        clicked [ SetField(persistent, "SLFolder", f) ]
+                if persistent.filecount_list[f] > 1:
+                    $ folderNumber = "{size=+2}%d{/size}{size=-10} \n\n{/size}%s" % (persistent.filecount_list[f] - 1, persistent.folder_list[f])
+                else:
+                    $ folderNumber = "{size=+2} {/size}{size=-10} \n\n{/size}%s" % (persistent.folder_list[f])
+                $ maxAdj = (persistent.filecount_list[f] % columns) + 1
+                $ newSLStart = max(persistent.filecount_list[f] + maxAdj - columns * rows, 1)
+                textbutton _(folderNumber) ypos -24:
+                    clicked [ SetField(persistent, "SLFolder", f), SetField(persistent, "SLStart", newSLStart)  ]
 
-            imagebutton idle "images/Menus/save-load/small_right_arrow_30.png" hover "images/Menus/save-load/small_right_arrow_100.png" action FilePageNext(max=11,wrap=True)
+
 
 screen save:
 
@@ -569,12 +779,31 @@ init -2 python:
 
     style.file_picker_nav_button.background = "#00000000"
 
+    style.file_picker_nav2_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
+    style.file_picker_nav2_button_text.size = 26
+    style.file_picker_nav2_button_text.hover_color = "#ffffff"
+    style.file_picker_nav2_button_text.idle_color = "#2e89ff80"
+    style.file_picker_nav2_button_text.insensitive_color = "#ffffff26"
+    style.file_picker_nav2_button_text.selected_idle_color = "#2e89ff"
+
+    style.file_picker_nav2_button.background = "#00000000"
+
+    style.file_picker_nav3_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
+    style.file_picker_nav3_button_text.size = 22
+    style.file_picker_nav3_button_text.hover_color = "#ffffff"
+    style.file_picker_nav3_button_text.idle_color = "#2e89ff80"
+    style.file_picker_nav3_button_text.insensitive_color = "#ffffff26"
+    style.file_picker_nav3_button_text.selected_idle_color = "#2e89ff"
+    style.file_picker_nav3_button_text.xalign = 0.0
+    style.file_picker_nav3_button_text.justify = True
+
+    style.file_picker_nav3_button.background = "#00000000"
 
     style.file_picker_button.idle_background = "images/Menus/save-load/save_frame_30.png"
     style.file_picker_button.hover_background = "images/Menus/save-load/save_frame_100.png"
     style.file_picker_button.insensitive_background = "images/Menus/save-load/save_frame_00.png"
+    style.file_picker_button.focus_rect = (0,0,381,142)
     style.file_picker_text = Style(style.large_button_text)
-
 
 
 ##############################################################################
@@ -748,7 +977,6 @@ screen preferences:
 init -2 python:
     style.pref_root.background = Frame("images/Menus/preferencesmenu/settings_background.png", left=0, top=0, right=None, bottom=None, tile=False)
 
-
     style.pref_frame.xfill = False
     style.pref_frame.xmargin = 5
     style.pref_frame.top_margin = 5
@@ -874,8 +1102,8 @@ screen quick_menu2:
 ##        textbutton _("Q.Save") action QuickSave()
 ##        textbutton _("Q.Load") action QuickLoad()
         textbutton _(" Log") action ShowMenu('log')
-        textbutton _(" Save") action ShowMenu('save')
-        textbutton _(" Load") action ShowMenu('load')
+        textbutton _(" Save") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), ShowMenu("save") ]
+        textbutton _(" Load") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), ShowMenu("load") ]
         textbutton _(" Prefs ") action ShowMenu('preferences')
         if persistent.show_girl_totals:
           if persistent.am_tot == 0:
@@ -902,6 +1130,15 @@ init -2 python:
     # turned off by default.
     config.default_afm_time = 10
     config.default_afm_enable = False
+    if persistent.folder_list == None:
+        persistent.folder_list = ["", "Folder 1", "Folder 2", "Folder 3", "Folder 4", "Folder 5", "Folder 6", "Folder 7"]
+        persistent.savenote_list = [[""], [""], [""], [""], [""], [""], [""], [""]]
+        persistent.filecount_list = [0,0,0,0,0,0,0,0]
+        persistent.SLFolder = 1
+        persistent.SLFile = 0
+        persistent.fileposition_list = [0,1,1,1,1,1,1,1]
+        persistent.iconstring = "A:A:A:A:A:A:A:A"
+    persistent.icon_list = [ "images/Menus/save-load/icon0.png","images/Menus/save-load/icon1.png","images/Menus/save-load/icon2.png","images/Menus/save-load/icon3.png","images/Menus/save-load/icon4.png","images/Menus/save-load/icon5.png","images/Menus/save-load/icon6.png","images/Menus/save-load/iconblank.png",]
 
 label reset_all:
   $ persistent.virgin_first = True
@@ -1035,8 +1272,8 @@ screen game_menu:
         spacing 10
         textbutton _("RETURN") action Return()
         textbutton _("LOG") action ShowMenu("log")
-        textbutton _("SAVE GAME") action ShowMenu("save")
-        textbutton _("LOAD GAME") action ShowMenu("load")
+        textbutton _("SAVE GAME") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), ShowMenu("save") ]
+        textbutton _("LOAD GAME") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), ShowMenu("load") ]
         textbutton _("SETTINGS") action ShowMenu("preferences")
         textbutton _("QUIT") action MainMenu()
 
@@ -1058,6 +1295,8 @@ init -2 python:
     style.gamemenu_button.hover_background = LiveComposite(
         (250,50),
         (0,0), "/images/Buttons/idle_menubutton.png",
-        (265,-9), "animatedstar"
+        (310,-9), "animatedstar"
         )
+
+
 
