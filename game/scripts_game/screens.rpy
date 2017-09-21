@@ -429,14 +429,55 @@ screen file_picker_save:
 
         $ columns = 2
         $ rows = 3
+        $ persistent.SLStart = persistent.SLStart - ((persistent.SLStart - 1) & 1)
         $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
+
+        # Set up for a new file added at the end
+        if fileAddedAtEnd > 0:
+            $ sep = ":"
+            $ parts = persistent.iconstring.split(sep)
+            if len(parts[persistent.SLFolder]) == fileAddedAtEnd:
+                #$ persistent.savenote_list[persistent.SLFolder].append("Pack my box with five dozen liquor jugs and the quick brown fox jumps over a lazy dog over and over and over and over and over again")
+                #$ persistent.savenote_list[persistent.SLFolder].append("Pack my box")
+                $ actScene = persistent.scene_number.split("_")
+                $ act = actScene[0][1:]
+                $ persistent.savenote_list[persistent.SLFolder].append("Act %s Scene %s" % (act, actScene[1]))
+                $ parts[persistent.SLFolder] = parts[persistent.SLFolder] + "B"
+                $ persistent.iconstring = sep.join(parts)
+            $ fileAddedAtEnd = 0
+            $ renpy.save_persistent()
+
+        # Clean up any deleted slots in the middle
+        # Change icon to default (Erik)
+        if lastDeleted > 0 and lastDeleted <= persistent.filecount_list[persistent.SLFolder]:
+            for i in range(lastDeleted, persistent.filecount_list[persistent.SLFolder]):
+                if not FileLoadable(i + persistent.SLFolder * 10000):
+                    $ sep = ":"
+                    $ parts = persistent.iconstring.split(sep)
+                    if len(parts[persistent.SLFolder]) > i:
+                        $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + "B" + parts[persistent.SLFolder][i+1:]
+                    else:
+                        $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + "B"
+                    $ persistent.iconstring = sep.join(parts)
+                    $ persistent.savenote_list[persistent.SLFolder][i] = ""
+            $ lastDeleted = 0
+            $ renpy.save_persistent()
+
+        # See if we should check the act + Scene in notes
+        if checkActScene > 0:
+            if persistent.savenote_list[persistent.SLFolder][checkActScene] == "":
+                $ actScene = persistent.scene_number.split("_")
+                $ act = actScene[0][1:]
+                $ persistent.savenote_list[persistent.SLFolder][checkActScene] = "Act %s Scene %s" % (act, actScene[1])
+            $ checkActScene = 0
+            $ renpy.save_persistent()
 
         hbox
 
         # Display a grid of file slots.
         grid columns rows:
             transpose False
-            area (0.25, 0.205, 0.666, 0.508)
+            area (0.27, 0.205, 0.666, 0.508)
             style_group "file_picker"
 
             # Display file slots
@@ -448,22 +489,15 @@ screen file_picker_save:
                     $ persistent.filecount_list[f] = int(filez[len(filez)-1][3:7]) + 1
                 else:
                     $ persistent.filecount_list[f] = 1
-                if persistent.filecount_list[f] > len(persistent.savenote_list[f]):
-                    #$ persistent.savenote_list[f].append("Pack my box with five dozen liquor jugs and the quick brown fox jumps over a lazy dog over and over and over and over and over again")
-                    #$ persistent.savenote_list[f].append("Pack my box")
-                    $ actScene = persistent.scene_number.split("_")
-                    $ act = actScene[0][1:]
-                    $ persistent.savenote_list[f].append("Act %s Scene %s" % (act, actScene[1]))
-                    $ sep = ":"
-                    $ parts = persistent.iconstring.split(sep)
-                    $ parts[f] = parts[f] + "A"
-                    $ persistent.iconstring = sep.join(parts)
+                $ renpy.save_persistent()
             $ timestamp = ""
             $ startFile = min(persistent.SLStart, persistent.filecount_list[persistent.SLFolder] - 1)
             if startFile == None or startFile == 0:
                 $ startFile = 1
+            $ startFile = startFile - ((startFile + 1) & 1)
             $ persistent.SLStart = startFile
             $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
+            $ renpy.save_persistent()
             for i in range(startFile, startFile + columns * rows):
                 if i >= persistent.filecount_list[persistent.SLFolder]:
                     button:
@@ -471,7 +505,7 @@ screen file_picker_save:
                 else:
                     # Each file slot is a button.
                     button:
-                        action FileAction(i + persistent.SLFolder * 10000)
+                        action [ FileAction(i + persistent.SLFolder * 10000), SetField(persistent, "SLFile", i), SetVariable("checkActScene", i) ]
                         has hbox
 
                         # Add the screenshot.
@@ -479,14 +513,14 @@ screen file_picker_save:
 
                         # Format the description, and add it as text.
                         $ timestamp = FileTime(i + persistent.SLFolder * 10000, format="%d.%m.%Y\n%H.%M", empty=_("Empty"))
-                        $ description = "{size=+5}%s{/size}\n" % (timestamp)
+                        $ description = "{size=+5}%s\n{/size}\n" % (timestamp)
                         text description xpos 40 ypos 10
-                        key "save_delete" action [ FileSave(i + persistent.SLFolder * 10000), SetField(persistent, "SLFile", i) ]
+                        $ renpy.save_persistent()
 
-        # Display the notes on each save
+        # Display the icons on each save
         grid columns rows:
             transpose False
-            area (0.25, 0.205, 0.666, 0.508)
+            area (0.27, 0.205, 0.666, 0.508)
             style_group "file_picker_nav3"
 
             $ persistent.SLStart = startFile
@@ -504,7 +538,10 @@ screen file_picker_save:
                         $ sep = ":"
                         $ parts = persistent.iconstring.split(sep)
                         $ A = ord("A")
-                        $ icon = ord(parts[persistent.SLFolder][i:i+1]) - A
+                        if len(parts[persistent.SLFolder]) > i:
+                            $ icon = ord(parts[persistent.SLFolder][i:i+1]) - A
+                        else:
+                            $ icon = 1
                         $ mod = len(persistent.icon_list)
                         if len(parts[persistent.SLFolder]) > i:
                             $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + chr(((icon + mod - 1) % mod) + A) + parts[persistent.SLFolder][i+1:]
@@ -516,27 +553,48 @@ screen file_picker_save:
                             $ left = sep.join(parts)
                             $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + chr(((icon + 1) % mod) + A)
                             $ right = sep.join(parts)
-                        imagebutton idle "images/Menus/save-load/small_left_arrow_30.png" hover "images/Menus/save-load/small_left_arrow_100.png" xoffset -55 clicked [ SetField(persistent, "iconstring", left) ]
-                        if len(parts[persistent.SLFolder]) > i:
-                            imagebutton idle persistent.icon_list[ord(persistent.iconstring.split(":")[persistent.SLFolder][i:i+1]) - A] xalign 0.5 yalign 0.5 xoffset -10 yoffset -35 clicked [  ]
-                        imagebutton idle "images/Menus/save-load/small_right_arrow_30.png" hover "images/Menus/save-load/small_right_arrow_100.png" xoffset 55 clicked [ SetField(persistent, "iconstring", right) ]
+                        $ renpy.save_persistent()
+                        if FileLoadable(i + persistent.SLFolder * 10000):
+                            imagebutton idle "images/Menus/save-load/small_left_arrow_30.png" hover "images/Menus/save-load/small_left_arrow_100.png" xoffset -55 clicked [ SetField(persistent, "iconstring", left) ]
+                            if len(parts[persistent.SLFolder]) > i:
+                                imagebutton idle persistent.icon_list[icon] xalign 0.5 yalign 0.5 xoffset -10 yoffset -35 clicked [ SetField(persistent, "iconstring", right) ]
+                            imagebutton idle "images/Menus/save-load/small_right_arrow_30.png" hover "images/Menus/save-load/small_right_arrow_100.png" xoffset 55 clicked [ SetField(persistent, "iconstring", right) ]
+                        $ renpy.save_persistent()
 
-        # Display the icons on each
+        # Display the notes on each save
         grid columns rows:
             transpose False
-            area (0.25, 0.205, 0.666, 0.508)
+            area (0.27, 0.205, 0.666, 0.508)
             style_group "file_picker_nav3"
 
             for i in range(startFile, startFile + columns * rows):
-                if i >= persistent.filecount_list[persistent.SLFolder]:
+                if i >= persistent.filecount_list[persistent.SLFolder] or not FileLoadable(i + persistent.SLFolder * 10000):
                     button:
                         has hbox
                 else:
                     # Each file slot is a button.
                     button:
-                        area (360, -9, 280, 50)
+                        area (360, -9, 250, 50)
                         textbutton _(persistent.savenote_list[persistent.SLFolder][i]) xalign 0.0 yalign 0.0:
-                            clicked [ ]
+                            clicked [ SetField(persistent, "SLStart", persistent.SLStart) ]
+
+        # Display X close button
+        grid columns rows:
+            transpose False
+            area (0.25, 0.205, 0.666, 0.508)
+            style_group "file_picker_nav4"
+
+            for i in range(startFile, startFile + columns * rows):
+                if i >= persistent.filecount_list[persistent.SLFolder] or not FileLoadable(i + persistent.SLFolder * 10000):
+                    button:
+                        has hbox
+                else:
+                    # Each file slot is a button.
+                    button:
+                        area (-20, -9, 30, 50)
+                        imagebutton idle "images/Menus/save-load/delete_frame_30.png" focus_mask "images/Menus/save-load/delete_frame_mask.png" hover "images/Menus/save-load/delete_frame_100.png" xoffset 7 yoffset 8:
+                            clicked [ FileDelete(i + persistent.SLFolder * 10000), SetVariable("lastDeleted", i) ]
+                        $ renpy.save_persistent()
 
 
         # Arrows to scroll through folders
@@ -550,6 +608,7 @@ screen file_picker_save:
             imagebutton idle "images/Menus/save-load/small_down_arrow_30.png" hover "images/Menus/save-load/small_down_arrow_100.png" action SetField(persistent, "SLStart", min(persistent.SLStart + columns, persistent.filecount_list[persistent.SLFolder] - maxAdj))
             imagebutton idle "images/Menus/save-load/small_down2_arrow_30.png" hover "images/Menus/save-load/small_down2_arrow_100.png" action SetField(persistent, "SLStart", min(persistent.SLStart + columns * rows, persistent.filecount_list[persistent.SLFolder] - maxAdj))
             imagebutton idle "images/Menus/save-load/small_down3_arrow_30.png" hover "images/Menus/save-load/small_down3_arrow_100.png" action SetField(persistent, "SLStart", persistent.filecount_list[persistent.SLFolder] - maxAdj)
+            $ renpy.save_persistent()
 
         # Add a new save file at the end
         vbox:
@@ -560,8 +619,10 @@ screen file_picker_save:
                 $ newSLStart = persistent.filecount_list[persistent.SLFolder] + maxAdj - columns * rows
             else:
                 $ newSLStart = persistent.SLStart
+            $ i = persistent.filecount_list[persistent.SLFolder]
             textbutton _("Add new save file"):
-                clicked [ FileSave(persistent.filecount_list[persistent.SLFolder] + persistent.SLFolder * 10000), SetField(persistent, "SLStart", newSLStart) ]
+                clicked [ FileSave(i + persistent.SLFolder * 10000), SetField(persistent, "SLStart", newSLStart), SetVariable("fileAddedAtEnd", i) ]
+            $ renpy.save_persistent()
 
         # Folders for save groups
         # The folders allow the user to pick a group of files.
@@ -577,14 +638,17 @@ screen file_picker_save:
                 else:
                     imagebutton idle "images/Menus/save-load/folder_30.png":
                         clicked [ SetField(persistent, "SLFolder", f) ]
-                if persistent.filecount_list[f] > 1:
-                    $ folderNumber = "{size=+2}%d{/size}{size=-10} \n\n{/size}%s" % (persistent.filecount_list[f] - 1, persistent.folder_list[f])
+                $ folderCount = len(renpy.list_saved_games(regexp="1-%d" % (f),fast=True))
+                if folderCount > 0:
+                    $ folderNumber = "{size=+2}%d{/size}{size=-10} \n\n{/size}%s" % (folderCount, persistent.folder_list[f])
                 else:
                     $ folderNumber = "{size=+2} {/size}{size=-10} \n\n{/size}%s" % (persistent.folder_list[f])
                 $ maxAdj = (persistent.filecount_list[f] % columns) + 1
                 $ newSLStart = max(persistent.filecount_list[f] + maxAdj - columns * rows, 1)
+                $ renpy.save_persistent()
                 textbutton _(folderNumber) ypos -24:
-                    clicked [ SetField(persistent, "SLFolder", f), SetField(persistent, "SLStart", newSLStart)  ]
+                    clicked [ SetVariable("fileAddedAtEnd", 0), SetVariable("lastDeleted", 0), SetVariable("checkActScene", 0), SetField(persistent, "SLFolder", f), SetField(persistent, "SLStart", newSLStart) ]
+                $ renpy.save_persistent()
 
 
 screen file_picker_load:
@@ -601,14 +665,55 @@ screen file_picker_load:
 
         $ columns = 2
         $ rows = 3
+        $ persistent.SLStart = persistent.SLStart - ((persistent.SLStart - 1) & 1)
         $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
+
+        # Set up for a new file added at the end
+        if fileAddedAtEnd > 0:
+            $ sep = ":"
+            $ parts = persistent.iconstring.split(sep)
+            if len(parts[persistent.SLFolder]) == fileAddedAtEnd:
+                #$ persistent.savenote_list[persistent.SLFolder].append("Pack my box with five dozen liquor jugs and the quick brown fox jumps over a lazy dog over and over and over and over and over again")
+                #$ persistent.savenote_list[persistent.SLFolder].append("Pack my box")
+                $ actScene = persistent.scene_number.split("_")
+                $ act = actScene[0][1:]
+                $ persistent.savenote_list[persistent.SLFolder].append("Act %s Scene %s" % (act, actScene[1]))
+                $ parts[persistent.SLFolder] = parts[persistent.SLFolder] + "B"
+                $ persistent.iconstring = sep.join(parts)
+            $ fileAddedAtEnd = 0
+            $ renpy.save_persistent()
+
+        # Clean up any deleted slots in the middle
+        # Change icon to default (Erik)
+        if lastDeleted > 0 and lastDeleted <= persistent.filecount_list[persistent.SLFolder]:
+            for i in range(lastDeleted, persistent.filecount_list[persistent.SLFolder]):
+                if not FileLoadable(i + persistent.SLFolder * 10000):
+                    $ sep = ":"
+                    $ parts = persistent.iconstring.split(sep)
+                    if len(parts[persistent.SLFolder]) > i:
+                        $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + "B" + parts[persistent.SLFolder][i+1:]
+                    else:
+                        $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + "B"
+                    $ persistent.iconstring = sep.join(parts)
+                    $ persistent.savenote_list[persistent.SLFolder][i] = ""
+            $ lastDeleted = 0
+            $ renpy.save_persistent()
+
+        # See if we should check the act + Scene in notes
+        if checkActScene > 0:
+            if persistent.savenote_list[persistent.SLFolder][checkActScene] == "":
+                $ actScene = persistent.scene_number.split("_")
+                $ act = actScene[0][1:]
+                $ persistent.savenote_list[persistent.SLFolder][checkActScene] = "Act %s Scene %s" % (act, actScene[1])
+            $ checkActScene = 0
+            $ renpy.save_persistent()
 
         hbox
 
         # Display a grid of file slots.
         grid columns rows:
             transpose False
-            area (0.25, 0.205, 0.666, 0.508)
+            area (0.27, 0.205, 0.666, 0.508)
             style_group "file_picker"
 
             # Display file slots
@@ -620,30 +725,27 @@ screen file_picker_load:
                     $ persistent.filecount_list[f] = int(filez[len(filez)-1][3:7]) + 1
                 else:
                     $ persistent.filecount_list[f] = 1
-                if persistent.filecount_list[f] > len(persistent.savenote_list[f]):
-                    #$ persistent.savenote_list[f].append("Pack my box with five dozen liquor jugs and the quick brown fox jumps over a lazy dog over and over and over and over and over again")
-                    #$ persistent.savenote_list[f].append("Pack my box")
-                    $ actScene = persistent.scene_number.split("_")
-                    $ act = actScene[0][1:]
-                    $ persistent.savenote_list[f].append("Act %s Scene %s" % (act, actScene[1]))
-                    $ sep = ":"
-                    $ parts = persistent.iconstring.split(sep)
-                    $ parts[f] = parts[f] + "A"
-                    $ persistent.iconstring = sep.join(parts)
+                $ renpy.save_persistent()
             $ timestamp = ""
             $ startFile = min(persistent.SLStart, persistent.filecount_list[persistent.SLFolder] - 1)
             if startFile == None or startFile == 0:
                 $ startFile = 1
+            $ startFile = startFile - ((startFile + 1) & 1)
             $ persistent.SLStart = startFile
             $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
+            $ renpy.save_persistent()
             for i in range(startFile, startFile + columns * rows):
                 if i >= persistent.filecount_list[persistent.SLFolder]:
                     button:
                         has hbox
+                elif len(renpy.list_saved_games(regexp="1-%d" % (i + persistent.SLFolder * 10000),fast=True)) == 0:
+                    button:
+                        action [ ]
+                        text "{size=+5}Empty\n{/size}\n" xpos 220 ypos 10
                 else:
                     # Each file slot is a button.
                     button:
-                        action FileAction(i + persistent.SLFolder * 10000)
+                        action [ FileAction(i + persistent.SLFolder * 10000), SetField(persistent, "SLFile", i), SetVariable("checkActScene", i) ]
                         has hbox
 
                         # Add the screenshot.
@@ -651,14 +753,14 @@ screen file_picker_load:
 
                         # Format the description, and add it as text.
                         $ timestamp = FileTime(i + persistent.SLFolder * 10000, format="%d.%m.%Y\n%H.%M", empty=_("Empty"))
-                        $ description = "{size=+5}%s{/size}\n" % (timestamp)
+                        $ description = "{size=+5}%s\n{/size}\n" % (timestamp)
                         text description xpos 40 ypos 10
-                        key "save_delete" action [ FileLoad(i + persistent.SLFolder * 10000), SetField(persistent, "SLFile", i) ]
+                        $ renpy.save_persistent()
 
-        # Display the notes on each save
+        # Display the icons on each save
         grid columns rows:
             transpose False
-            area (0.25, 0.205, 0.666, 0.508)
+            area (0.27, 0.205, 0.666, 0.508)
             style_group "file_picker_nav3"
 
             $ persistent.SLStart = startFile
@@ -676,7 +778,10 @@ screen file_picker_load:
                         $ sep = ":"
                         $ parts = persistent.iconstring.split(sep)
                         $ A = ord("A")
-                        $ icon = ord(parts[persistent.SLFolder][i:i+1]) - A
+                        if len(parts[persistent.SLFolder]) > i:
+                            $ icon = ord(parts[persistent.SLFolder][i:i+1]) - A
+                        else:
+                            $ icon = 1
                         $ mod = len(persistent.icon_list)
                         if len(parts[persistent.SLFolder]) > i:
                             $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + chr(((icon + mod - 1) % mod) + A) + parts[persistent.SLFolder][i+1:]
@@ -688,28 +793,48 @@ screen file_picker_load:
                             $ left = sep.join(parts)
                             $ parts[persistent.SLFolder] = parts[persistent.SLFolder][0:i] + chr(((icon + 1) % mod) + A)
                             $ right = sep.join(parts)
-                        imagebutton idle "images/Menus/save-load/small_left_arrow_30.png" hover "images/Menus/save-load/small_left_arrow_100.png" xoffset -55 clicked [ SetField(persistent, "iconstring", left) ]
-                        if len(parts[persistent.SLFolder]) > i:
-                            imagebutton idle persistent.icon_list[ord(persistent.iconstring.split(":")[persistent.SLFolder][i:i+1]) - A] xalign 0.5 yalign 0.5 xoffset -10 yoffset -35 clicked [  ]
-                        imagebutton idle "images/Menus/save-load/small_right_arrow_30.png" hover "images/Menus/save-load/small_right_arrow_100.png" xoffset 55 clicked [ SetField(persistent, "iconstring", right) ]
+                        $ renpy.save_persistent()
+                        if FileLoadable(i + persistent.SLFolder * 10000):
+                            imagebutton idle "images/Menus/save-load/small_left_arrow_30.png" hover "images/Menus/save-load/small_left_arrow_100.png" xoffset -55 clicked [ SetField(persistent, "iconstring", left) ]
+                            if len(parts[persistent.SLFolder]) > i:
+                                imagebutton idle persistent.icon_list[icon] xalign 0.5 yalign 0.5 xoffset -10 yoffset -35 clicked [ SetField(persistent, "iconstring", right) ]
+                            imagebutton idle "images/Menus/save-load/small_right_arrow_30.png" hover "images/Menus/save-load/small_right_arrow_100.png" xoffset 55 clicked [ SetField(persistent, "iconstring", right) ]
+                        $ renpy.save_persistent()
 
-        # Display the icons on each
+        # Display the notes on each save
         grid columns rows:
             transpose False
-            area (0.25, 0.205, 0.666, 0.508)
+            area (0.27, 0.205, 0.666, 0.508)
             style_group "file_picker_nav3"
 
             for i in range(startFile, startFile + columns * rows):
-                if i >= persistent.filecount_list[persistent.SLFolder]:
+                if i >= persistent.filecount_list[persistent.SLFolder] or not FileLoadable(i + persistent.SLFolder * 10000):
                     button:
                         has hbox
                 else:
                     # Each file slot is a button.
                     button:
-                        area (360, -9, 280, 50)
+                        area (360, -9, 250, 50)
                         textbutton _(persistent.savenote_list[persistent.SLFolder][i]) xalign 0.0 yalign 0.0:
                             clicked [ SetField(persistent, "SLStart", persistent.SLStart) ]
-                            #action Show("text_input_screen")
+
+        # Display X close button
+        grid columns rows:
+            transpose False
+            area (0.25, 0.205, 0.666, 0.508)
+            style_group "file_picker_nav4"
+
+            for i in range(startFile, startFile + columns * rows):
+                if i >= persistent.filecount_list[persistent.SLFolder] or not FileLoadable(i + persistent.SLFolder * 10000):
+                    button:
+                        has hbox
+                else:
+                    # Each file slot is a button.
+                    button:
+                        area (-20, -9, 30, 50)
+                        imagebutton idle "images/Menus/save-load/delete_frame_30.png" focus_mask "images/Menus/save-load/delete_frame_mask.png" hover "images/Menus/save-load/delete_frame_100.png" xoffset 7 yoffset 8:
+                            clicked [ FileDelete(i + persistent.SLFolder * 10000), SetVariable("lastDeleted", i) ]
+                        $ renpy.save_persistent()
 
 
         # Arrows to scroll through folders
@@ -723,7 +848,7 @@ screen file_picker_load:
             imagebutton idle "images/Menus/save-load/small_down_arrow_30.png" hover "images/Menus/save-load/small_down_arrow_100.png" action SetField(persistent, "SLStart", min(persistent.SLStart + columns, persistent.filecount_list[persistent.SLFolder] - maxAdj))
             imagebutton idle "images/Menus/save-load/small_down2_arrow_30.png" hover "images/Menus/save-load/small_down2_arrow_100.png" action SetField(persistent, "SLStart", min(persistent.SLStart + columns * rows, persistent.filecount_list[persistent.SLFolder] - maxAdj))
             imagebutton idle "images/Menus/save-load/small_down3_arrow_30.png" hover "images/Menus/save-load/small_down3_arrow_100.png" action SetField(persistent, "SLStart", persistent.filecount_list[persistent.SLFolder] - maxAdj)
-
+            $ renpy.save_persistent()
 
         # Folders for save groups
         # The folders allow the user to pick a group of files.
@@ -739,14 +864,20 @@ screen file_picker_load:
                 else:
                     imagebutton idle "images/Menus/save-load/folder_30.png":
                         clicked [ SetField(persistent, "SLFolder", f) ]
-                if persistent.filecount_list[f] > 1:
-                    $ folderNumber = "{size=+2}%d{/size}{size=-10} \n\n{/size}%s" % (persistent.filecount_list[f] - 1, persistent.folder_list[f])
+                $ folderCount = len(renpy.list_saved_games(regexp="1-%d" % (f),fast=True))
+                if folderCount > 0:
+                    $ folderNumber = "{size=+2}%d{/size}{size=-10} \n\n{/size}%s" % (folderCount, persistent.folder_list[f])
                 else:
                     $ folderNumber = "{size=+2} {/size}{size=-10} \n\n{/size}%s" % (persistent.folder_list[f])
                 $ maxAdj = (persistent.filecount_list[f] % columns) + 1
                 $ newSLStart = max(persistent.filecount_list[f] + maxAdj - columns * rows, 1)
+                $ renpy.save_persistent()
                 textbutton _(folderNumber) ypos -24:
-                    clicked [ SetField(persistent, "SLFolder", f), SetField(persistent, "SLStart", newSLStart)  ]
+                    clicked [ SetVariable("fileAddedAtEnd", 0), SetVariable("lastDeleted", 0), SetVariable("checkActScene", 0), SetField(persistent, "SLFolder", f), SetField(persistent, "SLStart", newSLStart) ]
+                $ renpy.save_persistent()
+
+
+
 
 
 
@@ -798,6 +929,17 @@ init -2 python:
     style.file_picker_nav3_button_text.justify = True
 
     style.file_picker_nav3_button.background = "#00000000"
+
+    style.file_picker_nav4_button_text.font = "ui/Fonts/GillSans-LightTrebufied.otf"
+    style.file_picker_nav4_button_text.size = 28
+    style.file_picker_nav4_button_text.hover_color = "#ff0000"
+    style.file_picker_nav4_button_text.idle_color = "#2e89ff80"
+    style.file_picker_nav4_button_text.insensitive_color = "#ffffff26"
+    style.file_picker_nav4_button_text.selected_idle_color = "#2e89ff"
+    style.file_picker_nav4_button_text.xalign = 0.0
+    style.file_picker_nav4_button_text.justify = True
+
+    style.file_picker_nav4_button.background = "#00000000"
 
     style.file_picker_button.idle_background = "images/Menus/save-load/save_frame_30.png"
     style.file_picker_button.hover_background = "images/Menus/save-load/save_frame_100.png"
@@ -1102,8 +1244,8 @@ screen quick_menu2:
 ##        textbutton _("Q.Save") action QuickSave()
 ##        textbutton _("Q.Load") action QuickLoad()
         textbutton _(" Log") action ShowMenu('log')
-        textbutton _(" Save") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), ShowMenu("save") ]
-        textbutton _(" Load") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), ShowMenu("load") ]
+        textbutton _(" Save") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), SetVariable("fileAddedAtEnd", 0), SetVariable("lastDeleted", 0), SetVariable("checkActScene", 0), ShowMenu("save") ]
+        textbutton _(" Load") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), SetVariable("fileAddedAtEnd", 0), SetVariable("lastDeleted", 0), SetVariable("checkActScene", 0), ShowMenu("load") ]
         textbutton _(" Prefs ") action ShowMenu('preferences')
         if persistent.show_girl_totals:
           if persistent.am_tot == 0:
@@ -1132,13 +1274,22 @@ init -2 python:
     config.default_afm_enable = False
     if persistent.folder_list == None:
         persistent.folder_list = ["", "Folder 1", "Folder 2", "Folder 3", "Folder 4", "Folder 5", "Folder 6", "Folder 7"]
+    if persistent.savenote_list == None:
         persistent.savenote_list = [[""], [""], [""], [""], [""], [""], [""], [""]]
+    if persistent.filecount_list == None:
         persistent.filecount_list = [0,0,0,0,0,0,0,0]
+    if persistent.SLFolder == None:
         persistent.SLFolder = 1
+    if persistent.SLFile == None:
         persistent.SLFile = 0
+    if persistent.fileposition_list == None:
         persistent.fileposition_list = [0,1,1,1,1,1,1,1]
+    if persistent.iconstring == None:
         persistent.iconstring = "A:A:A:A:A:A:A:A"
-    persistent.icon_list = [ "images/Menus/save-load/icon0.png","images/Menus/save-load/icon1.png","images/Menus/save-load/icon2.png","images/Menus/save-load/icon3.png","images/Menus/save-load/icon4.png","images/Menus/save-load/icon5.png","images/Menus/save-load/icon6.png","images/Menus/save-load/iconblank.png",]
+    persistent.icon_list = [ "images/Menus/save-load/iconblank.png","images/Menus/save-load/icon0.png","images/Menus/save-load/icon1.png","images/Menus/save-load/icon2.png","images/Menus/save-load/icon3.png","images/Menus/save-load/icon4.png","images/Menus/save-load/icon5.png","images/Menus/save-load/icon6.png"]
+    fileAddedAtEnd = 0
+    lastDeleted = 0
+    checkActScene = 0
 
 label reset_all:
   $ persistent.virgin_first = True
@@ -1272,8 +1423,8 @@ screen game_menu:
         spacing 10
         textbutton _("RETURN") action Return()
         textbutton _("LOG") action ShowMenu("log")
-        textbutton _("SAVE GAME") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), ShowMenu("save") ]
-        textbutton _("LOAD GAME") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), ShowMenu("load") ]
+        textbutton _("SAVE GAME") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), SetVariable("fileAddedAtEnd", 0), SetVariable("lastDeleted", 0), SetVariable("checkActScene", 0), ShowMenu("save") ]
+        textbutton _("LOAD GAME") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), SetVariable("fileAddedAtEnd", 0), SetVariable("lastDeleted", 0), SetVariable("checkActScene", 0), ShowMenu("load") ]
         textbutton _("SETTINGS") action ShowMenu("preferences")
         textbutton _("QUIT") action MainMenu()
 
