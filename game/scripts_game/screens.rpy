@@ -339,7 +339,7 @@ screen main_menu_kev:
         # textbutton _("RESUME") action ShowMenu("resume")
         textbutton _("LOAD GAME") action ShowMenu("load")
         textbutton _("SETTINGS") action ShowMenu("preferences")
-        textbutton _("EXTRAS") action ShowMenu("extras")
+        textbutton _("EXTRAS") action [ ] #ShowMenu("extras")
         # textbutton _("SETUI") action Jump("reset_ui")
         # textbutton _("HELP") action Help()
         textbutton _("QUIT") action Quit(confirm=False)
@@ -1286,6 +1286,8 @@ init -2 python:
         persistent.fileposition_list = [0,1,1,1,1,1,1,1]
     if persistent.iconstring == None:
         persistent.iconstring = "A:A:A:A:A:A:A:A"
+    if persistent.SLStart == None:
+        persistent.SLStart = 1
     persistent.icon_list = [ "images/Menus/save-load/iconblank.png","images/Menus/save-load/icon0.png","images/Menus/save-load/icon1.png","images/Menus/save-load/icon2.png","images/Menus/save-load/icon3.png","images/Menus/save-load/icon4.png","images/Menus/save-load/icon5.png","images/Menus/save-load/icon6.png"]
     fileAddedAtEnd = 0
     lastDeleted = 0
@@ -1422,7 +1424,7 @@ screen game_menu:
         has vbox
         spacing 10
         textbutton _("RETURN") action Return()
-        textbutton _("LOG") action ShowMenu("log")
+        textbutton _("LOG") action [ ] #ShowMenu("log")
         textbutton _("SAVE GAME") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), SetVariable("fileAddedAtEnd", 0), SetVariable("lastDeleted", 0), SetVariable("checkActScene", 0), ShowMenu("save") ]
         textbutton _("LOAD GAME") action [ SetField(persistent, "SLStart", persistent.fileposition_list[persistent.SLFolder]), SetVariable("fileAddedAtEnd", 0), SetVariable("lastDeleted", 0), SetVariable("checkActScene", 0), ShowMenu("load") ]
         textbutton _("SETTINGS") action ShowMenu("preferences")
