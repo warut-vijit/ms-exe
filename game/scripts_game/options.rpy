@@ -34,7 +34,9 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Missing Stars"
-    config.version = "0.1.1-alpha-rc1"
+    config.version = "0.1.2-alpha-rc1"
+    config.log = "log.txt"
+    config.log_width = 80
 
     #########################################
     # Themes
@@ -100,11 +102,11 @@ init -1 python hide:
 
         ## The color of an idle widget face.
         ## widget = "#003c78",
-        widget = "#00000000",
+        widget = "#17447fff",
 
         ## The color of a focused widget face.
         ## widget_hover = "#0050a0",
-        widget_hover = "#00ff00ff",
+        widget_hover = "#2e89ffff",
 
         ## The color of the text in a widget.
         widget_text = "#c8ffff",
@@ -135,7 +137,8 @@ init -1 python hide:
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        gm_root = "#000000",
+        gm_root = "images/Menus/save-load/SubMenu_Background.png",
+        #gm_root = "#000000ff",
 
         ## If this is True, the in-game window is rounded. If False,
         ## the in-game window is square.
@@ -145,7 +148,6 @@ init -1 python hide:
         ## various styles, so if we want to change them, we should
         ## do so below.
         )
-
 
 
     #########################################
@@ -226,11 +228,17 @@ init -1 python hide:
     ## Set this to False if the game does not have any music.
 
     config.has_music = True
+    # Create 2nd music channel for for crossfading, both controlled by "music" mixer
+    renpy.music.register_channel("music2", mixer="music")
 
     ## Set this to False if the game does not have voicing.
 
-    config.has_voice = True
+    config.has_voice = False
 
+    # Create 2 channels for ambient sounds, both controlled by "sound" (sfx) mixer
+    renpy.music.register_channel("ambience", mixer="sfx")
+    renpy.music.register_channel("ambience2", mixer="sfx")
+    
     ## Sounds that are used when button and imagemaps are clicked.
 
     # style.button.activate_sound = "click.wav"
@@ -302,7 +310,7 @@ init -1 python hide:
     ## stored. (It needs to be set early, before any other init code
     ## is run, so the persisten information can be found by the init code.)
 python early:
-    config.save_directory = "missing_stars_0002"
+    config.save_directory = "missing_stars_0020"
 
 init -1 python hide:
     #########################################
@@ -323,7 +331,9 @@ init -1 python hide:
     #########################################
     ## More customizations can go here.
 
-    style.say_label.font = "ui/Fonts/GillSans-LightTrebufied.otf"
+    style.say_label.font = "ui/Fonts/TrebuchetMS-RegularStraightened.otf"
+    style.say_dialogue.font = "ui/Fonts/GillSans-LightTrebufied.otf"
+    style.say_thought.font = "ui/Fonts/GillSans-LightTrebufied.otf"
     style.say_label.ypos = -30
     style.say_label.xpos = -90
     style.say_thought.ypos = 37
@@ -340,12 +350,12 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "missing_stars-0.1.1-alpha-rc1"
+    build.directory_name = "Missing_Stars_Demo"
 
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
     ## users can click 'mygame.exe' to start the game.
-    build.executable_name = "missing_stars-0.1.1-alpha-rc1"
+    build.executable_name = "Missing Stars Demo"
 
     ## If True, Ren'Py will include update information into packages. This
     ## allows the updater to run.
@@ -384,11 +394,18 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
+    build.classify('**/**.rpy', None)
+    build.classify('**/**.doc', None)
+    build.classify('**/**.docx', None)
 
     ## To archive files, classify them as 'archive'.
 
-    # build.classify('game/**.png', 'archive')
-    # build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.png', 'archive')
+    build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.mp3', 'archive')
+    build.classify('game/**.ogg', 'archive')
+    build.classify('game/**.wav', 'archive')
+    build.classify('game/**.webm', 'archive')
 
     ## Files matching documentation patterns are duplicated in a mac app
     ## build, so they appear in both the app and the zip file.
