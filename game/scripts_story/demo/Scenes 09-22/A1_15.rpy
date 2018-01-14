@@ -672,7 +672,10 @@ erik "\"Wouldn't have believed that I'd say that an hour ago, but yes. It really
 erik "\"It couldn't have been that long ago, but I can't remember the last time I did something like that.\""
 erik "\"Brings back so many memories from before. Got me thinking about all sorts of stuff.\""
 erik "\"What's a few hours of sleep compared to that?\""
-"{color=#FF8c00}>Katja_P5_E8a{/color}"
+#-# >Katja_P5_E8a 2
+show katja U_P5_E8a
+with Dissolve(0.25)
+#--#
 katja "\"That's the spirit.\""
 erik "\"Wouldn't be a mountaineer without it. You won't get anywhere nice if you're not willing to risk hypothermia.\""
 n "Katja nods in bemused approval. I think I've made a good impression on her."
