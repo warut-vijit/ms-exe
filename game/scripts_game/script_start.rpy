@@ -286,6 +286,7 @@ label start0:
   image chapel =                     "backgrounds/School_Generic3.png"
   image mainlobby =                  "backgrounds/School_MainHall.png"
   image classroom1 =        im.Scale("backgrounds/School_Classroom1_NOPAN.png", 1920, 1080, bilinear=True)
+  image relaxroom =                  "backgrounds/School_Relaxroom_NOPAN.png"
   image clubroom1 =         im.Scale("backgrounds/School_Clubroom_NOPAN.png", 1920, 1080, bilinear=True)
   image cafeteriaoutside =           "backgrounds/School_CafeteriaOutside.png"
   image cafeteria =                  "backgrounds/School_Cafeteria.png"
