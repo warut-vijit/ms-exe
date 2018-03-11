@@ -254,6 +254,7 @@ label start0:
   define music = Character('MUSIC', color="#FABE28", ctc="ctcstar", ctc_position="fixed")
 
   #backgrounds
+  image mountainRange =            "backgrounds/MountainRange.png"
   image bg car_interior = im.Scale("backgrounds/car_interior.jpg", 1280, 720, bilinear=False)
 
   image bg black="#000000"
