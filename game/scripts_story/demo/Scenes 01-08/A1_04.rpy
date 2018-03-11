@@ -30,8 +30,8 @@ $ renpy.save_persistent()
 # 
 #-# <scene fades from CG at the end of scene 03>
 scene School_MainBuildingClose with Dissolve(1.0)
-show ela P1_E3
-xalign 0.4 alpha 1.0
+show ela P1_E3:
+  xalign 0.4 alpha 1.0
 #--#
 #-# >branch breaking
 play sound "music/effects/Branch1.mp3"
@@ -50,8 +50,8 @@ n "From above us, a girl crashes through the tree Ela was leaning on."
 n "Before I even have time to register this, she rises from the debris, dusting herself off and initiating a conversation as casually as one might wave hello."
 
 #-# >Irene unidentified
-show irene P1_E1
-easein 1.0 xalign 0.8 alpha 1.0
+show irene P1_E1:
+  easein 1.0 xalign 0.8 alpha 1.0
 #--#
 
 strangegirl "\"Oh hey Ela, didn't see you there; don't mind me. For the record, that tree is a bit iffy! And you must be Erik!\""

@@ -56,7 +56,7 @@ n "Before long, we arrive and file out of the car."
 n "It's nice to stretch my legs after being squished into the back of Mom's eco-car with Hilda and Beatrice."
 
 #-# >the main gate
-scene School_Gate_NOPAN.png at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)
+scene mainGate at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)
 #--#
 #-# >Be Green begins (NOTE: NOT BE GREEN AFTERNOON)
 play music "music/Be Green.mp3" loop
@@ -71,7 +71,7 @@ mom "\"Isn't this building pretty, Erik? This is where you'll be going for class
 erik "\"It's nice. I like older buildings like this. It's kind of like the old church back home.\""
 
 #-# >Screen Shake
-scene School_Gate_NOPAN.png with vpunch
+scene mainGate with vpunch
 #--#
 #-# >All sounds and music cut
 stop music
@@ -109,8 +109,8 @@ n "I tilt my head toward the man in disbelief."
 dad "\"... Yes.\""
 
 #-# >Bosworth enter right
-show Bosworth P1_E2
-easein 1.0 xalign 0.65 alpha 1.0
+show Bosworth P1_E2:
+  easein 1.0 xalign 0.65 alpha 1.0
 #--#
 #-# >The Mind-Boggle begins playing
 play music "music/The_Mind-Boggle.mp3" loop
@@ -126,7 +126,7 @@ n "He approaches me. Despite us being almost similar in height, I can't help but
 
 #-# >Bosworth smile
 show bosworth P1_E4
-with Dissolve(0.25)"
+with Dissolve(0.25)
 #--#
 
 bosworth "\"Your parents have already told me so much about you, Erik. Such a gentleman to be joining our halls!\""
@@ -294,20 +294,21 @@ play sound "music/effects/door open and close.mp3"
 scene School_MainHall with Dissolve(1.0)
 #--#
 #-# >Mum enter left
-show mum P1_E1
-easein 1.0 xalign 0.1 alpha 1.0
+show mum P1_E1:
+  easein 1.0 xalign 0.1 alpha 1.0
 #--#
 #-# >Beatrice enter left
-show beatrice P1_E1
-easein 1.0 xalign 0.3 alpha 1.0
+show beatrice P1_E1:
+  easein 1.0 xalign 0.3 alpha 1.0
 #--#
 #-# >Brunhilde enter left
-show brunhilde P1_E1
-easein 1.0 xalign 0.5 alpha 1.0
+show brunhilde P1_E1:
+  easein 1.0 xalign 0.5 alpha 1.0
 #--#
 #-# >Dad enter left
-show dad P1_E1
-easein 1.0 xalign 0.7 alpha 1.0
+show dad P1_E1:
+  easein 1.0 xalign 0.7 alpha 1.0
+  easein 1.0 xalign 0.7 alpha 1.0
 #--#
 
 erik "\"Okay, all done.\""
@@ -319,11 +320,11 @@ beatrice "\"Is he nice?\""
 erik "\"It went well, and yeah, Mr. Bosworth is actually pretty nice.\""
 
 #-# >Bosworth enter right 2
-show Bosworth P1_E2
-easein 1.0 xalign 0.9 alpha 1.0
+show Bosworth P1_E2:
+  easein 1.0 xalign 0.9 alpha 1.0
 #--#
 #-# >A busier sort of day begins playing
-play "music/A Busier Sort of Day (Based on St. Paul's Suite by Gustav Holst)" loop
+play music "music/A Busier Sort of Day (Based on St. Paul's Suite by Gustav Holst)" loop
 #--#
 
 bosworth "\"I'm glad to hear it!\""
@@ -333,21 +334,21 @@ n "I turn around, not realizing the man I'm talking about has already finished w
 bosworth "\"I just called Ms. Claes; she's in her classroom at the end of this hallway, Erik. She'll be expecting you in a minute. Now, I'll need to steal you two away, Mr. and Mrs. Wilhelm. Just a few bits and pieces of last-minute paperwork...\""
 
 #-# >Bosworth and mom and dad leave
-show Bosworth P1_E2
-easein 1.0 xalign 1.0 alpha 0.0
-show mum P1_E1
-easein 1.0 xalign 1.0 alpha 0.0
-show dad P1_E1
-easein 1.0 xalign 1.0 alpha 0.0
+show Bosworth P1_E2:
+  easein 1.0 xalign 1.0 alpha 0.0
+show mum P1_E1:
+  easein 1.0 xalign 1.0 alpha 0.0
+show dad P1_E1:
+  easein 1.0 xalign 1.0 alpha 0.0
 #--#
 
 n "He guides them into the office and I'm left with Beatrice and Hilda."
 
 #-# >Beatrice and Hilda move to centerleft and center right
-show brunhilde P1_E1
-easein 1.0 xalign 0.4 alpha 1.0
-show beatrice P1_E1
-easein 1.0 xalign 0.4 alpha 1.0
+show brunhilde P1_E1:
+  easein 1.0 xalign 0.4 alpha 1.0
+show beatrice P1_E1:
+  easein 1.0 xalign 0.4 alpha 1.0
 #--#
 
 erik "\"Well, want to check out my classroom with me?\""
@@ -367,8 +368,8 @@ scene School_Classroom1_NOPAN with Dissolve(1.0)
 #--#
 
 #-# >Claes enter right
-show claes P1_E1
-easein 1.0 xalign 0.65 alpha 1.0
+show claes P1_E1:
+  easein 1.0 xalign 0.65 alpha 1.0
 #--#
 #-# >Claes_smile.png
 show claes P1_E5
@@ -434,12 +435,12 @@ play sound "music/effects/Knock Knock.mp3"
 claes "\"Ah, perfect timing. Come in.\""
 
 #-# >Ela enters from right
-show ela P1_E1
-easein 1.0 xalign 0.8 alpha 1.0
+show ela P1_E1:
+  easein 1.0 xalign 0.8 alpha 1.0
 #--#
 #-# >Claes moves over the left slightly
-show claes P1_E1
-easein 1.0 xalign 0.45 alpha 1.0
+show claes P1_E1:
+  easein 1.0 xalign 0.45 alpha 1.0
 #--#
 
 n "A young girl enters from outside."
@@ -476,7 +477,7 @@ show ela P1_E2
 #--#
 
 #-# >Music: Be Green (Afternoon)
-play "music/Be Green (Afternoon).mp3"
+play music "music/Be Green (Afternoon).mp3"
 #--#
 
 n "The tour is nothing out of the ordinary, even if the school is."

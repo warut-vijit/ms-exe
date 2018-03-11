@@ -382,7 +382,7 @@ with Dissolve(0.25)
 mum "\"Of course.\""
 
 #-# >mum exits center to left
-show mum P1_E2
+show mum P1_E2:
   easein 1.0 xalign 0.0 alpha 0.0
 jump resume
 #--#
@@ -399,7 +399,7 @@ with Dissolve(0.25)
 #--#
 
 #-# >mum exits center to left 2
-show mum P1_E2
+show mum P1_E2:
   easein 1.0 xalign 0.0 alpha 0.0
 jump resume
 #--#
@@ -507,7 +507,7 @@ n "A school for..."
 #-# >pause
 $ renpy.pause (1.0)
 
->pause
+#-# >pause
 $ renpy.pause (1.0)
 #--#
 n "people with problems like mine."

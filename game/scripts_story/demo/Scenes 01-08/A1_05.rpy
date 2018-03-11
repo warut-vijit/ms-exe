@@ -26,10 +26,12 @@ scene School_MainBuildEntrance at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, ya
 scene School_MainBuildEntrance
 #--#
 #-# >Show Ela at centre
-show ela P1_E1 alpha 1.0 xalign 0.5
+show ela P1_E1:
+ alpha 1.0 xalign 0.5
 #--#
 #-# >Show Irene at middle right
-show irene P1_E1 alpha 1.0 xalign 0.75
+show irene P1_E1:
+ alpha 1.0 xalign 0.75
 #--#
 n "Mostly recovered - save for with my heart still beating like a drum - we turn a corner and return to the school's entrance."
 ela "\"Okay! Here we are. All done. You sure you'll be able to find your way to the medical wing?\""
@@ -109,12 +111,12 @@ n "Beatrice freezes; a look of realisation crosses her face."
 n "I'm going to miss hearing my sisters' banter...."
 n "The door behind them opens again."
 #-# >Hilda move to right
-show brunhilde P1_E1
-easein 1.0 xalign 0.95 alpha 1.0
+show brunhilde P1_E1:
+  easein 1.0 xalign 0.95 alpha 1.0
 #--#
 #-# >Beatrice move to middle right
-show beatrice P1_E1
-easein 1.0 xalign 0.75 alpha 1.0
+show beatrice P1_E1:
+  easein 1.0 xalign 0.75 alpha 1.0
 #--#
 #-# >Mr Wilhelm enters from left to middle left
 show dad P1_E1:
