@@ -3,708 +3,434 @@ label A1_09:
 ###############
 
 $ persistent.scene_number = "A1_09" # current scene
-$ persistent.scene_name = "The Art of Introduction" # current scene name
+$ persistent.scene_name = "The Art of Introduction " # current scene name
 $ renpy.save_persistent()
 
 
-# Scene 9 - The Art of Introduction - Annaliese
-# Scene name: The Art of Introduction
-# Ultra_HR
-# 
-# Backgrounds:
-# Erik's room (early morning)
-# Boy's dorm exterior
-# School corridor/s
-# Lobby (main entrance)
-# Classroom
-# Sprites:
-# Ms. Claes
-# Annaliese
-# Sound effects:
-# Window opening
-# Window closing
-# Birds tweeting and general morningtime nature sounds
-# Paper handling
-# Quiet crowd
-# School bell
-# Visual effects:
-# Waking up
-# Passage of time
-# 
-# Scene Opens
-#-# >> Wakeup Effect to <School_ErikRoom_NOPAN.png>
-scene PitchBlack
-with Dissolve(1)
-scene erikdorm
-with Dissolve(2)
+# Scene name: The Art of Introduction 
+#-# <Scene Opens>
+stop ambience fadeout 1.0
 #--#
-
-n "A shaft of pale sunlight wakes me up from a shallow, restless sleep before my alarm. Despite the bright morning sun, my room feels chilly and I shiver in my thin pyjamas."
-
-n "I wonder if it actually is chilly or if the endless cycle of negative thoughts in my head is just making me think it is."
-
-n "You'd think the room would retain heat better what with the window being three times thicker than I'm used to, but it might as well be a hole in the wall."
-
-n "Not even a day here, and that window's thickness is already bothering me. It's such a small detail I'm not even sure I'd have noticed it if it hadn't been pointed out, but now I just can't seem to stop thinking about it."
-n "I roll out of bed and try opening it."
-
-
-#-# >>window opening
-play sound "music/effects/window.mp3"
-#--#
-#-# >>change to some sort of outside background if one is available, but otherwise stay in Erik's room (the view will have to be left to the reader's imagination)
-#
-#--#
-#-# >>birds tweeting, wind in trees etc.
-play ambience "music/effects/birdsandwind.ogg" loop fadein 2.0
-#--#
-
-n "It's heavy, but it does open. Why wouldn't it? They said my room had been fitted for a low-risk student."
-
-n "The air streaming in through the crack smells faintly of freshly cut grass and dew. It's numbingly cold, but I let it linger for a moment."
-
-n "Just as much as having that window here in the first place feels stifling, knowing that it can be opened feels relatively comforting. A small measure of control over my life. Tiny and inconsequential, maybe, but it's something."
-
-n "I take one final deep breath to clear my head and shut the window."
-
-#-# >> Music: New Beginnings Arise from Old Endings
-play music "<from 0.0 to 181.0826 loop 10.1653>music/New Beginnings Arise from Old Endings.mp3" loop
-#--#
-#-# >>window closing
-play sound "music/effects/window.mp3"
-#--#
-#-# >>outside SFX stop
-stop ambience fadeout 2.0
-#--#
-
-n "Control's fine and all, but it probably isn't worth coming back to a freezing room."
-
-n "I should get ready for school. No sense in getting all mopey about nothing before I've even started."
-n "I put on my glasses and check my phone for the time."
-
-n "6:55."
-
-n "Just too late to get a bit more sleep. Ugh. With an involuntary groan, I grab my clothes bag to hit the shower."
-
-#-# >>passage of time
-scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
-$ renpy.pause(1.0)
-scene erikdorm with ImageDissolve("Transitions/clock.png", 1.0)
-#--#
-
-n "By the time I've come back clean and dressed, someone's sent me a text message."
-
-#-# >>Some sort of mobile phone graphic if we have it. If not, again, leave it to the imagination.
-show EriksPhone
-with Dissolve (2.0)
-#--#
-
-beatrice "\"Morning bro! Sleep well? Cheer up no matter what!! <3\""
-
-beatrice "\"Hope you have a wonderful day!! I know you'll make a ton of friends!\""
-
-n "The rest is just a bunch of emoji that, if nothing else, represent her perfectly."
-
-n "I stare at the screen until it turns off by itself, wondering what I should send in return. It did feel good to read – it's nice to know that she cares."
-
-n "It's just, no matter how much I try to force on a smile and absorb some of Beatrice's enthusiasm through her text, I just can't bring myself to feel that kind of cheer."
-
-n "It's not even like I'm really sad. More like emotionally neutral. Numb."
-
-n "I turn the screen back on and tap out a quick reply."
-
-erik "\"Slept okay. Thanks. Talk to you later :)\""
-
-#-# >>phone out
-hide EriksPhone
-with Dissolve (0.5)
-#--#
-
-n "There. I even add a little smiley face at the end so she doesn't worry too much. Now I'm feeling illiterate as well as disingenuous. Good start to the day if ever there was one."
-
-n "Giving the rest of the room one final look-over to make sure I haven't forgotten anything, I grab my bag and the map from my bedside table and set out to my first class."
-
-#-# >Music fade out
-stop music fadeout 3.0
-#--#
-
-#-# <Crossfade to School_MaleDormsOut.png>
-scene PitchBlack
-with Dissolve(1)
+#-# <Boy's Dorm Exterior (morning)> crossfade to <School Cafeteria (morning)>
 scene outsidemaledorm
 with Dissolve(2)
-#--#
-#-# >>Music: The Mind-Boggle Fade in
-play music "music/The_Mind-Boggle.mp3" fadein 3.0 loop
-#--#
-#-# >>Quiet crowd sound effects
-play ambience "music/effects/muffledchatter.ogg" loop fadein 1.0
-#--#
-
-n "Despite it already being after seven, the male dorm courtyard is almost as empty right now as it was last night."
-
-n "I thought there'd be a crowd of students moving in the general direction of the school, but far as I can see the few that are out seem content to sit on benches and chat. A few are even jogging around in tracksuits. Don't these guys have class in a little bit?"
-
-n "I shuffle slowly through the courtyard, throwing the occasional glance this way and that to see if anyone looks like they're in any kind of hurry."
-
-n "More and more students are leaving the dorms and they're all moving about here and there, but there's no prevailing direction to their movement. A few even acknowledge my presence, waving or smiling at me when I pass. I smile back and nod, but nothing much more than that."
-
-n "Either I'm missing something about campus culture, or being late for first period is standard around here."
-
-n "Actually, scratch that. It's probably just first day nerves on my part. The anxiety over getting to my first class on time is overbearing. Either way, I think I'd be better get moving. Wouldn't have anything to say to them anyway."
-
-#-# <Clock wipe to School_MainHall.png>
-stop ambience
-scene mainlobby with ImageDissolve("Transitions/clock.png", 1.0)
-#--#
-
-n "After deciding against eating in the crowded cafeteria and taking breakfast in the form of a vending machine cereal bar, I drift back into the lobby to see if I can remember the way to my form room."
-
-n "As I enter, I feel a surge of relief as I see a familiar face for the first time that morning – a tutor, Ms. Claes. It looks as though she's waiting for someone, standing amidst a gaggle of other students and looking around."
-
-n "Apparently she was waiting for me as when our eyes make contact she walks briskly in my direction, a stern expression on her face. The students instinctively part before her and merge back together in her wake. Surely I'm not already in trouble."
-
-#-# >Edna_P1_E2.png enters from left to middle left
-show claes P1_E2:
-  xalign 0.1 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.3 alpha 1.0
-show claes P1_E2 alpha 1.0
-#--#
-
-claes "\"Erik! I'm glad you found your way here. I wasn't sure if you'd have been shown the way to your dorm room, so I thought it best to wait for you here.\""
-
-n "It seems I'm not in trouble as I'd feared, despite her almost frightening expression and short, clipped manner of speech."
-
-erik "\"Oh, thank you, but you didn't have to. Ela showed me where it was yesterday.\""
-
-erik "\"Plus, I have a map.\""
-
-#-# >Edna_P1_E1.png
-show claes P1_E1
-with Dissolve(0.25)
-#--#
-
-n "She gives a curt nod and chimes her approval with a small 'hmm'."
-
-claes "\"Good, good. Glad to hear Ela did a good job of introducing you to the building. Shall we be off then?\""
-
-#-# >Claes exits to left
-show claes P1_E1:
-  easein 1.0 xalign 0.1 alpha 0.0
-#--#
-
-n "With only the most cursory pause for me to confirm, she's turned on her heel and started walking away as briskly as she approached. Apparently she still wants to walk me to my form room."
-
-#-# <Crossfade to School_Corridor1.png>
-scene PitchBlack
-with Dissolve(1)
-scene classroomhall
+scene cafeteriaoutside
 with Dissolve(2)
 #--#
-
-n "I hurry along, but her pace is faster than mine, forcing me to half-hop awkwardly to match her."
-
-#-# >Edna_P1_E2.png enters from left
-show claes P1_E2:
-  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.4 alpha 1.0
-show claes P1_E2 alpha 1.0
+#-# >>Cafeteria Background Sounds
+play ambience "music/effects/covfefeshop.ogg" fadein 3.0 loop
+$ renpy.music.set_volume(0.2, 0.0, "ambience")
+scene cafeteria
+with Dissolve(2)
+#--#
+#-# >>Music: Be Violet (1), Be Violet (2) playing underneath at 0 volume
+play music "music/Be Violet 1.mp3"
+$ renpy.music.set_volume(0.0, 0.0, "music2")
+play music2 "music/Be Violet 2.mp3"
 #--#
 
-n "Within a few seconds she glances around at me and seems to notice my struggling, her expression shifting to become more apologetic."
-
-#-# >Edna_P1_E1.png 2
-show claes P1_E1
-with Dissolve(0.25)
+n "The cafeteria's already half full by the time I make it. I don't even need to limp all the way inside to tell. You can hear the students inside talking right from the hallway. I'd hoped for some half empty table, but wherever I look, it's just people sitting and talking."
+n "Some converse over their food. Others are shouting jokes and insults to friends on the other side of the room. A few actually look like they've finished and just don't feel like getting up."
+n "A line of students holding out trays and clutching handfuls of plastic utensils stretches through the hall, all chattering excitedly at each other."
+n "Before coming here, I had this mental image of patients queuing up at an institution, lining up in their sterile gowns for the nurse to fill their little polystyrene cups with their ration of color-coded pills."
+n "I knew that it couldn't be that bad, but a part of me wouldn't believe that."
+n "I was afraid that coming here would bring it back up, but the reality just doesn't sustain it."
+n "That bleak fantasy demands an air of oppressive silence, but everyone here is so lively and active. It demands that it smell of antiseptic and bleach, but all I can make out is meat and pastries and sliced fruits."
+n "And that's great. That's better than great. It's reassuring. It's normal."
+n "So why do I feel like I just can't blend in?"
+#-# >>Music: Slow crossfade Be Violet (1) into Be Violet (2)
+stop music fadeout 5.0
+$ renpy.music.set_volume(1.0, 5.0, "music2")
 #--#
-
-n "She slows to a much more comfortable pace and I'm able to catch up and walk next to her instead of trailing behind."
-
-n "As we walk up a set of stairs I feel my palms start to sweat a little. I hadn't realised how nervous I was, but I honestly have no idea what to expect from this place."
-
-n "I don't know what's going to be expected of me when we reach the form room. Will I have to introduce myself? The sharp clack-clack of Ms. Claes' heels echo against the stone walls, for some reason bringing the ticking of a time bomb to my mind."
-
-#-# <Crossfade to School_Corridor2.png>
-scene PitchBlack
-with Dissolve(1)
+n "Everyone's just so busy doing things that they know how to do, talking to people they're already friends with. Everyone looks like they have such a clear direction, and I don't even know where to start."
+n "I'm not really 'with' these people. What if we talk and they don't like me? What if they make fun of my limp? Just because they are childish fears doesn't mean they don't matter."
+n "And it's not just that, too. They all look fine right now, but I can't just forget where I am. This place can't be just like any other school, by definition."
+n "The rules for fitting in here can't possibly be the same. What if I make some terrible faux-pas because I don't know how things work here and they take offense?"
+n "I stop a few paces past the door, before even taking my own tray."
+n "I don't need this headache right now. It's a little defeatist, but I genuinely think that at this point just getting some fresh air would be better."
+n "Vending machine food was good enough for me this morning; if it means not having to sit down in here, it's going to do just fine now."
+n "I didn't have much of an appetite, anyway. And I can always come back here once I've made myself a little more comfortable. I've got almost the entire year ahead of me. There'd be nothing to gain from forcing myself over ten more minutes."
+#-# <School Cafeteria (morning)> crossfade to <School Corridor (morning)>
+stop music fadeout 5.0
+scene cafeteria
+with Dissolve(2)
 scene classroomhall2
 with Dissolve(2)
 #--#
-
-#-# >Edna_P1_E1.png enters from left
-show claes P1_E2:
-  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.4 alpha 1.0
-show claes P1_E2 alpha 1.0
+n "There's a sitting area next to the cafeteria, complete with benches and a vending machine. A few students are gathered around it, but they seem to be going through pretty quickly. I pull out my wallet and get in line, hoping no one will try to talk to me."
+n "Thankfully, most just take their sandwiches and leave rather than lingering around. Soon, the corridor is left blissfully silent and the only person besides me is the tall, blonde girl in front of me in line."
+n "She hums softly to herself as she approaches the machine. Thinking about it now, maybe she has been for a while, and it was just hard to hear because of everyone else. It's not something you normally notice, but crazy as it sounds, she hums... {i}really{/i} well."
+n "The tune is clear, yet complex enough to catch the ear. The high and low notes mix so seamlessly you barely notice them shifting. I've heard people singing on purpose and not sounding so good."
+n "I lift my eyes to her in time to see her reaching down for her purse, but before she can pull out any change, she instead stops humming and turns around to face me."
+#-# >Katja_P5_E1 enter from right to center (named "Humming Girl")
+show katja U_P1_E5:
+  xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.55 alpha 1.0
+show katja U_P1_E5 alpha 1.0
 #--#
-
-n "As we reach the top of the stairs and enter another corridor, rather more clinical than the last, she seems to pick up on my nerves, cocking her head as she looks at me. Her expression softens somewhat."
-
-claes "\"Nervous?\""
-
-n "Despite her apparent concern, her voice remains quite harsh. I suppose I can forgive her; I wouldn't know how to behave in her shoes."
-
-erik "\"Honestly, yeah.\""
-
-claes "\"That's perfectly understandable. It's completely natural to feel nervous in new situations.\""
-
-n "I can tell Ms. Claes is genuinely trying to reassure me but she isn't very good at it; it comes off feeling sort of forced and awkward."
-
-claes "\"Especially in circumstances like these.\""
-
-n "Yeah. No kidding."
-
-claes "\"But I assure you, you really have nothing to worry about.\""
-
-#-# >Edna_P1_E5.png
-show claes P1_E5
+n "What draws my attention, though, is her eyes. Or rather, eye."
+n "I can see she has one, the left."
+n "Piercing, golden brown, expertly made-up. Long, mascaraed lashes."
+n "By contrast, if she even still has it, her right one is covered with a large, sterile medical bandage."
+n "Call it stupid, but my first instinct is to point it out somehow. Maybe ask her if she's okay."
+n "Because, you know. She's got a bandage over her right eye. What if she hadn't noticed?"
+n "Luckily, I think better of it before I can open my mouth."
+#-# >>Music: Slow Fade into Katja's Theme (Susanne's, currently WIP). Placeholder: Be Blue
+stop music2 fadeout 5.0
+play music "music/Be_Blue.mp3" fadein 5.0 loop
+#--#
+humminggirl "\"Would you like to go before me?\""
+erik "\"...?\""
+n "Is she talking to me?"
+n "She's looking right at me. All signs do seem to be pointing towards that being the case."
+erik "\"N-no, it's alright. You go ahead.\""
+humminggirl "\"Please, I insist. It is no trouble.\""
+#-# >Katja moves right
+show katja U_P5_E1:
+  easein 1.0 xalign 0.7
+#--#
+#-# >Katja_P1_E1
+show katja U_P1_E1
 with Dissolve(0.25)
 #--#
-
-n "Ms. Claes stops in front of a door and turns to me. Apparently, this is my form room. She glances at the door, then at me. To my surprise, she actually gives me a small smile - I wasn't sure if this would be something she was capable of at all."
-
-claes "\"I'm just going to ask you to introduce yourself to the class, then you can take a seat.\""
-
-n "Of course, there it is. I have to introduce myself. Suck it up, Erik, you've done stuff like this before."
-
-erik "\"Yep.\""
-
-#-# >Claes exits to right
-show claes P1_E1:
-  easein 1.0 xalign 0.6 alpha 0.0
+n "She steps aside and keeps quietly looking at me, motioning with a hand towards her place."
+n "Even when not humming, her voice has a clear, musical quality."
+n "I'm not sure if she's making fun of me or if she's just being polite, but I'm not going to look a gift horse in the mouth."
+n "Or potentially set off a crazy person."
+#-# >Katja exit to right
+show katja U_P5_E1:
+  easein 1.0 xalign 1.0 alpha 0.0
 #--#
+n "Moving forward, I pick a different kind of sandwich from yesterday and a bottle of lemonade to wash it down with before sitting down on a nearby bench."
+n "I set aside the bottle and bite into my sandwich, but as soon as I've started to enjoy it, I'm interrupted by the girl."
+#-# >>Stop Cafeteria Background Sounds
+stop ambience
+#--#
+#-# > Katja_P5_E2a enters from left to center
+show katja U_P5_E2a:
+  xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.55 alpha 1.0
+show katja U_P5_E2a alpha 1.0
+#--#
+humminggirl "\"Excuse me, would you mind it if I sat here with you?\""
+n "Looking up, I see her standing right near the bench in front of me, daintily gesturing towards it as if intending to illustrate the concept of sitting."
+n "Mouth too full to do much but mumble, I make with an indifferent shrug."
+n "She nods, then sets her purse slowly on the bench and sits down."
+#-# > Katja_P2_E2
+show katja U_P2_E2
+with Dissolve(0.25)
+#--#
+n "Her smile is refreshingly friendly, after what happened in class. I try to force myself to focus on it, rather than how creepy her one good eye looks as it moves up and down to examine me."
+n "I get so absorbed in following her brown iris spinning about, I think that by the time I've noticed her talking to me she's already had to repeat herself once."
+erik "\"Uh... what?\""
+humminggirl "\"That sandwich.\""
+n "She speaks in a patient, measured tone."
+humminggirl "\"Why did you choose it?\""
+#-# >Katja_P5_E2b (smile)
+show katja U_P5_E2b
+with Dissolve(0.25)
+#--#
+humminggirl "\"That machine offers several kinds of sandwiches. Why did you pick this one?\""
+n "What an odd question."
+n "I guess I could just not answer, but she looks perfectly serious. Besides, she did move aside for me in line. It'd be rude to stay silent now that I've made it clear I did hear her."
+erik "\"Let's see...\""
+erik "\"I didn't have anything last night, and all I had for breakfast was a cereal bar.\""
+erik "\"I don't know. I was hungry, it felt like a good choice.\""
+erik "\"I mean, it's a sandwich, right? How bad could it be? Hard to screw something like that up.\""
+humminggirl "\"I see. Do you like it, then?\""
+erik "\"Eh, sure. It's... egg or something, I think. Got some vegetables in it. Definitely beats having nothing.\""
+"{color=#FF8c00}>Katja_P5_E2a{/color}"
+humminggirl "\"Hunger is the best sauce in the world, isn't it?\""
+erik "\"Yeah. Didn't even realize how hungry I was until now.\""
+"{color=#FF8c00}>Katja_P1_E2b{/color}"
+humminggirl "\"Don't we wish you had a cent for every time that happened?\""
+humminggirl "\"One moment you're having an interesting thought, and the next time you look at the clock, you've already missed dinner.\""
+erik "\"Sorta. I just wish it'd been an interesting thought, rather than just... I don't know. Not feeling like it, or whatever.\""
+n "I take another, experimental bite to see if she'd object, and she doesn't. Her eye keeps following me, though, turning silently under the lid while the girl sits in silence."
+n "Did I do something wrong? Did I give a wrong answer?"
+erik "\"Uh... Not to sound rude or anything, but why exactly did you ask me that? You know... just so we're all, uh, clear about that.\""
+#-# >Katja_P1_E8a (smirk)
+show katja U_P1_E8a
+with Dissolve(0.25)
+#--#
+n "Her lips stretch into a coy smile."
+humminggirl "\"Protocol.\""
+n "I put down my sandwich and swallow, waiting for her to elaborate, but she doesn't say anything more."
+n "Back home, I'd have immediately dismissed that reaction as her being obnoxious. I don't know anyone our age who uses that word unironically, and smirking like that just feels like she's trying to act mysterious."
+n "Here, though, there's always the chance that she's serious about it and I'll come off as a world-class douchebag for calling her out."
+n "Besides... There's something about her delivery. It doesn't feel ironic. It doesn't feel like \"acting\", either. It's feels every bit as sincere as her previous sentence."
+n "Until I'm sure, I'm going to give her the benefit of the doubt."
+erik "\"...I'm not sure I understand. You'd have to forgive me, I...\""
+erik "\"The truth is I'm really new here. Like, I only arrived last night. This is my first day around. I don't really know how this works.\""
+n "She puts the back of her hand to her mouth to stifle a giggle. I think I can make out a flash of gauze on her wrist when her sleeve flits. I hope it was just my imagination."
+"{color=#FF8c00}>Katja_P1_E3b{/color}"
+humminggirl "\"Well, I wouldn't go so far as to say that I {i}have{/i} to forgive you...\""
+humminggirl "\"But given your circumstances, and seeing as you haven't done anything wrong that I know... Fine.\""
+humminggirl "\"I forgive you.\""
+#-# >Katja_P1_E2b 2
+show katja U_P1_E2b
+with Dissolve(0.25)
 
-n "With nothing but another terse nod as acknowledgement she opens the door and steps inside. I only notice the noise that had been coming from the classroom in its absence as it dies down almost immediately. I stare at the doorway."
+>Katja_P1_E2b 2
+show katja U_P1_E2b
+with Dissolve(0.25)
+#--#
+erik "\"Gee. Thanks.\""
+n "From her smile, you'd almost think she was going to answer \"you're welcome.\""
+#-# >Katja_P1_E2a
+show katja U_P1_E2a
+with Dissolve(0.25)
 
-n "Now or never."
-
-n "I take a deep breath in a failed attempt to steady my nerves and follow the teacher inside, where she's already begun to address the class."
-
-#-# <Crossfade to School_Classroom1_NOPAN.png>
-scene PitchBlack
-with Dissolve(1)
-scene classroom1
+>Katja_P1_E2a
+show katja U_P1_E2a
+with Dissolve(0.25)
+#--#
+n "Before I can make up my mind on whether to roll my eyes or politely laugh at her joke, the girl's expression softens."
+n "When she next speaks, it's with a warm, motherly tone."
+humminggirl "\"Are you not comfortable eating with all of the others?\""
+erik "\"...It sounds stupid when you say it like that.\""
+humminggirl "\"Does it? I apologize, then. That wasn't my intention.\""
+humminggirl "\"I was there before. I hope that you realize that.\""
+humming "\"Everything made me nervous. Nothing anyone said cheered me up.\""
+humming "\"I felt sick of being told that everyone's been there at some point. It made me feel like I've missed something everyone else figured out.\""
+erik "\"Then why does everyone keep saying that all the time? What's the point? Everyone says that they've \"been there\", so how come they don't get it doesn't work? It never – it doesn't make me feel {i}any{/i} better.\""
+n "The girl nods matter-of-factly."
+humminggirl "\"It almost never does.\""
+#-# >Katja_P1_E2b 3
+show katja U_P1_E2b
+with Dissolve(0.25)
+#--#
+humminggirl "\"It is simply a true statement. I think there's a value in that.\""
+humming "\"Knowing that other people were nervous at first doesn't mean it's a fine thing to be. It means that you aren't any worse than them because of it. You {i}haven't{/i} missed out anything that they didn't in your place. At least not in that regard.\""
+humminggirl "\"How {i}that{/i} makes you feel is an entirely different question.\""
+erik "\"...Maybe it is. I know it's just a matter of time, or whatever, it's just...\""
+erik "\"Look, I don't want to talk about this. I don't even know what's the problem. Maybe I'm just tired. Woke up a bit earlier than I'm used to, and now it's like that morning daze just wouldn't pass.\""
+"{color=#FF8c00}>Katja_P5_E2b{/color}"
+humminggirl "\"The next time that happens, try going for a walk. It might help to get your blood running. That's what I do when I wake up too early.\""
+erik "\"Um... okay. Thanks, I guess.\""
+n "I'm torn between looking back at her and looking away. I know  or at least, I hope that she did mean to, but I really do feel stupid right now. It's weird, but I can't tell if I'm glad or embarrassed."
+n "Just as I resolve to pathetically gaze at my sandwich, the blonde girl talks."
+humminggirl "\"It isn't as silly as you might be thinking right now. I won't claim to know what your troubles are, and it isn't my place to ask.\""
+humminggirl "\"Remember, though, that whatever they might be, you probably aren't the first here to have had them.\""
+humminggirl "\"We all develop our small ways of coping. Even if all that means is eating the occasional meal outside the cafeteria.\""
+"{color=#FF8c00}>Katja_P2_E2{/color}"
+humminggirl "\"I'm here for a similar reason, in fact. I'll admit - I don't usually like to eat by myself, but every once in a while, even I feel like having some space.\""
+erik "\"Would you rather I go?\""
+n "She shakes her head lightly, motioning with her hand for me to remain seated down."
+humminggirl "\"No, but it's sweet that you ask. I was the one who started this talk, wasn't I?\""
+humminggirl "\"It's not every day that you happen to meet a new student.\""
+#-# >>Initiate Glorious Katja CG (Katja's Curtsy)
+show CG04 at Pan((0, 900), (0, 0), 18.0)
 with Dissolve(2)
 #--#
-#-# >Music fades out and stops
-stop music fadeout 5.0
-#--#
-#-# >Sound effects: Ambient crowd noise, no chatter. Occasional clearing of throats and coughs.
-play ambience "music/effects/muffledchatter.ogg" loop fadein 3.0
-#--#
-
-claes "\"Simmer down everyone, simmer down. I'd like you all to give a warm welcome to Erik Wilhelm. He'll be joining our class today.\""
-
-n "I can't help but be aware of the faces staring in my direction. As Ela said, the class is small – only a dozen or so students – yet I can't help but feel intimidated."
-
-n "Though most of them seem vacant, or indifferent, I can't help but assume they're all wondering the same thing."
-
-n "\"Why are {i}you{/i} here? What's wrong with {i}you?{/i}\""
-
-n "And as I look around the class, I find myself wondering the same thing about them."
-
-n "A sudden tap-tap sound drags me back to reality and I realise I've been spacing out here, at the front of the class, gawking at nothing. I turn to see Ms. Claes tapping her foot impatiently."
-
-n "Now that she has my attention, she clears her throat before continuing."
-
-claes "\"Erik, why don't you introduce yourself to the class briefly?\""
-
-n "My brain frantically searches for anything interesting to say. Why didn't I think of something when she told me the first time?"
-
-n "But nope. I got nothing."
-
-n "I hear someone snicker quietly, but then I catch a glimpse of Ela, who gives me a small smile and a double thumbs-up."
-
-n "I decide to open my mouth and let it do the talking, without engaging my brain at all."
-
-#-# <Crossfade to Erik Introduction CG>
-show CGErik
-with Dissolve (2.0)
-#--#
-
-erik "\"Uh, hi. I'm Erik.\""
-
-n "A short pause. Apparently that's all my mouth's giving me. Great start."
-
-n "Think, you moron."
-
-erik "\"I, uh, I used to like hiking. And other things.\""
-
-n "Insightful. This is probably the part where I impress them with some cool trivia I've gleaned from my years in the mountains to show off my experience, but the words fail to come and the nerves continue to tangle."
-
-n "Besides, the barely-hidden disinterest in their faces tell me they're not the type to care to learn, for instance, that the closest place is to space on Earth is not Mt. Everest, but Mt. Chimborazo in Ecuador."
-
-erik "\"And I just started here. Uh, today.\""
-
-n "Jesus Christ, man."
-
-erik "\"So hello.\""
-
-n "Yep, that's done it. I'm a laughing stock. Surely I will never be one of the cool kids after that."
-
-n "Thankfully, though, no one seems to care any more at the end of it than they did it at the beginning. It might be that in a few years I could maybe, possibly, begin to forget that ever happened."
-
-claes "\"Thank you, Erik. Now, if you would please take your seat we'll get on with the day.\""
-
-#-# <Crossfade to School_Classroom1_NOPAN.png>d
-hide CGErik
-with Dissolve (2.0)
-#--#
-
-n "She indicates a seat at the far right of the classroom. I consider taking the desk next to the one she indicated - it's empty and is right next to a window. Imagine how asocial I could be!"
-
-n "Instead, though, I resolve to be just a little more social and position myself further towards the centre of the class, at the adjacent desk."
-
-n "I hurry over, attempting to make myself as small as possible – though I realise after the fact that this combined with my slight limp gave me the appearance of some sort of hunched-over, and very conspicuous, goblin person."
-
-#-# >Ambient noise builds back to more regular classroom chatter
-# todo no different yet
-#--#
-
-#-# >Music: A Busier Sort of Day
-play music "music/A Busier Sort of Day (Based on St. Paul's Suite by Gustav Holst).mp3" loop
-#--#
-
-n "I take my seat as Ms. Claes begins rattling off the morning's announcements. She seems to give it only the most perfunctory attention and most students are either idly chatting, fidgeting or simply not paying attention. Everybody seems to have completely lost interest in me already. Am I okay with this? I'm not sure."
-
-#-# >Class bell
-play sound "music/effects/schoolbell.ogg"
-#--#
-
-n "Before I've built up the courage to introduce myself to some of the students around me, though, the bell's already ringing for the next period. Most of the students around me, and all those directly adjacent to my desk, get up to move off to their next lesson. I remain where I am though – I have maths with Ms. Claes."
-
-n "The classroom quickly fills up with other students again. This time, it looks like the desk next to mine by the window might be occupied; a girl enters the classroom and makes a beeline right for it."
-
-#-# >Annaliese_UniformBuds_P2_E1.png enters from left to middle right
-show anna U_B_P2_E1:
-  xalign 0.5 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.7 alpha 1.0
-show anna U_B_P2_E1 alpha 1.0
-#--#
-
-#-# >Annaliese_UniformBuds_P2_E7.png
-show anna U_B_P2_E7
-with Dissolve(0.25)
-#--#
-
-n "As she notices me, she falters, visibly shocked. It seems my new and unexpected presence might not be entirely welcome."
-
-#-# >Annaliese_UniformBuds_P2_E1.png
-show anna U_B_P2_E1
-with Dissolve(0.25)
-#--#
-
-n "She regains her composure quickly, though, fixing back her resolutely neutral expression and taking her seat by the window without saying a word to me or, aside from the slight hesitation, acknowledging my existence at all."
-
-n "The first thing that catches my eye about her is how little she catches my eye. Sitting still and staring out the window, oblivious to the rest of the class, wearing a hoodie rather than the standard blazer everyone else seems to wear. I wonder how she gets away with that?"
-
-n "Despite being out of uniform, she almost blends into the wall. If she hadn't sat next to me, I doubt I would have noticed her at all."
-
-n "She hasn't looked my way at all and the fancy-looking metallic earbuds in her ears make trying a verbal introduction seem foolish."
-
-n "I'm not sure why I'm focussing on this girl over any of the other students in the class. Maybe her inconspicuousness makes her somehow more conspicuous?"
-
-#-# >Annaliese exits to right
-show anna U_B_P2_E1:
-  easein 1.0 xalign 0.9 alpha 0.0
-#--#
-
-#-# >Edna_P1_E2.png enter from left to middle left
-show claes P1_E2:
-  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.4 alpha 1.0
-show claes P1_E2 alpha 1.0
-#--#
-
-n "Ms. Claes taps the whiteboard and clears her throat for the class's attention."
-
-claes "\"Okay, so today we'll be reviewing the material we covered in the previous lesson. These worksheets...\""
-
-n "She brandishes a sheaf of papers."
-
-claes "\"... comprise a thorough test of it all. To be finished by the end of the lesson, please.\""
-
-n "As she starts handing them down the class, she looks at me, an expression of realisation on her face."
-
-#-# >Edna_P1_E1.png 3
-show claes P1_E1
-with Dissolve(0.25)
-#--#
-
-claes "\"Ah, Erik, of course, you won't know what we covered last time. Would you like to partner up with someone? Take your pick, I imagine it would be good to get to know some of your fellows.\""
-
-n "I'm not sure what to say except 'Sure', which I do, sheepishly."
-
-#-# >Edna exits to left
-show claes P1_E1:
-  easein 1.0 xalign 0.2 alpha 0.0
-#--#
-
-n "Scanning the material on the sheet Ms. Claes has placed in front of me, it doesn't seem to be too challenging. Maths isn't exactly my forté, but this is relatively simple stuff. I might have missed the previous lesson but it's nothing I couldn't handle on my own."
-
-n "Still, it wouldn't hurt to partner up, introduce myself, socialize a little bit. That would be the normal thing to do. Well, who knows what's normal here? Might as well try, though."
-
-#-# >Annaliese_UniformBuds_P2_E1.png enters from right to middle right
-show anna U_B_P2_E1:
-  xalign 0.8 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.6 alpha 1.0
-show anna U_B_P2_E1 alpha 1.0
-#--#
-
-#-# >CG in
-# done below
-#--#
-#-# >CG_03_E1.png
-show CG03E1
-with Dissolve (1.0)
-#--#
-
-n "The girl next to me is still staring out the window, the muffled and tinny beat from her headphones bleeding into the room around her, barely audible to me over the noise of the class. Presumably in time with the music she's listening to, her fingers are drumming out a beat on the desk in front of her."
-
-n "Actually, it looks more like someone playing an imaginary piano than imaginary drums. Her fingers appear spider-like, splayed across the desk."
-
-n "If wonder if she's aware that she's doing that. She must be really into whatever she's listening to."
-
-n "In my distraction, it seems like everyone else in the class has already partnered up or started the work themselves, leaving this girl as my only choice. Working with someone who seems so strongly not to want to be noticed probably isn't a good idea, and I'm sure I could take care of the relatively simple-looking worksheet by myself, but Ms. Claes did seem very keen for me to work with a partner."
-
-n "I wonder if she'll even hear me if I talk to her."
-
-erik "\"Hello.\""
-
-n "You have to start with hello."
-
-#-# >CG_03_E2.png
-show CG03E2
-with Dissolve (0.25)
-hide CG03E1
-#--#
-
-n "She turns her head in my direction though still doesn't face me properly, instead focussing on some spot on the wall behind me. It's not much, but at least she's noticed my presence and is no longer gazing absentmindedly out the window."
-
-n "I can already feel that this is going to be difficult."
-
-erik "\"I'm Erik.\""
-
-n "In a daring move, I stretch out a hand in introduction."
-
-#-# >CG_03_E3.png
-show CG03E3
-with Dissolve (0.25)
-hide CG03E2
-#--#
-#-# >Music stops
-stop music fadeout 5.0
-#--#
-#-# >Ambient crowd noise
-play ambience "music/effects/muffledchatter.ogg" fadein 3.0 loop
-#--#
-
-n "The look of confusion and surprise on her face is almost pitiful. The girl looks worried and shocked beyond belief, turning away from me again"
-
-n "Is this some great unforgivable faux-pas I was unaware of?"
-
-#-# >Ambient crowd noise stops
-stop ambience fadeout 3.0
-#--#
-#-# >Music: St. D's Ghost
-play music "music/St. D_s Ghost.mp3" loop
-#--#
-#-# >CG_03_E4.png
-show CG03E4
-with Dissolve (0.25)
-hide CG03E3
-#--#
-
-n "I am about to withdraw my hand and apologise when she gingerly grabs it through her sleeve. She shakes my hand with just her thumb and her index finger so delicately that if I hadn't watched it happen I might not have noticed, before abruptly dropping it and withdrawing."
-
-#-# >Annaliese_UniformBuds_P2_E6.png
-# skip
-#--#
-
-n "Somehow she looks more surprised than before. Her eyebrows look like they're just about ready to fly off her face and she stares at her own hand as if it had committed some foul act of betrayal. Aside from in that one brief moment of shock, she still hasn't looked me in the eye."
-
-n "I feel pretty bad for worrying her and try to think of a way to move the conversation past this."
-
-erik "\"Nice headphones.\""
-
-#-# >CG_03_E5.png
-show CG03E5
-with Dissolve (0.25)
-hide CG03E4
-#--#
-
-n "Clearly noticing my attempt to move past my initial, horrific mistake, she turns in my direction again and smiles slightly haltingly, looking only a little less hesitant than before – but this time definitely and deliberately looking me in the eye."
-
-n "Once again I notice the music faintly leaking out. It may be just that it's very faint, but I don't recognise it at all."
-
-erik "\"What are you listening to?\""
-
-#-# >Annaliese_UniformBuds_P1_E3.png
-hide CG03E5
-with Dissolve (1.0)
-show anna U_P1_E3
-#--#
-
-#-# >CG Out with fade
-# todo done above?
-#--#
-
-n "She shrugs, and looks thoughtful for a moment."
-
-#-# >Annaliese_UniformNobuds_P1_E5.png
-show anna U_P1_E5
-with Dissolve(0.25)
-#--#
-
-n "Sliding her headphones out of her ears, she moves to get something out of her bag."
-
-n "Maybe it's time to give up. If she really isn't going to communicate with me –"
-
-#-# >Annaliese_UniformNobuds_P1_E1.png
-show anna U_P1_E1
-with Dissolve(0.25)
-#--#
-
-n "But then, from her bag, she pulls out the smartphone her headphones are connected to and shows me the screen. A music player open, I catch a glimpse of what she's listening to. I've never heard of the artist, and the album art – a photo of a couple of people sitting on a cliff by the sea – doesn't give anything away about the type of music."
-
-erik "\"Oh. Cool. Uh...\""
-
-#-# >Annaliese_UniformNobuds_P1_E3.png
-show anna U_P1_E3
-with Dissolve(0.25)
-#--#
-
-n "What do you say in this situation? It's not like I'm going to get a response if I ask what kind of music it is."
-
-erik "\"... Do you like it?\""
-
-#-# >Annaliese_UniformNobuds_P1_E2.png
-show anna U_P1_E2
-with Dissolve(0.25)
-#--#
-
-n "Clearly, judging from her expression she understands the problem in communication as well. Nonetheless, her only response is to nod once and smile almost imperceptibly."
-
-n "Being unable to think of anywhere else to take the conversation, I change tack and tap the worksheet on my desk with a pencil."
-
-erik "\"You want to work on these together?\""
-
-#-# >Annaliese_UniformNobuds_P1_E1.png 2
-show anna U_P1_E1
-with Dissolve(0.25)
-#--#
-
-n "She nods again. She seems to be getting over the initial shock of me talking to her, but anything else about her is difficult to gauge."
-
-n "I'm not exactly sure how we're going to work on these together, seeing as she's apparently incapable of speech."
-
-erik "\"Alright, let's divide up the work I suppose. I do odd numbered questions, you do evens?\""
-
-#-# >Annaliese_UniformNobuds_P2_E1.png
-show anna U_P2_E1
-with Dissolve(0.25)
-#--#
-
-n "Without a word she nods one final time, takes a copy of the sheet from me, scans the second question for only a few seconds and starts scribbling nonchalantly on a page from her workbook. Doesn't exactly look like she's writing – her hand movements are weirdly erratic – but who am I to say?"
-
-n "Seems like she's glad to have an excuse not to interact any more."
-
-erik "\"Okay then...\""
-
-#-# >Annaliese_UniformNobuds_P2_E1.png exits to right
-show anna U_P2_E1:
-  easein 1.0 xalign 0.8 alpha 0.0
-#--#
-
-n "I sigh and settle down to my work, with only the occasional glance at the strange girl sitting next to me."
-
-#-# <timelapse>
-scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
-$ renpy.pause(1.0)
-scene classroom1 with ImageDissolve("Transitions/clock.png", 1.0)
-#--#
-
-n "A quarter of an hour later, as I'm in the middle of my work a sheet of paper falls unceremoniously onto my desk."
-
-#-# >Annaliese_UniformBuds_P2_E1.png enters from right to middle right 2
-show anna U_B_P2_E1:
-  xalign 0.9 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.7 alpha 1.0
-show anna U_B_P2_E1 alpha 1.0
-#--#
-
-n "I look at my mysterious neighbour who is already staring out the window once more, headphones back in her ears. I take a look at her worksheet."
-
-n "The edges of the paper are covered in small doodles and scribblings. Apparently that's how this girl works. Nevertheless, she has managed to finish all of the even-numbered questions."
-
-n "And here I thought she wasn't doing any work."
-
-n "I finish off quickly and pass my answers to her."
-
-#-# >Annaliese_UniformBuds_P2_E3.png
-show anna U_B_P2_E3
-with Dissolve(0.25)
-#--#
-
-erik "Sorry, I don't know if it's all right. Seemed simple enough though."
-
-#-# >Annaliese_UniformBuds_P1_E4.png
-show anna U_B_P1_E4
-with Dissolve(0.25)
-#--#
-
-n "Without even acknowledging me, she turns to her desk and starts writing again. After a minute of copying down my answers she stands up, walks up to the front of the class and hands Ms. Claes our work."
-
-#-# >Anna out
+n "With a long, graceful step, she stands up in front of me."
+humminggirl "\"My name is Katja Böhm, from Mr. Rosenstein's class.\""
+#-# >>From now own, the textbox shall refer to the Humming Girl as Katja
 #
 #--#
-
-n "Once Ms. Claes has thanked her she seems to hesitate, glancing furtively in the direction of my desk. I feel like I shouldn't be watching her so I look out of the window instead, but keep her in my peripheral vision."
-
-n "After a few seconds of consideration, she seems to come to a decision. She heads back over to her desk and sits down again."
-
-#-# >Annaliese_UniformBuds_P1_E4.png moves from middle left to middle right
-show anna U_B_P1_E4:
-  easein 2.0 xalign 0.55 alpha 1.0
+katja "\"You may call me Katja, if you wish.\""
+katja "\"I'm originally from Linz, Austria, though I've been living in Vienna for the past few years now.\""
+katja "\"I'm sure that you've already been given the customary tour, but nevertheless, allow me the honor of welcoming you to our school.\""
+katja "\"I hope your stay will be pleasant and beneficial.\""
+n "She adds a little flourish of her hand and a bow, and by now I honestly can't tell if she's serious."
+n "Her smile looks like something from a poster. Even the way the light reflects off her lipstick looks like art."
+n "Even and inscrutable. Teasing? Humorous?"
+n "Will she start laughing soon? Or is that just a thing they do in Austria?"
+n "I try to remember if anyone introduced themselves like that outside the school. How awkward would it be to find out this is actually normal, and all this time I've been the one who was being impolite?"
+n "That can't be the case, right? Someone would've definitely said something."
+n "This is just... Katja's thing."
+n "Her unusual, anachronistic, incredibly striking {i}thing{/i}."
+n "I think I'd put her somewhere between Ela and Irene on the weirdness scale."
+n "Leaning heavily towards the first. I mean, she is being polite."
+n "And I can't complain about the view, either."
+n "Wait... Is that intentional?"
+n "I mean, I am staring pretty hard here. Should I be staring this hard? She {i}has{/i} to know how this looks like, right? She wouldn't be doing this otherwise, right?"
+n "Am I being a huge creep now? This is like puberty all over again."
+n "Not cool, Erik. Women are not for staring. Abort! Abort!"
+n "Just as I begin averting my eyes, she sits back down like nothing's happened. The whole ordeal couldn't have lasted longer than five seconds, but man, did that feel like it."
+#-# >>End glorious CG
+hide CG04
 #--#
-
-#-# >Annaliese_UniformBuds_P2_E6.png 2
-show anna U_B_P2_E6
+#-# >Katja_P1_E2a 2
+show katja U_P1_E2a
 with Dissolve(0.25)
 #--#
-
-n "She takes a deep breath and glances at me once again – though I don't think she knows I can see her as I'm doing a good job of keeping her exclusively out of my direct line of sight."
-
-n "After another few seconds that feel strangely tense, she exhales, shakes her head, grabs her bag and exits swiftly."
-
-#-# >Annaliese out
-show anna U_B_P2_E6:
-  easein 1.0 xalign 0.75 alpha 0.0
+erik "\"Wow. Umm... thanks.\""
+erik "\"Hmm...\""
+erik "\"My name's Erik Wilhelm, and... I guess you can call me Erik?\""
+n "I'm not sure why she added that part, but whether that's just standard \"protocol\" or Katja's own idea of manners, I don't see a reason not follow."
+erik "\"I'm from Ms. Claes' class, and...\""
+erik "\"I'm originally from Basel, Switzerland. The city, not the canton.\""
+n "She nods carefully, looking far more interested than I'd have thought anyone should be."
+"{color=#FF8c00}>Katja_P1_E5{/color}"
+katja "\"I thought one was inside the other.\""
+erik "\"Well, yes, but not everyone knows that and it can be confusing. Also, the second's technically called Basel-Stadt, if you care about it.\""
+"{color=#FF8c00}>Katja_P1_E8a{/color}"
+katja "\"So much as you do. I do admire specificity.\""
+n "When I don't respond, she straightens up in her seat and gives another short, dignified bow."
+"{color=#FF8c00}>Katja_P1_E2b{/color}"
+katja "\"It's a pleasure to meet you, Erik.\""
+n "I thank her, and then the air grows silent. Neither of us says a word."
+erik "\"Just, for the record, you know. I don't normally eat vending machine sandwiches either.\""
+#-# >Katja_P1_E8b
+show katja U_P1_E8b
+with Dissolve(0.25)
 #--#
+katja "\"I'd never have thought to imply that.\""
+erik "\"Yeah. I mean, it's not like it's disgusting or anything, but it's sort of bland, right?\""
+#-# >Katja_P1_E2a 3
+show katja U_P1_E2a
+with Dissolve(0.25)
+#--#
+katja "\"That is true. As you said yourself, though, there's a reason you've chosen to.\""
+erik "\"Because it's lunchtime and that's just what was here?\""
+n "Katja snickers. It's a beautiful, ringing sound."
+katja "\"Precisely. I can empathise with that choice.\""
+erik "\"... The choice to go with whatever's in front of you?\""
+katja "\"The choice to eat for its own sake when you know you couldn't enjoy it. I don't think that there's anything shameful about it. If anything, I think it's wise.\""
+katja "\"It wouldn't do you good not to eat, and it would've have felt wasteful to me to eat something I might've enjoyed when my mind wasn't really on it. It might've just made me feel worse.\""
+n "I take one more peek at my sandwich to make sure it hasn't turned into something profound while I wasn't looking."
+n "Should I feel more offended or more complimented that Katja's giving my judgment that much credit? None of what she's saying is {i}wrong{/i}, but it's still not the kind of thing you normally actually {i}think{/i} of."
+n "Unless, that is, the thought to eat when you're hungry doesn't just come to you naturally. But I probably really shouldn't be going that way."
+n "Frankly, I'm not really sure where to go from here. What is with this girl?"
+#-# >>pause
+$ renpy.pause (2.0)
+#--#
+n "This is just getting silly. If I'm not eating, I might as well ask a question that's been bothering me."
+erik "\"Can I ask something?\""
+#-# >Katja_P1_E3a
+show katja U_P1_E3a
+with Dissolve(0.25)
+#--#
+katja "\"Feel free to. I might even answer.\""
+#-# >Katja_P5_E2a 2
+show katja U_P5_E2a
+with Dissolve(0.25)
+#--#
+erik "\"Huh. Good to know I got nothing to lose, then\""
+erik "\"Why that last part of the introduction? With the cities and countries, and all that? It sounds like it's something formal. Do they just do that in Austria in general, or just here?\""
+katja "\"Once again, protocol. This is, as Mr. Bosworth likes to brag so much, a rather multinational institution.\""
+katja "\"It's a friendly way of finding out what languages a new student speaks. People default to English because it's the most common teaching language, but since very few come here from the Anglosphere, that tends to just make both sides equally uncomfortable.\""
+katja "\"If you find out you have a shared language, it becomes far easier to have a conversation. Aside from that, sometimes it puts new students at ease.\""
+katja "\"It doesn't happen every time, but a lot that I've met who were not comfortable talking about nearly anything else were eager to bring up a familiar subject, like their hometown.\""
+#-# >Katja_P5_E2b 2
+show katja U_P5_E2b
+with Dissolve(0.25)
 
+>Katja_P5_E2b 2
+show katja U_P5_E2b
+with Dissolve(0.25)
+#--#
+katja "\"They get to talk about something they're confident in, I know whether we have a shared language, and every once in a while, I learn something. Not a bad deal, if you ask me.\""
+katja "\"I'm assuming you speak native German? I know I'd be more comfortable if I were speaking my native language.\""
+n "I nod, vaguely aware that the sandwich in my hand is still not even half eaten."
+erik "\"Yeah. Basel-Stadt's right across the Rhine from Germany, so that's what we speak. Is it unusual?\""
+katja "\"Ganz und gar nicht.\""
+n "I sit dumbfounded for what feels like far too long while my brain switches gears back to German."
+n "Either Katja hasn't noticed, or she doesn't mind. Her German is as rapid and precise as her English before."
+n "All in all, I suppose that's a good thing."
+katja "\"Most students are still from around Austria, and those that aren't do tend to speak German, with the exception of a significant French minority. As I said, though, it can lead to trouble on those cases they're not.\""
+n "Sounds simple enough. I should probably remember that for the next time I run into someone."
+erik "\"Hey, it's not all that bad, right? Encouraging a little multilingualism, and all that.\""
+"{color=#FF8c00}>Katja_P5_E2b{/color}"
+katja "\"That does make you sound very Swiss.\""
+erik "\"No, I'm serious. They say there are proven benefits in child development.\""
+erik "\"I think.\""
+"{color=#FF8c00}>Katja_P5_E5{/color}"
+n "She rests back in seat with an intrigued expression."
+katja "\"Is that so? Do you think they tried that research on high-schoolers?\""
+erik "\"Well... no. I think it mostly just applies to young children.\""
+erik "\"But, like... you know. I'm cool with that.\""
+#-# >Katja_P5_E8b
+show katja U_P5_E8b
+with Dissolve(0.25)
+#--#
+katja "\"Young children?\""
+erik "\"Multilingualism.\""
+n "She lets out a quiet laugh, crossing her arms and absentmindedly letting her gaze wander up the corridor."
+"{color=#FF8c00}>Katja_P4_E10{/color}"
+katja "\"That's interesting. Do you think that it works every time? Do the languages have to be similar, or something of that sort?\""
+n "I shrug halfheartedly. I don't even know why this topic came up. She's asking me like I'm some kind of expert, but honestly, most of that's just stuff I think I remember reading once in a popular science magazine. I could be talking out of my ass."
+erik "\"I guess it can depend on a lot of things.\""
+"{color=#FF8c00}>Katja_P4_E1{/color}"
+n "She doesn't respond, and I'm left to finish my sandwich."
+n "If you ignore her weird manner of speech, Katja's not all that bad. Shame about the eyepatch, though. It makes looking at her... awkward, somehow."
+n "I can't look her in the face without feeling like I'm staring at something I shouldn't. I can't just look somewhere else while she's talking to me, since that'd be rude, and I obviously can't keep my eyes on any other part of her. I'm feeling sleazy enough just thinking about this."
+n "She's just so striking. Everything about her is. How much work does she have to put every day into looking like that?"
+n "The hair, the makeup, the way she wears her clothes –"
+n "Does that mean she's okay with being looked at?"
+n "Jesus, I can't believe I went there. It sounds like something a weirdo would say to the judge."
+n "I wonder if I'm the first one who has ever had this problem with her, or if... if maybe she's used to this, by now. I wonder which would make me feel better."
+n "I mean, this is just one, tiny part of her appearance but it happens to be the one everyone looks to at first."
+n "Could you blame someone for seeing that and feeling uneasy?"
+n "Especially if they also saw the gauze on her wrists."
+erik "\"You still haven't explained that part of the protocol where you ask me about the sandwich.\""
+katja "\"Correct. Our conversations topic has changed, and I didn't see all that much need to.\""
+katja "\"You could call it a precaution, for when confronting newly met students.\""
+erik "\"... A precaution? Against what? Offering them the wrong sort of appetizer?\""
+#-# >Katja_P4_E2
+show katja U_P4_E2
+with Dissolve(0.25)
+#--#
+n "She smirks slightly, but doesn't laugh."
+katja "\"To be honest, the question itself doesn't matter much. It's the way it is answered that does.\""
+erik "\"... Meaning?\""
+katja "\"Whether there is a reply and how clear it is. Whether it makes sense. Whether it's stammered or mumbled, or implies offense.\""
+katja "\"It's a crude instrument, but it can be invaluable in gauging how to proceed  or even if  when talking to someone new.\""
+n "She says it with the flagrant carelessness of someone who knows that they're saying something outrageous. At least she understands that it is."
+erik "\"Wait. So if I'd answered more slowly, or not to the point, or if I didn't, you'd have known to keep talking to me in little words?\""
+"{color=#FF8c00}>Katja_P4_E1{/color}"
+katja "\"No. That would have been reckless of me. However, given my personal experience, I would have been able to make a better-informed guess. If I'd guessed wrong, I could've apologized.\""
+erik "\"Sounds like a small comfort, if you've made that kind of wrong assumption about someone.\""
+katja "\"But worse than assuming that they think and talk just like yourself, and behaving on that? Potentially saying something that hurts them? Using figures of speech that they won't understand? Pushing them to talk when they don't even want to?\""
+katja "\"It's an unfortunate truth of our life here that not everyone can be approached the same ways.\""
+katja "\"Some students don't get metaphors. Others are not always in the mood to talk, or never want to talk about something that seems natural to you. Some don't want to be talked to at all.\""
+n "I nod thoughtfully."
+erik "\"Why the sandwich thing, then? If the question itself doesn't matter, why not just ask how I'm doing? Or something about the weather?\""
 #-# >Music fades out
 stop music fadeout 5.0
 #--#
-#-# >Ambient crowd noise 2
-play ambience "music/effects/muffledchatter.ogg" fadein 3.0 loop
+katja "\"It was the first one that came to mind. Optimally, the question needs to be unexpected and not have an objective answer, since many students who would've been able to answer ones that aren't can't carry a conversation otherwise.\""
+katja "\"From there, it's simply a matter of prodding and probing and coming to conclusions as you go. You'll probably get used to it after a while.\""
+#-# >>Music: Slow Fade into Be Violet (2)
+stop ambience fadeout 3.0
+stop music2 fadeout 5.0
+play music "music/Be Violet 2.mp3" fadein 5.0 loop
+#--#
+n "She studies me carefully while I ponder her words."
+n "I can get what she's saying from a, well, clinical viewpoint."
+n "Assuming she does have enough experience to \"tell\", it can certainly be useful if she wants to avoid making social blunders. In a school like St. Dymphna's, where everyone has their issues, it's probably a crucial skill to learn."
+n "At the same time, there's something definitely off about making that judgement of someone based on their answer to a single, pointless question."
+n "What if I just hadn't felt like responding? Could she have just gone away, pegging me down as... what? A boy with autism? Depression?"
+n "This whole conversation could have looked entirely different."
+n "Then again... she's a pretty, blonde girl with an eyepatch who goes to a special school. She probably knows all about people judging her based on first impressions."
+n "Even I may have done it a little bit when I first saw her. And then once more, when we just started talking and she didn't seem to be making sense."
+n "That's another thing I should probably keep to mind. Be cautious, but try not to judge people {i}too{/i} quickly."
+n "It's hard to shake off the feeling that I'm missing something. Is this really as hard as it seems?"
+n "Maybe I really should try going about introductions a bit differently from now on."
+#-# >>School Bell
+play sound "music/effects/schoolbell.ogg"
+#--#
+n "The first warning bell pulls me back to reality. From the way it makes Katja get up and turn to look at her watch, I'm assuming it's the same for her."
+"{color=#FF8c00}>Katja_P1_E2a{/color}"
+katja "\"Don't you have classes to attend?\""
+erik "\"Yeah. Don't you?\""
+n "She nods, getting up while I push myself off the bench, trying to keep the weight of my bad leg. This'd be a terrible time to trip like an idiot."
+erik "\"See you around, or something.\""
+katja "\"Likewise. I enjoyed our conversation.\""
+#-# >Katja exit to left
+show katja U_P1_E2a:
+  easein 1.0 xalign 0.35 alpha 0.0
+stop music fadeout 5.0
+#--#
+n "I turn away and back towards the classes, leaving Katja behind with the vending machine."
+#-# <END>
+#
 #--#
 
-n "I look up at the clock. There are still 10 minutes of the lesson to go, but Ms. Claes said nothing about the girl leaving early."
 
-n "\"The girl\". Huh. Didn't even learn her name. I don't know how to feel about what just happened."
 
-n "Somehow, despite having done very little, I feel exhausted."
-
-n "First period isn't even over yet. I sink into my chair, ready to admit defeat."
-
-n "Is every day going to be as awkward as this?"
-
-#-# >TIMESKIP
-scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
-$ renpy.pause(1.0)
-scene erikdorm with ImageDissolve("Transitions/clock.png", 1.0)
-#--#
 
 ########
 
-jump A1_09_5 # jump A?_??
+jump A1_10 # jump A?_??

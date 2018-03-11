@@ -18,10 +18,11 @@ scene classroomhall
 with Dissolve(2)
 #--#
 #-# >CLASSROOM BG
-# done below?
+scene classroom1
+with Dissolve(2)
 #--#
 #-# >CLOCK WIPE TO CLASSROOM BG
-scene classroom1 with ImageDissolve("Transitions/clock.png", 1.0)
+#
 #--#
 #-# >BE GREEN AFTERNOON
 play music "music/Be Green (Afternoon).mp3" loop
@@ -39,10 +40,8 @@ n "Fair enough. It's not as if I would know how to respond to them, anyway."
 n "I prop my head on my arm and fiddle with my notebook's pages."
 n "While the people I've met up to now have each shown their share of peculiarities, the classes themselves were surprisingly, comfortingly normal."
 n "We had Math, English, History, among others – same old stuff I knew back home, same old boredom and apathy as I've always felt about them. I don't know what I was expecting, really."
-n "Was I assuming that they're going to teach us like kindergartners, with colorful, easy-to-understand flashcards and little saccharine jingles to go with the lectures?"
-n "Was I assuming they're going to teach us with simple words and slow patient voices, hoping to make all those overblown terms digestible for our little broken minds?"
-n "If I was, then those assumptions have been proven unfounded, and I feel I'm better off knowing that they are."
-n "In some twisted, self-deceptive way, it's a taste of the normalcy I doubt I can ever truly go back to again – superficial and fleeting, for sure, but acceptably pleasant, nevertheless."
+n "Aside from the first period in the relaxation room, it almost does feel just like any other school."
+n "Almost being the operative word."
 n "I look to my side, and notice the girl sitting beside me finally stirring, rubbing her eyes on her jacket sleeve."
 #-# >ST. D'S GHOST IN
 #
@@ -54,8 +53,8 @@ show anna U_B_P2_E1:
 show anna U_B_P2_E1 alpha 1.0
 #--#
 n "She sweeps the room with a tentative glance, like a groundhog on the first day of spring, plucking off her earbuds and whipping out her phone."
-#-# >ANNA UNIFORM BUDS P1_E4
-show anna U_P1_E4
+#-#>ANNA UNIFORM BUDS P1_E4
+show anna U_B_P1_E4
 with Dissolve(0.25)
 #--#
 #-# >ANNA UNIFORM NO BUDS P1_E5
@@ -85,7 +84,7 @@ n "Getting more and more anxious by the second, she's now nervously crumpling in
 n "Our gazes meet for a moment, and spurred on by a feeling of urgency I blurt out the first thing that comes to mind."
 erik "\"Er, so, what kind of sandwiches do you like?\""
 #-# >MUSIC STOP
-stop music fadeout 5.0
+stop music2 fadeout 5.0
 #--#
 #-# >ANNA UNIFORM NO BUDS P2_E7
 show anna U_P2_E7
@@ -101,7 +100,7 @@ n "She blinks once, twice, as if she can't believe someone would just up and ask
 n "I scramble to salvage my dignity."
 erik "\"O-Oh, sorry! Just that, that's a vending machine sandwich, isn't it? I just thought...\""
 n "The sentence dissolves into nothingness unfinished."
-#-# >ANNA UNIFORM NO BUDS P2_E4
+#-#>ANNA UNIFORM NO BUDS P2_E4
 show anna U_P2_E4
 with Dissolve(0.25)
 #--#
@@ -127,7 +126,6 @@ n "Deep breaths. It's the anxiety. My anxiety's getting the better of me once ag
 #-# >BE GREEN AFTERNOON 2
 play music "music/Be Green (Afternoon).mp3" loop
 #--#
-n "It was right then that I hear a muffled voice behind my seat."
 voice "\"Pff... hee hee...\""
 n "Huh?"
 #-# >FRAN UNIFORM P1_E1 FADE IN
@@ -136,31 +134,30 @@ show fran P1_E1:
   easein 1.0 xalign 0.3 alpha 1.0
 show fran P1_E1 alpha 1.0
 #--#
-n "I turn to the source of the sound, and sure enough, there it is: a tall, long-haired girl – boy? – sitting behind me, clutching at their stomach and mouth, their body quivering so convulsively I thought she was having a seizure."
-n "They're on the verge of falling out of their seat trying to contain their giggling, before at last giving in and exploding into a laughing fit so loud I swear it shook the whole room."
+n "I turn to the source of the sound, and sure enough, there it is: Fran, the guy from the first period, sitting behind me, clutching at his stomach and mouth, his body quivering so convulsively I thought he was having a seizure."
+n "He's on the verge of falling out of their seat trying to contain his giggling, before at last giving in and exploding into a laughing fit so loud I swear it shook the whole room."
 #-# >FRAN UNIFORM P1_E3
 show fran P1_E3
 with Dissolve(0.25)
 #--#
-suspiciousperson "\"What the actual hell was {i}that{/i} about?!\""
-suspiciousperson "\"I swear – I {i}swear{/i}– that has got to be the worst pickup line I've ever heard in my life!\""
+fran "\"What the actual hell was {i}that{/i} about?!\""
+fran "\"I swear – I {i}swear{/i}– that has got to be the worst pickup line I've ever heard in my life!\""
 erik "\"Hey, knock it off!\""
-n "She doesn't, at least, not for a while. I think she laughed for a solid minute before even showing any intention of calming down."
+n "He doesn't, at least, not for a while. I think he laughed for a solid minute before even showing any intention of calming down."
+n "I was pretty sure he was a guy earlier, but now looking at him--at them?--I'm not quite so sure anymore."
 #-# >FRAN UNIFORM P1_E1
 show fran P1_E1
 with Dissolve(0.25)
 #--#
-n "She has a rather deep and husky voice – maybe even too deep and husky for a girl, but not quite enough to be identifiably masculine."
-n "My mind stretches and contracts in various ways wrapping itself around this conundrum presented before me."
+n "Their voice is too high-pitched to be identifiably masculine, but it also has a husky, raspy quality that wasn't quite feminine either."
 n "They have a tall, spindly build, with facial features that tread precariously on the line between mild and sharp that you can't tell whether you're supposed to call them pretty or handsome."
 n "They're also wearing a female student's jacket and cravat, but it's coupled with long, black trousers."
-n "I feel rotten to say it, but the chest area doesn't give me much of a clue, either."
 erik "\"...\""
 #-# >FRAN P1_E2
 show fran P1_E2
 with Dissolve(0.25)
 #--#
-suspiciousperson "\"Whoa, whoa there, darling! No need to be so serious! Life's too short to go on living like that!\""
+fran "\"Whoa, whoa there, darling! No need to be so serious! Life's too short to go on living like that!\""
 erik "\"Uh...\""
 suspiciousperson "\"But oh, man, oh man. Christ on a bike, I needed that laugh.\""
 erik "\"Glad to have served, then.\""
@@ -168,20 +165,20 @@ erik "\"Glad to have served, then.\""
 show fran P1_E5
 with Dissolve(0.25)
 #--#
-suspiciousperson "\"Oh, c'mon, don't be like that! Jeez, so glum!\""
+fran "\"Oh, c'mon, don't be like that! Jeez, so glum!\""
 #-# >FRAN P1_E4
 show fran P1_E4
 with Dissolve(0.25)
 #--#
-suspiciousperson "\"I have to give points to you, though. A lot of people give up on talking to her after the first try. She's, uh, a very skittish person.\""
+fran "\"I have to give points to you, though. A lot of people give up on talking to her after the first try. She's, uh, a very skittish person.\""
 erik "\"You don't say.\""
 #-# >FRAN P1_E1
 show fran P1_E1
 with Dissolve(0.25)
 #--#
-suspiciousperson "\"Still, you totally wanna tap that, don'tcha?\""
+suspiciousperson "\"So, uh, is she your type?\""
 n "The unexpected question hits me like a piano dropped from the Roche Tower hitting a run-down pinto on the streets of Basel-Stadt on a sultry Sunday morning. My face burns as hot as the resultant fire."
-erik "\"What?!\""
+erik "\"What?\""
 n "I try to stammer out an answer to shut them up, but my confusion and embarrassment only make their features curl into a thin, mischievous leer."
 #-# >FRAN P1_E4 2
 show fran P1_E4
@@ -193,7 +190,7 @@ erik "\"Well, you were reading wrong. I was just trying to start a conversation!
 show fran P1_E2
 with Dissolve(0.25)
 #--#
-n "My frustration leaks into my voice, causing the words to come off more harshly than intended. She falls dead silent, and the room temperature plunges into a nosedive."
+n "My frustration leaks into my voice, causing the words to come off more harshly than intended. They fall dead silent, and the room temperature plunges into a nosedive."
 n "The bubbly smile drains out of their face, darkening into a cold, horrified stare that sends a twinge of panic up my spine."
 n "Should I not have said that?"
 n "I should not have said that."
@@ -204,23 +201,23 @@ n "Before I can finish my sentence, they slap me on the shoulder and burst into 
 show fran P1_E4
 with Dissolve(0.25)
 #--#
-suspiciousperson "\"Haha! Gotcha!\""
+fran "\"Haha! Gotcha!\""
 n "I groan. Well, isn't this quite the life I've gotten myself into?"
-suspiciousperson "\"How was my acting? A thespian miracle worthy of Broadway, huh? Huh?\""
-n "My face curdles into a grimace. I didn't find it nearly as amusing as she did. I decide against rewarding them with a response."
+fran "\"How was my acting? A thespian miracle worthy of Hollywood, huh? Huh?\""
+n "My face curdles into a grimace. I didn't find it nearly as amusing as they did. I decide against rewarding them with a response."
 n "That said, should I really even be engaging this... person, to begin with? The impish light in their eyes sends various warning sirens in my head blaring at full volume."
 n "I turn away from them and begin packing my things without further comment. I can think of a few better ways to spend my afternoon than being mocked by a stranger."
 #-# >FRAN P1_E3
 show fran P1_E3
 with Dissolve(0.25)
 #--#
-suspiciousperson "\"Hey, hey, man! Okay, okay, I get it! No need to get all cranky, now; I understand. Sorry, I didn't mean to sound like a total jerk, alright?\""
+fran "\"Hey, hey, man! Okay, okay, I get it! No need to get all cranky, now; I understand. Sorry, I didn't mean to sound like a total jerk, alright?\""
 #-# >FRAN P1_E1 2
 show fran P1_E1
 with Dissolve(0.25)
 #--#
-suspiciousperson "\"Just a little bit of a jerk.\""
-suspiciousperson "\"Besides, you're too stuffy! You wanna grow up to be like that French teacher dude or something? Sometimes you have to forgive a gentleman her amusements.\""
+fran "\"Just a little bit of a jerk.\""
+fran "\"Besides, you're too stuffy! You wanna grow up to be like that French teacher dude or something? Sometimes you have to forgive a gentleman her amusements.\""
 erik "\"Gentle – what?\""
 n "They snap their fingers, and continue on, as if the topic wasn't up for discussion in the first place. They extend a hand to me."
 #-# >FORMAL MEETINGS CASUAL GREETINGS IN
@@ -231,12 +228,13 @@ play music "music/Formal Meetings Casual Greetings.mp3" loop
 show fran P1_E5
 with Dissolve(0.25)
 #--#
-fran "\"So! I'm Fran Dragovic, at your service! I'm more of a roast beef sandwich kind of person, but ham and beetroot will do the trick, too. Is that the type you usually fall for?\""
-n "They will never let me live this down, will she?"
+fran "\"So! I know we've been introduced earlier, but I'm Fran Dragovic, at your service!\""
+fran "\"I'm more of a roast beef sandwich kind of person, but ham and beetroot will do the trick, too. Is that the type you usually fall for?\""
+n "They will never let me live this down, will they?"
 erik "\"I'm Erik, but you know that already, right?\""
 fran "\"Of course! Not every day we get a new face around here! A pretty one, at that! Have you got any idea where you're gonna eat dinner already, Erik? I'm starving here already.\""
 fran "\"Cafeteria? Some fancy-ass resto outside campus? Cook your own? Man, I wish I could cook my own food. School grub is very much hit-or-miss here.\""
-n "I raise my finger to answer, but retract it when I find I have no clue whatsoever. Also, did she just call me pretty?"
+n "I raise my finger to answer, but retract it when I find I have no clue whatsoever. Also, did they just call me pretty?"
 n "As for the topic of dinner, that's... actually a good question. Where, indeed? I know for a fact I can't possibly live my life here subsisting on vending machine sandwiches."
 erik "\"I... don't know.\""
 #-# >FRAN P1_E4 4
@@ -252,7 +250,7 @@ with Dissolve(0.25)
 fran "\"Ah! Sorry, love! You okay?\""
 erik "\"Yes, yes, it's alright. It's just...\""
 erik "\"It's nothing, don't mind it.\""
-n "Fran raises an eyebrow, but they loosens their hold on me and decides against inquiring further with a nonchalant shrug."
+n "Fran raises an eyebrow, but they loosen their hold on me and decides against inquiring further with a nonchalant shrug."
 #-# >FRAN P1_E3 2
 show fran P1_E3
 with Dissolve(0.25)
@@ -263,21 +261,21 @@ erik "\"Huh? Where to?\""
 show fran P1_E5
 with Dissolve(0.25)
 #--#
-n "Fran simply begins humming a tune as she waltzes out of the room with me in tow. I try to object, but she flagrantly refuses to hear me out."
+n "Fran simply begins humming a tune as they waltz out of the room with me in tow. I try to object, but they flagrantly refuse to hear me out."
 #-# >FRAN SLIDE OUT RIGHT
 show fran P1_E1:
   easein 1.0 xalign 0.0 alpha 0.0
 #--#
-n "I think of running off, but I figure I'd rather spare myself from another embarrassment. It's not like I can get very far away at any speed she can't beat."
+n "I think of running off, but I figure I'd rather spare myself from another embarrassment. It's not like I can get very far away at any speed they can't beat."
 #-# >Music fade out
-stop music fadeout 3.0
+stop music fadeout 5.0
 #--#
 n "Needless to say, I have a bad feeling about this."
 #-# >clock wipe transition
 # done below
 #--#
 #-# >BE VIOLET IN
-play music "<from 0.0 to 165.1274 loop 16.1363>music/Be Violet 1.mp3" loop
+play music "music/Be Violet 1.mp3" loop
 #--#
 #-# >CAFETERIA EXTERIOR BG
 scene cafeteriaoutside with ImageDissolve("Transitions/clock.png", 1.0)
@@ -332,8 +330,6 @@ n "Fran waves coolly at its lone occupant: a delicate-looking young woman with s
 show CG05E1
 with Dissolve(2)
 #--#
-n "Goodness gracious, she's pretty."
-n "It's either I'm just especially lucky, or this school really has a disproportionate volume of beautiful girls – it feels like I need a super-special VIP pass just to be near this young lady."
 n "I think she looked a bit tense when she lifted her eyes from her phone to acknowledge Fran, but nonetheless she quietly and gracefully waves back and gestures for us to take our seats."
 #-# >FRAN P1_E1 4
 show fran P1_E1
@@ -345,7 +341,7 @@ erik "\"Um, uh, hello. I'm new here; first day at school, in fact. Nice to meet 
 natalya "\"...\""
 #-# >CG 4 VARIATION 2
 show CG05E2
-with Dissolve(0.25)
+with Dissolve(2)
 hide CG05E1
 #--#
 natalya "\"Good afternoon, Mister Erik. It is nice to meet you, too. Welcome to cafeteria.\""
@@ -359,14 +355,14 @@ natalya "\"It is wasted chance. Wasted chance, yes.\""
 erik "\"W-Why?\""
 n "Great. First day here, and I run into not just one, but two tall, pretty blondes with a flair for the cryptic within a few hours of each other. I might as well buy a lottery ticket after this."
 #-# > NAT THEME IN / PLACEHOLDER: BE VIOLET IN
-#play music "<from 0.0 to 165.1274 loop 16.1363>music/Be Violet 1.mp3" loop
+# already playing
 #--#
 #-# > CG VARIATION 3
 show CG05E3
-with Dissolve(0.25)
+with Dissolve(2)
 hide CG05E2
 #--#
-natalya "\"Because~ if you were named Peter I could have saying, 'Hello, Peter! Welcome to caPETERia!\""
+natalya "\"Because~ if you were named Peter I could say, 'Hello, Peter! Welcome to caPETERia!\""
 n "Or not."
 erik "\"... Uhm...\""
 n "Her prim, reserved smile breaks and turns into a goofy, childish giggle that shatters my first impression of her so hard I could hear the shards crashing in my mind."
@@ -418,7 +414,7 @@ with Dissolve(0.25)
 fran "\"Uh, Erik?\""
 n "Natalya's eyes flit furtively back and forth between me and the cafeteria counter."
 n "My concern and suspicion must've shown on my face, since her smile cracks a little bit and her voice becomes tinged with urgency."
-natalya "\"No, no, please, I am doing an insist! I do this with all my new ac-tain-quances? Acquaintances? That! And now we are acquaintances too, so there!\""
+natalya "\"No, no, please, I insist! I do this with all my new ac-tain-quances? Acquaintances? That! And now we are acquaintances too, so there!\""
 #-# >NAT P2_E7A
 show natalya U_P2_E7a
 with Dissolve(0.25)
@@ -456,7 +452,7 @@ natalya "\"Yes, but...!\""
 show sofiya C_P1_E2
 with Dissolve(0.25)
 #--#
-sofiya "\"Mom and Dad would to worry if they hear you skip meals again. Surely you do not want that?\""
+sofiya "\"Mum and Dad would to worry if they hear you skip meals again. Surely you do not want that?\""
 #-# >NAT P2_E6
 show natalya U_P2_E6
 with Dissolve(0.25)
@@ -491,7 +487,7 @@ show sofiya C_P2_E9
 with Dissolve(0.25)
 #--#
 sofiya "\"Well, how do you say it...\""
-sofiya "\"Natasha should not really to skip meals right now. It is the, well, what the doctor tell us.\""
+sofiya "\"Natasha should not really skip meals right now. It is the, well, what the doctor tells us.\""
 erik "\"Ah.\""
 n "As expected of a smooth, suave guy like myself, I immediately draw a blank the size of Jupiter as to where to take the conversation from that bit of information."
 n "Thankfully, Sofiya takes charge quickly enough, reaching out for a handshake with an airy but perfectly unruffled smile."
@@ -499,7 +495,7 @@ n "Thankfully, Sofiya takes charge quickly enough, reaching out for a handshake 
 show sofiya C_P1_E8
 with Dissolve(0.25)
 #--#
-sofiya "\"But I'm being rude, no? My name is Sofiya Volkova, Natalya's sister. It is glad to be meeting you. Your name is...?\""
+sofiya "\"But I'm being rude, no? My name is Sofiya Volkova, Natalya's sister. It is glad to meet you. Your name is...?\""
 erik "\"Erik. Erik Wilhelm. Nice to meet you too.\""
 #-# >NAT P3_E8
 show natalya U_P3_E8
@@ -515,10 +511,8 @@ with Dissolve(0.25)
 show sofiya C_P1_E1
 with Dissolve(0.25)
 #--#
-n "Twins, huh. Hair and eye color aside, they don't really look all that similar. Natalya's face has a much milder contour than Sofiya, who has sharper, more catlike features to her."
-n "That, among a few other noticeable discrepancies in, er, {i}physique{/i}..."
-n "Let's just assume they're fraternal twins and call it a day."
-n "Natalya gingerly pulls back her croissant and eats, daintily slicing it with her knife into small pieces, nibbling on each little cut much like a little hamster."
+sofiya "\"Let us eat now, shall we?\""
+n "Natalya gingerly pulls back her croissant and sets to work, daintily slicing it with her knife into small pieces, nibbling on each little cut much like a little hamster."
 sofiya "\"Do you want some fruit too, Natasha?\""
 #-# >NAT P3_E3
 show natalya U_P3_E3
@@ -534,7 +528,7 @@ with Dissolve(0.25)
 show sofiya C_P1_E5
 with Dissolve(0.25)
 #--#
-sofiya "\"So you are the new student Fran yesterday said to transferring in his class, I assume?\""
+sofiya "\"So you are the new student Fran yesterday said to transfer in his class, I assume?\""
 erik "\"Y-Yeah, that would be me, most likely.\""
 n "Strange. How Fran got a hold of info about my move here before I even arrived, I'll never know. Is she in cahoots with Irene? It seems kinda likely; their personalities are quite similar."
 sofiya "\"I'm not student here myself, but I visit Natasha often to make sure she is doing well.\""
@@ -542,20 +536,20 @@ sofiya "\"I'm not student here myself, but I visit Natasha often to make sure sh
 show sofiya C_P1_E9
 with Dissolve(0.25)
 #--#
-sofiya "\"Will it be hard for Natasha to adjusting here, you think?\""
+sofiya "\"Will it be hard for Natasha to adjust here, you think?\""
 erik "\"I still don't know about that, I've only arrived here yesterday myself.\""
 #-# >SOF P2_E4B
 show sofiya C_P2_E4b
 with Dissolve(0.25)
 #--#
-sofiya "\"Oh, is that so? That is interesting. You two are quite of in same boat, then.\""
+sofiya "\"Oh, is that so? That is interesting. You two are in same boat, then.\""
 n "Swallowing her food, Natalya arranges her features into a smile and rejoins the conversation, nodding enthusiastically to confirm Sofiya's statement."
 #-# >NAT P2_E3 2
 show natalya U_P2_E3
 with Dissolve(0.25)
 #--#
 natalya "\"It is very difficult to make many new friends here, especially since we're new.\""
-natalya "\"I tried to go lunch with some of my classmates few days ago, but, uh, well, they are plenty of nice and friendly, but, when I am with them, uh...\""
+natalya "\"I tried to go lunch with some of my classmates few days ago, but, uh, well, they are plenty nice and friendly, but, when I am with them, uh...\""
 natalya "\"How do you say it... I kind of feel like square hole entering round peg.\""
 #-# >SOF P2_E6
 show sofiya C_P2_E6
@@ -590,7 +584,6 @@ natalya "\"I practiced lot of jokes before going here! Wanna hear one? Wanna hea
 n "Somehow, her deep emerald eyes piercing my very soul are telling me that she's going to make me hear the joke anyway, consequences be damned."
 erik "\"Uh, shoot away.\""
 n "Her face lights up, reminds me of a kid pressing her nose on a shop window looking at the shiny new toy on display."
-n "So straightforward and earnest. I think it's quite cute."
 #-# >NAT P1_E1
 show natalya U_P1_E1
 with Dissolve(0.25)
@@ -609,7 +602,7 @@ with Dissolve(0.25)
 #--#
 n "She puffs her cheeks out in annoyance, and fixes me with the dourest glare she can muster."
 n "It's supposed to be intimidating, I think, but the downright affectedness of the gesture elicits less of abject dread from me and more of an amused chuckle."
-natalya "\"But I should be the one giving out the punchline, Erik! That is how joke works!\""
+natalya "\"But I should be the one giving out punchline, Erik! That is how a joke works!\""
 erik "\"Sorry! But it's a really, really old joke, you know?\""
 n "It's probably one of the first jokes I heard in English, even."
 #-# >SOF P2_E6 2
@@ -714,9 +707,9 @@ erik "\"Let's see... my sisters took me sight-seeing around the city yesterday, 
 show sofiya C_P1_E5
 with Dissolve(0.25)
 #--#
-sofiya "\"We are thinking it an amazing place, also. The food is also very good. I am to be looking forward to try cooking some of the new dishes I saw here.\""
+sofiya "\"We are thinking it an amazing place, also. The food is also very good. I am looking forward to try cooking some of the new dishes I saw here.\""
 erik "\"Oh, you're into cooking?\""
-sofiya "\"Just a bit.\""
+sofiya "\"Just little bit.\""
 n "There's a glint of pride in her eyes as she says that, so I'll be assuming that her interest, and most likely her experience and skill, in the field is not actually  limited to \"just a bit.\""
 #-# >NAT P3_E7
 show natalya U_P3_E7a
@@ -774,13 +767,13 @@ natalya "\"A girl!\""
 sofiya "\"Boy.\""
 natalya "\"But that is not right! Tell Sonechka she's wrong, Miss Fran!\""
 n "Fran merely smiles at this little argument, very much entertained."
-n "I throw them an inquisitive glance; I've been asking myself that question this whole afternoon, but they hasn't really shown any evidence to confirm or disprove either case."
+n "I throw them an inquisitive glance; I've been asking myself that question this whole afternoon, but they haven't really shown any evidence to confirm or disprove either case."
 #-# >FRAN P1_E4 8
 show fran P1_E4
 with Dissolve(0.25)
 #--#
 fran "\"I dunno. Depends on the weather. You kids be off now, and tell Mr Zhang I said hi!\""
-n "Put like that, it doesn't seem she'll be telling us anytime soon. The fox-like grin on their face tells me they're savoring every last drop of our utter bewilderment."
+n "Put like that, it doesn't seem they'll be telling us anytime soon. The fox-like grin on their face tells me they're savoring every last drop of our utter bewilderment."
 erik "\"Well then, see you later, Sofiya, Natalya.\""
 #-# >NAT P2_E1 4
 show natalya U_P2_E1
@@ -793,7 +786,7 @@ with Dissolve(0.25)
 #--#
 sofiya "\"It is very nice meeting you.\""
 #-# >Music fade out 2
-stop music fadeout 3.0
+stop music fadeout 5.0
 #--#
 n "We give them a wave as we go."
 #-# >CAFETERIA BG
