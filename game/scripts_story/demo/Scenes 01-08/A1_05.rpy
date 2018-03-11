@@ -3,616 +3,201 @@ label A1_05:
 ###############
 
 $ persistent.scene_number = "A1_05" # current scene
-$ persistent.scene_name = "Surprises in Strange Places" # current scene name
+$ persistent.scene_name = "A Wilhelm Goodbye (I'll probs change this)" # current scene name
 $ renpy.save_persistent()
 
 
-# Scene 05
-# 
-# Scene name: Surprises in Strange Places
-# 
-#-# >open to school hallway
-play music "<from 0.0 to 181.0826 loop 10.1653>music/New Beginnings Arise from Old Endings.mp3" loop
-
-scene classroomhall with ImageDissolve("Transitions/clock.png", 1.0)
+# A1_05
+# Scene name: A Wilhelm Goodbye (I'll probs change this)
+# Asset list and direction is incomplete atm
+# Backgrounds:
+# School Entrance (day)
+# Sprites:
+# Ela
+# Irene
+# Mr Wilhelm
+# Mrs Wilhelm
+# Beatrice
+# Hilda
+#-# <timeskip>
+scene School_MainBuildEntrance at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
 #--#
-
-#-# >Brunhilde P2_E6
-show hilda P2_E6:
-  alpha 0.0 xalign 0.6 yanchor 1.0 ypos 1080+425+85
-  easein 1.0 xalign 0.4 alpha 1.0
-show hilda P2_E6 alpha 1.0
+#-# >Background: School Entrance (day)
+scene School_MainBuildEntrance
 #--#
-#-# >Beatrice smile
-show beatrice P2_E1:
-  xalign 0.8 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.6 alpha 1.0
-show beatrice P2_E1 alpha 1.0
+#-# >Show Ela at centre
+show ela P1_E1 alpha 1.0 xalign 0.5
 #--#
-#-# >Ela smile
+#-# >Show Irene at middle right
+show irene P1_E1 alpha 1.0 xalign 0.75
+#--#
+n "Mostly recovered - save for with my heart still beating like a drum - we turn a corner and return to the school's entrance."
+ela "\"Okay! Here we are. All done. You sure you'll be able to find your way to the medical wing?\""
+erik "\"Yeah. Orienteering is kind of my thing.\""
+ela "\"Alrighty then. I should probably get back to work. Lots to do!\""
+ela "\"It was really nice meeting you, Erik. I'll see you around - and call me if you have any questions, okay?\""
+#-# >Ela exit to right
 show ela P1_E1:
-  xalign 0.0 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.2 alpha 1.0
-show ela P1_E1 alpha 1.0
+  easein 1.0 xalign 0.9 alpha 0.0
 #--#
-
-#-# >The sisters on the right, Ela on the left
-#
+n "With a brilliant smile, Ela departs, heading into the school through its heavy double-doors."
+n "She's clearly dedicated to her role, and the tour was... informative. I just wish she hadn't sprung the concept of a medical wing on me like that."
+n "I don't know; perhaps I'm being oversensitive."
+irene "\"You're looking pensive, Erik. Bee in your bonnet?\""
+n "I'd forgotten Irene was still here. Her stature makes her easy to miss."
+n "I'm not sure if my face really gives away much, or if it was another lucky guess. Either way, I don't know how I feel about her gleeful expression."
+erik "\"It's just a lot, isn't it? All this.\""
+n "I gesture to the expansive grounds."
+erik "\"For us?\""
+irene "\"Don't look at it that way. Just think about how much there is to do here, and how much to explore.\""
+n "Her grin becomes more sincere."
+irene "\"It's just a school, really.\""
+irene "\"Just a school with interesting buildings. I mean, I haven't found any secret passageways yet - but y'know... still pretty cool.\""
+n "Her absurdity forces a laugh out of my dry mouth, but it doesn't untie the knot in my stomach."
+erik "\"Man, you think they'd have thought to cater to people who like secret passageways when they were designing this place.\""
+irene "\"Right? But no. Just miles and miles of boring corridors. What were they thinking?\""
+irene "\"Aaanyway, I should probably be off. Oh, hello!\""
+n "The doors behind her open again, and she spins on the spot to see who it is."
+#-# >Irene exit to right
+show irene P1_E1:
+  easein 1.0 xalign 0.9 alpha 0.0
 #--#
-
-#-# >Music: Be Green (Afternoon)
-play music "music/Be Green (Afternoon).mp3" loop
+#-# >Beatrice enter from left to middle left
+show beatrice P1_E1:
+  alpha 0.0 xalign 0.65 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.25 alpha 1.0
+show beatrice P1_E1 alpha 1.0
 #--#
-
-n "The tour is nothing out of the ordinary, even if the school is."
-
-ela "\"... This hallway houses most of the art and music rooms, where elective classes and after-hour clubs are held.\""
-
-n "The buildings themselves are beautiful, but I can't help but notice the additions – light filtering through huge windows with suspiciously thick glass, wide corridors dotted with emergency phone lines."
-
-n "Ela makes no mention of the 'preventative measures' the brochures seemed so eager to promote."
-
-n "If Hilda has caught on, she's kept her mouth shut, mirroring my quiet concern. Beatrice, on the other hand, is in love with the place."
-
-#-# >Beatrice excited
-show beatrice P2_E3
-with Dissolve (0.25)
+#-# >Hilda enter from left to middle right
+show brunhilde P1_E1:
+  alpha 0.0 xalign 1.0 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
+show brunhilde P1_E1 alpha 1.0
 #--#
-
-beatrice "\"Oh my God! The ceilings here go on {i}forever!{/i} Erik, check out the {i}rafters!{/i} It's like something out of a movie!\""
-
-ela "\"Privatgymnasium St. Dymphna was established in 1858, and while there's been some modifications to install modern conveniences and the like, for the most part the building itself has been very well preserved.\""
-
-n "Beatrice practically bounces from room to room, alternately running ahead and lagging behind to take in each new sight."
-
-beatrice "\"It's so {i}cool!{/i} It's like a {i}castle!{/i}\""
-
-#-# >Ela happy
-show ela P1_E2
-with Dissolve (0.25)
+erik "\"Hey guys.\""
+beatrice "\"Hey Erik! How was the tour? And who was that girl?\""
+erik "\"Was? She's just-- \""
+n "I turn to my right, but Irene is gone."
+erik "\"Uh. Okay. Well, she {i}was{/i} right there. It was Irene. She joined us halfway through the tour.\""
+beatrice "\"Ooo, look at you! Escorted 'round the school with a girl on each arm.\""
+n "She gives me a little punch on the shoulder."
+erik "\"You have to admit, I've got game.\""
+n "Hilda steps in as Beatrice winds up to give me another whack."
+brunhilde "\"It was all okay though, right? Everything looked good?\""
+erik "\"I mean, as far as a school campus can, I guess. There was...\""
+n "For a moment, I consider confiding my reaction to the medical wing in them."
+n "But no, I feel like I shouldn't. After all, the {i}\"world-leading\"{/i} psychiatric facilities are part of the reason I'm here - as much as I hate to admit it."
+erik "\"...There's this nice little path I'll be able to walk around. And Ela was nice.\""
+#-# >Beatrice big smile
+show beatrice P1_E3
+with Dissolve(0.25)
 #--#
-
-ela "\"It is rather spacious, isn't it? Mr. Bosworth likes to sell the historical significance and 'architectural richness' of the place to some of our visitors, but I'm sure you're not interested in all that canned stuff...\""
-
-#-# >Brunhilde happy
-show hilda P2_E2
-with Dissolve (0.25)
-#--#
-
-n "From her face, I can tell that Hilda actually {i}would{/i} want to hear it, but she doesn't speak up."
-
-ela "\"... so I'll just stick to the basics. The floor above us is reserved for assorted odds and ends, some offices, storage rooms, nothing very impressive. The view is nice, though. Let's just head through to the next building, shall we?\""
-
-#-# >Brunhilde default
-show ela P1_E1
-with Dissolve (0.25)
-#--#
-#-# >Beatrice frown
+beatrice "\"Whoa, there. Come on, Erik. She's way out of your lea--\""
+n "Hilda elbows Beatrice to the side and butts in."
+#-# >Beatrice neutral
 show beatrice P1_E1
-with Dissolve (0.25)
+with Dissolve(0.25)
 #--#
-
-n "Beatrice gives the stairs a longing glance, but reluctantly follows."
-
-#-# >Transition to different building
-scene classroomhall2
-with Dissolve (1)
+brunhilde "\"You think you'll be able to find your way around okay? This campus looks pretty big.\""
+beatrice "\"Way bigger than mine...\""
+erik "\"Yeah, I'm sure I'll be fine. They gave me a map, anyway.\""
+beatrice "\"The teachers are nicer here, too.\""
+brunhilde "\"There's nothing wrong with your teachers, Bea. You just keep fighting with them.\""
+beatrice "\"Can you blame me with all the work they expect me to do? It's inhuman.\""
+brunhilde "\"You are literally paying them thousands of euros to have the privilege of {i}doing{/i} that work.\""
+n "Beatrice freezes; a look of realisation crosses her face."
+n "I'm going to miss hearing my sisters' banter...."
+n "The door behind them opens again."
+#-# >Hilda move to right
+show brunhilde P1_E1
+easein 1.0 xalign 0.95 alpha 1.0
 #--#
-
-#-# >Beatrice default
-show hilda P2_E4:
-  xalign 1.0 yanchor 1.0 ypos 1080+425+85 alpha 0.0
-  easein 1.0 xalign 0.8 alpha 1.0
-show beatrice P2_E2:
-  xalign 0.7 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.5 alpha 1.0
-show hilda P2_E4 alpha 1.0
-show beatrice P2_E2 alpha 1.0
+#-# >Beatrice move to middle right
+show beatrice P1_E1
+easein 1.0 xalign 0.75 alpha 1.0
 #--#
-#-# >Ela default
-show ela P1_E1:
-  xalign 0.0 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.2 alpha 1.0
-show ela P1_E1 alpha 1.0
+#-# >Mr Wilhelm enters from left to middle left
+show dad P1_E1:
+  alpha 0.0 xalign 0.0 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.25 alpha 1.0
+show dad P1_E1 alpha 1.0
 #--#
-
-erik "\"So... Ela. How long have you been here?\""
-
-ela "\"Three years. Transfer students are very common, but St. D's has been my only secondary school.\""
-
-n "{i}But... why are you{/i} here?"
-
-n "I shove the thought out of my mind, but there's nothing there to take its place. My mouth makes a half-hearted attempt to cover for it."
-
-erik "\"It looks nice.\""
-
-#-# >Ela smile 2
-show ela P1_E5
-with Dissolve (0.25)
+#-# >Mrs Wilhelm enters from left to left
+show mum P1_E1:
+  alpha 0.0 xalign 0.0 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.05 alpha 1.0
+show mum P1_E1 alpha 1.0
 #--#
-
-ela "\"It is.\""
-
-#-# >Brunhilde frown
-show hilda P2_E5
-with Dissolve (0.25)
+wilhelm "\"We're finally done!\""
+erik "\"Finally? Were you getting bored of being told how great this place is?\""
+wilhelm "\"Oh, don't be so cynical, sweetheart. It {i}is{/i} a great place.\""
+wilhelm "\"Mr. Bosworth just had a lot to say about it. It may have been a bit... over the top, but he's clearly very passionate.\""
+n "Yeah. {i}Passionate{/i} is the right word to describe him."
+wilhelm "\"He talked a lot about the clubs and other extracurricular things they have going on. Do you think you might get involved in any of that?\""
+n "Mum looks hopeful."
+erik "\"Maybe.\""
+n "And now she looks a little worried."
+erik "\"I promise I'm not going to turn into a moping zombie. I'd miss the outdoors too much.\""
+wilhelm "\"Good. I'm sure you must be nervous - but try not to let it get the better of you, okay?\""
+wilhelm "\"Mm. Make the nervousness work for you.\""
+n "The knot in my stomach tightens, almost to breaking point. It's such an intense, physical swoop of emotion that I almost double over."
+n "I feel my quickening heartbeat and hear it in my ears; my head throbs."
+n "No. Not again!"
+n "I clench my hands into fists; my nails dig into the palms.  Focussing on that pain, I try to breathe deeply, breaking through the bonds around my chest. They're all in my head."
+n "Nobody's noticed. Mum's started speaking. I focus on her words."
+wilhelm "\"I'm sure some days you'll feel like not leaving your room at first, but don't...\""
+n "It's working. I can feel myself coming back to reality."
+wilhelm "\"...And if you're really struggling, you can always give me a call, okay?\""
+n "Just in time."
+erik "\"I will.\""
+n "I swallow and force a smile. This time, it looks like Mum might have noticed."
+wilhelm "\"Are you okay, sweetheart? Really?\""
+n "I put a bit more effort into my expression."
+erik "\"Yeah, for real. I'm fine. This place is great.\""
+wilhelm "\"Well, if you're sure. Come here.\""
+n "She pulls me into a tight hug and rubs my back."
+wilhelm "\"It's going to be great for you, Erik.\""
+wilhelm "\"Just go into it with an open mind, okay?\""
+n "Yeah, I get it; everyone's telling me the same things."
+n "She releases me after another extra-tight squeeze."
+n "Hilda and Beatrice are next, embracing me in unison  though they let me go in a much more sensible amount of time than Mum, who didn't seem to want to let go."
+beatrice "\"We'll miss you, bro!\""
+brunhilde "\"But we're closer to him than we were before.\""
+beatrice "\"Yeah, but it seems like a time to say goodbye, you know?\""
+brunhilde "\"Okay Beatrice. I mean, that doesn't make any sense, but okay.\""
+wilhelm "\"Come on, girls. Bye Erik. Love you! Be good, and please keep in touch!\""
+erik "\"Love you too.\""
+#-# >Mum exits to right
+show mum P1_E1:
+  easein 1.0 xalign 0.9 alpha 0.0
 #--#
-
-n "Hilda shoots me a worried glance, but Ela speaks up before the silence has a chance to entrench itself, gesturing past the hallway windows."
-
-#-# >Brunhilde neutral
-show hilda P2_E1:
-  xalign 1.0 yanchor 1.0 ypos 1080+425+85 alpha 0.0
-  easein 1.0 xalign 0.8 alpha 1.0
-show hilda P2_E1 alpha 1.0
+#-# >Beatrice exits to right
+show beatrice P1_E1:
+  easein 1.0 xalign 0.9 alpha 0.0
 #--#
-
-ela "\"The lake is a popular spot to relax, although there's no fishing or swimming allowed. There {i}is{/i} a pool though, which is obviously cleaner than the lake in any case.\""
-
-#-# >Transition to outside chapel
-scene chapel
-with Dissolve (1)
-
-show hilda P2_E4:
-  xalign 1.0 yanchor 1.0 ypos 1080+425+85 alpha 0.0
-  easein 1.0 xalign 0.8 alpha 1.0
-show beatrice P2_E2:
-  xalign 0.7 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.5 alpha 1.0
-show ela P1_E1:
-  xalign 0.0 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.2 alpha 1.0
-show beatrice P2_E2 alpha 1.0
-show hilda P2_E4 alpha 1.0
-show ela P1_E1 alpha 1.0
+#-# >Brunhilde exits to right
+show brunhilde P1_E1:
+  easein 1.0 xalign 0.9 alpha 0.0
 #--#
-
-n "As we descend the stairs and emerge from the building into the blinding sunlight, Ela points towards the small structure to the right."
-
-ela "\"The chapel is always open, though not always 'staffed'. Services are held every day, if you're interested.\""
-
-n "She switches to her left."
-
-ela "\"... and the dorms are across the way. We'll head there in a moment, but for now...\""
-
-#-# >Transition to inside main building
-scene mainlobby
-with Dissolve (1)
+n "Dad stays behind; I don't spend much time with him one-on-one, so this is kind of weird."
+n "Unexpectedly, he claps a heavy hand on my shoulder and looks me right in the eye. Although firm and unwavering, his expression isn't intimidating."
+wilhelm "\"I know how you feel, son.\""
+erik "\"Really? Because-- \""
+wilhelm "\"Yes. Really.\""
+wilhelm "\"You've probably heard a lot of words today that have been completely meaningless to you, and a lot of placations that felt totally hollow.\""
+n "I'm not sure what's going on, but Dad's right."
+wilhelm "\"It's not going to be like that forever.\""
+n "After a second, he seems to notice his hand is still on my shoulder and swiftly removes it. He clears his throat, no longer looking directly at me."
+wilhelm "\"I'm sure you'll make the most of your time here.\""
+n "And his gaze returns to meet mine."
+wilhelm "\"And I'm sure you'll make me proud.\""
+#-# >Mr Wilhelm exits to right
+show dad P1_E1:
+  easein 1.0 xalign 0.9 alpha 0.0
 #--#
-#-# >Beatrice happy
-show hilda P2_E1:
-  xalign 1.0 yanchor 1.0 ypos 1080+425+85 alpha 0.0
-  easein 1.0 xalign 0.8 alpha 1.0
-show beatrice P1_E2:
-  xalign 0.7 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.5 alpha 1.0
-show ela P1_E1:
-  xalign 0.0 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.2 alpha 1.0
-show beatrice P1_E2 alpha 1.0
-show hilda P2_E1 alpha 1.0
-show ela P1_E1 alpha 1.0
-#--#
-
-n "Ela leads us straight forward, pushing open larger-than-average double doors into the main building, central to the campus. Beatrice gasps audibly."
-
-ela "\"We call this is the atrium, which is fitting since it's sort of the heart of the building. Most of the classrooms can be accessed from here, as well as the library.\""
-
-ela "\"It can be a little noisy, but if that doesn't bother you, it's a very calming place to study or relax.\""
-
-n "{i}Lots of places to relax, I see. Wouldn't want us getting anxious, after all.{/i}"
-
-n "As impressed as I ought to be, once again, doubt colors my thoughts."
-
-#-# >Ela big smile
-show ela P1_E2
-with Dissolve (0.25)
-#--#
-
-n "Ela takes my silence for awe, and gives me a knowing smile that feels entirely out of place, given my circumstances."
-
-#-# >Ela regular smile
-show ela P1_E1
-with Dissolve (0.25)
-#--#
-
-ela "\"Yeah, it has that effect on people, doesn't it? Well, the classrooms aren't nearly as impressive. They're pretty standard, actually.\""
-
-n "{i}So let's skip those, right?{/i}"
-
-n "After giving us another moment to appreciate the décor, Ela turns to hold the door for us, and I obediently follow my sisters back outside."
-
-#-# >Outside main building with fade
-scene mainbuilding
-with Dissolve (1)
-show hilda P2_E1:
-  xalign 1.0 yanchor 1.0 ypos 1080+425+85 alpha 0.0
-  easein 1.0 xalign 0.8 alpha 1.0
-show beatrice P1_E2:
-  xalign 0.7 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.5 alpha 1.0
-show ela P1_E1:
-  xalign 0.0 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.2 alpha 1.0
-show beatrice P1_E2 alpha 1.0
-show hilda P2_E1 alpha 1.0
-show ela P1_E1 alpha 1.0
-#--#
-
-n "Ela regains the lead, and begins to direct us to the dorms."
-
-ela "\"And that's pretty much the tour. I'm not the best at this, I know, but hopefully I've managed to highlight some of the more interesting spots for you.\""
-
-#-# >Pause
-$ renpy.pause (1.0)
-#--#
-
-#-# >Beatrice frown 2
-show beatrice P1_E5
-with Dissolve (0.25)
-#--#
-#-# >Ela frown
-show ela P1_E3
-with Dissolve (0.25)
-#--#
-
-n "After a moment, I feel an elbow in my ribs, and glance up to find Beatrice attached to it, an impatient glare on her face. Behind her, Ela's adopted a slightly worried expression."
-
-erik "\"Er, yeah. It's fine. It looks good.\""
-
-#-# >Beatrice smile 2
-show beatrice P2_E2
-with Dissolve (0.25)
-#--#
-
-beatrice "\"{i}Good?{/i} Lighten up, Erik, this place is {i}amazing!{/i}\""
-
-n "{i}Yeah, the parts they're showing us.{/i}"
-
-erik "\"Yeah, I know. I'm just... kind of shocked, I guess.\""
-
-#-# >Ela frowns harder
-show ela P1_E6
-with Dissolve (0.25)
-
-stop music fadeout 5.0
-#--#
-
-n "Another moment of uncomfortable tension later, Ela sighs, slowing to a halt, her smile fading into a look of empathy. Her 'tour guide' voice drops to something more subdued."
-
-#-# >Ela natural
-play music "music/Reflections.mp3" loop
-
-show CG02
-with Dissolve (1.0)
-#--#
-
-ela "\"...I realize this is a lot to take in, yes.\""
-
-ela "\"I'm sure you have your own ideas on what to expect here, and I'm not going to say that's unreasonable.\""
-
-#-# >Ela worried
-play sound "music/effects/Branch1.mp3"
-#--#
-
-ela "\"What I {i}will{/i} say is that this school is probably the best chance you have addressing these issues, rather than ignoring them.\""
-
-n "Ela leans against the trunk of a nearby tree, hands clasped behind her back."
-
-#-# >CG
-#
-#--#
-
-ela "\"You aren't the first person I've given this tour to, you know.\""
-
-ela "\"Students from all over the world have gone through exactly the same problem, faced the exact same fears.\""
-
-ela "\"You're afraid your condition, whatever it may be, is controlling your life by forcing you to come here.\""
-
-ela "\"...But as long as you're acting on fear, you aren't going to make progress.\""
-
-ela "\"If all you're doing is trying not to get worse, you're not going to get better.\""
-
-ela "\"Of course the school isn't perfect. None of us are. What's important is that you focus on what this school can give you, not what it's taking away.\""
-
-n "A heavy silence settles in, one I'm not sure how to break. I understand what she's saying; I guess it'll just take some time to put it into practice."
-
-erik "\"... thanks, Ela, that's... probably pretty good advice.\""
-
-erik "\"...and for what it's worth, I'm sorry. I guess I'm just worried –\""
-
-#-# >CG END
-hide CG02
-#--#
-#-# >Abrupt music end
-stop music fadeout 5.0
-#--#
-#-# >Crack
-play sound "music/effects/Branch2.mp3"
-#--#
-#-# >Irene sprite tumbles from top of screen to bottom?
-show irene U_P1_E1:
-  xalign 0.8 yanchor 1.0 ypos 1080+425+300 alpha 0.0
-  easein 1.5 xalign 0.8 yanchor 1.0 ypos 1080+425 alpha 1.0
-show irene U_P1_E1 alpha 1.0
-#--#
-#-# >Ela shocked
-show ela P1_E4:
-  xalign 0.2 yanchor 1.0 ypos 1080+425
-  easein 0.75 xalign 0.15
-#--#
-#-# >Beatrice shocked
-show beatrice P2_E5 behind hilda:
-  xalign 0.5 yanchor 1.0 ypos 1080+425
-  easein 0.75 xalign 0.45
-#--#
-#-# >Brunhilde shocked
-show hilda P2_E3:
-  xalign 0.8 yanchor 1.0 ypos 1080+425+85
-  easein 0.75 xalign 0.75
-#--#
-
-#-# >Beatrice and Brunhilde slide closer to Ela, Beatrice behind Brunhilde
-show beatrice P2_E5 behind hilda:
-  xalign 0.45 yanchor 1.0 ypos 1080+425
-  easein 1.0 xalign 0.4
-show hilda P2_E3:
-  xalign 0.75 yanchor 1.0 ypos 1080+425+85
-  easein 1.0 xalign 0.57
-#--#
-
-n "The sound of splitting wood and rustling leaves interrupts me, causing all of us to instinctively jump closer to Ela, away from the crashing bough."
-
-n "Before I even have time to register the event, a student rises from the debris, dusting herself off and initiating a conversation as casually as one might wave hello."
-
-#-# >Irene unidentified
-show irene U_P1_E1:
-  xalign 0.8 yanchor 1.0 ypos 1080+425
-  easein 1.5 xalign 0.85 yanchor 1.0 ypos 1080+425
-#--#
-
-unknownqqq "\"Oh hey Ela, didn't see you there, don't mind me. For the record, that tree is a bit iffy! And you must be Erik!\""
-
-#-# >Irene smile
-show irene U_P1_E4
-with Dissolve (0.25)
-#--#
-
-n "She thrusts a hand in my direction, a thousand watt smile on her face."
-
-erik "\"Uh. Yeah. It's nice to meet you...\""
-
-n "Ela seems to have shorted out, staring at the girl with a mixture of despair and panic."
-
-#-# >Irene intro
-show irene U_P1_E2
-with Dissolve (0.25)
-#--#
-
-irene "\"Irene! Irene Ross, at your service!\""
-
-#-# >In Her Element in
-play music "music/In Her Element.mp3" loop
-#--#
-
-#-# >Irene post intro
-show irene U_P1_E1
-with Dissolve (0.25)
-#--#
-
-erik "\"Nice to meet you, Irene. I'm... Erik... hang on, where did you hear my name before?\""
-
-#-# >Irene raised eyebrow
-show irene U_P1_E4
-with Dissolve (0.25)
-#--#
-
-irene "\"Huh? Oh. It was kind of a lucky guess? I figured it was either that or Aaron, I mean, lip reading is more art than science, look it's not important and {i}heeey{/i} welcome to St. D's!\""
-
-#-# >Irene open mouth smile
-show irene U_P1_E2
-with Dissolve (0.25)
-#--#
-
-n "Irene throws her arms in a wide gesture, the expanse of the campus behind her. A thin line of blood seeps from a fresh cut on her cheekbone."
-
-n "Ela's face has completely drained of color. Hilda's jaw hangs slightly agape. At some point Beatrice has taken the opportunity to take cover behind Hilda in case Irene were to spontaneously combust, which doesn't seem terribly far-fetched. None of them seem eager to join this conversation."
-
-erik "\"... Thanks?\""
-
-#-# >Irene smile 2
-show irene U_P1_E1
-with Dissolve (0.25)
-#--#
-
-irene "\"No problem! It's always good to see a new face. I'm sure you'll fit right in! Ela, you're giving him the tour, right? I'd be happy to lend a hand. No one knows more about this campus than I do!\""
-
-n "She holds up the case strung loosely around her neck, which I now realize is a pair of well-worn binoculars."
-
-n "Ela finds her voice, maybe an octave higher than when she lost it."
-
-#-# >Ela vs Irene
-show ela P1_E7
-with hpunch
-
-show irene U_P1_E1
-with Dissolve (0.25)
-#--#
-
-ela "\"We're fine! It's fine! You probably have stuff to do, right?\""
-
-#-# >Irene oblivious
-show irene U_P1_E2
-with Dissolve (0.25)
-#--#
-
-irene "\"Nope! Totally open today! Just doing my rounds, nothing really happening around here – except Erik, of course! – so I figure I might as well drop in. Ha! Drop in! I didn't even mean to do that.\""
-
-#-# >Irene yet again
-show irene U_P1_E4
-with Dissolve (0.25)
-#--#
-
-irene "\"Hey, how much have you gotten to, anyway? Has she shown you the old therapy rooms, you know, the ones where they still have all the cool, antique heavy-duty leather restraints and metal dentists chairs an' stuff?\""
-
-#-# >Ela exasperated
-show ela P1_E7
-with hpunch
-#--#
-
-ela "\"{i}Irene!{/i}\""
-
-#-# >Irene confused
-show irene U_P1_E1
-with Dissolve (0.25)
-#--#
-
-irene "\"Huh? What?\""
-
-n "Irene follows Ela's line of sight to me, and understanding lights up her face."
-
-#-# >Irene shocked
-show irene U_P1_E3
-with Dissolve (0.25)
-#--#
-
-irene "\"Oh. {i}Oh!{/i} Hey, listen, they don't use that stuff unless shit's, like, {i}really{/i} hitting the fan, so –\""
-
-#-# >Brunhilde angry
-show hilda P2_E5
-with Dissolve (0.25)
-#--#
-
-hilda "\"W-What were you doing in a {i}tree?{/i}\""
-
-n "Hilda is the first to recover some semblance of control over the situation."
-
-#-# >Irene smile 3
-show irene U_P1_E1
-with Dissolve (0.25)
-#--#
-
-irene "\"Oh, you know, basic recon, information gathering, stuff like that. It's like people watching, only with a laser mic.\""
-
-#-# >Beatrice excited, moves out from behind Brunhilde
-show beatrice P1_E2:
-  easein 1.0 xalign 0.7
-
-show hilda P2_E5:
-  easein 1.0 xalign 0.45
-
-with Dissolve (0.25)
-#--#
-
-n "Beatrice breaks from her cover, a look of excitement on her face."
-
-beatrice "\"You have a {i}laser microphone?!{/i}\""
-
-#-# >Ela's still displeased
-show ela P1_E7
-with Dissolve (0.25)
-#--#
-
-ela "\"{i}Irene{/i} here likes to eavesdrop on people, but she {i}usually{/i} has the best intentions.\""
-
-n "I'm not sure if she's trying to convince us or herself, but either way, it doesn't do much."
-
-#-# >Irene open mouth smile 2
-show irene U_P1_E2
-with Dissolve (0.25)
-#--#
-
-irene "\"Oh c'mon! It's not like Erik's name is a big secret.\""
-
-n "She turns to me, suddenly intense."
-
-#-# >Irene furrowed brow
-show irene U_P1_E1
-with Dissolve (0.25)
-#--#
-
-irene "\"Is your name a big secret, though? Because that would be {i}awesome.{/i}\""
-
-erik "\"Er, no. Just Erik.\""
-
-#-# >Irene sad
-show irene U_P1_E1
-with Dissolve (0.25)
-#--#
-
-n "Irene's face falls a little, and she looks over her binoculars for a moment before shrugging a little."
-
-#-# >Irene smile 4
-show irene U_P1_E4
-with Dissolve (0.25)
-#--#
-
-irene "\"Damn. That's a shame. I mean, not your name, that's fine. Secret names are just cool. Not that I have one. That {i}you{/i} know about.\""
-
-#-# >Ela angry
-show ela P1_E7
-with Dissolve (0.25)
-#--#
-
-ela "\"{i}Nobody{/i} has one!\""
-
-irene "\"Well, of course you'd {i}think{/i} that, they're {i}secrets.{/i}\""
-
-#-# >Ela secrets
-show ela P1_E8
-with Dissolve (0.25)
-#--#
-
-n "{i}I don't think this place is going to be good for my mental health.{/i}"
-
-#-# >Ela neutral
-show ela P1_E3
-with Dissolve (0.25)
-#--#
-
-irene "\"Anyway, it's nice to meet you guys! I guess you need some time to, like, adjust, but seriously, everyone here is really cool. And I'd know! So don't worry about it, 'kay?\""
-
-erik "\"Um, sure? It's nice to meet you, too. These are my sisters, Hilda and Beatrice.\""
-
-#-# >Brunhilde neutral 2
-show hilda P2_E1:
-  xalign 0.45 yanchor 1.0 ypos 1080+425+85 alpha 1.0
-  easein 1.0 xalign 0.48 alpha 1.0
-show hilda P2_E1 alpha 1.0
-#--#
-
-hilda "\"... I apologise for my earli – \""
-
-#-# >Brunhilde shocked 2
-show hilda P2_E3
-with Dissolve (0.25)
-#--#
-#-# >Beatrice excited 2
-show beatrice P2_E3
-with Dissolve (0.25)
-#--#
-
-beatrice "\"{i} – please tell me you actually have a laser mic.{/i}\""
-
-irene "\"Of course! Wanna check it out?\""
-
-beatrice "\"{i}Oh my God please.{/i}\""
-
-n "Beatrice glances back at us with an expression of childlike joy."
-
-#-# >Beatrice joy
-show beatrice P2_E4
-with Dissolve (0.25)
-#--#
-
-beatrice "\"This is the {i}best school ever.{/i}\""
-
-#-# >transition start
-#
-#--#
-#-# <end>
-stop music fadeout 5.0
-#--#
+n "He departs."
+n "I'm left alone."
+n "Just me and the knot in my stomach, tighter than ever."
 
 ########
 

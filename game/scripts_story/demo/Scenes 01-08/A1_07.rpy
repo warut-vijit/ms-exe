@@ -3,441 +3,463 @@ label A1_07:
 ###############
 
 $ persistent.scene_number = "A1_07" # current scene
-$ persistent.scene_name = "A Wilhelm Goodbye" # current scene name
+$ persistent.scene_name = "Icebreaker" # current scene name
 $ renpy.save_persistent()
 
 
-# A1_07
-# Scene name: A Wilhelm Goodbye
+# Scene name: Icebreaker
 # 
-# Backgrounds:
-# School Entrance (day)
-# 
-# Sprites:
-# Beatrice, Hilda, Mr. + Mrs. Wilhelm, Ela
-# 
-# Music:
-# Schooltheme
-# 
-# Sound Effects:
-# Dull thump/punch
-# 
-# 
-#-# >open to School Entrance (day)
-scene mainbuilding
+#-# >fade open to Erik's dorm room, morning
+#scene School_ErikRoom_NOPAN at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/eye.png", 1.0)
+#--#
+
+#-# >Alarm clock sound effect
+play sound "music/effects/Phone alert.mp3"
+#--#
+
+n "Scene Opens"
+#-# >> Wakeup Effect to <School_ErikRoom_NOPAN.png>
+scene School_ErikRoom_NOPAN at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/eye.png", 1.0)
+#--#
+
+n "A shaft of pale sunlight wakes me up from a shallow, restless sleep before my alarm. Despite the bright morning sun, my room feels chilly and I shiver in my thin pyjamas."
+
+n "I wonder if it actually is chilly or if the endless cycle of negative thoughts in my head is just making me think it is."
+
+n "You'd think the room would retain heat better what with the window being three times thicker than I'm used to, but it might as well be a hole in the wall."
+
+n "Not even a day here, and that window's thickness is already bothering me. It's such a small detail I'm not even sure I'd have noticed it if it hadn't been pointed out, but now I just can't seem to stop thinking about it."
+n "I roll out of bed and try opening it."
+
+#-# >>window opening
+play sound "music/effects/window.mp3"
+#--#
+#-# >>change to some sort of outside background if one is available, but otherwise stay in Erik's room (the view will have to be left to the reader's imagination)
+#
+#--#
+#-# >>birds tweeting, wind in trees etc.
+play ambience "music/effects/birdsandwind.ogg"
+#--#
+
+n "It's heavy, but it does open. Why wouldn't it? They said my room had been fitted for a low-risk student."
+
+n "The air streaming in through the crack smells faintly of freshly cut grass and dew. It's numbingly cold, but I let it linger for a moment."
+
+n "Just as much as having that window here in the first place feels stifling, knowing that it can be opened feels relatively comforting. A small measure of control over my life. Tiny and inconsequential, maybe, but it's something."
+
+n "I take one final deep breath to clear my head and shut the window."
+
+#-# >> Music: New Beginnings Arise from Old Endings
+play music "music/New Beginnings Arise from Old Endings.mp3"
+#--#
+#-# >>window closing
+play sound "music/effects/window.mp3"
+#--#
+#-# >>outside SFX stop
+stop ambience
+#--#
+
+n "Control's fine and all, but it probably isn't worth coming back to a freezing room."
+
+n "I should get ready for school. No sense in getting all mopey about nothing before I've even started."
+
+n "I put on my glasses and check my phone for the time."
+
+n "6:55."
+
+n "Just too late to get a bit more sleep. Ugh. With an involuntary groan, I grab my clothes bag to hit the shower."
+
+#-# >>passage of time
+scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
+$ renpy.pause(1.0)
+scene erikdorm with ImageDissolve("Transitions/clock.png", 1.0)
+#--#
+
+n "By the time I've come back clean and dressed, someone's sent me a text message."
+
+#-# >>Some sort of mobile phone graphic if we have it. If not, again, leave it to the imagination.
+show EriksPhone
+with Dissolve (2.0)
+#--#
+
+beatrice "\"Morning bro! Sleep well? Cheer up no matter what!! <3\""
+
+beatrice "\"Hope you have a wonderful day!! I know you'll make a ton of friends!\""
+
+n "The rest is just a bunch of emoji that, if nothing else, represent her perfectly."
+
+n "I stare at the screen until it turns off by itself, wondering what I should send in return. It did feel good to read – it's nice to know that she cares."
+
+n "It's just, no matter how much I try to force on a smile and absorb some of Beatrice's enthusiasm through her text, I just can't bring myself to feel that kind of cheer."
+
+n "It's not even like I'm really sad. More like emotionally neutral. Numb."
+
+n "I turn the screen back on and tap out a quick reply."
+
+erik "\"Slept okay. Thanks. Talk to you later :)\""
+
+#-# >>phone out
+hide EriksPhone
+with Dissolve (0.5)
+#--#
+
+n "There. I even add a little smiley face at the end so she doesn't worry too much. Now I'm feeling illiterate as well as disingenuous. Good start to the day if ever there was one."
+
+n "Giving the rest of the room one final look-over to make sure I haven't forgotten anything, I grab my bag and the map from my bedside table and set out to my first class."
+
+#-# >Music fade out
+stop music fadeout 3.0
+#--#
+
+#-# <Crossfade to School_MaleDormsOut.png>
+scene PitchBlack
+with Dissolve(1)
+scene School_MaleDormsOut
 with Dissolve(2)
 #--#
-#-# >Ela + sisters slide to center, as does the background to signify movement coming to a stop.
-show hilda P2_E1:
-  xalign 0.12 yanchor 1.0 ypos 1080+425+85 alpha 0.0
-  easein 1.0 xalign 0.22 alpha 1.0
-
-show beatrice P1_E1 behind hilda:
-  xalign 0.0 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.02 alpha 1.0
-
-show ela P1_E1:
-  xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.45 alpha 1.0
-
-show irene U_P1_E1:
-  xalign 0.58 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.68 alpha 1.0
-show hilda P2_E1 alpha 1.0
-show beatrice P1_E1 alpha 1.0
-show ela P1_E1 alpha 1.0
-show irene U_P1_E1 alpha 1.0
+#-# >>Music: The Mind-Boggle Fade in
+play music "music/The_Mind-Boggle.mp3" fadein 3.0 loop
+#--#
+#-# >>Quiet crowd sound effects
+play ambience "music/effects/muffledchatter.ogg" loop fadein 1.0
 #--#
 
-n "We come to a stop in front of the large building that holds the offices."
 
-#-# >Irene tour over
-show irene U_P1_E2
-with Dissolve (0.25)
+n "Despite it already being after seven, the male dorm courtyard is almost as empty right now as it was last night."
+
+n "I thought there'd be a crowd of students moving in the general direction of the school, but far as I can see the few that are out seem content to sit on benches and chat. A few are even jogging around in tracksuits. Don't these guys have class in a little bit?"
+
+n "I shuffle slowly through the courtyard, throwing the occasional glance this way and that to see if anyone looks like they're in any kind of hurry."
+
+n "More and more students are leaving the dorms and they're all moving about here and there, but there's no prevailing direction to their movement. A few even acknowledge my presence, waving or smiling at me when I pass. I smile back and nod, but nothing much more than that."
+
+n "Either I'm missing something about campus culture, or being late for first period is standard around here."
+
+n "Actually, scratch that. It's probably just first day nerves on my part. The anxiety over getting to my first class on time is overbearing. Either way, I think I'd be better get moving. Wouldn't have anything to say to them anyway."
+
+#-# <Clock wipe to School_MainHall.png>
+stop ambience
+scene School_MainHall with ImageDissolve("Transitions/clock.png", 1.0)
 #--#
 
-irene "\"Well, looks like our little tour is over!\""
+n "After deciding against eating in the crowded cafeteria and taking breakfast in the form of a vending machine cereal bar, I drift back into the lobby to see if I can remember the way to my form room."
 
-n "I'd like to be able to say 'This tour has put me at ease', but if anything it's put me more on edge."
+n "As I enter, I feel a surge of relief as I see a familiar face for the first time that morning – a tutor, Ms. Claes. It looks as though she's waiting for someone, standing amidst a gaggle of other students and looking around."
 
-n "Sure, I didn't see any padded walls or restraints, but I did see a student fall from a tree before talking about lipreading and Nazi gold. Then there was that run in with Dr. Faber."
+n "Apparently she was waiting for me as when our eyes make contact she walks briskly in my direction, a stern expression on her face. The students instinctively part before her and merge back together in her wake. Surely I'm not already in trouble."
 
-n "My palms are sweaty just {i}thinking{/i} about meeting him again."
-
-n "Beatrice still looks like she's off in her own world while Hilda seems to be feeling just as uneasy as I am."
-
-n "Ela breaks the silence with a small cough before speaking."
-
-#-# >Ela back to work
-show ela P1_E2
-with Dissolve (0.25)
-
-show irene U_P1_E1
-with Dissolve (0.25)
-#--#
-
-ela "\"I should probably get back to work.\""
-
-ela "\"It was nice meeting you Erik, give me a call if you need to know anything, okay?\""
-
-erik "\"Sure, thanks.\""
-
-#-# >Ela leaves
-show ela P1_E1
-with Dissolve (0.25)
-#--#
-
-n "Ela leaves with a wave and a smile. I offer a half-hearted wave back, but it seems like she's turned around by the time my hand is raised. Ah."
-
-#-# >Ela out
-show ela P1_E1:
-  xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 1.0
-  easein 1.0 xalign 0.25 alpha 0.0
-
-show irene U_P1_E4
-with Dissolve (0.25)
-#--#
-
-n "Irene snickers as she notices my half-hearted wave. Before leaving, she leans towards me conspiratorially."
-
-irene "\"Let me know if you {i}actually{/i} need info, she talks a big game but she doesn't know the land like I do.\""
-
-erik "\"Uh, right. Thanks.\""
-
-n "Irene winks and spins on her heels just like Ela did before strutting off towards the forest."
-
-#-# >Irene out
-show irene U_P1_E1:
-  xalign 0.68 yanchor 1.0 ypos 1080+425 alpha 1.0
-  easein 1.0 xalign 0.78 alpha 0.0
-#--#
-
-n "Beatrice releases a small sigh as her new best friend walks away before turning her eyes to me."
-
-#-# >The sisters move to center
-show hilda P2_E1:
-  xalign 0.22 yanchor 1.0 ypos 1080+425+85 alpha 1.0
-  easein 2.0 xalign 0.6 alpha 1.0
-
-show beatrice P1_E1 behind hilda:
-  xalign 0.02 yanchor 1.0 ypos 1080+425 alpha 1.0
-  easein 2.0 xalign 0.4 alpha 1.0
-#--#
-
-beatrice "\"Eeeeerik~\""
-
-erik "\"What?\""
-
-beatrice "\"Oh {i}nooooothing~{/i}\""
-
-erik "\"That means it's definitely something.\""
-
-#-# >beatrice something
-show beatrice P2_E4
-with Dissolve (0.25)
-#--#
-
-beatrice "\"I mean... Ela was cute, {i}riiiight?{/i}\""
-
-n "A loaded question aimed right at me. Gulp."
-
-erik "\"... Sure.\""
-
-#-# >beatrice what about
-show beatrice P2_E3
-with Dissolve (0.25)
-#--#
-
-beatrice "\" And what about Ire–!\""
-
-#-# >Beatrice is bumped
-show beatrice P2_E3:
-  linear 0.090 xoffset -5
-  linear 0.090 xoffset 5
-  linear 0.090 xoffset -5
-  linear 0.090 xoffset 5
-  linear 0.090 xoffset 0
-#--#
-#-# >Dull thump/punch SFX
-play sound "music/effects/Punch.mp3"
-#--#
-#-# >Beatrice P1_E6
-show beatrice P1_E6
-with Dissolve (0.25)
-#--#
-
-n "Hilde offers an aggressive elbow into Beatrice's side, almost knocking her off her feet. Thanks Hilde."
-
-#-# >hilda elbow
-show hilda P3_E4
-with Dissolve (0.25)
-
-show beatrice P1_E1
-with Dissolve (0.25)
-#--#
-
-hilde "\"Think you'll get lost much?\""
-
-erik "\"No doubt. I'm pretty sure they gave me a map in my welcome pack though.\""
-
-hilde "\"Good. It looks like a very nice campus.\""
-
-#-# >hilda nice campus
-show beatrice P1_E2
-with Dissolve (0.25)
-#--#
-
-beatrice "\"Definitely nicer than mine.\""
-
-#-# >beatrice nicer
-show beatrice P1_E5
-with Dissolve (0.25)
-#--#
-
-beatrice "\"And the teachers are nicer too.\""
-
-n "She punctuates her sentence with a drawn out sigh. I don't think there's a teacher on this planet that Beatrice could get along with."
-
-hilde "\"Your lecturers are perfectly fine, it's just that you keep arguing with them.\""
-
-#-# >beatrice fine
-show beatrice P1_E8
-with Dissolve (0.25)
-#--#
-
-beatrice "\"Can you blame me with the amount of work they give out?\""
-
-#-# >beatrice work
-show hilda P3_E2
-with Dissolve (0.25)
-#--#
-
-hilde "\"You're a university student, what did you expect?\""
-
-erik "\"Less homework, clearly.\""
-
-#-# >beatrice homework
-show beatrice P1_E3
-with Dissolve (0.25)
-#--#
-
-beatrice "\"Yes! He understands!\""
-
-n "This casual conversation is calming after the whirlwind that my tour turned out to be. I expected today to turn out {i}very{/i} differently."
-
-#-# >Mom + Dad in center
-scene mainGate
-with Dissolve(2)
-
-show mum P1_E2:
-  xalign 0.65 yanchor 1.0 ypos 1080+425+60 alpha 0.0
-  easein 1.0 alpha 1.0
-show dad P2_E1:
-  xalign 0.9 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 alpha 1.0
-show mum P1_E2 alpha 1.0
-show dad P2_E1 alpha 1.0
-#--#
-#-# >Sisters slide over to the left
-show hilda P1_E2:
-  xalign 0.5 yanchor 1.0 ypos 1080+425+85 alpha 0.0
+#-# >Edna_P1_E2.png enters from left to middle left
+show claes P1_E2:
+  xalign 0.1 yanchor 1.0 ypos 1080+425 alpha 0.0
   easein 1.0 xalign 0.3 alpha 1.0
-
-show beatrice P1_E1:
-  xalign 0.3 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.1 alpha 1.0
-show hilda P1_E2 alpha 1.0
-show beatrice P1_E1 alpha 1.0
+show claes P1_E2 alpha 1.0
 #--#
 
-n "Mom and Dad finally exit the large building and make their way over to us, a small folder of papers resting in Dad's hands."
+claes "\"Erik! I'm glad you found your way here. I wasn't sure if you'd have been shown the way, so I thought it best to wait for you here.\""
 
-mom "\"Ah, we escaped!\""
+n "It seems I'm not in trouble as I'd feared, despite her almost frightening expression and short, clipped manner of speech."
 
-dad "\"He certainly had a lot to say about the school.\""
+erik "\"Oh, thank you, but you didn't have to. Ela showed me where it was yesterday.\""
 
-#-# >dad say
-show mum P1_E4
-with Dissolve (0.25)
+erik "\"Plus, I have a map.\""
+
+#-# >Edna_P1_E1.png
+show claes P1_E1
+with Dissolve(0.25)
 #--#
 
-mom "\"That's good! He's passionate!\""
+n "She gives a curt nod and chimes her approval with a small 'hmm'."
 
-#-# >mom passionate
-show mum P1_E2
-with Dissolve (0.25)
+claes "\"Good, good. Glad to hear Ela did a good job of introducing you to the building. Shall we be off then?\""
+
+#-# >Claes exits to left
+show claes P1_E1:
+  easein 1.0 xalign 0.1 alpha 0.0
 #--#
 
-mom "\"And he's going to make sure you get the best care possible, Erik.\""
+n "With only the most cursory pause for me to confirm, she's turned on her heel and started walking away as briskly as she approached. Apparently she still wants to walk me to my form room."
 
-erik "\"Right.\""
-
-erik "\"Once I'm settled in I'll feel a lot better.\""
-
-mom "\"That's great! How was your tour?\""
-
-erik "\"It was... good. There's a lot of places to see, I think I might go for a walk a little later on.\""
-
-#-# >dad careful
-show dad P2_E2
-with Dissolve (0.25)
+#-# <Crossfade to School_Corridor1.png>
+scene PitchBlack
+with Dissolve(1)
+scene School_Corridor1
+with Dissolve(2)
 #--#
 
-dad "\"Just be sure to be careful, It looks like the weather is going to get worse later on.\""
+n "I hurry along, but her pace is faster than mine, forcing me to half-hop awkwardly to match her."
 
-#-# >music out
-stop music fadeout 5.0
+#-# >Edna_P1_E2.png enters from left
+show claes P1_E2:
+  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.4 alpha 1.0
+show claes P1_E2 alpha 1.0
 #--#
 
-erik "\"There's no such thing as bad weather, just inappropriate clothing.\""
+n "Within a few seconds she glances around at me and seems to notice my struggling, her expression shifting to become more apologetic."
+
+#-# >Edna_P1_E1.png 2
+show claes P1_E1
+with Dissolve(0.25)
+#--#
+
+n "She slows to a much more comfortable pace and I'm able to catch up and walk next to her instead of trailing behind."
+
+n "As we walk up a set of stairs I feel my palms start to sweat a little. I hadn't realised how nervous I was, but I honestly have no idea what to expect from this place."
+
+n "I don't know what's going to be expected of me when we reach the form room. Will I have to introduce myself? The sharp clack-clack of Ms. Claes' heels echo against the stone walls, for some reason bringing the ticking of a time bomb to my mind."
+
+#-# <Crossfade to School_Corridor2.png>
+scene PitchBlack
+with Dissolve(1)
+scene School_Corridor2
+with Dissolve(2)
+#--#
+
+#-# >Edna_P1_E1.png enters from left
+show claes P1_E2:
+  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.4 alpha 1.0
+show claes P1_E2 alpha 1.0
+#--#
+
+n "As we reach the top of the stairs and enter another corridor, rather more clinical than the last, she seems to pick up on my nerves, cocking her head as she looks at me. Her expression softens somewhat."
+
+claes "\"Nervous?\""
+
+n "Despite her apparent concern, her voice remains quite harsh. I suppose I can forgive her; I wouldn't know how to behave in her shoes."
+
+erik "\"Honestly, yeah.\""
+
+claes "\"That's perfectly understandable. It's completely natural to feel nervous in new situations.\""
+
+n "I can tell Ms. Claes is genuinely trying to reassure me but she isn't very good at it; it comes off feeling sort of forced and awkward."
+
+claes "\"Especially in circumstances like these.\""
+
+n "Yeah. No kidding."
+
+claes "\"But I assure you, you really have nothing to worry about. Our introductions are quite relaxed.\""
+
+#-# >Edna_P1_E5.png
+show claes P1_E5
+with Dissolve(0.25)
+#--#
+
+n "Ms. Claes stops in front of a door and turns to me. She glances at the door, then at me. To my surprise, she actually gives me a small smile - I wasn't sure if this would be something she was capable of at all."
+
+#-# >Claes exits to right
+show claes P1_E1:
+  easein 1.0 xalign 0.6 alpha 0.0
+#--#
+
+n "With nothing but another terse nod as acknowledgement she opens the door and steps inside. I only notice the noise that had been coming from the classroom in its absence as it dies down almost immediately. I stare at the doorway."
+
+n "Now or never."
+
+n "I take a deep breath in a failed attempt to steady my nerves and follow the teacher inside, where she's already begun to address the class."
+
+#-# >door opening sound effect
+play sound "music/effects/door open and close.mp3"
+#--#
+#-# >Ms.Claes classroom BG
+scene PitchBlack
+with Dissolve(1)
+scene School_Classroom1_NOPAN
+with Dissolve(2)
+#--#
+#-# >Idle chatter sound fades in
+play ambience "music/effects/muffledchatter.ogg" loop fadein 3.0
+#--#
+
+n "The classroom is just as you'd expect of a normal classroom, there's desks, a large blackboard and students dressed in the same red uniform as me."
+
+n "There must only be 12 students in this class, including me."
+
+#-# >Idle chatter fades out
+stop ambience fadeout 3.0
+#--#
+
+n "The few students chatting to each other wrap up their conversations as Ms. Claes takes her place at the front of the class."
+
+n "I'm left awkwardly standing by the door."
+
+claes "\"Okay class, today we'll be holding an introduction, so let's all move to the relaxation room.\""
+
+n "{i}Relaxation room?{/i}"
+
+n "The students seem to know what this is, and all stand before making their way towards a door at the back of the classroom."
+
+n "Ms. Claes turns her attention to me, and beckons me to follow her."
+
+n "I follow obediently, walking into the \"relaxation room\" behind her."
+
+#-# >Relaxation room bg
+scene PitchBlack
+with Dissolve(1)
+scene School_Relaxroom_NOPAN
+with Dissolve(2)
+#--#
+
+n "The room is about half the size of the classroom, painted in neutral, warm colors and dotted with small book shelves and tables."
+
+n "A circle of chairs has been formed in the center of the classroom, some of the students have already taken seats, while a few are more content to choose seats outside of the circle."
+
+n "There's a girl over there listening to music; is that allowed?"
+
+n "I'd much rather take a seat at the edge and listen to music, but I guess it's not really an introduction if I'm as far away from anyone's attention as I can be."
+
+n "I take a seat between two classmates, and wait until the rest of the class has found somewhere to sit."
 
 n "..."
 
-#-# >Beatrice P1_E6 2
-show beatrice P1_E6
-with Dissolve (0.25)
+n "This process takes a lot longer than expected. A few students seem unsure as to where they want to sit, but Ms. Claes seems fine waiting for them."
+
+n "..."
+
+n "Once everyone is seated, Ms. Claes begins speaking."
+
+claes "\"Okay everyone, as I said, we'll be holding an introduction for a new student today, so I'll explain the rules.\""
+
+n "{i}Rules?{/i}"
+
+n "Ms. Claes reaches for a shelf behind her, and retrieves a small pillow."
+
+claes "\"This is the talking pillow, we'll be passing this around the circle. If you're holding the pillow, you can introduce yourself if you like, and if not, you can pass it along.\""
+
+n "This has got to be the strangest introduction I've ever found myself in."
+
+n "Is this the norm here?"
+
+claes "\"I'll begin. I'm Ms. Claes, and I'll be your homeroom teacher. I've been teaching for many years, and my hobbies include reading and puzzles.\""
+
+n "The class is quiet for a moment before Ms. Claes passes the pillow to her right. That student immediately passed it on again, apparently unwilling to introduce themselves."
+
+malestudent "\"Uh, Hi everyone, I'm Andre. I'm in the literature club, that's pretty much all I do.\""
+
+n "Andre considers adding more, before passing the pillow on further."
+
+n "We spend the next twenty minutes passing the pillow around the circle and introducing ourselves."
+
+n "Some simply say their name, while some take the time to explain why their favorite food is their favorite."
+
+n "It seems so... childish."
+
+n "Before long the pillow is in my hands, and all eyes are on me."
+
+n "They're not judging. Not mean, or expectant. Some are even bored."
+
+n "Erik \"I'm Erik, I used to like hiking... geography too, I guess.\""
+
+n "And just like that, my introduction is over."
+
+n "Maybe I was hyping this up too much."
+
+n "I pass the pillow to Fran. He likes steak and goes to the newspaper club."
+
+n "He seems like a pretty nice guy, actually."
+
+n "After a few more introductions, few of which I will remember, the pillow is handed back to Ms. Claes."
+
+claes "\"Okay class, that was very good.\""
+
+claes "\"We'll split into some smaller groups now.\""
+
+n "More introductions?"
+
+n "Ms. Claes splits us intro groups of four and encourages us to ask each other \"icebreaker questions,\" whatever those are."
+
+n "I don't really get the point of all of this, but I guess I've got to play along."
+
+n "Luckily one of the people in my group seems happy to talk about herself at length."
+
+frauke "\"What about you, Erik?\""
+
+erik "\"Huh? What was that, sorry?\""
+
+frauke "\"What's your ideal job?\""
+
+erik "\"Oh, uh... I'm not sure really. I never really think about that.\""
+
+frauke "\"Same here, to be honest.\""
+
+amala "\"I think I'd be an investment banker.\""
+
+n "And investment banker?"
+
+erik "\"Ah, that's interesting.\""
+
+amala "\"Interesting? How?\""
+
+erik "\"I'd have guessed that most people would have chosen something exotic is all.\""
+
+amala "\"Why's that?\""
+
+n "Her tone is getting sharper with each response. Did I mess up?"
+
+erik "\"I, uh, I'm not sure, really.\""
+
+amala "\"Just because we're here doesn't mean we can't do normal stuff you know, Erik.\""
+
+erik "\"Oh, no, that's not what I meant, I-\""
+
+amala "\"What's wrong with wanting to do investments, anyway?\""
+
+n "{i}Crap.{/i}"
+
+erik "\"I'm s-sorry, I misspoke, I...\""
+
+n "{i}Oh man...{/i}"
+
+n "What should I do?"
+
+claes "\"Erik, Amala.\""
+
+#-# >Claes in, frowning
+show claes P1_E2:
+  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.4 alpha 1.0
+show claes P1_E2 alpha 1.0
 #--#
 
-beatrice "\"Doesn't Gustav say that all the time?\""
+n "Now I'm in trouble. Great."
 
-#-# >Hilda P1_E1
-show hilda P1_E1
-with Dissolve (0.25)
-#--#
-#-# >mom and dad
-show mum P1_E7
-with Dissolve (0.25)
+claes "\"Amala, I'm sure Erik misspoke, he didn't mean to imply that. Right Erik?\""
 
-show dad P2_E5
-with Dissolve (0.25)
-#--#
-#-# >Music: Unknown Past (NB: NOT Muted Past)
-play music "music/Unknown Past.mp3" loop
+erik "\"Right, I'm sorry.\""
+
+n "Amala opens her mouth to respond, but reconsiders for a second."
+
+amala "\"You're right, I'm sorry.\""
+
+#-# >Claes neutral
+show claes P1_E1
+with Dissolve(0.25)
 #--#
 
-n "Mom and dad practically freeze at the mention of his name. Silence lingers in the air."
+claes "\"That's fine Amala, introductions can be stressful for everyone. Are you two okay, now?\""
 
-mom "\"...\""
+amala "\"Yeah, I'm okay.\""
 
-dad "\"...\""
+erik "\"Yeah. Again, sorry.\""
 
-#-# >mom ...
-show mum P1_E8
-with Dissolve (0.25)
+amala "\"It's fine, man, let's just get on with the introduction stuff.\""
+
+erik "\"Right.\""
+
+#-# >Claes out
+show claes P1_E1:
+  easein 1.0 xalign 0.6 alpha 0.0
 #--#
 
-mom "\"Well I'm sure it will be a nice walk, Erik.\""
+n "The introductions continue. Frauke likes ham sandwiches, Niklaus wants to be a lawyer and Amala likes swimming in lakes."
 
-#-# >bea and hilda
-show beatrice P1_E5
-with Dissolve (0.25)
+n "After a tedious hour of carefully choosing my words, my first period at Saint Dymphna's is over."
 
-show hilda P1_E4
-with Dissolve (0.25)
-#--#
+n "{i}Thank god{/i}"
 
-n "This time Hilda freezes, a sour look on her face."
-
-#-# >hilda freeze
-show hilda P1_E5
-with Dissolve (0.25)
-#--#
-
-hilda "\"Mum, If we keep ignoring it then you're just wasting his time here!\""
-
-n "That calming feeling is torn from my body almost as quick as it arrived. The last thing I wanted was for my family to fight about this."
-
-mom "\"Oh, don't worry about that now, Erik. It's going to be fantastic here, right?\""
-
-n "Dad nods along with his usual deadpan expression."
-
-n "My family hasn't mentioned Gustav's name directly for a long time, probably for my sake."
-n "I try to find the words that I really want to say, but they don't come."
-
-#-# >mom check
-show mum P1_E1
-with Dissolve (0.25)
-#--#
-
-n "Mom quickly checks her watch and launches into her goodbyes as thoroughly as possible."
-
-#-# >and dad
-show dad P2_E2
-with Dissolve (0.25)
-#--#
-
-n "She pulls me into a hug and almost breaks my ribs as she squeezes. Dad follows shortly after, though with a much more relaxed handshake."
-
-mom "\"Well, we better be off. Make sure to relax a little, okay?\""
-
-#-# >music stops
-stop music fadeout 6.0
-#--#
-
-mom "\"You've got {i}nothing{/i} to worry about here. We're just a phone call away if you need anything. All right?\""
-
-erik "\"... Okay.\""
-
-n "Aside from the fact I'm in a school for the mentally impaired, who knows who could be waiting around the next corner."
-
-dad "\"There's a train you can take that'll get you home in a few hours. You should come around for the holidays at least, son.\""
-
-n "I can't help but grin at him."
-
-erik "\"Wouldn't want to miss Mum's Christmas ham, after all.\""
-
-#-# >dad_smile.png
-show dad P1_E2
-with Dissolve (0.25)
-#--#
-
-n "Dad smiles and nods in agreement."
-
-mum "\"Alright, come on girls, let's go and get some dinner before the restraunts close!\""
-
-n "Her usual peppiness returns as the 'Gustav' issue is sidestepped completely."
-
-#-# >peppy
-show hilda P1_E4
-with Dissolve (0.25)
-
-show beatrice P1_E4
-with Dissolve (0.25)
-#--#
-
-beatrice "\"Oh, where do you wanna go?\""
-
-n "In a matter of seconds Beatrice forgets what we were talking about. Hilde looks sour for a second, but folds to Mum's authority with a sigh."
-
-#-# >hilda take care
-show hilda P1_E1
-with Dissolve (0.25)
-#--#
-
-hilde "\"Well then... Take care, Erik.\""
-
-beatrice "\"We love you lots! I'll text you!\""
-
-n "Both sisters move in for a hug, and then are quickly herded towards the car while Mom fusses over them."
-
-#-# >group hug
-hide hilda
-with Dissolve (1.0)
-hide beatrice
-with Dissolve (1.0)
-hide dad
-with Dissolve (1.0)
-hide mum
-with Dissolve (1.0)
-#--#
-
-n "And now I'm alone."
-
-#-# >END
+#-# >end scene
 #
 #--#
-
-
 
 ########
 
