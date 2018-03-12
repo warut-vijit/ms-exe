@@ -33,7 +33,7 @@ $ renpy.save_persistent()
 #
 #--#
 #-# <mountain range>
-show mountainRange
+scene pitchblack
 #--#
 #-# <pan up slowly>
 show mountainRange at Pan((0, 360), (0, 0), 5.0)
@@ -143,6 +143,10 @@ n "He claps me on the back again and sets off."
 
 #-# <Men on the Mountain fades out>
 stop music fadeout 2.0
+stop ambience fadeout 2.0
+show PitchBlack:
+  alpha 0.0
+  easein 2.0 alpha 0.5
 #--#
 
 n "..."
@@ -159,6 +163,9 @@ n "I try to call out to him, but there's no sound. I scream, but end up swallowi
 #-# <noise sfx starts softly>
 play ambience2 "music/effects/Panic Attack Sounds.ogg" fadein 3.0 loop
 $ renpy.music.set_volume(0.5, 0, "ambience2")
+show PitchBlack:
+  alpha 0.5
+  easein 2.0 alpha 0.9
 #--#
 
 him "\"{i}I've got your back...{/i}\""

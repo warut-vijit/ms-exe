@@ -76,8 +76,7 @@ n "It's a face I know all too well."
 erik "\"Morning, Beatrice...\""
 
 #-#>Beatrice_happier.png, very close, P1_E3, HD sprite
-show beatrice HDP1_E3:
-  alpha 1.0 xalign 0.5 yanchor 1.0 ypos 1080+425+4500
+show beatrice P1_E3
 with Dissolve (0.25)
 #--#
 
@@ -505,11 +504,9 @@ n "St. Dymphna's..."
 n "If their website is anything to go by, it's certainly picturesque. The campus was an old Jesuit monastery until they converted it into a school a few decades ago."
 
 n "A school for..."
-#-# >pause
-$ renpy.pause (1.0)
 
 #-# >pause
-$ renpy.pause (1.0)
+$ renpy.pause (0.5)
 #--#
 n "people with problems like mine."
 

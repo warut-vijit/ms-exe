@@ -35,8 +35,7 @@ play music "music/New Beginnings Arise From Old Endings.mp3"
 EOF
 
 >Beatrice_happier.png, very close, P1_E3, HD sprite
-show beatrice HDP1_E3:
-  alpha 1.0 xalign 0.5 yanchor 1.0 ypos 1080+425+4750 zoom 2.0
+show beatrice P1_E3
 with Dissolve (0.25)
 EOF
 
@@ -268,7 +267,7 @@ $ renpy.music.set_volume(0.6, 2.0, "music")
 EOF
 
 >pause
-$ renpy.pause (1.0)
+$ renpy.pause (0.5)
 EOF
 
 >Music back to normal volume

@@ -1,6 +1,6 @@
 
 >open to mail school grounds.
-scene School_MaleDormsOut with Dissolve(1.0)
+scene outsidemaledorm with Dissolve(1.0)
 EOF
 
 >New beginnings arise from old endings.mp3
@@ -8,15 +8,15 @@ play music "music/New Beginnings Arise from Old Endings.mp3"
 EOF
 
 >BG school_generic2
-scene School_Generic2 with Dissolve(1.0)
+scene school2 with Dissolve(1.0)
 EOF
 
 >bg school_generic3
-scene School_Generic3 with Dissolve(1.0)
+scene chapel with Dissolve(1.0)
 EOF
 
 >bg school_generic3 2
-scene School_Generic3 with Dissolve(1.0)
+scene school1 with Dissolve(1.0)
 EOF
 
 >Music abruptly stops
@@ -37,6 +37,11 @@ EOF
 
 >Ringtone sound effect 3
 play sound "music/effects/phonering.ogg"
+EOF
+
+>fade to black
+scene PitchBlack
+with Dissolve(1)
 EOF
 
 

@@ -29,11 +29,18 @@ EOF
 
 <Men on the Mountain fades out>
 stop music fadeout 2.0
+stop ambience fadeout 2.0
+show PitchBlack:
+  alpha 0.0
+  easein 2.0 alpha 0.2
 EOF
 
 <noise sfx starts softly>
 play ambience2 "music/effects/Panic Attack Sounds.ogg" fadein 3.0 loop
 $ renpy.music.set_volume(0.5, 0, "ambience2")
+show PitchBlack:
+  alpha 0.5
+  easein 2.0 alpha 0.9
 EOF
 
 <fade to black>

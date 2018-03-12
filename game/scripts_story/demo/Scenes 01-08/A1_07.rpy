@@ -10,16 +10,16 @@ $ renpy.save_persistent()
 # Scene name: Icebreaker
 # 
 #-# >fade open to Erik's dorm room, morning
-#scene School_ErikRoom_NOPAN at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/eye.png", 1.0)
+#scene erikdorm at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/eye.png", 1.0)
 #--#
 
 #-# >Alarm clock sound effect
 play sound "music/effects/Phone alert.mp3"
 #--#
 
-n "Scene Opens"
+#-# "Scene Opens"
 #-# >> Wakeup Effect to <School_ErikRoom_NOPAN.png>
-scene School_ErikRoom_NOPAN at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/eye.png", 1.0)
+scene erikdorm at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/eye.png", 1.0)
 #--#
 
 n "A shaft of pale sunlight wakes me up from a shallow, restless sleep before my alarm. Despite the bright morning sun, my room feels chilly and I shiver in my thin pyjamas."
@@ -114,7 +114,7 @@ stop music fadeout 3.0
 #-# <Crossfade to School_MaleDormsOut.png>
 scene PitchBlack
 with Dissolve(1)
-scene School_MaleDormsOut
+scene outsidemaledormcloudy
 with Dissolve(2)
 #--#
 #-# >>Music: The Mind-Boggle Fade in
@@ -139,7 +139,7 @@ n "Actually, scratch that. It's probably just first day nerves on my part. The a
 
 #-# <Clock wipe to School_MainHall.png>
 stop ambience
-scene School_MainHall with ImageDissolve("Transitions/clock.png", 1.0)
+scene classroomhall2 with ImageDissolve("Transitions/clock.png", 1.0)
 #--#
 
 n "After deciding against eating in the crowded cafeteria and taking breakfast in the form of a vending machine cereal bar, I drift back into the lobby to see if I can remember the way to my form room."
@@ -182,7 +182,7 @@ n "With only the most cursory pause for me to confirm, she's turned on her heel 
 #-# <Crossfade to School_Corridor1.png>
 scene PitchBlack
 with Dissolve(1)
-scene School_Corridor1
+scene classroomhall
 with Dissolve(2)
 #--#
 
@@ -209,17 +209,11 @@ n "As we walk up a set of stairs I feel my palms start to sweat a little. I hadn
 n "I don't know what's going to be expected of me when we reach the form room. Will I have to introduce myself? The sharp clack-clack of Ms. Claes' heels echo against the stone walls, for some reason bringing the ticking of a time bomb to my mind."
 
 #-# <Crossfade to School_Corridor2.png>
-scene PitchBlack
-with Dissolve(1)
-scene School_Corridor2
-with Dissolve(2)
+
 #--#
 
 #-# >Edna_P1_E1.png enters from left
-show claes P1_E2:
-  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.4 alpha 1.0
-show claes P1_E2 alpha 1.0
+
 #--#
 
 n "As we reach the top of the stairs and enter another corridor, rather more clinical than the last, she seems to pick up on my nerves, cocking her head as she looks at me. Her expression softens somewhat."
@@ -264,7 +258,7 @@ play sound "music/effects/door open and close.mp3"
 #-# >Ms.Claes classroom BG
 scene PitchBlack
 with Dissolve(1)
-scene School_Classroom1_NOPAN
+scene classroom1
 with Dissolve(2)
 #--#
 #-# >Idle chatter sound fades in
@@ -296,7 +290,7 @@ n "I follow obediently, walking into the \"relaxation room\" behind her."
 #-# >Relaxation room bg
 scene PitchBlack
 with Dissolve(1)
-scene School_Relaxroom_NOPAN
+scene relaxroom
 with Dissolve(2)
 #--#
 
@@ -334,7 +328,7 @@ claes "\"I'll begin. I'm Ms. Claes, and I'll be your homeroom teacher. I've been
 
 n "The class is quiet for a moment before Ms. Claes passes the pillow to her right. That student immediately passed it on again, apparently unwilling to introduce themselves."
 
-malestudent "\"Uh, Hi everyone, I'm Andre. I'm in the literature club, that's pretty much all I do.\""
+student "\"Uh, Hi everyone, I'm Andre. I'm in the literature club, that's pretty much all I do.\""
 
 n "Andre considers adding more, before passing the pillow on further."
 
@@ -348,7 +342,7 @@ n "Before long the pillow is in my hands, and all eyes are on me."
 
 n "They're not judging. Not mean, or expectant. Some are even bored."
 
-n "Erik \"I'm Erik, I used to like hiking... geography too, I guess.\""
+erik "\"I'm Erik, I used to like hiking... geography too, I guess.\""
 
 n "And just like that, my introduction is over."
 
@@ -458,7 +452,7 @@ n "After a tedious hour of carefully choosing my words, my first period at Saint
 n "{i}Thank god{/i}"
 
 #-# >end scene
-#
+scene classroom1 at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
 #--#
 
 ########

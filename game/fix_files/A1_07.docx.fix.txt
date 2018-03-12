@@ -58,7 +58,7 @@ EOF
 <Crossfade to School_MaleDormsOut.png>
 scene PitchBlack
 with Dissolve(1)
-scene School_MaleDormsOut
+scene outsidemaledormcloudy
 with Dissolve(2)
 EOF
 
@@ -72,7 +72,7 @@ EOF
 
 <Clock wipe to School_MainHall.png>
 stop ambience
-scene School_MainHall with ImageDissolve("Transitions/clock.png", 1.0)
+scene classroomhall2 with ImageDissolve("Transitions/clock.png", 1.0)
 EOF
 
 >Edna_P1_E2.png enters from left to middle left
@@ -93,17 +93,11 @@ show claes P1_E1:
 EOF
 
 <Crossfade to School_Corridor1.png>
-scene PitchBlack
-with Dissolve(1)
-scene School_Corridor1
-with Dissolve(2)
+
 EOF
 
 >Edna_P1_E2.png enters from left
-show claes P1_E2:
-  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.4 alpha 1.0
-show claes P1_E2 alpha 1.0
+
 EOF
 
 >Edna_P1_E1.png 2
@@ -157,7 +151,7 @@ EOF
 >Relaxation room bg
 scene PitchBlack
 with Dissolve(1)
-scene School_Relaxroom_NOPAN
+scene relaxroom
 with Dissolve(2)
 EOF
 

@@ -24,7 +24,7 @@ $ renpy.save_persistent()
 # TBD
 # 
 #-# >open to mail school grounds.
-scene School_MaleDormsOut with Dissolve(1.0)
+scene outsidemaledorm with Dissolve(1.0)
 #--#
 
 n "Dad's words echo in my head."
@@ -56,7 +56,7 @@ n "The tour showed me all the places I'll need to go for classes and daily life,
 n "Luckily it seems as though most of the students that were wandering around before have gone elsewhere, so I don't have to try and hide my limp like I had to for that whole tour."
 
 #-# >BG school_generic2
-scene School_Generic2 with Dissolve(1.0)
+scene school2 with Dissolve(1.0)
 #--#
 
 n "Before long, I pass the large academic building and continue onwards."
@@ -72,7 +72,7 @@ n "It feels a little strange walking around school grounds after classes are don
 n "I'd usually dart off as soon as the bell rang."
 
 #-# >bg school_generic3
-scene School_Generic3 with Dissolve(1.0)
+scene chapel with Dissolve(1.0)
 #--#
 
 n "I wonder if anybody from back home wonders where I went."
@@ -86,7 +86,7 @@ n "Now I've got to learn to fit in here."
 n "{i}Somehow...{/i}"
 
 #-# >bg school_generic3 2
-scene School_Generic3 with Dissolve(1.0)
+scene school1 with Dissolve(1.0)
 #--#
 
 n "I mean, Ela seemed normal."
@@ -122,7 +122,7 @@ n "Oh, my phone."
 n "I pull it from my pocket and look at the screen."
 
 #-# >Traumen.mp3
-play music "music/Träumen.mp3"
+play music "music/Traumen.mp3"
 #--#
 
 n "{i}Gustav.{/i}"
@@ -139,7 +139,7 @@ play sound "music/effects/phonering.ogg"
 
 n "I stare at the screen, seemingly unable to move."
 
-n "{I}Incoming call from: Gustav{/i}"
+n "Incoming call from: Gustav"
 
 n "It doesn't stop."
 
@@ -184,6 +184,11 @@ n "Deep breaths..."
 n "Let's just get back to the dorm."
 
 n "With much more effort, I begin limping my way there."
+
+#--#>fade to black
+scene PitchBlack
+with Dissolve(1)
+#--#
 
 ########
 

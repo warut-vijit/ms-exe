@@ -240,6 +240,8 @@ label start0:
   define inconspicuousshrub = Character('Inconspicuous Shrub', color="#906D9F", ctc="ctcstar", ctc_position="fixed")
   define maskedgirl = Character('Masked Girl', color="#9d9d9d", ctc="ctcstar", ctc_position="fixed")
   define brunettegirl = Character('Brunette Girl', color="#9d9d9d", ctc="ctcstar", ctc_position="fixed")
+  define frauke = Character('Frauke', color="#9d9d9d", ctc="ctcstar", ctc_position="fixed")
+  define amala = Character('Amala', color="#9d9d9d", ctc="ctcstar", ctc_position="fixed")
   #Undefined
   define todo = Character('TODO', color="#ff8300", ctc="ctcstar", ctc_position="fixed")
 

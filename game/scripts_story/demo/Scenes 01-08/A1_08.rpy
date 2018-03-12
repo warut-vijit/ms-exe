@@ -33,11 +33,11 @@ $ renpy.save_persistent()
 # 
 # 
 # 
-# I follow everyone back into the classroom as Ms. Claes had instructed, and attempt to find myself a seat.
+n "I follow everyone back into the classroom as Ms. Claes had instructed, and attempt to find myself a seat."
 # 
-# Most of the students around me, and all those directly adjacent to my desk, get up to move off to their next lesson. I remain where I am though – I have maths with Ms. Claes.
+n "Most of the students around me, and all those directly adjacent to my desk, get up to move off to their next lesson. I remain where I am though – I have maths with Ms. Claes."
 # 
-# The classroom quickly fills up with other students again. This time, it looks like the desk next to mine by the window might be occupied; a girl enters the classroom and makes a beeline right for it.
+n "The classroom quickly fills up with other students again. This time, it looks like the desk next to mine by the window might be occupied; a girl enters the classroom and makes a beeline right for it."
 # 
 #-# >Annaliese_UniformBuds_P2_E1.png enters from left to middle right
 show anna U_B_P2_E1:
