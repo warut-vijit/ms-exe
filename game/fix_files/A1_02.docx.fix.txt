@@ -1,0 +1,396 @@
+
+<black screen>
+show PitchBlack
+EOF
+
+>door knocking (no music)
+$ renpy.sound.set_volume(0.75)
+play sound "music/effects/Knock Knock.mp3"
+EOF
+
+>iris open
+scene SisAptMorning at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/eye.png", 1.0)
+EOF
+
+<apartment bedroom>
+#
+EOF
+
+>Beatrice running
+$ renpy.sound.set_volume(0.75)
+play sound "music/effects/BeatriceRunning.mp3"
+EOF
+
+>Beatrice_happy.png, very close, like as close as we can get her before the sprites scaling goes weird
+stop sound
+play sound "music/effects/BeatriceRunning.mp3"
+show beatrice P1_E2:
+  alpha 0.0 xalign 0.1 yanchor 1.0 ypos 1080+425+1100 zoom 2.0
+  easein 2.0 xalign 0.4 alpha 1.0
+show beatrice P1_E2 alpha 1.0
+EOF
+
+>New Beginnings Arise From Old Endings begins
+play music "music/New Beginnings Arise From Old Endings.mp3"
+EOF
+
+>Beatrice_happier.png, very close, P1_E3, HD sprite
+show beatrice HDP1_E3:
+  alpha 1.0 xalign 0.5 yanchor 1.0 ypos 1080+425+4750 zoom 2.0
+with Dissolve (0.25)
+EOF
+
+>Beatrice_happy.png, normal scaling now, centered
+show beatrice P1_E4:
+  xalign 0.4 yanchor 1.0 ypos 1080+425 zoom 1.0
+with Dissolve(0.25)
+EOF
+
+>Beatrice pout
+show beatrice P1_E5:
+  xalign 0.4 yanchor 1.0 ypos 1080+425
+with Dissolve(0.25)
+EOF
+
+>Beatrice small smile
+show beatrice P1_E2
+with Dissolve(0.25)
+EOF
+
+>Beatrice big smile
+show beatrice P1_E3
+with Dissolve(0.25)
+EOF
+
+>Beatrice small smile 2
+show beatrice P1_E2
+with Dissolve(0.25)
+EOF
+
+>Beatrice_laugh.png
+show beatrice P1_E3
+with Dissolve(0.25)
+EOF
+
+>Beatrice out
+show beatrice P1_E3:
+  easein 2.0 xalign 0.1 alpha 0.0
+EOF
+
+>clockwipe
+# done next
+EOF
+
+<Sister's Flat Main Room>
+scene SisAptMain at Position(xpos=0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+EOF
+
+>Mum_smile.png enter right to center
+show mum P1_E2:
+  alpha 0.0 xalign 0.3 yanchor 1.0 ypos 1080+425+60
+  easein 1.0 xalign 0.45 alpha 1.0
+show mum P1_E2 alpha 1.0
+EOF
+
+>Mum_smile.png exit center to right
+show mum P1_E2:
+  easein 1.0 xalign 0.65 alpha 0.0
+EOF
+
+>Hilda enter left to center
+show hilda P1_E2 behind mum:
+  alpha 0.0 xalign 0.3 yanchor 1.0 ypos 1080+425+85
+  easein 1.0 xalign 0.4 alpha 1.0
+show hilda P1_E2 alpha 1.0
+EOF
+
+>Hilda_pout.png
+show hilda P2_E6
+with Dissolve(0.25)
+EOF
+
+>Hilda_smile.png
+show hilda P2_E2
+with Dissolve(0.25)
+EOF
+
+>Hilda_neutral
+show hilda P2_E3
+with Dissolve(0.25)
+EOF
+
+>Hilda_smile.png 2
+show hilda P2_E2
+with Dissolve(0.25)
+EOF
+
+>Beatrice enter right to center
+show beatrice P1_E2:
+  alpha 0.0 xalign 0.3 yanchor 1.0 ypos 1080+425+60
+  easein 1.0 xalign 0.45 alpha 1.0
+show beatrice P1_E2 alpha 1.0
+EOF
+
+>Hilda_neutral 2
+show hilda P2_E3
+with Dissolve(0.25)
+EOF
+
+>Hilda smile again, from center to leftcenter
+show hilda P1_E2:
+  easein 1.0 xalign 0.2 alpha 1.0
+EOF
+
+>Beatrice_happy.png enter from offscreenleft to rightcenter
+show beatrice P1_E2:
+  alpha 0.0 xalign 0.7 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.8 alpha 1.0
+show beatrice P1_E2 alpha 1.0
+EOF
+
+>Mum_smile.png enter offscreenleft to center, between the sisters
+show mum P1_E2:
+  alpha 0.0 xalign 0.45 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.55 alpha 1.0
+show mum P1_E2 alpha 1.0
+EOF
+
+>Hilda raised eyebrows
+show hilda P2_E4
+with Dissolve(0.25)
+EOF
+
+>Beatrice huffy
+show beatrice P1_E7
+with Dissolve(0.25)
+EOF
+
+>Beatrice mock anger
+show beatrice P1_E5
+with Dissolve(0.25)
+EOF
+
+>Hilda smug
+show hilda P2_E2
+with Dissolve(0.25)
+EOF
+
+>Beatrice laughing
+show beatrice P1_E3
+with Dissolve(0.25)
+EOF
+
+>beatrice smile
+show beatrice P1_E2
+with Dissolve(0.25)
+EOF
+
+>Mum beatrice and hilda exit
+show beatrice P1_E2:
+  easein 1.0 xalign 0.9 alpha 0.0
+show mum P1_E2:
+  easein 3.0 xalign 0.3 alpha 0.0
+show hilda P2_E2:
+  easein 3.0 xalign 0.0 alpha 0.0
+EOF
+
+>mum enters from left to center
+show mum P1_E2:
+  alpha 0.0 xalign 0.3 yanchor 1.0 ypos 1080+425+85
+  easein 1.0 xalign 0.4 alpha 1.0
+show mum P1_E2 alpha 1.0
+EOF
+
+[Menu choice:] 
+menu:
+    "\"Sorry, just not hungry after last night.\"":
+        jump choice_1
+    "\"...Sure.\":
+        jump choice_2
+EOF
+
+<if menu choice 1>
+label choice_1:
+EOF
+
+>mum frown
+show mum P1_E7
+with Dissolve(0.25)
+EOF
+
+>mum smile
+show mum P1_E2
+with Dissolve(0.25)
+EOF
+
+>mum exits center to left
+show mum P1_E2:
+  easein 1.0 xalign 0.0 alpha 0.0
+jump resume
+EOF
+
+<if menu choice 2>
+label choice_2:
+EOF
+
+>mum smile 2
+show mum P1_E2
+with Dissolve(0.25)
+EOF
+
+>mum exits center to left 2
+show mum P1_E2:
+  easein 1.0 xalign 0.0 alpha 0.0
+jump resume
+EOF
+
+<resume here>
+label resume:
+EOF
+
+>Beatrice_happy.png exit right
+show beatrice P1_E2:
+  easein 1.0 xalign 0.9 alpha 0.0
+EOF
+
+>Mum_smile.png exit left
+show mum P1_E2:
+  easein 3.0 xalign 0.3 alpha 0.0
+EOF
+
+>Hilda_happy.png exit right
+show hilda P2_E2:
+  easein 3.0 xalign 0.0 alpha 0.0
+EOF
+
+>Music volume lowers slightly
+$ renpy.music.set_volume(0.6, 2.0, "music")
+EOF
+
+>pause
+$ renpy.pause (1.0)
+EOF
+
+>Music back to normal volume
+$ renpy.music.set_volume(0.75, 2.0, "music")
+EOF
+
+>>Dad_neutral enter left to center
+show dad P1_E1:
+  alpha 0.0 xalign 0.65 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.45 alpha 1.0
+show dad P1_E1 alpha 1.0
+EOF
+
+>Dad_smile.png
+show dad P1_E2
+with Dissolve(0.25)
+EOF
+
+>Dad_neutral.png
+show dad P1_E1
+with Dissolve(0.25)
+EOF
+
+>Mum_smile.png enter offscreenright to rightcenter
+show mum P1_E2:
+  alpha 0.0 xalign 0.8 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.7 alpha 1.0
+show mum P1_E2 alpha 1.0
+EOF
+
+>Dad_smile.png 2
+show dad P1_E2
+with Dissolve(0.25)
+EOF
+
+>>scene shifts left
+#show SisAptMain at Position(xpos = -1.0, xanchor=-1.0, ypos=0.5, yanchor=0.5):
+#  easein 1.0 xalign 0.0
+#show dad P1_E2:
+#  easein 1.0 xalign 0.75
+#show mum P1_E4 behind Dad:
+#  easein 1.0 xalign 0.95
+EOF
+
+>Beatrice angry2 enter offscreen left to left
+show beatrice P1_E7:
+  alpha 0.0 xalign 0.1 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.2 alpha 1.0
+show beatrice P1_E7 alpha 1.0
+EOF
+
+>>scene shifts back
+#show SisAptMain at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5):
+#  easein 1.0 xalign 1.0
+#show dad P1_E2:
+#  easein 1.0 xalign 0.45
+#show mum P1_E4 behind Dad
+#  easein 1.0 xalign 0.75
+#show beatrice angry2:
+#    easein 1.0 offscreenleft
+EOF
+
+>beatrice out
+show beatrice P1_E7:
+  easein 1.0 xalign 0.1 alpha 0.0
+EOF
+
+>Mum_smile.png exit right
+show mum P1_E2:
+  easein 1.0 xalign 0.85 alpha 0.0
+EOF
+
+>Hilda enter from left
+show hilda P3_E2:
+  alpha 0.0 xalign 0.1 yanchor 1.0 ypos 1080+425+85
+  easein 1.0 xalign 0.2 alpha 1.0
+show hilda P3_E2 alpha 1.0
+EOF
+
+>pause
+$ renpy.pause (1.0)
+EOF
+
+>timewipe
+scene CarInteriorAlleyWay at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+EOF
+
+>car interior
+scene CarInteriorAlleyWay at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)
+EOF
+
+>clockwipe 2
+scene CarInteriorAlleyWay at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+EOF
+
+>open with car_interior(inside alleyway) BG
+scene CarInteriorAlleyWay at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)
+EOF
+
+>thump (camera shake here)
+scene CarInteriorAlleyWay with vpunch
+EOF
+
+>Transition to car_interior(in Vienna) BG
+scene CarInteriorVienna at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with Dissolve(1.0)
+EOF
+
+>Transition to car_interior(highway) BG
+scene CarInteriorHighway at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with Dissolve(1.0)
+EOF
+
+>transition_start
+stop music fadeout 5.0
+show PitchBlack
+with Dissolve(3.0)
+EOF
+
+<end>
+#
+EOF
+
+
+########
+
+jump A1_03 # jump A?_??

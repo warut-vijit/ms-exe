@@ -1,0 +1,45 @@
+
+>open to mail school grounds.
+scene School_MaleDormsOut with Dissolve(1.0)
+EOF
+
+>New beginnings arise from old endings.mp3
+play music "music/New Beginnings Arise from Old Endings.mp3"
+EOF
+
+>BG school_generic2
+scene School_Generic2 with Dissolve(1.0)
+EOF
+
+>bg school_generic3
+scene School_Generic3 with Dissolve(1.0)
+EOF
+
+>bg school_generic3 2
+scene School_Generic3 with Dissolve(1.0)
+EOF
+
+>Music abruptly stops
+stop music
+EOF
+
+>Ringtone sound effect
+play sound "music/effects/phonering.ogg"
+EOF
+
+>Traumen.mp3
+play music "music/Träumen.mp3"
+EOF
+
+>Ringtone sound effect 2
+play sound "music/effects/phonering.ogg"
+EOF
+
+>Ringtone sound effect 3
+play sound "music/effects/phonering.ogg"
+EOF
+
+
+########
+
+jump A1_07 # jump A?_??

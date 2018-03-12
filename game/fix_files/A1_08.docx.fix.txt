@@ -1,0 +1,206 @@
+
+>Annaliese_UniformBuds_P2_E1.png enters from left to middle right
+show anna U_B_P2_E1:
+  xalign 0.5 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.7 alpha 1.0
+show anna U_B_P2_E1 alpha 1.0
+EOF
+
+>Annaliese_UniformBuds_P2_E7.png
+show anna U_B_P2_E7
+with Dissolve(0.25)
+EOF
+
+>Annaliese_UniformBuds_P2_E1.png
+show anna U_B_P2_E1
+with Dissolve(0.25)
+EOF
+
+>Annaliese exits to right
+show anna U_B_P2_E1:
+  easein 1.0 xalign 0.9 alpha 0.0
+EOF
+
+>Edna_P1_E2.png enter from left to middle left
+show claes P1_E2:
+  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.4 alpha 1.0
+show claes P1_E2 alpha 1.0
+EOF
+
+>Edna_P1_E1.png
+show claes P1_E1
+with Dissolve(0.25)
+EOF
+
+>Edna exits to left
+show claes P1_E1:
+  easein 1.0 xalign 0.2 alpha 0.0
+EOF
+
+>Annaliese_UniformBuds_P2_E1.png enters from right to middle right
+show anna U_B_P2_E1:
+  xalign 0.8 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.6 alpha 1.0
+show anna U_B_P2_E1 alpha 1.0
+EOF
+
+>CG in
+# done below
+EOF
+
+>CG_03_E1.png
+show CG03E1
+with Dissolve (1.0)
+EOF
+
+>CG_03_E2.png
+show CG03E2
+with Dissolve (0.25)
+hide CG03E1
+EOF
+
+>CG_03_E3.png
+show CG03E3
+with Dissolve (0.25)
+hide CG03E2
+EOF
+
+>Music stops
+stop music fadeout 5.0
+EOF
+
+>Ambient crowd noise
+play ambience "music/effects/muffledchatter.ogg" fadein 3.0 loop
+EOF
+
+>Ambient crowd noise stops
+stop ambience fadeout 3.0
+EOF
+
+>Music: St. D's Ghost
+play music "music/St. D_s Ghost.mp3" loop
+EOF
+
+>CG_03_E4.png
+show CG03E4
+with Dissolve (0.25)
+hide CG03E3
+EOF
+
+>Annaliese_UniformBuds_P2_E6.png
+# skip
+EOF
+
+>CG_03_E5.png
+show CG03E5
+with Dissolve (0.25)
+hide CG03E4
+EOF
+
+>Annaliese_UniformBuds_P1_E3.png
+hide CG03E5
+show anna U_P1_E3
+EOF
+
+>CG Out with fade
+# done above
+EOF
+
+>Annaliese_UniformNobuds_P1_E5.png
+show anna U_P1_E5
+with Dissolve(0.25)
+EOF
+
+>Annaliese_UniformNobuds_P1_E1.png
+show anna U_P1_E1
+with Dissolve(0.25)
+EOF
+
+>Annaliese_UniformNobuds_P1_E3.png
+show anna U_P1_E3
+with Dissolve(0.25)
+EOF
+
+>Annaliese_UniformNobuds_P1_E2.png
+show anna U_P1_E2
+with Dissolve(0.25)
+EOF
+
+>Annaliese_UniformNobuds_P1_E1.png 2
+show anna U_P1_E1
+with Dissolve(0.25)
+EOF
+
+>Annaliese_UniformNobuds_P2_E1.png
+show anna U_P2_E1
+with Dissolve(0.25)
+EOF
+
+>Annaliese_UniformNobuds_P2_E1.png exits to right
+show anna U_P2_E1:
+  easein 1.0 xalign 0.8 alpha 0.0
+EOF
+
+<timelapse>
+scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
+$ renpy.pause(1.0)
+scene classroom1 with ImageDissolve("Transitions/clock.png", 1.0)
+EOF
+
+>Annaliese_UniformBuds_P2_E1.png enters from right to middle right 2
+show anna U_B_P2_E1:
+  xalign 0.9 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.7 alpha 1.0
+show anna U_B_P2_E1 alpha 1.0
+EOF
+
+>Annaliese_UniformBuds_P2_E3.png
+show anna U_B_P2_E3
+with Dissolve(0.25)
+EOF
+
+>Annaliese_UniformBuds_P1_E4.png
+show CG03E2
+with Dissolve (0.25)
+hide CG03E1
+EOF
+
+>Anna out
+show anna U_B_P1_E4:
+  easein 1.0 xalign 0.9 alpha 0.0
+EOF
+
+>Annaliese_UniformBuds_P1_E4.png moves from middle left to middle right
+show anna U_B_P1_E4:
+  easein 2.0 xalign 0.55 alpha 1.0
+EOF
+
+>Annaliese_UniformBuds_P2_E6.png 2
+show anna U_B_P2_E6
+with Dissolve(0.25)
+EOF
+
+>Annaliese out
+show anna U_B_P2_E6:
+  easein 1.0 xalign 0.9 alpha 0.0
+EOF
+
+>Music fades out
+stop music fadeout 5.0
+EOF
+
+>Ambient crowd noise 2
+play ambience "music/effects/muffledchatter.ogg" fadein 3.0 loop
+EOF
+
+>TIMESKIP
+scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
+$ renpy.pause(1.0)
+scene erikdorm with ImageDissolve("Transitions/clock.png", 1.0)
+EOF
+
+
+########
+
+jump A1_09_5 # jump A?_??

@@ -1,0 +1,99 @@
+
+<timeskip>
+scene School_MainBuildEntrance at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+EOF
+
+>Background: School Entrance (day)
+scene School_MainBuildEntrance
+EOF
+
+>Show Ela at centre
+show ela P1_E1 alpha 1.0 xalign 0.5
+EOF
+
+>Show Irene at middle right
+show irene P1_E1 alpha 1.0 xalign 0.75
+EOF
+
+>Ela exit to right
+show ela P1_E1:
+  easein 1.0 xalign 0.9 alpha 0.0
+EOF
+
+>Irene exit to right
+show irene P1_E1:
+  easein 1.0 xalign 0.9 alpha 0.0
+EOF
+
+>Beatrice enter from left to middle left
+show beatrice P1_E1:
+  alpha 0.0 xalign 0.65 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.25 alpha 1.0
+show beatrice P1_E1 alpha 1.0
+EOF
+
+>Hilda enter from left to middle right
+show brunhilde P1_E1:
+  alpha 0.0 xalign 1.0 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
+show brunhilde P1_E1 alpha 1.0
+EOF
+
+>Beatrice big smile
+show beatrice P1_E3
+with Dissolve(0.25)
+EOF
+
+>Beatrice neutral
+show beatrice P1_E1
+with Dissolve(0.25)
+EOF
+
+>Hilda move to right
+show brunhilde P1_E1:
+  easein 1.0 xalign 0.95 alpha 1.0
+EOF
+
+>Beatrice move to middle right
+show beatrice P1_E1:
+  easein 1.0 xalign 0.75 alpha 1.0
+EOF
+
+>Mr Wilhelm enters from left to middle left
+show dad P1_E1:
+  alpha 0.0 xalign 0.0 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.25 alpha 1.0
+show dad P1_E1 alpha 1.0
+EOF
+
+>Mrs Wilhelm enters from left to left
+show mum P1_E1:
+  alpha 0.0 xalign 0.0 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.05 alpha 1.0
+show mum P1_E1 alpha 1.0
+EOF
+
+>Mum exits to right
+show mum P1_E1:
+  easein 1.0 xalign 0.9 alpha 0.0
+EOF
+
+>Beatrice exits to right
+show beatrice P1_E1:
+  easein 1.0 xalign 0.9 alpha 0.0
+EOF
+
+>Brunhilde exits to right
+show brunhilde P1_E1:
+  easein 1.0 xalign 0.9 alpha 0.0
+EOF
+
+>Mr Wilhelm exits to right
+show dad P1_E1:
+  easein 1.0 xalign 0.9 alpha 0.0
+EOF
+
+
+########
+
+jump A1_06 # jump A?_??

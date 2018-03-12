@@ -59,12 +59,23 @@ n "It's nice to stretch my legs after being squished into the back of Mom's eco-
 scene mainGate at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)
 #--#
 #-# >Be Green begins (NOTE: NOT BE GREEN AFTERNOON)
-play music "music/Be Green.mp3" loop
+play music "music/Be Green (Afternoon).mp3" loop
 #--#
 
 n "After consulting a map of the campus from my welcome pack, we set out towards our destination."
 
 n "The main building is the easiest to recognize; it's three stories - the tallest building on campus -  and definitely very old. A mass of ivy coats the entrance, adding a natural, green layer of patina to the stonework."
+
+#-# >Dad_frown
+show dad P1_E4:
+  alpha 0.0 xalign 0.1 yanchor 1.0 ypos 1080+425+60
+  easein 1.0 xalign 0.25 alpha 1.0
+#--#
+#-# >Mum_neutral
+show mum P1_E1:
+  alpha 0.0 xalign 0.9 yanchor 1.0 ypos 1080+425+60
+  easein 1.0 xalign 0.75 alpha 1.0
+#--#
 
 mom "\"Isn't this building pretty, Erik? This is where you'll be going for classes.\""
 
@@ -78,16 +89,8 @@ stop music
 stop music2
 stop ambience
 stop ambience2
+#--#
 stop sound
-#--#
-
-#-# >Dad_frown
-show dad P1_E4
-#--#
-#-# >Mum_neutral
-show mum P1_E1
-with dissolve(0.25)
-#--#
 
 unknownqqq "\"GOOD MORNING!\""
 
@@ -96,8 +99,9 @@ n "Suddenly, a booming voice emerges from the building. Despite the distance, I 
 n "A large man comes out from behind the entranceway. He's waving at us to come inside."
 
 #-# >Dad_neutral
-show dad P1_E1
-with Dissolve(0.25)
+show dad P1_E1:
+  alpha 0.0 xalign 0.1 yanchor 1.0 ypos 1080+425+60
+  easein 1.0 xalign 0.25 alpha 1.0
 #--#
 
 dad "\"Ah, that'll be Mr. Bosworth.\""
@@ -109,8 +113,9 @@ n "I tilt my head toward the man in disbelief."
 dad "\"... Yes.\""
 
 #-# >Bosworth enter right
-show Bosworth P1_E2:
-  easein 1.0 xalign 0.65 alpha 1.0
+show bosworth P1_E2:
+  alpha 0.0 xalign 0.9 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
 #--#
 #-# >The Mind-Boggle begins playing
 play music "music/The_Mind-Boggle.mp3" loop
@@ -140,7 +145,7 @@ erik "\"Uh, thanks...\""
 n "He claps his hands together loud enough to scare some of the nearby birds away."
 
 #-# >Bosworth neutral
-show Bosworth P1_E2
+show bosworth P1_E2
 with Dissolve(0.25)
 #--#
 
@@ -149,7 +154,7 @@ bosworth "\"Well, then, we have a lot of ground to cover today! There's some pap
 erik "\"Ritual?\""
 
 #-# >Bosworth laugh
-show Bosworth P1_E4
+show bosworth P1_E4
 with Dissolve(0.25)
 #--#
 
@@ -158,12 +163,13 @@ bosworth "\"Kidding, kidding!\""
 n "He herds us inside with a jolly laugh."
 
 #-# >Fade to interior building
-scene School_MainHall with Dissolve(1.0)
+scene classroomhall with Dissolve(1.0)
 #--#
 
 #-# >Bosworth neutral 2
-show Bosworth P1_E2
-with Dissolve(0.25)
+show bosworth P1_E2:
+  alpha 0.0 xalign 0.4 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
 #--#
 
 bosworth "\"If you don't mind, I'd like to begin with a short one-on-one with Erik. Please, make yourselves comfortable in the lobby.\""
@@ -178,7 +184,12 @@ play music "music/The Hero's Theme.mp3" fadein 1.0
 #--#
 
 #-# >Fade to office (day)
-scene BosworthOffice_Under with Dissolve (1.0)
+#-# >Fade to office (day)
+scene BosworthOffice with Dissolve (1.0)
+show bosworth P1_E2:
+  alpha 0.0 xalign 0.9 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
+show BosworthOfficeFG
 #--#
 #-# >Slide across the BG as Erik inspects the room
 # not big enough to pan
@@ -189,7 +200,7 @@ n "Bosworth's office is very organized, with bookshelves containing dozens of vo
 n "He settles into his massive chair and shuffles a few papers, then gestures to the seat opposite his."
 
 #-# >Return to full BG
-scene BosworthOffice_Under
+
 #--#
 
 n "..."
@@ -218,7 +229,7 @@ bosworth "\"Splendid! Ms. Claes is one of our English-speaking instructors; you'
 erik "\"Sounds good to me. I take it English classrooms have students from a wider variety of countries?\""
 
 #-# >Bosworth neutral 3
-show Bosworth P1_E2
+show bosworth P1_E2
 with Dissolve(0.25)
 #--#
 
@@ -291,24 +302,27 @@ play sound "music/effects/door open and close.mp3"
 #--#
 
 #-# >Fade to interior building 2
-scene School_MainHall with Dissolve(1.0)
+scene classroomhall with Dissolve(1.0)
 #--#
 #-# >Mum enter left
 show mum P1_E1:
-  easein 1.0 xalign 0.1 alpha 1.0
+  alpha 0.0 xalign 0.0 yanchor 1.0 ypos 1080+425+60
+  easein 1.0 xalign 0.0 alpha 1.0
 #--#
 #-# >Beatrice enter left
 show beatrice P1_E1:
-  easein 1.0 xalign 0.3 alpha 1.0
+  alpha 0.0 xalign 0.35 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.35 alpha 1.0
 #--#
 #-# >Brunhilde enter left
-show brunhilde P1_E1:
-  easein 1.0 xalign 0.5 alpha 1.0
+show hilda P1_E1:
+  alpha 0.0 xalign 0.65 yanchor 1.0 ypos 1080+425+85
+  easein 1.0 xalign 0.65 alpha 1.0
 #--#
 #-# >Dad enter left
 show dad P1_E1:
-  easein 1.0 xalign 0.7 alpha 1.0
-  easein 1.0 xalign 0.7 alpha 1.0
+  alpha 0.0 xalign 1.1 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 1.1 alpha 1.0
 #--#
 
 erik "\"Okay, all done.\""
@@ -320,11 +334,18 @@ beatrice "\"Is he nice?\""
 erik "\"It went well, and yeah, Mr. Bosworth is actually pretty nice.\""
 
 #-# >Bosworth enter right 2
-show Bosworth P1_E2:
-  easein 1.0 xalign 0.9 alpha 1.0
+show bosworth P1_E2:
+  alpha 0.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
+show beatrice P1_E1:
+  alpha 1.0 xalign 0.35 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.2 alpha 1.0
+show hilda P1_E1:
+  alpha 1.0 xalign 0.65 yanchor 1.0 ypos 1080+425+85
+  easein 1.0 xalign 0.8 alpha 1.0
 #--#
 #-# >A busier sort of day begins playing
-play music "music/A Busier Sort of Day (Based on St. Paul's Suite by Gustav Holst)" loop
+play music "music/A Busier Sort of Day (Based on St. Paul's Suite by Gustav Holst).mp3" loop
 #--#
 
 bosworth "\"I'm glad to hear it!\""
@@ -334,21 +355,24 @@ n "I turn around, not realizing the man I'm talking about has already finished w
 bosworth "\"I just called Ms. Claes; she's in her classroom at the end of this hallway, Erik. She'll be expecting you in a minute. Now, I'll need to steal you two away, Mr. and Mrs. Wilhelm. Just a few bits and pieces of last-minute paperwork...\""
 
 #-# >Bosworth and mom and dad leave
-show Bosworth P1_E2:
-  easein 1.0 xalign 1.0 alpha 0.0
+show bosworth P1_E2:
+  alpha 1.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 0.0
 show mum P1_E1:
-  easein 1.0 xalign 1.0 alpha 0.0
+  alpha 1.0 xalign 0.0 yanchor 1.0 ypos 1080+425+85
+  easein 1.0 xalign 0.0 alpha 0.0
 show dad P1_E1:
-  easein 1.0 xalign 1.0 alpha 0.0
+  alpha 1.0 xalign 1.1 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 1.1 alpha 0.0
 #--#
 
 n "He guides them into the office and I'm left with Beatrice and Hilda."
 
 #-# >Beatrice and Hilda move to centerleft and center right
-show brunhilde P1_E1:
-  easein 1.0 xalign 0.4 alpha 1.0
+show hilda P1_E1:
+  easein 1.0 xalign 0.7 alpha 1.0
 show beatrice P1_E1:
-  easein 1.0 xalign 0.4 alpha 1.0
+  easein 1.0 xalign 0.3 alpha 1.0
 #--#
 
 erik "\"Well, want to check out my classroom with me?\""
@@ -364,12 +388,19 @@ play sound "music/effects/Knock Knock.mp3"
 unknownqqq "\"Come in.\""
 
 #-# >fade to office (day)
-scene School_Classroom1_NOPAN with Dissolve(1.0)
+scene classroom1 with Dissolve(1.0)
 #--#
 
 #-# >Claes enter right
 show claes P1_E1:
-  easein 1.0 xalign 0.65 alpha 1.0
+  alpha 0.0 xalign 1.0 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.9 alpha 1.0
+show hilda P2_E2:
+  alpha 0.0 xalign 0.0 yanchor 1.0 ypos 1080+425+85
+  easein 1.0 xalign 0.1 alpha 1.0
+show beatrice P1_E2:
+  alpha 0.0 xalign 0.3 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.4 alpha 1.0
 #--#
 #-# >Claes_smile.png
 show claes P1_E5
@@ -416,6 +447,13 @@ claes "\"Great, we'll have someone come by and show you around.\""
 
 n "Ms. Claes falters for a second before speaking again."
 
+#-# >Sisters sad
+show beatrice P2_E5
+with Dissolve(0.25)
+show hilda P2_E5
+with Dissolve(0.25)
+#--#
+
 claes "\"Unfortunately, your sisters won't be able to accompany you.\""
 
 claes "\"I'm afraid it's policy, so I hope you don't mind. \""
@@ -436,11 +474,16 @@ claes "\"Ah, perfect timing. Come in.\""
 
 #-# >Ela enters from right
 show ela P1_E1:
-  easein 1.0 xalign 0.8 alpha 1.0
+  alpha 0.0 xalign 1.2 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 1.1 alpha 1.0
 #--#
 #-# >Claes moves over the left slightly
 show claes P1_E1:
-  easein 1.0 xalign 0.45 alpha 1.0
+  easein 1.0 xalign 0.8 alpha 1.0
+show beatrice P1_E1
+with Dissolve(0.25)
+show hilda P2_E6
+with Dissolve(0.25)
 #--#
 
 n "A young girl enters from outside."
@@ -465,15 +508,17 @@ ela "\"It's nice to meet you too, Erik.\""
 ela "\"Now, let's get started, shall we? Right this way, please!\""
 
 #-# >clock wipe transition
-scene School_MainHall at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+scene mainlobby at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
 #--#
 
 #-# >open to school hallway
-scene School_MainHall at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)
+
 #--#
 
 #-# >Ela smile
-show ela P1_E2
+show ela P1_E2:
+  alpha 0.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
 #--#
 
 #-# >Music: Be Green (Afternoon)
@@ -505,7 +550,7 @@ n "Despite my lack of response, Ela continues on, unphased."
 n "She must have given a lot of these tours like these - ones with unresponsive, awkward recipients."
 
 #-# >Transition to different building
-scene School_Corridor1 with Dissolve(1.0)
+scene classroomhall with Dissolve(1.0)
 #--#
 
 n "Ela does her best to fill the silence with random facts about the school as we move between points of interest, but it seems as though she's starting to run out."
@@ -515,7 +560,9 @@ n "Should I try and speak? My last attempt was poor at best."
 n "I guess I should present myself as more than a brick wall."
 
 #-# >Ela default
-show ela P1_E1
+show ela P1_E1:
+  alpha 0.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
 #--#
 
 erik "\"So... Ela. How long have you been here?\""
@@ -530,6 +577,7 @@ erik "\"It looks nice.\""
 
 #-# >Ela smile 2
 show ela P1_E2
+with Dissolve(0.25)
 #--#
 
 ela "\"It is.\""
@@ -543,7 +591,10 @@ n "Ugh, that was awkward. Come on brain, you've done this a million times before
 ela "\"The lake is a popular spot to relax, although there's no fishing or swimming allowed. There {i}is{/i} a pool though - which is obviously cleaner than the lake, in any case.\""
 
 #-# >Transition to outside chapel
-scene School_Generic3 with Dissolve(1.0)
+scene chapel with Dissolve(1.0)
+show ela P1_E1:
+  alpha 0.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
 #--#
 
 n "We descend the stairs and emerge from the building into the blinding sunlight; Ela points towards the small structure to the right."
@@ -555,7 +606,10 @@ n "She switches to her left."
 ela "\"... And the dorms are across the way. We'll head there in a moment, but for now...\""
 
 #-# >Transition to main school grounds
-scene School_MainBuildingClose with Dissolve(1.0)
+scene mainbuildingclose with Dissolve(1.0)
+show ela P1_E1:
+  alpha 0.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
 #--#
 
 n "Ela leads us straight and comes to a stop in the middle of a walking path between two buildings."
@@ -626,7 +680,7 @@ ela "\"What I {i}will{/i} say is that this school is probably the best chance yo
 n "Ela leans against the trunk of a nearby tree, hands clasped behind her back."
 
 #-# >CG
-show CG01
+show CG02
 with Dissolve(2)
 #--#
 

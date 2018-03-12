@@ -29,16 +29,24 @@ $ renpy.save_persistent()
 # -walking sfx
 # 
 #-# <scene fades from CG at the end of scene 03>
-scene School_MainBuildingClose with Dissolve(1.0)
+scene mainbuildingclose with Dissolve(1.0)
 show ela P1_E3:
-  xalign 0.4 alpha 1.0
+  alpha 1.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
 #--#
 #-# >branch breaking
 play sound "music/effects/Branch1.mp3"
 play sound "music/effects/Branch2.mp3"
 #--#
 #-# >thump
-scene School_MainBuildingClose with vpunch
+scene mainbuildingclose with vpunch
+show ela P1_E3:
+  alpha 1.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
+stop music
+stop music2
+stop ambience
+stop ambience2
 #--#
 #-# >Ela surprised
 show ela P1_E4
@@ -50,14 +58,15 @@ n "From above us, a girl crashes through the tree Ela was leaning on."
 n "Before I even have time to register this, she rises from the debris, dusting herself off and initiating a conversation as casually as one might wave hello."
 
 #-# >Irene unidentified
-show irene P1_E1:
-  easein 1.0 xalign 0.8 alpha 1.0
+show irene U_P1_E1:
+  alpha 0.0 xalign 0.75 yanchor 1.0 ypos 1080+425+100
+  easein 1.0 xalign 0.75 ypos 1080+425 alpha 1.0
 #--#
 
-strangegirl "\"Oh hey Ela, didn't see you there; don't mind me. For the record, that tree is a bit iffy! And you must be Erik!\""
+suspiciousperson "\"Oh hey Ela, didn't see you there; don't mind me. For the record, that tree is a bit iffy! And you must be Erik!\""
 
 #-# >Irene smile
-show irene P1_E2
+show irene U_P1_E2
 with Dissolve(0.25)
 #--#
 
@@ -68,7 +77,7 @@ erik "\"Uh. Yeah. It's nice to meet you...?\""
 n "Ela seems to have shorted out, staring at the girl with a mixture of despair and panic."
 
 #-# >Irene intro
-show irene P1_E2
+show irene U_P1_E2
 with Dissolve(0.25)
 #--#
 
@@ -78,21 +87,22 @@ irene "\"Irene! Irene Ross, at your service!\""
 play music "music/In Her Element.mp3"
 #--#
 
-#-# >Irene post intro
-show irene P1_E4
+#-# >irene U_Post intro
+show irene U_P1_E4
+with Dissolve(0.25)
 #--#
 
 erik "\"Nice to meet you. I'm Erik... Hang on, how do you know my name?\""
 
 #-# >Irene raised eyebrow
-show irene P1_E4
+show irene U_P1_E4
 with Dissolve(0.25)
 #--#
 
 irene "\"Huh? Oh. It was kind of a lucky guess? I figured it was either that or Aaron; I mean, lip reading is more art than science-- look, it's not important! And {i}heyyyy{/i} welcome to St. D's!\""
 
 #-# >Irene open mouth smile
-show irene P1_E2
+show irene U_P1_E2
 with Dissolve(0.25)
 #--#
 
@@ -103,7 +113,7 @@ n "Ela's face has completely drained of colour."
 erik "\"Uh, thanks?\""
 
 #-# >Irene smile 2
-show irene P1_E2
+show irene U_P1_E2
 with Dissolve(0.25)
 #--#
 
@@ -114,7 +124,7 @@ n "She holds up the case strung loosely around her neck - which I now realize is
 n "Ela finds her voice, maybe an octave higher than when she lost it."
 
 #-# >Ela vs Irene
-show irene P1_E1
+show irene U_P1_E1
 with Dissolve(0.25)
 show ela P1_E7
 with Dissolve(0.25)
@@ -123,14 +133,14 @@ with Dissolve(0.25)
 ela "\"We're fine! {i}It's fine!{/i} You probably have stuff to do, right?\""
 
 #-# >Irene oblivious
-show irene P1_E2
+show irene U_P1_E2
 with Dissolve(0.25)
 #--#
 
 irene "\"Nope! Totally open today! Just doing my rounds; nothing really happening around here - except Erik, of course! - so I figured I might as well drop in. Ha! {i}'Drop in!'{/i} I didn't even mean to do that.\""
 
 #-# >Irene yet again
-show irene P1_E4
+show irene U_P1_E4
 with Dissolve(0.25)
 #--#
 
@@ -150,7 +160,7 @@ with Dissolve(0.25)
 ela "\"All right, Irene, you've had your fun. I'm sure you two will run into each other later, so {i}can you please leave us be?{/i}\""
 
 #-# >Irene neutral
-show irene P1_E1
+show irene U_P1_E1
 with Dissolve(0.25)
 #--#
 
@@ -170,14 +180,20 @@ n "Ela takes a moment to ponder it.."
 ela "\"...All right. Irene; why don't you take us to some places you like?\""
 
 #-# >Irene smile 3
-show irene P1_E2
+show irene U_P1_E2
 with Dissolve(0.25)
 #--#
 
 irene "\"Great! Follow me!\""
 
 #-# <fade to main campus view>
-scene School_MainBuildEntrance with Dissolve(1.0)
+scene mainbuilding with Dissolve(1.0)
+show irene U_P1_E1:
+  alpha 0.0 xalign 0.85 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
+show ela P1_E3:
+  alpha 0.0 xalign 0.15 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.25 alpha 1.0
 #--#
 
 n "With Irene at the helm, the tour re-commences; Ela is seemingly resigned to her inclusion. Maybe calling it a \"tour\" at this point isn't exactly accurate?"
@@ -196,7 +212,7 @@ with Dissolve(0.25)
 ela "\"You were chiseling out a section of a building.\""
 
 #-# >Irene neutral 2
-show irene P1_E1
+show irene U_P1_E1
 with Dissolve(0.25)
 #--#
 
@@ -214,7 +230,7 @@ irene "\"Huh? I dunno; like exercise and stuff. They've got a gym in there. It's
 ela "\"But {i}brickwork{/i} is?\""
 
 #-# >Irene smile 4
-show irene P1_E2
+show irene U_P1_E2
 with Dissolve(0.25)
 #--#
 
@@ -240,8 +256,13 @@ n "As we explore the more mundane aspects of the campus, I (ironically) find mys
 n "Really, it's those small touches of personalization and little imperfections that make it feel... normal."
 
 #-# >Ela wander
-show ela P1_E6
-with Dissolve(0.25)
+scene schoolground1 with Dissolve(1.0)
+show irene U_P1_E1:
+  alpha 0.0 xalign 0.85 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
+show ela P1_E1:
+  alpha 0.0 xalign 0.15 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.25 alpha 1.0
 #--#
 
 n "Eventually we wander away from the campus, Ela takes the lead again as we head towards the woods. Irene gives a shrug, but seems content to follow along. Before I have a chance to ask where we're heading next, Ela slows to a halt."
@@ -261,7 +282,13 @@ ela "\"Like it or not, this is Erik's tour.\""
 n "Irene groans, but leads us down the trail anyway."
 
 #-# <fade to trail BG>
-scene School_Grounds1 with Dissolve(1.0)
+scene schoolground2 with Dissolve(1.0)
+show irene U_P1_E1:
+  alpha 0.0 xalign 0.85 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
+show ela P1_E1:
+  alpha 0.0 xalign 0.15 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.25 alpha 1.0
 #--#
 #-# <walking sfx starts>
 play sound "music/effects/WalkingGrass.mp3"
@@ -303,16 +330,21 @@ n "I shrug."
 erik "\"Sure, we don't have a whole lot of time left anyway.\""
 
 #-# <timeskip>
-scene School_MainBuildEntrance at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+scene mainbuilding at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
 #--#
 #-# <show campus BG>
-scene School_MainBuildEntrance
+show irene U_P1_E1:
+  alpha 0.0 xalign 0.85 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
+show ela P1_E1:
+  alpha 0.0 xalign 0.15 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.25 alpha 1.0
 #--#
 
 #-# <show Ela neutral and Irene neutral>
 show ela P1_E1
 with Dissolve(0.25)
-show irene P1_E1
+show irene U_P1_E1
 with Dissolve(0.25)
 #--#
 
@@ -362,7 +394,7 @@ with Dissolve(0.25)
 #--#
 
 #-# >Irene look
-show irene P1_E3
+show irene U_P1_E3
 with Dissolve(0.25)
 #--#
 
@@ -392,7 +424,7 @@ erik "\"I just...\""
 n "{i}...Can't do this.{/i}"
 
 #-# >ears ringing
-play sound2 "music/effects/RingingEars.mp3"
+play sound "music/effects/RingingEars.mp3"
 #--#
 
 erik "\"Sorry, sorry. I just need to sit down, I just... need to...\""
@@ -413,7 +445,9 @@ n "{i}Breathe out.{/i}"
 
 #-# >Panic noise fades out
 stop sound fadeout 2.0
-stop sound2 fadeout 2.0
+show PitchBlack behind beatrice, hilda, ela, irene:
+  alpha 0.4
+  easein 2.0 alpha 0.0
 #--#
 #-# >School theme fades in
 play music "music/The_Mind-Boggle.mp3" fadein 1.0
@@ -429,7 +463,7 @@ with Dissolve(0.25)
 ela "\"Erik, are you okay?\""
 
 #-# >Irene frown
-show irene P1_E3
+show irene U_P1_E3
 with Dissolve(0.25)
 #--#
 
@@ -448,7 +482,7 @@ show ela P1_E2
 with Dissolve(0.25)
 #--#
 #-# >Irene smile 5
-show irene P1_E2
+show irene U_P1_E2
 with Dissolve(0.25)
 #--#
 

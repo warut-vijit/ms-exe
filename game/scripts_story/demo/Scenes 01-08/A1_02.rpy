@@ -76,7 +76,8 @@ n "It's a face I know all too well."
 erik "\"Morning, Beatrice...\""
 
 #-#>Beatrice_happier.png, very close, P1_E3, HD sprite
-show beatrice HDP1_E3
+show beatrice HDP1_E3:
+  alpha 1.0 xalign 0.5 yanchor 1.0 ypos 1080+425+4500
 with Dissolve (0.25)
 #--#
 
@@ -195,8 +196,8 @@ show mum P1_E2:
 
 #-#>Hilda enter left to center
 show hilda P1_E2 behind mum:
-  alpha 0.0 xalign 0.3 yanchor 1.0 ypos 1080+425+85
-  easein 1.0 xalign 0.4 alpha 1.0
+  alpha 0.0 xalign 0.4 yanchor 1.0 ypos 1080+425+85
+  easein 1.0 xalign 0.5 alpha 1.0
 show hilda P1_E2 alpha 1.0
 #--#
 
@@ -243,8 +244,8 @@ n "My sister's reminder that food exists is enough for me. I plop down and am im
 
 #-#>Beatrice enter right to center
 show beatrice P1_E2:
-  alpha 0.0 xalign 0.3 yanchor 1.0 ypos 1080+425+60
-  easein 1.0 xalign 0.45 alpha 1.0
+  alpha 0.0 xalign 0.1 yanchor 1.0 ypos 1080+425+60
+  easein 1.0 xalign 0.25 alpha 1.0
 show beatrice P1_E2 alpha 1.0
 #--#
 
@@ -254,8 +255,8 @@ n "Beatrice is far more skilled than I am in the culinary arts; I doubt I could 
 
 #-# >Mum_smile.png enter offscreenleft to center, between the sisters
 show mum P1_E2:
-  alpha 0.0 xalign 0.45 yanchor 1.0 ypos 1080+425
-  easein 1.0 xalign 0.55 alpha 1.0
+  alpha 0.0 xalign 0.6 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.85 alpha 1.0
 show mum P1_E2 alpha 1.0
 #--#
 
@@ -307,7 +308,7 @@ n "We're in their house and already my mother has taken control of the situation
 
 #-# >Mum beatrice and hilda exit
 show beatrice P1_E2:
-  easein 1.0 xalign 0.9 alpha 0.0
+  easein 1.0 xalign 0.0 alpha 0.0
 show mum P1_E2:
   easein 3.0 xalign 0.3 alpha 0.0
 show hilda P2_E2:

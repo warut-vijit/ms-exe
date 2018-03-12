@@ -1,0 +1,624 @@
+
+<#Homeroom>
+scene classroomhall
+with Dissolve(2)
+EOF
+
+>CLASSROOM BG
+scene classroom1
+with Dissolve(2)
+EOF
+
+>CLOCK WIPE TO CLASSROOM BG
+#
+EOF
+
+>BE GREEN AFTERNOON
+play music "music/Be Green (Afternoon).mp3" loop
+EOF
+
+>ST. D'S GHOST IN
+#
+EOF
+
+>ANNA UNIFORM BUDS P2_E1 FADE IN
+show anna U_B_P2_E1:
+  xalign 0.45 yanchor 1.0 ypos 1080+425+350 alpha 0.0 zoom 1.3
+  easein 1.0 xalign 0.45 alpha 1.0
+show anna U_B_P2_E1 alpha 1.0
+EOF
+
+>ANNA UNIFORM BUDS P1_E4
+show anna U_B_P1_E4
+with Dissolve(0.25)
+EOF
+
+>ANNA UNIFORM NO BUDS P1_E5
+show anna U_P1_E5
+with Dissolve(0.25)
+EOF
+
+>ANNA UNIFORM NO BUDS P1_E3
+show anna U_P1_E3
+with Dissolve(0.25)
+EOF
+
+>ANNA UNIFORM NO BUDS P1_E4
+show anna U_P1_E4
+with Dissolve(0.25)
+EOF
+
+>MUSIC STOP
+stop music2 fadeout 5.0
+EOF
+
+>ANNA UNIFORM NO BUDS P2_E7
+show anna U_P2_E7
+with Dissolve(0.25)
+EOF
+
+>ANNA UNIFORM NO BUDS P2_E4
+show anna U_P2_E4
+with Dissolve(0.25)
+EOF
+
+>ANNA SPRITE RISES TO SYMBOLIZE STANDING UP
+show anna U_P2_E4:
+  easein 0.25 yanchor 1.0 ypos 1080+425 xalign 0.45 alpha 1.0 zoom 1.0
+show anna U_P2_E4 alpha 1.0
+EOF
+
+>ANNA SLOW EASE OUT RIGHT
+show anna U_B_P2_E1:
+  easein 3.0 xalign 1.0 alpha 0.0
+EOF
+
+>BE GREEN AFTERNOON 2
+play music "music/Be Green (Afternoon).mp3" loop
+EOF
+
+>FRAN UNIFORM P1_E1 FADE IN
+show fran P1_E1:
+  xalign 0.3 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.3 alpha 1.0
+show fran P1_E1 alpha 1.0
+EOF
+
+>FRAN UNIFORM P1_E3
+show fran P1_E3
+with Dissolve(0.25)
+EOF
+
+>FRAN UNIFORM P1_E1
+show fran P1_E1
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E2
+show fran P1_E2
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E5
+show fran P1_E5
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E4
+show fran P1_E4
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E1
+show fran P1_E1
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E4 2
+show fran P1_E4
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E2 2
+show fran P1_E2
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E4 3
+show fran P1_E4
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E3
+show fran P1_E3
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E1 2
+show fran P1_E1
+with Dissolve(0.25)
+EOF
+
+>FORMAL MEETINGS CASUAL GREETINGS IN
+stop music fadeout 5.0
+play music "music/Formal Meetings Casual Greetings.mp3" loop
+EOF
+
+>FRAN P1_E5 2
+show fran P1_E5
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E4 4
+show fran P1_E4
+with Dissolve(0.25)
+EOF
+
+> FRAN P1_E2
+show fran P1_E2
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E3 2
+show fran P1_E3
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E5 3
+show fran P1_E5
+with Dissolve(0.25)
+EOF
+
+>FRAN SLIDE OUT RIGHT
+show fran P1_E1:
+  easein 1.0 xalign 0.0 alpha 0.0
+EOF
+
+>Music fade out
+stop music fadeout 5.0
+EOF
+
+>clock wipe transition
+# done below
+EOF
+
+>BE VIOLET IN
+play music "music/Be Violet 1.mp3" loop
+EOF
+
+>CAFETERIA EXTERIOR BG
+scene cafeteriaoutside with ImageDissolve("Transitions/clock.png", 1.0)
+EOF
+
+>FRAN P1_E1 EASE IN FROM RIGHT
+show fran P1_E1:
+  xalign 0.8 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.6 alpha 1.0
+show fran P1_E1 alpha 1.0
+EOF
+
+>FRAN P1_E1 3
+show fran P1_E1
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E4 5
+show fran P1_E1
+with Dissolve(0.25)
+EOF
+
+>CAFETERIA INTERIOR
+scene cafeteria
+with Dissolve(2)
+EOF
+
+>FRAN P1_E5 4
+show fran P1_E5:
+  xalign 0.6 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.6 alpha 1.0
+show fran P1_E5 alpha 1.0
+EOF
+
+>CG 4 EXPRESSION 1 IN
+show CG05E1
+with Dissolve(2)
+EOF
+
+>FRAN P1_E1 4
+show fran P1_E1
+with Dissolve(0.25)
+EOF
+
+>CG 4 VARIATION 2
+show CG05E2
+with Dissolve(2)
+hide CG05E1
+EOF
+
+> NAT THEME IN / PLACEHOLDER: BE VIOLET IN
+# already playing
+EOF
+
+> CG VARIATION 3
+show CG05E3
+with Dissolve(2)
+hide CG05E2
+EOF
+
+>CG OUT
+hide fran
+hide CG05E3
+EOF
+
+>NAT UNIFORM P1_E9
+show natalya U_P1_E9:
+  xalign 0.52 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.72 alpha 1.0
+show natalya U_P1_E9 alpha 1.0
+EOF
+
+>FRAN P1_E4 6
+show fran P1_E4:
+  xalign 0.1 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.2 alpha 1.0
+show fran P1_E1 alpha 1.0
+EOF
+
+>NAT P1_E10
+show natalya U_P1_E10
+with Dissolve(0.25)
+EOF
+
+>NAT P1_E8
+show natalya U_P1_E8
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E3
+show natalya U_P2_E3
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E3 3
+show fran P1_E3
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E7A
+show natalya U_P2_E7a
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E5 5
+show fran P1_E5
+with Dissolve(0.25)
+EOF
+
+>NAT P1_E6
+show natalya U_P2_E6
+with Dissolve(0.25)
+EOF
+
+>SOFIYA P2_E7 SLIDE IN FROM LEFT
+show sofiya C_P2_E7:
+  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.51 alpha 1.0
+show sofiya C_P2_E7 alpha 1.0
+EOF
+
+>NAT P1_E8 2
+show natalya U_P1_E8
+with Dissolve(0.25)
+EOF
+
+>SOFIYA P1_E2
+show sofiya C_P1_E2
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E6
+show natalya U_P2_E6
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E3 4
+show fran P1_E3
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E5 6
+show fran P1_E5
+with Dissolve(0.25)
+EOF
+
+>SOFIYA P1_E9
+show sofiya C_P1_E9
+with Dissolve(0.25)
+EOF
+
+>SOFIYA P1_E1
+show sofiya C_P1_E1
+with Dissolve(0.25)
+EOF
+
+>SOF P2_E9
+show sofiya C_P2_E9
+with Dissolve(0.25)
+EOF
+
+>SOFIYA P1_E8
+show sofiya C_P1_E8
+with Dissolve(0.25)
+EOF
+
+>NAT P3_E8
+show natalya U_P3_E8
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E1
+show natalya U_P1_E1
+with Dissolve(0.25)
+EOF
+
+>SOF P1_E1
+show sofiya C_P1_E1
+with Dissolve(0.25)
+EOF
+
+>NAT P3_E3
+show natalya U_P3_E3
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E1 2
+show natalya U_P2_E1
+with Dissolve(0.25)
+EOF
+
+>SOF P1_E5
+show sofiya C_P1_E5
+with Dissolve(0.25)
+EOF
+
+>SOF P1_E9
+show sofiya C_P1_E9
+with Dissolve(0.25)
+EOF
+
+>SOF P2_E4B
+show sofiya C_P2_E4b
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E3 2
+show natalya U_P2_E3
+with Dissolve(0.25)
+EOF
+
+>SOF P2_E6
+show sofiya C_P2_E6
+with Dissolve(0.25)
+EOF
+
+>SOF P2_E4A
+show sofiya C_P2_E4a
+with Dissolve(0.25)
+EOF
+
+>NAT P3_E7B
+show natalya U_P3_E7b
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E9
+show natalya U_P2_E9
+with Dissolve(0.25)
+EOF
+
+>NAT P1_E1
+show natalya U_P1_E1
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E6 2
+show natalya U_P2_E6
+with Dissolve(0.25)
+EOF
+
+>NAT P3_E10
+show natalya U_P3_E10
+with Dissolve(0.25)
+EOF
+
+>SOF P2_E6 2
+show sofiya C_P2_E6
+with Dissolve(0.25)
+EOF
+
+>NAT P1_E4
+show natalya U_P1_E4
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E4 7
+show fran P1_E4
+with Dissolve(0.25)
+EOF
+
+>NAT P1_E8 3
+show natalya U_P1_E8
+with Dissolve(0.25)
+EOF
+
+>SOF P1_E7
+show sofiya C_P1_E7
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E8
+show natalya U_P2_E8
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E1 5
+show fran P1_E1
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E1 3
+show natalya U_P2_E1
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E9 2
+show natalya U_P2_E9
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E7B
+show natalya U_P2_E7b
+with Dissolve(0.25)
+EOF
+
+>NAT P3_E5
+show natalya U_P3_E5
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E9 3
+show natalya U_P2_E9
+with Dissolve(0.25)
+EOF
+
+>SOF P2_E1
+show sofiya C_P2_E1
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E5 7
+show fran P1_E5
+with Dissolve(0.25)
+EOF
+
+>NAT P1_E1 2
+show natalya U_P1_E1
+with Dissolve(0.25)
+EOF
+
+>SOF P1_E2
+show sofiya C_P1_E2
+with Dissolve(0.25)
+EOF
+
+>SOF P1_E5 2
+show sofiya C_P1_E5
+with Dissolve(0.25)
+EOF
+
+>NAT P3_E7
+show natalya U_P3_E7a
+with Dissolve(0.25)
+EOF
+
+>SOF P1_E4A
+show sofiya C_P1_E4a
+with Dissolve(0.25)
+EOF
+
+>NAT P1_E3
+show natalya U_P1_E3
+with Dissolve(0.25)
+EOF
+
+>NAT P1_E1 3
+show natalya U_P1_E1
+with Dissolve(0.25)
+EOF
+
+>SOF P1_E1 2
+show sofiya C_P1_E1
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E5 8
+show fran P1_E5
+with Dissolve(0.25)
+EOF
+
+>SOF P1_E4A 2
+show sofiya C_P1_E4a
+with Dissolve(0.25)
+EOF
+
+>NAT P3_E3 2
+show natalya U_P3_E3
+with Dissolve(0.25)
+EOF
+
+>SOF P1_E6
+show sofiya C_P1_E6
+with Dissolve(0.25)
+EOF
+
+>NAT P3_E5 2
+show natalya U_P3_E5
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E4 8
+show fran P1_E4
+with Dissolve(0.25)
+EOF
+
+>NAT P2_E1 4
+show natalya U_P2_E1
+with Dissolve(0.25)
+EOF
+
+>SOF P2_E5
+show sofiya C_P2_E5
+with Dissolve(0.25)
+EOF
+
+>Music fade out 2
+stop music fadeout 5.0
+EOF
+
+>CAFETERIA BG
+#scene cafeteria # still in cafeteria
+#with Dissolve(2)
+EOF
+
+>A BUSIER SORT OF DAY IN
+stop music fadeout 5.0
+play music "music/A Busier Sort of Day (Based on St. Paul's Suite by Gustav Holst).mp3" loop
+EOF
+
+>SOFIYA, NAT OUT
+show sofiya C_P2_E5:
+  xalign 0.51 yanchor 1.0 ypos 1080+425 alpha 1.0
+  easein 1.0 xalign 0.31 alpha 0.0
+show natalya U_P2_E1:
+  xalign 0.72 yanchor 1.0 ypos 1080+425 alpha 1.0
+  easein 1.0 xalign 0.52 alpha 0.0
+EOF
+
+>FRAN P1_E1 6
+show fran P1_E1
+with Dissolve(0.25)
+EOF
+
+>FRAN P1_E4 9
+show fran P1_E4
+with Dissolve(0.25)
+EOF
+
+>end
+stop music fadeout 0.5
+EOF
+
+
+########
+
+jump A1_11 # jump A?_??

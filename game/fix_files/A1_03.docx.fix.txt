@@ -1,0 +1,340 @@
+
+>open with car_interior(inside alleyway) BG
+scene CarInteriorAlleyWay at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)
+EOF
+
+>the main gate
+scene School_Gate_NOPAN.png at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)
+EOF
+
+>Be Green begins (NOTE: NOT BE GREEN AFTERNOON)
+play music "music/Be Green.mp3" loop
+EOF
+
+>Screen Shake
+scene School_Gate_NOPAN.png with vpunch
+EOF
+
+>All sounds and music cut
+stop music
+stop music2
+stop ambience
+stop ambience2
+stop sound
+
+EOF
+
+>Dad_frown
+show dad P1_E4:
+  alpha 0.0 xalign 0.1 yanchor 1.0 ypos 1080+425+60
+  easein 1.0 xalign 0.25 alpha 1.0
+EOF
+
+>Mum_neutral
+show mum P1_E1:
+  alpha 0.0 xalign 0.9 yanchor 1.0 ypos 1080+425+60
+  easein 1.0 xalign 0.75 alpha 1.0
+EOF
+
+>Dad_neutral
+show dad P1_E1:
+  alpha 0.0 xalign 0.1 yanchor 1.0 ypos 1080+425+60
+  easein 1.0 xalign 0.25 alpha 1.0
+EOF
+
+>Bosworth enter right
+show bosworth P1_E2:
+  alpha 0.0 xalign 0.9 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
+EOF
+
+>The Mind-Boggle begins playing
+play music "music/The_Mind-Boggle.mp3" loop
+EOF
+
+>Bosworth smile
+show bosworth P1_E4
+with Dissolve(0.25)"
+EOF
+
+>Bosworth neutral
+show bosworth P1_E2
+with Dissolve(0.25)
+EOF
+
+>Bosworth laugh
+show bosworth P1_E4
+with Dissolve(0.25)
+EOF
+
+>Fade to interior building
+scene classroomhall with Dissolve(1.0)
+EOF
+
+>Bosworth neutral 2
+show bosworth P1_E2:
+  alpha 0.0 xalign 0.4 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
+EOF
+
+>Music fadeout
+stop music fadeout 1.0
+EOF
+
+>Fade in a hero's theme
+play music "music/The Hero's Theme.mp3" fadein 1.0
+EOF
+
+>Fade to office (day)
+scene BosworthOffice with Dissolve (1.0)
+show BosworthOfficeFG
+EOF
+
+>Slide across the BG as Erik inspects the room
+# not big enough to pan
+EOF
+
+>Return to full BG
+
+EOF
+
+>Bosworth splendid
+show bosworth P1_E4
+with Dissolve(0.25)
+EOF
+
+>Bosworth neutral 3
+show bosworth P1_E2
+with Dissolve(0.25)
+EOF
+
+>Bosworth chuckle
+show bosworth P1_E4
+with Dissolve(0.25)
+EOF
+
+>Bosworth chuckle 2
+show bosworth P1_E4
+with Dissolve(0.25)
+EOF
+
+>Music fadeout 2
+stop music fadeout 1.0
+EOF
+
+>door opening
+play sound "music/effects/door open and close.mp3"
+EOF
+
+>Fade to interior building 2
+scene classroomhall with Dissolve(1.0)
+EOF
+
+>Mum enter left
+show mum P1_E1:
+  alpha 0.0 xalign 0.0 yanchor 1.0 ypos 1080+425+60
+  easein 1.0 xalign 0.0 alpha 1.0
+EOF
+
+>Beatrice enter left
+show beatrice P1_E1:
+  alpha 0.0 xalign 0.35 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.35 alpha 1.0
+EOF
+
+>Brunhilde enter left
+show hilda P1_E1:
+  alpha 0.0 xalign 0.65 yanchor 1.0 ypos 1080+425+85
+  easein 1.0 xalign 0.65 alpha 1.0
+EOF
+
+>Dad enter left
+show dad P1_E1:
+  alpha 0.0 xalign 1.1 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 1.1 alpha 1.0
+EOF
+
+>Bosworth enter right 2
+show bosworth P1_E2:
+  alpha 0.0 xalign 0.5 yanchor 1.0 ypos 1080+425+60
+  easein 1.0 xalign 0.5 alpha 1.0
+show beatrice P1_E1:
+  alpha 1.0 xalign 0.35 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.2 alpha 1.0
+show hilda P1_E1:
+  alpha 1.0 xalign 0.65 yanchor 1.0 ypos 1080+425+85
+  easein 1.0 xalign 0.8 alpha 1.0
+EOF
+
+>A busier sort of day begins playing
+play music "music/A Busier Sort of Day (Based on St. Paul's Suite by Gustav Holst).mp3" loop
+EOF
+
+>Bosworth and mom and dad leave
+show bosworth P1_E2:
+  alpha 1.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 0.0
+show mum P1_E1:
+  alpha 1.0 xalign 0.0 yanchor 1.0 ypos 1080+425+85
+  easein 1.0 xalign 0.0 alpha 0.0
+show dad P1_E1:
+  alpha 1.0 xalign 1.1 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 1.1 alpha 0.0
+EOF
+
+>Beatrice and Hilda move to centerleft and center right
+show hilda P1_E1:
+  easein 1.0 xalign 0.7 alpha 1.0
+show beatrice P1_E1:
+  easein 1.0 xalign 0.3 alpha 1.0
+EOF
+
+>knock knock
+play sound "music/effects/Knock Knock.mp3"
+EOF
+
+>fade to office (day)
+scene classroom1 with Dissolve(1.0)
+EOF
+
+>Claes enter right
+show claes P1_E1:
+  alpha 0.0 xalign 1.0 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.9 alpha 1.0
+show hilda P2_E2:
+  alpha 0.0 xalign 0.0 yanchor 1.0 ypos 1080+425+85
+  easein 1.0 xalign 0.1 alpha 1.0
+show beatrice P1_E2:
+  alpha 0.0 xalign 0.3 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.4 alpha 1.0
+EOF
+
+>Claes_smile.png
+show claes P1_E5
+with Dissolve(0.25)
+EOF
+
+>Sisters sad
+show beatrice P2_E5
+with Dissolve(0.25)
+show hilda P2_E5
+with Dissolve(0.25)
+EOF
+
+>knock knock 2
+play sound "music/effects/Knock Knock.mp3"
+EOF
+
+>Ela enters from right
+show ela P1_E1:
+  alpha 0.0 xalign 1.2 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 1.1 alpha 1.0
+EOF
+
+>Claes moves over the left slightly
+show claes P1_E1:
+  easein 1.0 xalign 0.8 alpha 1.0
+show beatrice P1_E1
+with Dissolve(0.25)
+show hilda P2_E6
+with Dissolve(0.25)
+EOF
+
+>ela_smile.png
+show ela P1_E2
+with Dissolve(0.25)
+EOF
+
+>clock wipe transition
+scene mainlobby at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+EOF
+
+>open to school hallway
+
+EOF
+
+>Ela smile
+show ela P1_E2:
+  alpha 0.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
+EOF
+
+>Music: Be Green (Afternoon)
+play "music/Be Green (Afternoon).mp3"
+EOF
+
+>Transition to different building
+scene classroomhall with Dissolve(1.0)
+EOF
+
+>Ela default
+show ela P1_E1:
+  alpha 0.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
+EOF
+
+>Ela smile 2
+show ela P1_E2
+with Dissolve(0.25)
+EOF
+
+>pause
+$ renpy.pause (1.0)
+EOF
+
+>Transition to outside chapel
+scene chapel with Dissolve(1.0)
+show ela P1_E1:
+  alpha 0.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
+EOF
+
+>Transition to main school grounds
+scene mainbuildingclose with Dissolve(1.0)
+show ela P1_E1:
+  alpha 0.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
+EOF
+
+>Ela big smile
+show ela P1_E2
+with Dissolve(0.25)
+EOF
+
+>Ela regular smile
+show ela P1_E2
+with Dissolve(0.25)
+EOF
+
+>Pause
+$ renpy.pause (1.0)
+EOF
+
+>Ela frown
+show ela P1_E6
+with Dissolve(0.25)
+EOF
+
+>Ela natural
+show ela P1_E1
+with Dissolve(0.25)
+EOF
+
+>Ela worried
+show ela P1_E3
+with Dissolve(0.25)
+EOF
+
+>CG
+show CG02
+with Dissolve(2)
+EOF
+
+>scene end
+#
+EOF
+
+
+########
+
+jump A1_04 # jump A?_??

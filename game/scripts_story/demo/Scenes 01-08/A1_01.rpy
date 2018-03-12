@@ -39,11 +39,12 @@ show mountainRange
 show mountainRange at Pan((0, 360), (0, 0), 5.0)
 #--#
 #-# <Men on the Mountain start>
-play music "music/Men on the Mountain.mp3"
+
 #--#
 #-# <wind sfx blowing for 5 seconds>
 play ambience "<from 0 to 5>music/effects/birdsandwind.ogg" 
 #--#
+
 n "The mountain looms above us, tall and imposing."
 
 him "\"Hey, see that ledge?\""

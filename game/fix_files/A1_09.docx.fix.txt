@@ -1,0 +1,273 @@
+
+<Scene Opens>
+stop ambience fadeout 1.0
+EOF
+
+<Boy's Dorm Exterior (morning)> crossfade to <School Cafeteria (morning)>
+scene outsidemaledorm
+with Dissolve(2)
+scene cafeteriaoutside
+with Dissolve(2)
+EOF
+
+>>Cafeteria Background Sounds
+play ambience "music/effects/covfefeshop.ogg" fadein 3.0 loop
+$ renpy.music.set_volume(0.2, 0.0, "ambience")
+scene cafeteria
+with Dissolve(2)
+EOF
+
+>>Music: Be Violet (1), Be Violet (2) playing underneath at 0 volume
+play music "music/Be Violet 1.mp3"
+$ renpy.music.set_volume(0.0, 0.0, "music2")
+play music2 "music/Be Violet 2.mp3"
+EOF
+
+>>Music: Slow crossfade Be Violet (1) into Be Violet (2)
+stop music fadeout 5.0
+$ renpy.music.set_volume(1.0, 5.0, "music2")
+EOF
+
+<School Cafeteria (morning)> crossfade to <School Corridor (morning)>
+stop music fadeout 5.0
+scene cafeteria
+with Dissolve(2)
+scene classroomhall2
+with Dissolve(2)
+EOF
+
+>Katja_P5_E1 enter from right to center (named "Humming Girl")
+show katja U_P1_E5:
+  xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.55 alpha 1.0
+show katja U_P1_E5 alpha 1.0
+EOF
+
+>>Music: Slow Fade into Katja's Theme (Susanne's, currently WIP). Placeholder: Be Blue
+stop music2 fadeout 5.0
+play music "music/Be_Blue.mp3" fadein 5.0 loop
+EOF
+
+>Katja moves right
+show katja U_P5_E1:
+  easein 1.0 xalign 0.7
+EOF
+
+>Katja_P1_E1
+show katja U_P1_E1
+with Dissolve(0.25)
+EOF
+
+>Katja exit to right
+show katja U_P5_E1:
+  easein 1.0 xalign 1.0 alpha 0.0
+EOF
+
+>>Stop Cafeteria Background Sounds
+stop ambience
+EOF
+
+> Katja_P5_E2a enters from left to center
+show katja U_P5_E2a:
+  xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.55 alpha 1.0
+show katja U_P5_E2a alpha 1.0
+EOF
+
+> Katja_P2_E2
+show katja U_P2_E2
+with Dissolve(0.25)
+EOF
+
+>Katja_P5_E2b (smile)
+show katja U_P5_E2b
+with Dissolve(0.25)
+EOF
+
+>Katja_P5_E2a
+show katja U_P5_E2a
+with Dissolve(0.25)
+EOF
+
+>Katja_P1_E2b
+show katja U_P5_E2b
+with Dissolve(0.25)
+EOF
+
+>Katja_P1_E8a (smirk)
+show katja U_P1_E8a
+with Dissolve(0.25)
+EOF
+
+>Katja_P1_E3b
+show katja U_P5_E3b
+with Dissolve(0.25)
+EOF
+
+>Katja_P1_E2b 2
+show katja U_P1_E2b
+with Dissolve(0.25)
+
+>Katja_P1_E2b 2
+show katja U_P1_E2b
+with Dissolve(0.25)
+EOF
+
+>Katja_P1_E2a
+show katja U_P1_E2a
+with Dissolve(0.25)
+
+>Katja_P1_E2a
+show katja U_P1_E2a
+with Dissolve(0.25)
+EOF
+
+>Katja_P1_E2b 3
+show katja U_P1_E2b
+with Dissolve(0.25)
+EOF
+
+>Katja_P5_E2b
+show katja U_P5_E2b
+with Dissolve(0.25)
+EOF
+
+>Katja_P2_E2
+show katja U_P5_E2a
+with Dissolve(0.25)
+EOF
+
+>>Initiate Glorious Katja CG (Katja's Curtsy)
+show CG04 at Pan((0, 900), (0, 0), 18.0)
+with Dissolve(2)
+EOF
+
+>>From now own, the textbox shall refer to the Humming Girl as Katja
+#
+EOF
+
+>>End glorious CG
+hide CG04
+EOF
+
+>Katja_P1_E2a 2
+show katja U_P1_E2a
+with Dissolve(0.25)
+EOF
+
+>Katja_P1_E5
+show katja U_P1_E5
+with Dissolve(0.25)
+EOF
+
+>Katja_P1_E8a
+show katja U_P1_E8a
+with Dissolve(0.25)
+EOF
+
+>Katja_P1_E2b 2
+show katja U_P1_E2b
+with Dissolve(0.25)
+EOF
+
+>Katja_P1_E8b
+show katja U_P1_E8b
+with Dissolve(0.25)
+EOF
+
+>Katja_P1_E2a 3
+show katja U_P1_E2a
+with Dissolve(0.25)
+EOF
+
+>>pause
+$ renpy.pause (2.0)
+EOF
+
+>Katja_P1_E3a
+show katja U_P1_E3a
+with Dissolve(0.25)
+EOF
+
+>Katja_P5_E2a 2
+show katja U_P5_E2a
+with Dissolve(0.25)
+EOF
+
+>Katja_P5_E2b 2
+show katja U_P5_E2b
+with Dissolve(0.25)
+
+>Katja_P5_E2b 2
+show katja U_P5_E2b
+with Dissolve(0.25)
+EOF
+
+>Katja_P5_E2b 2
+show katja U_P5_E2b
+with Dissolve(0.25)
+EOF
+
+>Katja_P5_E5
+show katja U_P5_E5
+with Dissolve(0.25)
+EOF
+
+>Katja_P5_E8b
+show katja U_P5_E8b
+with Dissolve(0.25)
+EOF
+
+>Katja_P4_E10
+show katja U_P4_E10
+with Dissolve(0.25)
+EOF
+
+>Katja_P4_E1
+show katja U_P4_E1
+with Dissolve(0.25)
+EOF
+
+>Katja_P4_E2
+show katja U_P4_E2
+with Dissolve(0.25)
+EOF
+
+>Katja_P4_E1 2
+show katja U_P4_E1
+with Dissolve(0.25)
+EOF
+
+>Music fades out
+stop music fadeout 5.0
+EOF
+
+>>Music: Slow Fade into Be Violet (2)
+stop ambience fadeout 3.0
+stop music2 fadeout 5.0
+play music "music/Be Violet 2.mp3" fadein 5.0 loop
+EOF
+
+>>School Bell
+play sound "music/effects/schoolbell.ogg"
+EOF
+
+>Katja_P1_E2a
+show katja U_P1_E2a
+with Dissolve(0.25)
+EOF
+
+>Katja exit to left
+show katja U_P1_E2a:
+  easein 1.0 xalign 0.35 alpha 0.0
+stop music fadeout 5.0
+EOF
+
+<END>
+#
+EOF
+
+
+########
+
+jump A1_10 # jump A?_??

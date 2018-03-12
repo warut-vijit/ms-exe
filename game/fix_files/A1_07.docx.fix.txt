@@ -1,0 +1,187 @@
+
+>fade open to Erik's dorm room, morning
+#scene School_ErikRoom_NOPAN at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/eye.png", 1.0)
+EOF
+
+>Alarm clock sound effect
+play sound "music/effects/Phone alert.mp3"
+EOF
+
+>> Wakeup Effect to <School_ErikRoom_NOPAN.png>
+scene School_ErikRoom_NOPAN at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/eye.png", 1.0)
+EOF
+
+>>window opening
+play sound "music/effects/window.mp3"
+EOF
+
+>>change to some sort of outside background if one is available, but otherwise stay in Erik's room (the view will have to be left to the reader's imagination)
+#
+EOF
+
+>>birds tweeting, wind in trees etc.
+play ambience "music/effects/birdsandwind.ogg"
+EOF
+
+>> Music: New Beginnings Arise from Old Endings
+play music "music/New Beginnings Arise from Old Endings.mp3"
+EOF
+
+>>window closing
+play sound "music/effects/window.mp3"
+EOF
+
+>>outside SFX stop
+stop ambience
+EOF
+
+>>passage of time
+scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
+$ renpy.pause(1.0)
+scene erikdorm with ImageDissolve("Transitions/clock.png", 1.0)
+EOF
+
+>>Some sort of mobile phone graphic if we have it. If not, again, leave it to the imagination.
+show EriksPhone
+with Dissolve (2.0)
+EOF
+
+>>phone out
+hide EriksPhone
+with Dissolve (0.5)
+EOF
+
+>Music fade out
+stop music fadeout 3.0
+EOF
+
+<Crossfade to School_MaleDormsOut.png>
+scene PitchBlack
+with Dissolve(1)
+scene School_MaleDormsOut
+with Dissolve(2)
+EOF
+
+>>Music: The Mind-Boggle Fade in
+play music "music/The_Mind-Boggle.mp3" fadein 3.0 loop
+EOF
+
+>>Quiet crowd sound effects
+play ambience "music/effects/muffledchatter.ogg" loop fadein 1.0
+EOF
+
+<Clock wipe to School_MainHall.png>
+stop ambience
+scene School_MainHall with ImageDissolve("Transitions/clock.png", 1.0)
+EOF
+
+>Edna_P1_E2.png enters from left to middle left
+show claes P1_E2:
+  xalign 0.1 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.3 alpha 1.0
+show claes P1_E2 alpha 1.0
+EOF
+
+>Edna_P1_E1.png
+show claes P1_E1
+with Dissolve(0.25)
+EOF
+
+>Claes exits to left
+show claes P1_E1:
+  easein 1.0 xalign 0.1 alpha 0.0
+EOF
+
+<Crossfade to School_Corridor1.png>
+scene PitchBlack
+with Dissolve(1)
+scene School_Corridor1
+with Dissolve(2)
+EOF
+
+>Edna_P1_E2.png enters from left
+show claes P1_E2:
+  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.4 alpha 1.0
+show claes P1_E2 alpha 1.0
+EOF
+
+>Edna_P1_E1.png 2
+show claes P1_E1
+with Dissolve(0.25)
+EOF
+
+<Crossfade to School_Corridor2.png>
+scene PitchBlack
+with Dissolve(1)
+scene School_Corridor2
+with Dissolve(2)
+EOF
+
+>Edna_P1_E1.png enters from left
+show claes P1_E2:
+  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.4 alpha 1.0
+show claes P1_E2 alpha 1.0
+EOF
+
+>Edna_P1_E5.png
+show claes P1_E5
+with Dissolve(0.25)
+EOF
+
+>Claes exits to right
+show claes P1_E1:
+  easein 1.0 xalign 0.6 alpha 0.0
+EOF
+
+>door opening sound effect
+play sound "music/effects/door open and close.mp3"
+EOF
+
+>Ms.Claes classroom BG
+scene PitchBlack
+with Dissolve(1)
+scene School_Classroom1_NOPAN
+with Dissolve(2)
+EOF
+
+>Idle chatter sound fades in
+play ambience "music/effects/muffledchatter.ogg" loop fadein 3.0
+EOF
+
+>Idle chatter fades out
+stop ambience fadeout 3.0
+EOF
+
+>Relaxation room bg
+scene PitchBlack
+with Dissolve(1)
+scene School_Relaxroom_NOPAN
+with Dissolve(2)
+EOF
+
+>Claes in, frowning
+show claes P1_E2:
+  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.4 alpha 1.0
+show claes P1_E2 alpha 1.0
+EOF
+
+>Claes neutral
+show claes P1_E1
+with Dissolve(0.25)
+EOF
+
+>Claes out
+show claes P1_E1:
+  easein 1.0 xalign 0.6 alpha 0.0
+EOF
+
+>end scene
+#
+EOF
+
+########
+
+jump A1_08 # jump A?_??

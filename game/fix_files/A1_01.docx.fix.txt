@@ -1,0 +1,197 @@
+
+<scene open>
+#
+EOF
+
+<mountain range>
+show MountainRange
+EOF
+
+<pan up slowly>
+show MountainRange at Pan((0, 360), (0, 0), 5.0)
+EOF
+
+<Men on the Mountain start>
+play music "music/Men on the Mountain.mp3"
+EOF
+
+<wind sfx blowing for 5 seconds>
+play ambience "<from 0 to 5>music/effects/birdsandwind.ogg" 
+EOF
+
+<replace wind sfx with two sets of booted steps over rock>
+play ambience2 "music/effects/WalkingGrass.mp3"
+EOF
+
+<boot sfx stops>
+stop ambience2
+EOF
+
+<Men on the Mountain fades out>
+stop music fadeout 2.0
+EOF
+
+<noise sfx starts softly>
+play ambience2 "music/effects/Panic Attack Sounds.ogg" fadein 3.0 loop
+$ renpy.music.set_volume(0.5, 0, "ambience2")
+EOF
+
+<fade to black>
+scene PitchBlack
+with Dissolve(3)
+EOF
+
+<apartment bedroom>
+window show
+scene PitchBlack
+sv "It's night time, everything is dark"
+#n "Welcome to the Missing Stars demo."
+#
+#n "This demo's purpose is to attract new artists."
+#
+#n "As such, this demo is non-final and not representative of the final product. Please refrain from uploading it anywhere or sharing it."
+#
+#n "Please enjoy."
+#
+#$ renpy.pause (5.0)
+EOF
+
+>noise starts
+play ambience2 "music/effects/Panic Attack Sounds.ogg" fadein 3.0 loop
+$ renpy.music.set_volume(0.5, 0, "ambience2")
+EOF
+
+>noise increases in volume
+$ renpy.music.set_volume(0.85, 3.0, "ambience2")
+EOF
+
+>bedsheets rustling
+play sound "music/effects/heavy cloth.wav"
+EOF
+
+<apartment bedroom (night)>
+show SisAptNight:
+  alpha 0.1
+with Dissolve(2)
+sv "A dimly-lit bedroom"
+EOF
+
+<apartment bedroom (night), dark hazy lighting begins to lighten>
+show SisAptNight:
+  alpha 0.25
+with Dissolve(2)
+EOF
+
+<apartment bedroom (night), fades into normal cg lighting>
+show SisAptNight:
+  alpha 0.45
+with Dissolve(2)
+EOF
+
+>window opening
+stop ambience2 fadeout 5.0
+$ renpy.music.set_volume(0.3, 0, "sound")
+play sound "music/effects/window.mp3"
+EOF
+
+>ambient city noises (fade in)
+play ambience "music/effects/City Night Ambience.mp3" fadein 2.0 loop
+EOF
+
+>CG_W1
+show CGW1
+with Dissolve(2)
+EOF
+
+>muted past starts
+play music "music/Muted Past.mp3" loop
+$ renpy.music.set_volume(0.8, 0.0, "music")
+$ renpy.music.set_volume(0.1, 2.0, "ambience")
+EOF
+
+>>door knocking
+$ renpy.sound.set_volume(0.75)
+play sound "music/effects/Knock Knock.mp3"
+EOF
+
+>>door knocking 2
+$ renpy.sound.set_volume(0.75)
+play sound "music/effects/Knock Knock.mp3"
+EOF
+
+>>door open
+play sound "music/effects/door open and close.mp3"
+EOF
+
+>CG_W2
+show CGW2
+with Dissolve(2)
+hide CGW1
+EOF
+
+>CG_W3
+show CGW3
+with Dissolve(2)
+hide CGW2
+EOF
+
+>CG_01 with mum start
+show CG01
+with Dissolve(2)
+hide CGW3
+EOF
+
+>Mum_smile.png
+#show Mum P1_E2
+#with Dissolve(0.25)
+EOF
+
+>CG_01 just erik
+show CG01
+with Dissolve(2)
+EOF
+
+>Back to CG_W1
+show CGW1
+with Dissolve(2)
+hide CG01
+EOF
+
+>Mum_smile.png 2
+stop music fadeout 10.0
+$ renpy.music.set_volume(0.3, 10.0, "ambience")
+#show Mum P1_E2
+#with Dissolve(0.25)
+EOF
+
+>Mum_smile.png exit center to left
+#show Mum Smile Vclose2:
+#  easein 2.0 xalign 0.0 alpha 0.0
+EOF
+
+>door closing
+play sound "music/effects/door open and close.mp3"
+$ renpy.music.set_volume(0.5, 5.0, "ambience")
+EOF
+
+>fade to black
+scene PitchBlack
+with Dissolve(3)
+EOF
+
+>all sounds fade out
+stop music fadeout 2.0
+stop music2 fadeout 2.0
+stop ambience fadeout 2.0
+stop ambience2 fadeout 2.0
+stop sound fadeout 2.0
+EOF
+
+<end>
+#
+EOF
+
+
+########
+
+jump A1_02 # jump A?_??

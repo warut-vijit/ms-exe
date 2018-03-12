@@ -1,0 +1,274 @@
+
+<scene fades from CG at the end of scene 03>
+scene mainbuildingclose with Dissolve(1.0)
+show ela P1_E3:
+  alpha 1.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
+EOF
+
+>branch breaking
+play sound "music/effects/Branch1.mp3"
+play sound "music/effects/Branch2.mp3"
+EOF
+
+>thump
+scene mainbuildingclose with vpunch
+show ela P1_E3:
+  alpha 1.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.5 alpha 1.0
+stop music
+stop music2
+stop ambience
+stop ambience2
+EOF
+
+>Ela surprised
+show ela P1_E4
+with Dissolve(0.25)
+EOF
+
+>Irene unidentified
+show irene U_P1_E1:
+  alpha 0.0 xalign 0.75 yanchor 1.0 ypos 1080+425+100
+  easein 1.0 xalign 0.75 ypos 1080+425 alpha 1.0
+EOF
+
+>Irene smile
+show irene U_P1_E2
+with Dissolve(0.25)
+EOF
+
+>Irene intro
+show irene U_P1_E2
+with Dissolve(0.25)
+EOF
+
+>In Her Element in
+play music "music/In Her Element.mp3"
+EOF
+
+>irene U_Post intro
+show irene U_P1_E4
+with Dissolve(0.25)
+EOF
+
+>Irene raised eyebrow
+show irene U_P1_E4
+with Dissolve(0.25)
+EOF
+
+>Irene open mouth smile
+show irene U_P1_E2
+with Dissolve(0.25)
+EOF
+
+>Irene smile 2
+show irene U_P1_E2
+with Dissolve(0.25)
+EOF
+
+>Ela vs Irene
+show irene U_P1_E1
+with Dissolve(0.25)
+show ela P1_E7
+with Dissolve(0.25)
+EOF
+
+>Irene oblivious
+show irene U_P1_E2
+with Dissolve(0.25)
+EOF
+
+>Irene yet again
+show irene U_P1_E4
+with Dissolve(0.25)
+EOF
+
+>Ela smile
+show ela P1_E2
+with Dissolve(0.25)
+EOF
+
+>Irene neutral
+show irene U_P1_E1
+with Dissolve(0.25)
+EOF
+
+>Ela neutral
+show ela P1_E2
+with Dissolve(0.25)
+EOF
+
+>Irene smile 3
+show irene U_P1_E2
+with Dissolve(0.25)
+EOF
+
+<fade to main campus view>
+scene mainbuilding with Dissolve(1.0)
+show irene U_P1_E1:
+  alpha 0.0 xalign 0.85 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
+show ela P1_E3:
+  alpha 0.0 xalign 0.15 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.25 alpha 1.0
+EOF
+
+>Ela frown
+show ela P1_E6
+with Dissolve(0.25)
+EOF
+
+>Irene neutral 2
+show irene U_P1_E1
+with Dissolve(0.25)
+EOF
+
+>Ela neutral 2
+show ela P1_E1
+with Dissolve(0.25)
+EOF
+
+>Irene smile 4
+show irene U_P1_E2
+with Dissolve(0.25)
+EOF
+
+>Ela angry
+show ela P1_E7
+with Dissolve(0.25)
+EOF
+
+>Ela frown 2
+show ela P1_E6
+with Dissolve(0.25)
+EOF
+
+>Ela neutral 3
+show ela P1_E1
+with Dissolve(0.25)
+EOF
+
+>Ela wander
+scene schoolground1 with Dissolve(1.0)
+show irene U_P1_E1:
+  alpha 0.0 xalign 0.85 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
+show ela P1_E1:
+  alpha 0.0 xalign 0.15 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.25 alpha 1.0
+EOF
+
+<fade to trail BG>
+scene schoolground2 with Dissolve(1.0)
+show irene U_P1_E1:
+  alpha 0.0 xalign 0.85 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
+show ela P1_E1:
+  alpha 0.0 xalign 0.15 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.25 alpha 1.0
+EOF
+
+<walking sfx starts>
+play sound "music/effects/WalkingGrass.mp3"
+EOF
+
+>Ela smile 2
+show ela P1_E2
+with Dissolve(0.25)
+EOF
+
+<timeskip>
+scene mainbuilding at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+EOF
+
+<show campus BG>
+show irene U_P1_E1:
+  alpha 0.0 xalign 0.85 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.75 alpha 1.0
+show ela P1_E1:
+  alpha 0.0 xalign 0.15 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.25 alpha 1.0
+EOF
+
+<show Ela neutral and Irene neutral>
+show ela P1_E1
+with Dissolve(0.25)
+show irene U_P1_E1
+with Dissolve(0.25)
+EOF
+
+>Schooltheme fade out
+stop music fadeout 2.0
+EOF
+
+>Panic attack noise fade in
+$ renpy.sound.set_volume(0.75)
+play sound "music/effects/Panic Attack Sounds.mp3" fadein 1.0
+EOF
+
+>Ela look
+show ela P1_E4
+with Dissolve(0.25)
+EOF
+
+>Irene look
+show irene U_P1_E3
+with Dissolve(0.25)
+EOF
+
+>more black
+show PitchBlack behind beatrice, hilda, ela, irene:
+  alpha 0.4
+  easein 2.0 alpha 0.5
+$ renpy.sound.set_volume(0.5)
+EOF
+
+>Panic noise louder
+$ renpy.sound.set_volume(1.0)
+play sound "music/effects/Panic Attack Sounds.mp3"
+EOF
+
+>ears ringing
+play sound "music/effects/RingingEars.mp3"
+EOF
+
+>Panic noise fades out
+stop sound fadeout 2.0
+show PitchBlack behind beatrice, hilda, ela, irene:
+  alpha 0.4
+  easein 2.0 alpha 0.0
+EOF
+
+>School theme fades in
+play music "music/The_Mind-Boggle.mp3" fadein 1.0
+EOF
+
+>Ela surprised 2
+show ela P1_E4
+with Dissolve(0.25)
+EOF
+
+>Irene frown
+show irene U_P1_E3
+with Dissolve(0.25)
+EOF
+
+>Ela smile 3
+show ela P1_E2
+with Dissolve(0.25)
+EOF
+
+>Irene smile 5
+show irene U_P1_E2
+with Dissolve(0.25)
+EOF
+
+<end>
+#
+EOF
+
+
+########
+
+jump A1_05 # jump A?_??
