@@ -466,6 +466,7 @@ screen file_picker_save:
                     $ persistent.savenote_list[persistent.SLFolder][fileAddedAtEnd] = persistent.girlpath + scenename + "\n"
                 $ filez_list[persistent.SLFolder] = renpy.list_saved_games("1-%d" % (persistent.SLFolder))
             $ fileAddedAtEnd = 0
+            $ filez_list[persistent.SLFolder] = renpy.list_saved_games("1-%d" % (persistent.SLFolder))
             #$ renpy.save_persistent()
 
         # Clean up any deleted slots in the middle
