@@ -1178,8 +1178,14 @@ screen quick_menu1:
 ##        textbutton _("Q.Save") action QuickSave()
 ##        textbutton _("Q.Load") action QuickLoad()
         textbutton _("Auto") action Preference("auto-forward", "toggle")
-        textbutton _(" Skip") action Skip()
-        textbutton _(" Mute ") action Preference("all mute", "toggle")
+        if _preferences.mute["music"]:
+          textbutton _("Skip") action Skip()
+          textbutton _("Unmute"):
+            action Preference("all mute", "disable")
+        else:
+          textbutton _(" Skip") action Skip()
+          textbutton _(" Mute"):
+            action Preference("all mute", "enable")
         if persistent.show_girl_totals:
           if persistent.am_tot == 0:
             text ("{size=11}{color=#FF0000} Annaliese:[persistent.a_tot] Isolda:[persistent.i_tot] Jeanne:[persistent.j_tot] Lena:[persistent.l_tot] Katja:[persistent.k_tot] Twins:[persistent.nh_tot] {/color}{/size}")

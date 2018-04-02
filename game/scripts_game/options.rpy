@@ -310,7 +310,7 @@ init -1 python hide:
     ## stored. (It needs to be set early, before any other init code
     ## is run, so the persisten information can be found by the init code.)
 python early:
-    config.save_directory = "missing_stars_0020"
+    config.save_directory = "missing_stars_0024"
 
 init -1 python hide:
     #########################################
@@ -326,7 +326,7 @@ init -1 python hide:
 
     ## The default text speed in characters per second. 0 is infinite.
 
-    config.default_text_cps = 20
+    config.default_text_cps = 50
 
     #########################################
     ## More customizations can go here.
