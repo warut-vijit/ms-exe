@@ -193,6 +193,7 @@ label start0:
   define alfons = Character('Alfons', color="#", ctc="ctcstar", ctc_position="fixed")
   define fran = Character('Fran', color="#703D6F", ctc="ctcstar", ctc_position="fixed")
   define suspiciousperson = Character('Suspicious Person', color="#703D6F", ctc="ctcstar", ctc_position="fixed")
+  define lunchlady = Character('Kitchen Crew Lady', color="#38c93a", ctc="ctcstar", ctc_position="fixed")
 
   #Family Related
   #Erik
