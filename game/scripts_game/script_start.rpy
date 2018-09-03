@@ -163,6 +163,7 @@ label start0:
   define me = Character('Me', color="#FFCC99", ctc="ctcstar", ctc_position="fixed")
   define isolda = Character('Isolda', color="#5ABF90", ctc="ctcstar", ctc_position="fixed")
   define jeanne = Character('Jeanne', color="#ED0202", ctc="ctcstar", ctc_position="fixed")
+  define jeanneunknown = Character('???', color="#ED0202", ctc="ctcstar", ctc_position="fixed")
   define lena = Character('Lena', color="#808000", ctc="ctcstar", ctc_position="fixed")
   define mysteriouslady = Character('Mysterious Lady', color="#FE8A8A", ctc="ctcstar", ctc_position="fixed")
   define mysteriouslylady = Character('Mysterious Lady', color="#FE8A8A", ctc="ctcstar", ctc_position="fixed")
@@ -193,7 +194,7 @@ label start0:
   define alfons = Character('Alfons', color="#", ctc="ctcstar", ctc_position="fixed")
   define fran = Character('Fran', color="#703D6F", ctc="ctcstar", ctc_position="fixed")
   define suspiciousperson = Character('Suspicious Person', color="#703D6F", ctc="ctcstar", ctc_position="fixed")
-  define lunchlady = Character('Kitchen Crew Lady', color="#38c93a", ctc="ctcstar", ctc_position="fixed")
+  define lunchlady = Character('Lunch Lady', color="#38c93a", ctc="ctcstar", ctc_position="fixed")
 
   #Family Related
   #Erik
@@ -311,6 +312,8 @@ label start0:
   image mainbuildingnight =          "backgrounds/School_MainBuildingFar_Night.png"
   image schoolground1=               "backgrounds/School_Grounds1.png"
   image schoolground2=               "backgrounds/School_Grounds2.png"
+  image gym=                         "backgrounds/gym_1.jpg"
+  image nursesoffice=                "backgrounds/Nurses-office.jpg"
 
   #CG
   image CGW1 = im.Scale("images/CG/CG_W1.png", 1920, 1080, bilinear=True)
@@ -331,6 +334,7 @@ label start0:
   image CG06E1 = im.Scale("images/CG/CG_06_E1.png", 1920, 1080, bilinear=True)
   image CG06E2 = im.Scale("images/CG/CG_06_E2.png", 1920, 1080, bilinear=True)
   image CG07 = im.Scale("images/CG/CG_07.png", 1920, 1080, bilinear=True)
+  image CG_A1_17 = im.Scale("images/CG/MS_CG_01.jpg", 1920, 1080, bilinear=True)
   image CGErik = im.Scale("images/CG/CG_Erik.png", 1920, 1080, bilinear=True)
   image EriksPhone = im.Scale("images/CG/EriksPhone.png", 1920, 1080, bilinear=True)
   image CGui = im.Scale("ui/TextboxFade.png", 1920, 1080, bilinear=True)
@@ -571,6 +575,19 @@ label start0:
   image sofiya C_P2_E7 = im.FactorScale("images/Sprites/Main Characters/Sofiya/Sofiya_Casual_P2_E7.png", 0.64, bilinear=True)
   image sofiya C_P2_E8 = im.FactorScale("images/Sprites/Main Characters/Sofiya/Sofiya_Casual_P2_E8.png", 0.64, bilinear=True)
   image sofiya C_P2_E9 = im.FactorScale("images/Sprites/Main Characters/Sofiya/Sofiya_Casual_P2_E9.png", 0.64, bilinear=True)
+  
+  image jeanne G_P1_E1 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym_P1_E1.png", 0.64, bilinear=True)
+  image jeanne G_P1_E2 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E2.png", 0.64, bilinear=True)
+  image jeanne G_P1_E3 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E3.png", 0.64, bilinear=True)
+  image jeanne G_P1_E4 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E4.png", 0.64, bilinear=True)
+  image jeanne G_P1_E5 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E5.png", 0.64, bilinear=True)
+  image jeanne G_P1_E6 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E6.png", 0.64, bilinear=True)
+  image jeanne G_P1_E8 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E8.png", 0.64, bilinear=True)
+  image jeanne G_P1_E9 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E9.png", 0.64, bilinear=True)
+  image jeanne G_P6a_E2 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P6a E2.png", 0.64, bilinear=True)
+  image jeanne G_P6b_E2 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P6b E2.png", 0.64, bilinear=True)
+  image jeanne U_P6a_E2 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneUniform P6a E2.png", 0.64, bilinear=True)
+  image jeanne U_P6b_E2 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneUniform P6b E2.png", 0.64, bilinear=True)
 
   #side characters
 
