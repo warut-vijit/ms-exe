@@ -23,7 +23,7 @@ n "Looks like I’m the only one who’s alone right now."
 n "I make my way to the counter. Being as early as it is, there’s still no queue to speak of, and the woman on the other side greets me with a perfectly-rehearsed spiel and a nice, small smile."
 lunchlady "\"Good morning! What will you be having today, my dear?\""
 n "I scan the counter for choices. I’m not particularly picky with food, so I guess it doesn’t really matter much as long as it’s filling enough. I ask for some pancakes, and a cup of café au lait to go with it."
-n "It takes no less than a couple minutes before the server returns with my tray of food. I carefully lift it, only to nearly send its contents flying off when a cold, rasping voice breathes down my neck."
+n "It takes no more than a couple minutes before the server returns with my tray of food. I carefully lift it, only to nearly send its contents flying off when a cold, rasping voice breathes down my neck."
 natalya "\"Доброе утро, Erik.\""
 erik "\"WHOA!\""
 n "I swivel around to face the source of the voice. What hellish beast could’ve produced that unearthly—"
@@ -80,7 +80,7 @@ natalya "\"Nyet! She promised to visit sometime this week, though! She lives in 
 show natalya U_P2_E1
 with Dissolve(0.25)
 #--#
-natalya "\"But please do not change the topic! Perhaps we can launch some secret attack into Miss Lena’s room and search for any clue about her magical mask\""
+natalya "\"But please do not change the topic! Perhaps we can launch some secret attack into Miss Lena’s room and search for any clue about her magical mask.\""
 natalya "\"We need to conduct a raid.\""
 #-#>Nat P2_E9
 show natalya U_P2_E9
@@ -101,7 +101,7 @@ with Dissolve(0.25)
 #--#
 natalya "\"I might need to buy a new one. Don’t you... think so?\""
 erik "\"Uh...\""
-n "She sighs"
+n "She sighs."
 natalya "\"Lately I feel like life is nothing but suffering, Erik.\""
 n "Relief washes over me as I realize she’s dropped the subject of her own accord. But that doesn’t mean I understand what the hell she’s on about now."
 erik "\"What brought this about...?\""
@@ -169,7 +169,7 @@ show natalya U_P4_E8
 with Dissolve(0.25)
 #--#
 natalya "\"Say, would you... help me do my homework? It is just a few questions on Geography. You’re good at this, da? Da?\""
-erik "\"Wait, what? How do you figure that\""
+erik "\"Wait, what? How do you figure that?\""
 #-#>Nat P2_E9
 show natalya U_P2_E9
 with Dissolve(0.25)
