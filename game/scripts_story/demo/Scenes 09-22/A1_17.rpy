@@ -173,7 +173,7 @@ n "The girl starts moving in an attempt to get up, Ms. Wieck gently supporting h
 scene gym
 with Dissolve (2.0)
 ## >show Jeanne/Hertha moved down
-show hertha U_P1_E5:
+show hertha U_P1_E4:
   xalign 0.30 yanchor 1.0 ypos 1080+425+300 alpha 1.0
   
 show jeanne G_P1_E1:
@@ -182,11 +182,11 @@ show jeanne G_P1_E1:
 ## BLOOD ##
 ## >Hertha up, slow
 ## >Jeanne up, wobble animation
-show hertha U_P1_E5:
+show hertha U_P1_E4:
   easein 3.0 ypos 1080+425
   
 show jeanne G_P1_E1:
-  easein 3.0 ypos 1080+425
+  easein 3.0 ypos 1080+425-30
   
 ## BLOOD ##
 n "She stumbles in an attempt to get up, wincing as she rises to her feet."
@@ -246,7 +246,7 @@ n "Slowly, we make our way to the doors outside."
 ## <Cross to Hallway (day)>
 scene classroomhall2
 show jeanne G_P1_E8:
-  xalign 0.50 yanchor 1.0 ypos 1080+425 alpha 1.0
+  xalign 0.50 yanchor 1.0 ypos 1080+425-30 alpha 1.0
 n "It feels weird saying nothing while walking down the hallway. I don't know her all that well, and she looks pretty shaken up. But..."
 
 n "Maybe I should talk to her, to get her mind off of things. It is kind of awkward walking down here without trying to say anything."
@@ -277,6 +277,8 @@ jeanne "\"Umm, thad is...I shoobd be fyn.\""
 ##>snap
 
 n "As if on instinct, her body stiffens a little and the fingers on her right hand snap. It's quick, but it's quite loud. She turns a gaze in my direction."
+
+show jeanne G_P1_E6
 
 n "Is it a nervous tic? I remember hearing about those on some documentary I watched. She was doing it after she collided with me, so maybe this is something related to that?"
 
@@ -496,7 +498,7 @@ scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
 scene mainlobby with ImageDissolve("Transitions/clock.png", 1.0)
 ## >Jeanne enter smile
 show jeanne G_P1_E9:
-  xalign 0.5 yanchor 1.0 ypos 1080+425 alpha 0.0
+  xalign 0.5 yanchor 1.0 ypos 1080+425-30 alpha 0.0
   easein 1.0 xalign 0.55 alpha 1.0
 
 n "Soon after, Jeanne returns, minus the blood on her face. The worried, embarrassed look she had is also gone, replaced with a gentle, friendly smile. The nurse turns to me."
@@ -508,7 +510,7 @@ erik "\"That’s good.\""
 ## <Cross to Hallway – Day>
 scene classroomhall2
 show jeanne G_P1_E9:
-  xalign 0.5 yanchor 1.0 ypos 1080+425 alpha 0.0
+  xalign 0.5 yanchor 1.0 ypos 1080+425-30 alpha 0.0
   easein 1.0 xalign 0.55 alpha 1.0
 n "Jeanne still has a slight limp to her step, but she looks much better after getting cleaned up. Her eyes, which were sullen and a bit red a few minutes ago, look to be a lot brighter now that she's cheered up a bit."
 
@@ -571,7 +573,7 @@ jeanne "\"You bet!\""
 ## <Cross to Gym – Day>
 scene gym
 show jeanne G_P1_E2:
-  xalign 0.7 yanchor 1.0 ypos 1080+425 alpha 0.0
+  xalign 0.7 yanchor 1.0 ypos 1080+425-30 alpha 0.0
   easein 1.0 xalign 0.7 alpha 1.0
 n "I lead Jeanne back over to Hertha, who jogs up to greet us."
 

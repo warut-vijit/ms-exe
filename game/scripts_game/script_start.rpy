@@ -576,7 +576,7 @@ label start0:
   image sofiya C_P2_E8 = im.FactorScale("images/Sprites/Main Characters/Sofiya/Sofiya_Casual_P2_E8.png", 0.64, bilinear=True)
   image sofiya C_P2_E9 = im.FactorScale("images/Sprites/Main Characters/Sofiya/Sofiya_Casual_P2_E9.png", 0.64, bilinear=True)
   
-  image jeanne G_P1_E1 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym_P1_E1.png", 0.64, bilinear=True)
+  image jeanne G_P1_E1 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E1.png", 0.64, bilinear=True)
   image jeanne G_P1_E2 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E2.png", 0.64, bilinear=True)
   image jeanne G_P1_E3 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E3.png", 0.64, bilinear=True)
   image jeanne G_P1_E4 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E4.png", 0.64, bilinear=True)
