@@ -340,7 +340,7 @@ label start0:
   image CGErik = im.Scale("images/CG/CG_Erik.png", 1920, 1080, bilinear=True)
   image EriksPhone = im.Scale("images/CG/EriksPhone.png", 1920, 1080, bilinear=True)
   image CGui = im.Scale("ui/TextboxFade.png", 1920, 1080, bilinear=True)
-  image CG08 = im.Scale("images/CG/CG_08_E2.png", 1920, 1080, bilinear=True)
+  image CG08 = im.Scale("images/CG/CG_08.png", 1920, 1080, bilinear=True)
   #Sprites
 
   image PitchBlack = Solid("#000")
