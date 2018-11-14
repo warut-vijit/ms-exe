@@ -175,6 +175,7 @@ label start0:
   define sofiya = Character('Sofiya', color="#FABE28", ctc="ctcstar", ctc_position="fixed")
   define femalevoice = Character("Girl's Voice", color="#FABE28", ctc="ctcstar", ctc_position="fixed")
   define annemarie = Character('Anne-Marie', color="#964820", ctc="ctcstar", ctc_position="fixed")
+  define irene = Character('Irene', color="#906D9F", ctc="ctcstar", ctc_position="fixed")
 
   #Side
   define drfaber = Character('Dr. Faber', color="#BF8000", ctc="ctcstar", ctc_position="fixed")
@@ -238,7 +239,6 @@ label start0:
   define boy = Character('Boy', color="#9d9d9d", ctc="ctcstar", ctc_position="fixed")
   define yvonne = Character('Yvonne', color="#9d9d9d", ctc="ctcstar", ctc_position="fixed")
   define allen = Character('Allen', color="#9d9d9d", ctc="ctcstar", ctc_position="fixed")
-  define irene = Character('Irene', color="#906D9F", ctc="ctcstar", ctc_position="fixed")
   define inconspicuousshrub = Character('Inconspicuous Shrub', color="#906D9F", ctc="ctcstar", ctc_position="fixed")
   define maskedgirl = Character('Masked Girl', color="#9d9d9d", ctc="ctcstar", ctc_position="fixed")
   define brunettegirl = Character('Brunette Girl', color="#9d9d9d", ctc="ctcstar", ctc_position="fixed")
@@ -314,6 +314,8 @@ label start0:
   image schoolground2=               "backgrounds/School_Grounds2.png"
   image gym=                         "backgrounds/gym_1.jpg"
   image nursesoffice=                "backgrounds/Nurses-office.jpg"
+  image chapelentrance=              "backgrounds/chapelentrance.png"
+  image chapelinterior=              "backgrounds/chapelinterior.png"
 
   #CG
   image CGW1 = im.Scale("images/CG/CG_W1.png", 1920, 1080, bilinear=True)
@@ -338,6 +340,7 @@ label start0:
   image CGErik = im.Scale("images/CG/CG_Erik.png", 1920, 1080, bilinear=True)
   image EriksPhone = im.Scale("images/CG/EriksPhone.png", 1920, 1080, bilinear=True)
   image CGui = im.Scale("ui/TextboxFade.png", 1920, 1080, bilinear=True)
+  image CG08 = im.Scale("images/CG/CG_08_E2.png", 1920, 1080, bilinear=True)
   #Sprites
 
   image PitchBlack = Solid("#000")

@@ -47,6 +47,9 @@ play ambience "<from 0 to 5>music/effects/birdsandwind.ogg"
 
 n "The mountain looms above us, tall and imposing."
 
+#Temporary jump for directing purposes
+jump A1_19
+
 him "\"Hey, see that ledge?\""
 
 n "My gaze follows his finger to an outcrop jutting a few hundred metres out from the mountain's surface."
