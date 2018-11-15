@@ -45,9 +45,9 @@ n "Ironic, that."
 
 #-# >clock wipe
 scene PitchBlack
-with Dissolve(1.5)
+with Clockwipe
 scene classroom1
-with Dissolve(1.5)
+with Clockwipe
 #--#
 
 n "Well, I did it."
@@ -189,7 +189,7 @@ n "I open my eyes and find her looking at me with a hesitant sort of expression.
 #-# > KATJA IN, Katja_Uniform_P5_E10.png, center
 show katja U_P5_E10:
   xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.55 alpha 1.0
+  easein 1.0 xalign 0.5 alpha 1.0
 #--#
 
 katja "Erik. I didn’t expect to see you here."
@@ -199,7 +199,7 @@ n "Maybe I’m laying it on a bit thick; I decided somewhat on a whim but in ret
 
 #-# >Katja_Uniform_P1_E3a.png
 show katja U_P1_E3a
-with Dissolve(0.5)
+with SDis
 #--#
 
 katja "I see. Stepping up to the plate with your best gentlemanly behaviour. I might be able to put the lunchtime incident behind us at last."
@@ -208,7 +208,7 @@ erik "Of course. That was definitely my intention."
 
 #-# >Katja_Uniform_P1_E2b.png
 show katja U_P1_E2b
-with Dissolve(0.5)
+with SDis
 #--#
 
 katja "Consider yourself provisionally forgiven, then."
@@ -217,7 +217,7 @@ erik "I’m provisionally relieved to hear that."
 
 #-# >Katja_Uniform_P1_E12.png
 #show katja U_P1_E12
-#with Dissolve(0.5)
+#with SDis
 #does not exist TODO
 #--#
 
@@ -226,7 +226,7 @@ n "The moment is gone as quickly as it came, and Katja’s face returns to its u
 
 #-# >Katja_Uniform_P1_E2a.png
 show katja U_P1_E2a
-with Dissolve(0.5)
+with SDis
 #--#
 
 katja "In any case, I’m obliged to ask: what did you think?"
@@ -234,7 +234,7 @@ erik "Of the singing?"
 
 #-# >Katja_Uniform_P1_E3a.png
 show katja U_P1_E3a
-with Dissolve(0.5)
+with SDis
 #--#
 
 katja "Well, Erik, I’m not asking about the weather."
@@ -245,7 +245,7 @@ erik "I don’t think I’ve ever watched someone sing that well."
 
 #-# >Katja_Uniform_P1_E8a.png
 show katja U_P1_E8a
-with Dissolve(0.5)
+with SDis
 #--#
 
 n "Katja’s smile widens and… she seems to blush a little? Surely with skill like hers, she’s used to all sorts of compliments."
@@ -440,6 +440,9 @@ n "I can imagine what it would be like to listen to his sermons - reassuring, ev
 erik "Ah, yeah… we’ve spoken a few times."
 
 #-# >FATHER MAX IN, FatherMax_P1_E1.png, center
+show fathermax P1_E1:
+  xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.5 alpha 1.0
 #--#
 
 n "As he reaches me I can make out some of his features more clearly. His pensive gray eyes observe me without a hint of judgment, and his wrinkles show the age of someone who’s spent most of his life smiling. Gentle is how I’d describe him, in a word."
@@ -447,6 +450,8 @@ n "He gives me a once-over himself and offers another smile, which I do my best 
 oldpriest "I’m Father Maximillian Steinhoff, rector of St. Dympnha’s. That is a fine mouthful, however, and you should feel free to call me Father Max."
 
 #-# >FatherMax_P1_E3.png
+show fathermax P1_E3
+with SDis
 #--#
 
 fathermax "I assume you are the new arrival, Erik Wilhelm? I’ve not seen you yet."
@@ -454,6 +459,8 @@ n "As Father Max says this he extends a hand and I shake it and nod, putting the
 erik "...you’re in charge around here? Not the principal?"
 
 #-# >FatherMax_P2_E1.png
+show fathermax P2_E1
+with SDis
 #--#
 
 n "Now he grins."
@@ -463,11 +470,15 @@ erik "I guess with a name like St. Dymphna’s I should have guessed this was a 
 n "He holds up a hand as though he’s asking for my patience."
 
 #-# >FatherMax_P1_E2.png
+show fathermax P1_E2
+with SDis
 #--#
 
 fathermax "Strictly speaking, Erik, you are correct: this is a religious institution."
 
 #-# >FatherMax_1_E1.png
+show fathermax P1_E1
+with SDis
 #--#
 
 fathermax "That said, I wouldn’t worry yourself about any implications of that term."
@@ -477,6 +488,8 @@ n "I want to say that that’s a relief, but I realise that might be rude."
 erik "I understand. Thank you for the clarification."
 
 #-# >FatherMax_P2_E2.png
+show fathermax P2_E2
+with SDis
 #--#
 
 n "Father Max gives me a nod."
@@ -485,6 +498,8 @@ erik "I will."
 n "Now he looks down the hall at the entrance through which Katja had left just now."
 
 #-# >FatherMax_P2_E3.png
+show fathermax P2_E3
+with SDis
 #--#
 
 fathermax "Katja doesn’t usually have visitors during her practices, you know."
@@ -492,12 +507,16 @@ erik "Yeah, she told me."
 erik "We were talking yesterday and she mentioned that she sings here often, so I thought I’d stop by after class."
 
 #-# >FatherMax_P2_E4.png
+show fathermax P2_E4
+with SDis
 #--#
 
 fathermax "I’m glad you did. I don’t think enough people appreciate that girl’s talent."
 erik "There’s a lot to appreciate, that’s for sure."
 
 #-# >FatherMax_P2_E3.png
+show fathermax P2_E3
+with SDis
 #--#
 
 n "I think he raised his eyebrows a little at that, but if there was any movement he carries on unperturbed."
@@ -513,12 +532,16 @@ erik "Is Katja one of those people?"
 n "Now his eyebrows definitely shoot up, but he returns to his standard, pleasant expression soon enough."
 
 #-# >FatherMax_P2_E1.png
+show fathermax P2_E1
+with SDis
 #--#
 
 fathermax "While that isn’t protected information, Erik, it would not quite be appropriate for me to divulge."
 erik "Right. I’m sorry."
 
 #-# >FatherMax_P1_E1.png
+show fathermax P1_E1
+with SDis
 #--#
 
 fathermax "That said, Katja’s singing brings her here often."
@@ -528,12 +551,16 @@ n "I guess we’re friends-ish. Friend-adjacent. Approximately friends."
 erik "Something like that."
 
 #-# >FatherMax_P1_E2.png
+show fathermax P1_E2
+with SDis
 #--#
 
 fathermax "Then permit me to offer you some advice, to your mutual benefit."
 n "Oh? Where could he be going with this?"
 
 #-# >FatherMax_P1_E1.png
+show fathermax P1_E1
+with SDis
 #--#
 
 fathermax "I'm sure that with the nature of this school, you've found yourself thinking perhaps more than usual about your social interactions."
@@ -541,12 +568,16 @@ erik "Well…"
 n "He's not wrong. But it's a bit embarrassing to admit, since those thoughts are usually of a more judgmental sort."
 
 #-# >FatherMax_P1_E2.png
+show fathermax P1_E2
+with SDis
 #--#
 
 fathermax "It's quite alright, Erik. That was not an accusation. It's natural to tread more carefully in a place like this. Wise, even."
 erik "Right."
 
 #-# >FatherMax_P1_E3.png
+show fathermax P1_E3
+with SDis
 #--#
 
 fathermax "In fact, I bring it up only to give my recommendations on the very same matter."
@@ -558,6 +589,8 @@ n "I'm reminded of the panic attack I had during Ela's tour. The way everyone ju
 erik "Yeah. I get that."
 
 #-# >FatherMax_P1_E4.png
+show fathermax P1_E4
+with SDis
 #--#
 
 fathermax "I expect you will also understand that as part of this facade, students often find that they need to effect a more stoic demeanour than they actually feel."
@@ -565,6 +598,8 @@ n "And now I'm reminded of how, right after the attack, I tried to put on a calm
 erik "Yeah."
 
 #-# >FatherMax_P1_E3.png
+show fathermax P1_E3
+with SDis
 #--#
 
 fathermax "You should not be surprised, then, if you find that people here appear to change as you grow close to them. Of course, they aren't changing; they're merely showing more of themselves to you. And you, in turn, will show more of yourself to them."
@@ -572,6 +607,8 @@ fathermax "More thoughts, more feelings, more sensitivities."
 fathermax "What I want to suggest to you is that as these days come to pass, you'll find yourself treading as carefully as before. You'll still need to think before you speak."
 
 #-# >FatherMax_P1_E1.png
+show fathermax P1_E1
+with SDis
 #--#
 
 fathermax "But where with strangers, you may not see the obstacles in your path, with friends, you'll know that the step you're taking is the right one. That is, if you've paid attention."
@@ -582,11 +619,15 @@ n "We all have our own triggers and preferences we have to keep in mind. Father 
 erik "I’ll keep that in mind, I appreciate it."
 
 #-# >FatherMax_P1_E2.png
+show fathermax P1_E2
+with SDis
 #--#
 
 fathermax "Very good. As a rule you’ll find that advice useful for anyone, but in Katja’s case exceptionally so."
 
 #-# >FatherMax_P1_E1.png
+show fathermax P1_E1
+with SDis
 #--#
 
 fathermax "This isn’t a warning, to be clear. I’ve just seen what careless ‘friends’ can do to a student. Everyone here deserves a brighter future than that."
@@ -599,11 +640,15 @@ fathermax "For my part, I must be off."
 n "He grins in good humour."
 
 #-# >FatherMax_P2_E2.png
+show fathermax P2_E2
+with SDis
 #--#
 
 fathermax "I’ve got a rather large pile of church paperwork to get through. I only stepped away to give you my welcome."
 
 #-# >FatherMax_P1_E1.png
+show fathermax P1_E1
+with SDis
 #--#
 
 fathermax "So, welcome to St. Dymphna’s. I hope to see you around."
@@ -611,6 +656,8 @@ n "I wave as he turns back toward the side room."
 erik "I’ll be around."
 
 #-# >father max out
+show fathermax P1_E1:
+  easein 1.0 xalign 0.65 alpha 0.0
 #--#
 
 n "I’m left once again with my thoughts and I realise I’ve lost track of the time. I check my phone: it’s getting close to my appointment with Dr. Faber. "
