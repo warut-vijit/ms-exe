@@ -316,6 +316,12 @@ label start0:
   image nursesoffice=                "backgrounds/Nurses-office.jpg"
   image chapelentrance=              "backgrounds/chapelentrance.png"
   image chapelinterior=              "backgrounds/chapelinterior.png"
+  
+  #Transitions
+  #Clockwipe transition
+  define Clockwipe = ImageDissolve("images/Transitions/clock.png", 1.5)
+  #"Spride Dissolve" Used to fade one sprite to another
+  define SDis = Dissolve(0.25)
 
   #CG
   image CGW1 = im.Scale("images/CG/CG_W1.png", 1920, 1080, bilinear=True)
