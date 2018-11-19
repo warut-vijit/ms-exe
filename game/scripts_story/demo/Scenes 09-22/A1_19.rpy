@@ -23,13 +23,14 @@ $ renpy.save_persistent()
 #-# <scene open>
 scene classroom1
 #Temporary audio stops
-stop music
-stop music2
-stop ambience
-stop ambience2
+stop music fadeout 1.0
+stop music2 fadeout 1.0
+stop ambience fadeout 1.0
+stop ambience2 fadeout 1.0
 #--#
 
 #-# >music: school theme (day)
+play music "music/Be Green (Afternoon).mp3" loop fadein 5.0
 #--#
 
 n "Two days haven’t been enough to orient me and my afternoon philosophy class does little to help. In other circumstances I might be engaged or, at least, indifferent."
@@ -136,6 +137,8 @@ with Dissolve(1.5)
 #--#
 
 #-# music: katja singing
+stop music fadeout 2.0
+play music2 "music/Be_Pious.mp3" loop fadein 5.0
 #--#
 
 n "It’s even more impressive from the inside. It isn’t exactly huge, like I’d expect from a full-fledged cathedral or a church, but the chapel is clearly designed to evoke awe."
@@ -182,6 +185,8 @@ with Dissolve(1.5)
 #--#
 
 #-# >music: katja calm
+stop music2 fadeout 2.0
+play music "music/Be_Green.mp3" loop fadein 5.0
 #--#
 
 n "I open my eyes and find her looking at me with a hesitant sort of expression."
@@ -194,6 +199,12 @@ show katja U_P5_E10:
 
 katja "Erik. I didn’t expect to see you here."
 n "I did come unannounced, to be fair. Still, I can’t tell from her tone whether that’s a good or bad thing."
+
+#-#
+show katja U_P1_E2a
+with SDis
+#--#
+
 erik "You mentioned this yesterday. It seemed like the friendly thing to do."
 n "Maybe I’m laying it on a bit thick; I decided somewhat on a whim but in retrospect I’m glad I did. Sometimes it doesn’t pay to be honest."
 
@@ -215,10 +226,9 @@ katja "Consider yourself provisionally forgiven, then."
 n "She’s really pushing her luck with this, but I’m in a good mood. Besides, I should humour her as payment for the song. It seems only fair."
 erik "I’m provisionally relieved to hear that."
 
-#-# >Katja_Uniform_P1_E12.png
-#show katja U_P1_E12
-#with SDis
-#does not exist TODO
+#-#
+show katja U_P5_E8b
+with SDis
 #--#
 
 n "Now she giggles, and I realise I’d never seen her laugh. It feels almost like a scandalous invasion of privacy, as cordial as she’s been."
@@ -240,6 +250,12 @@ with SDis
 katja "Well, Erik, I’m not asking about the weather."
 n "She got me there."
 n "But how do I answer that question? Katja is an incredible singer and I’m not sure how to even put it into words."
+
+#-#
+show katja U_P5_E8b
+with SDis
+#--#
+
 erik "I thought it was amazing. Like, really, really good."
 erik "I don’t think I’ve ever watched someone sing that well."
 
@@ -354,13 +370,13 @@ with Dissolve(0.5)
 
 katja "I’d ask you to get your vision checked but that degree of self-deprecation is something even I’m not willing to employ for the sake of a joke."
 erik "Good. I win."
-n "Her eyebrows shoot up."
 
 #-# >Katja_Uniform_P1_E10.png
 show katja U_P1_E10
 with Dissolve(0.5)
 #--#
 
+n "Her eyebrows shoot up."
 katja "I didn’t realise we were having a competition."
 erik "You started it!"
 
@@ -373,7 +389,7 @@ katja "Ah, there’s your knightly chivalry. I’m glad to see it’s alive and 
 n "Grinning at me, she slips her phone from her pocket and glances at the display."
 
 #-# >Katja_Uniform_P1_E2a.png
-show katja U_P1_E2a
+show katja U_P5_E2a
 with Dissolve(0.5)
 #--#
 
@@ -419,6 +435,7 @@ katja "I look forward to seeing you around more. Let me know if you need help wi
 erik "Thanks. I’ll see you later."
 
 #-# >KATJA OUT
+stop music fadeout 5.0
 show katja U_P1_E8b:
   easein 1.0 xalign 0.35 alpha 0.0
 #--#
@@ -440,6 +457,8 @@ n "I can imagine what it would be like to listen to his sermons - reassuring, ev
 erik "Ah, yeah… we’ve spoken a few times."
 
 #-# >FATHER MAX IN, FatherMax_P1_E1.png, center
+stop music fadeout 5.0
+play music2 "music/Be_Blue.mp3" loop fadein 5.0
 show fathermax P1_E1:
   xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
   easein 1.0 xalign 0.5 alpha 1.0
