@@ -7,7 +7,7 @@ $ persistent.scene_name = "Morning, With Additions" # current scene name
 $ renpy.save_persistent()
 
 #-# <scene open>
-scene black
+scene erikdormcloudy
 #Temporary audio stops
 stop music fadeout 1.0
 stop music2 fadeout 1.0
@@ -28,6 +28,9 @@ n "Mostly, though, my web-surfing involves floundering around in the shallows of
 n "Tonight, aside from the ubiquitous daily newsletter, there's only one message to read:"
 
 #<CG of Erik's phone#>
+show EriksPhone
+with Dissolve (1.0)
+#
 
 n "{i}Mr. Wilhelm,{/i}"
 
@@ -36,6 +39,11 @@ n "{i}If you would be so kind, please stop by my office before class tomorrow mo
 n "{i}Best regards,{/i}"
 
 n "{i}Edna Claes.{/i}"
+
+#
+hide EriksPhone
+with Dissolve (1.0)
+#
 
 n "Short and to the point, as I've come to expect of her. If to the point means being vague and conjuring up a thousand and one possible horrible reasons for Claes to email me."
 
@@ -50,6 +58,10 @@ n "For a few more minutes, I click back through previous emails. I read a few ol
 n "When I'm tired of that, I close up shop and take my metaphorical surfboard to bed."
 
 ##>timeskip
+scene PitchBlack
+with Clockwipe
+scene erikdorm
+with Clockwipe
 ##>show Erik’s room (day)
 
 n "I know I've only been in class for a few days, and that I'm a new student here…"
@@ -59,6 +71,9 @@ n "But still, I hope that that email I got doesn’t mean anything serious is go
 n "I suppose there’s no worrying about it at this hour. I’m too tired to think about it too much."
 
 ##>crossfade to classroom (day)
+scene classroom1
+with Dissolve (2.0)
+#
 
 n "Before the rest of the students even arrive I find her at my classroom, where she's getting today's lesson plan ready."
 
