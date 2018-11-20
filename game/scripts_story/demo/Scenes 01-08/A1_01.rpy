@@ -332,9 +332,7 @@ n "Still struggling between sleep and waking, with cold air blowing against my f
 
 n "I'm not going to cry. I'm not going to cry. I won't cry. I'm not that fragile. I won't–"
 
-n "I won't let myself!"
-
-n "What a vicious cycle. Wanting to cry makes me want to cry."
+n "..."
 
 n "Deep breaths. Deep breaths."
 
