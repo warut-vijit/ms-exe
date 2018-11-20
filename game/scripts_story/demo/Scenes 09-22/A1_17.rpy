@@ -28,15 +28,15 @@ scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
 scene gym with ImageDissolve("Transitions/clock.png", 1.0)
 n "Entering the gym, about half of these students I can see are from my class, but I notice some new faces mixed in. "
 
-n "All of us are wearing the same white-and-blue gym uniforms provided to us by the school, of course."
+n "All of us are wearing the same white—and—blue gym uniforms provided to us by the school, of course."
 
-n "I recall when Mum got the gym uniform from the school. She called it “drab and boring,” then immediately tossed it into the washing machine before I had a chance to look at it."
+n "I recall when Mum got the gym uniform from the school; she called it “drab and boring,” then immediately tossed it into the washing machine before I had a chance to look at it."
 
 n "It feels a bit snug, but at least the fabric is breathable."
 
-n "The gym here is a bit smaller than the one at my previous school - with soft, rubberised floors and a lack of any bleachers, it’s more suited to a playroom than a gym proper. "
+n "The gym here is a bit smaller than the one at my previous school—with soft, rubberised floors and a lack of any bleachers, it’s more suited to a playroom than a gym proper. "
 
-n "Outdoor sports like track and football are done as part of class occasionally, but I read that this course is just something low-impact for all students."
+n "Outdoor sports like track and football are done as part of class occasionally, but apparently I've been placed on the 'low—impact' course."
 
 n "I’d prefer to be in the more active phys ed courses, but my leg could cause problems, according to the physical I had before transferring here."
 
@@ -44,17 +44,19 @@ n "Walking is fine, though."
 
 n "I decide to warm up my leg by milling around the small space, where clusters of students are having small conversations."
 
-n "Most of the conversations revolve the latest school gossip I’m not aware of, the latest internet trends I’ve missed out on because of my non-stop treatments, and, naturally, homework."
+n "Most of the conversations revolve around the latest school gossip I’m not aware of and generic school topics; homework, what people are up to when they’re not doing their homework, when the next test is..."
 
-n "Seems fairly standard."
+n "Seems fairly standard, though I can’t help but feel a sense of alienation. I don’t really know anyone here, aside from a few familiar faces from class."
 
-n "Maybe I can meet people who aren’t as pun-obsessed as Natalya, or as silent as Annaliese."
+n "Maybe I can meet people who aren’t as pun—obsessed as Natalya, or as silent as Annaliese."
+
+n "Ela seemed pretty normal..."
 
 ##<gym door open>
 play sound "music/effects/door open and close.mp3"
 ##<Clap>
 
-n "Suddenly, a loud clap bursts from the side doors, where a young woman – probably in her late twenties – strides over to us. "
+n "Suddenly, a loud clap bursts from the side doors, where a young woman—probably in her late twenties—strides over to us. "
 
 n "Oh, it's Hertha. I wasn't expecting her to show up here. It's kind of interesting to see teachers in multiple roles in this school."
 
@@ -79,9 +81,9 @@ student "\"Where’s Dr. Berhn? He’s supposed to teach us, right?\""
 ## >Hertha (smile)
 show hertha U_P2_E2
 with Dissolve (0.25)
-hertha "\"Dr. Berhn is very busy this school year – he’s been invited to several international conferences across Europe and in the United States. I’m sure he misses teaching all of you, though.\""
+hertha "\"Dr. Berhn is very busy this school year–he’s been invited to several international conferences across Europe and in the United States. I’m sure he misses teaching all of you, though!\""
 
-n "Several students nod – I guess this Dr. Berhn was pretty popular with the students here."
+n "Several students nod.  I guess this Dr. Berhn was pretty popular with the students here."
 
 hertha "\"I know I’m not him, but let’s do our best to get along and have some fun, okay?\""
 
@@ -91,9 +93,9 @@ n "Some students give a smile, but most of the others sigh and shrug their shoul
 show hertha U_P2_E2:
   easein 0.5 xalign 1.0 alpha 0.0
 
-n "Everyone lines up into rows to get started on some calisthenics. However, despite her cheerful demeanor, many of the students don’t seem all that interested, many putting in a minimal effort to appear active. "
+n "Everyone lines up into rows to get started on some calisthenics. However, despite Ms. Wieck's cheerful demeanor, many of the students don’t seem all that interested, many putting in a minimal effort to appear active. "
 
-n "I figure it wouldn’t hurt to get some exercise in – I’ve been cooped up in a hospital and my own home for months now. I wasn't moving a lot while I was recuperating, so being able to freely move around is a nice change of pace."
+n "It wouldn’t hurt to get some exercise in—I’ve been cooped up in a hospital and my own home for months now. I wasn't moving a lot while I was recuperating, so being able to freely move around is a nice change of pace."
 
 n "It reminds me of all the times I warmed up to go outdoors with Gustav."
 
@@ -136,20 +138,20 @@ n "Before me is a girl splayed on top of my chest. Well, that explains why I can
 
 erik "\"Ack...need to…\""
 
-n "The girl who fell on me feebly squeaks out in surprise and scrambles off of me before I suffocate."
+n "The girl who fell on me feebly squeaks out in surprise and scrambles off of me."
 
-jeanneunknown "\"S-sorry! I’m so sorry!\""
+jeanneunknown "\"S—sorry! I’m so sorry!\""
 
 n "Her face is tinged red with embarrassment. I try and say something, but Hertha quickly approaches the two of us before I can reply."
 
-hertha "\"Woah, everything okay here?\""
+hertha "\"Woah, everyone okay?\""
 
 jeanneunknown "\"Hertha! I um… I...\""
 
 ## >click
 ## >click
 
-n "The girl is pretty stressed out. She’s rhythmically snapping her fingers for some reason."
+n "She’s rhythmically snapping her fingers for some reason."
 
 n "She sniffles a little bit, clearly trying not to cry."
 
@@ -157,11 +159,11 @@ n "..."
 
 jeanneunknown "\"!\""
 
-n "Blood starts trickling down her nose - a nosebleed?"
+n "Blood starts trickling down her nose—a nosebleed?"
 
 n "Almost instantly she clamps her hand over her nose to try and plug it."
 
-n "That was a serious blow - my guess is she landed nose-first into me when she fell over. "
+n "That was a serious blow—my guess is she landed nose—first into me when she fell over. "
 
 n "I hear Hertha sharply inhale as she realises what’s happened."
 
@@ -201,7 +203,7 @@ hertha "\"This is bad...\""
 
 n "Ms. Wieck turns to me."
 
-hertha "\"Sorry to put this on you, uh - wait, you’re...\""
+hertha "\"Sorry to put this on you, uh—wait, you’re...\""
 
 erik "\"...From the newspaper club yesterday. I’m Erik?\""
 
@@ -219,7 +221,7 @@ n "I shake my head. It was probably pointed out to me briefly in Ela’s tour, b
 
 ## >Hertha neutral
 show hertha U_P1_E4
-hertha "\"Well, from those doors over there, just take a left and head all the way down until you see a fork in the hall. Take the left one – the nurse’s office is the second door on the right. There’s a sign that says ‘First Aid’ over the door. Got it?\""
+hertha "\"Well, from those doors over there, just take a left and head all the way down until you see a fork in the hall. Take the left one—the nurse’s office is the second door on the right. There’s a sign that says 'Nurse's Office' over the door. Got it?\""
 
 erik "\"Got it. I’ll take her there.\""
 
@@ -231,7 +233,7 @@ show jeanne:
   easein 0.5 xalign 0.5
 n "Hopefully my own leg doesn’t give out while guiding her down there."
 
-n "I reach out to Jeanne, who is still focusing on trying not to stain her gym shirt with blood."
+n "I reach out to the girl, who is still focusing on trying not to stain her gym shirt with blood."
 
 erik "\"Hey, let me help you up.\""
 
@@ -243,7 +245,7 @@ erik "\"Easy now. Try to keep off that foot.\""
 
 n "Slowly, we make our way to the doors outside."
 
-## <Cross to Hallway (day)>
+## <Cross to Hallway (day)> Needs transition ##
 scene classroomhall2
 show jeanne G_P1_E8:
   xalign 0.50 yanchor 1.0 ypos 1080+425-30 alpha 1.0
@@ -257,7 +259,7 @@ n "Looking closer, she's… kind of cute. I'm usually not a fan of thick-rimmed 
 
 n "Wait, is she…?"
 
-n "Yep, I’m not seeing things - she’s missing part of one her left hand’s finger. Yikes."
+n "Yep, I’m not seeing things—she’s missing part of one her left hand’s finger. Yikes."
 
 ## >start Jeanne’s theme
 ## >Jeanne (nosebleed)
@@ -282,9 +284,9 @@ show jeanne G_P1_E6
 
 n "Is it a nervous tic? I remember hearing about those on some documentary I watched. She was doing it after she collided with me, so maybe this is something related to that?"
 
-erik "\"Uh...\""
+erik "\"What was that?\""
 
-jeanne "\"Oh, thad’s just me. I do thad, um, ad ramdun. Turrette’s Syundronme.\""
+jeanne "\"Oh, thad’s just me. I do thad, um, ad ramdun. Turrette’s Syundrone.\""
 
 n "Tourette’s Syndrome?"
 
@@ -292,7 +294,7 @@ n "Isn’t that the disorder that makes people swear uncontrollably?"
 
 n "I guess this shows how little I know of other people’s disorders. I’m sure she’s probably never heard of a somatic disorder."
 
-erik "\"I see.\""
+erik "\"Oh, ok. Just curious.\""
 
 n "All I can do is accept it and move on, I guess."
 
@@ -365,7 +367,10 @@ jeanne "\"What do you think of the school so far?\""
 
 erik "\"It's all right. Can't say I love it or hate it just yet, you know?\""
 
-jeanne "\"Mm, I understand. I was the same way when I first started going here a few years ago. Don't worry – this place grows on you after a while.\""
+jeanne "\"Mm, I understand. I was the same way when I first started going here a few years ago.\""
+
+## Jeanne smile
+jeanne "\"Don't worry—this place grows on you after a while.\""
 
 ##>click
 
@@ -375,17 +380,19 @@ jeanne "\"Oh, it didn't take that long. Maybe a few months?\""
 
 n "So there are some students who have been here quite a while. Jeanne's reassurance that the school would grow on me is nice to hear."
 
-n "Still, I'm going to remain skeptical as a matter of principle. The week isn't even over and I've run into – in Jeanne’s case, quite literally –  some rather “interesting” characters."
+n "Still, I'm going to remain skeptical as a matter of principle. The week isn't even over and I've run into—in Jeanne’s case, quite literally—some rather \"interesting\" characters."
 
-n "Jeanne and I make some more small talk until we reach the nurse's office."
+n "Finally, we arrive at the nurse's office."
 
-##<Crossfade to Nurse's office – Day>
+##<Crossfade to Nurse's office – Lobby Day>
 scene nursesoffice
 
 show jeanne G_P1_E2:
   xalign 0.50 yanchor 1.0 ypos 1080+425 alpha 1.0
   
-n "The nurse on staff greets us, then notices Jeanne on my shoulder. I take a moment to explain what happened."
+n "Looking around, the office actually extends a little bit past the lobby we're currently in; several doors lead into what I assume to be beds or private offices."
+  
+n "The nurse on staff greets us, then notices Jeanne on my shoulder."
 
 erik "\"She rolled her ankle a bit in gym class, and she had a slight nosebleed.\""
 
@@ -401,7 +408,7 @@ nurse "\"All right, let’s head back to my office and I’ll take a look.\""
 
 erik "\"Need me to help take her back, miss?\""
 
-nurse "\"That would be very helpful, thank you. You'll have to wait in the lobby afterward, though – patient privacy, you know.\""
+nurse "\"That would be very helpful, thank you. You'll have to wait in the lobby afterward, though.  Patient privacy, you know.\""
 
 erik "\"Of course.\""
 
@@ -415,9 +422,13 @@ n "The nurse steps out, leaving the two of us in the room."
 
 erik "\"All good up there?\""
 
+## Jeanne neutral ##
+
 jeanne "\"I'm fine. I just hope it's not a sprain.\""
 
 erik "\"Mind if I take a look?\""
+
+## Jeanne puzzled ##
 
 jeanne "\"... Sure?\""
 
@@ -427,9 +438,13 @@ n "If it were a sprain, her ankle would definitely be puffed up and red right ab
 
 erik "\"I don't know if it's sprained. Does it still hurt?\""
 
+## Jeanne neutral ##
+
 n "Jeanne nods."
 
 erik "\"Then it's probably just the pain from rolling your ankle so suddenly.\""
+
+## Jeanne smile ##
 
 jeanne "\"You sure know a lot about ankles, Erik. Are you studying to be a doctor? Or a physical therapist?\""
 
@@ -469,23 +484,11 @@ nurse "\"She won't be long. Please, take a seat outside.\""
 
 ## >TO Lobby <Day>
 scene mainlobby
-n "A large stack of colorful pamphlets next to me catches my eye."
 
-n "\"Sign up for Flu Shots!\""
+n "The lobby seems to be pretty new in comparison to the rest of the building."
+n "There's a secretary clacking away on a computer nearby."
 
-n "\"Eating Right – A Primer on Good Fruits and Vegetables!\""
-
-n "\"Use Protection!\""
-
-n "I don't need to read these."
-
-n "Looking around, the office actually extends a little bit past the lobby I'm currently in; several doors lead into what I assume to be beds or private offices."
-
-n "I can hear some muffled voices behind some of them – I guess it's a nurse or two helping another student."
-
-n "I guess I can just relax for a bit. The lobby seems to be pretty new in comparison to the rest of the building, with a secretary clacking away on a computer."
-
-n "Some social media site is up – guess there isn't much to do here, aside from students and staff visiting."
+n "Some social media site is up—guess there isn't much to do here, aside from students and staff visiting."
 
 n "A slight rumble in my stomach reminds me that taking most of my time at breakfast helping Natalya meant that I didn’t have much time to actually eat anything."
 
@@ -505,7 +508,7 @@ n "Soon after, Jeanne returns, minus the blood on her face. The worried, embarra
 
 nurse "\"She's got a cold compress on her ankle, but she should take it easy for a little while longer.\""
 
-erik "\"That’s good.\""
+erik "\"Okay.\""
 
 ## <Cross to Hallway – Day>
 scene classroomhall2
@@ -536,7 +539,11 @@ n "Ha, I was right."
 
 erik "\"That's a relief then. Trust me, you do not want a sprained ankle during school.\""
 
+## Jeanne laugh ##
+
 jeanne "\"Right! I'll have to be careful.\""
+
+## Jeanne neutral ##
 
 ## >click
 
@@ -596,12 +603,16 @@ hertha "\"That's good to hear! Just sit out for the rest of class, okay?\""
 ##>Jeanne (neutral)
 
 jeanne "\"Okay, sure.\""
+
+## Jeanne out ##
+## Hertha out ##
+
 show jeanne G_P1_E4:
   easein 1.0 xalign 1.0 alpha 0.0
 n "I go to walk her to the bleachers."
 
-## >Hertha frown
-show hertha U_P1_E4
+## >Hertha in to centre - frown ##
+
 hertha "\"And you, young man, don't have a sprained ankle, last I checked.\""
 
 n "Well, shoot."
@@ -627,7 +638,7 @@ n "After finishing up, Hertha meets me before I head to the locker room."
 show hertha U_P3_E1:
   xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
   easein 1.0 xalign 0.55 alpha 1.0
-hertha "\"Hey, thanks for your help, Erik.\""
+hertha "\"Hey, thanks for your help today, Erik.\""
 
 ## >Hertha smile
 show hertha U_P3_E2
@@ -639,23 +650,22 @@ hertha "\"Jeanne certainly appreciates it.\""
 
 erik "\"Really?\""
 
-hertha "\"She’s not one to mince words — she told me she’s really grateful to you for carrying her to the nurse’s office.\""
+hertha "\"She’s not one to mince words—she told me she’s really grateful to you for carrying her to the nurse’s office.\""
 
 n "I recall her face when she thanked me back in the hallway."
 
-n "It was warm, cheerful, and charming — I could tell Jeanne was the type of girl to be a little more grateful than usual over things like this."
+n "It was warm, cheerful, and charming—I could tell Jeanne was the type of girl to be a little more grateful than usual over things like this."
 
 hertha "\"I hope you two continue to get along! It’ll be nice to have two great students leading everybody in class.\""
 
 ## >Hertha neutral
 show hertha U_P1_E1
-hertha "\"I’m not usually teaching these courses, so having some students help out would be a huge relief to me.\""
 
-erik "\"I’ll do what I can.\""
+erik "\"I think we'll be goof.  Jeanne seems nice.\""
 
 ## >Hertha smile
 show hertha U_P1_E2
-hertha "\"Great to hear!\""
+hertha "\"Great!\""
 
 
 hertha "\"Well, see you around, Erik.\""

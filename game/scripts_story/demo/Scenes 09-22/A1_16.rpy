@@ -274,5 +274,5 @@ stop music fadeout 0.5
 #--#
 
 ########
-
+label A1_16end:
 jump A1_17 # jump A?_??
