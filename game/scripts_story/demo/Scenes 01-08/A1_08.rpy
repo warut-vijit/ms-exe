@@ -282,9 +282,9 @@ show anna U_P2_E1:
 n "I sigh and settle down to my work, with only the occasional glance at the strange girl sitting next to me."
 
 #-# <timelapse>
-scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
+scene PitchBlack with Clockwipe
 $ renpy.pause(1.0)
-scene classroom1 with ImageDissolve("Transitions/clock.png", 1.0)
+scene classroom1 with Clockwipe
 #--#
 
 n "A quarter of an hour later, as I'm in the middle of my work a sheet of paper falls unceremoniously onto my desk."
@@ -365,9 +365,9 @@ n "First period isn't even over yet. I sink into my chair, ready to admit defeat
 n "Is every day going to be as awkward as this?"
 
 #-# >TIMESKIP
-scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
+scene PitchBlack with Clockwipe
 $ renpy.pause(1.0)
-scene erikdorm with ImageDissolve("Transitions/clock.png", 1.0)
+scene erikdorm with Clockwipe
 #--#
 
 ########

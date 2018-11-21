@@ -70,9 +70,9 @@ n "6:55."
 n "Just too late to get a bit more sleep. Ugh. With an involuntary groan, I grab my clothes bag to hit the shower."
 
 #-# >>passage of time
-scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
+scene PitchBlack with Clockwipe
 $ renpy.pause(1.0)
-scene erikdorm with ImageDissolve("Transitions/clock.png", 1.0)
+scene erikdorm with Clockwipe
 #--#
 
 n "By the time I've come back clean and dressed, someone's sent me a text message."
@@ -139,7 +139,7 @@ n "Actually, scratch that. It's probably just first day nerves on my part. The a
 
 #-# <Clock wipe to School_MainHall.png>
 stop ambience
-scene classroomhall2 with ImageDissolve("Transitions/clock.png", 1.0)
+scene classroomhall2 with Clockwipe
 #--#
 
 n "After deciding against eating in the crowded cafeteria and taking breakfast in the form of a vending machine cereal bar, I drift back into the lobby to see if I can remember the way to my form room."
@@ -452,7 +452,7 @@ n "After a tedious hour of carefully choosing my words, my first period at Saint
 n "{i}Thank god{/i}"
 
 #-# >end scene
-scene classroom1 at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+scene classroom1 at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with Clockwipe
 #--#
 
 ########

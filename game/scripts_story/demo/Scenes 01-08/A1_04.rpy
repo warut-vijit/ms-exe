@@ -330,7 +330,7 @@ n "I shrug."
 erik "\"Sure, we don't have a whole lot of time left anyway.\""
 
 #-# <timeskip>
-scene mainbuilding at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+scene mainbuilding at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with Clockwipe
 #--#
 #-# <show campus BG>
 show irene U_P1_E1:

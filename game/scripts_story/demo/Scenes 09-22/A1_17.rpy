@@ -529,8 +529,8 @@ n "Thankfully, there's a water cooler right next to me. I take a paper cup and w
 n "Right next to the cooler is a small candy dish with some wrapped chocolates. It's not exactly breakfast, but it's something to eat. I take a few to nibble on while I wait."
 
 ## <timeskip>
-scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
-scene mainlobby with ImageDissolve("Transitions/clock.png", 1.0)
+scene PitchBlack with Clockwipe
+scene mainlobby with Clockwipe
 ## >Jeanne enter smile
 show jeanne G_P1_E9:
   xalign 0.5 yanchor 1.0 ypos 1080+425-30 alpha 0.0
@@ -662,8 +662,8 @@ hertha "\"Oh, don't be so formal – you're making me sound old!\""
 n "I nod as I head back to the track as the two girls take a seat and start talking."
 
 ##<timeskip>
-scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
-scene gym with ImageDissolve("Transitions/clock.png", 1.0)
+scene PitchBlack with Clockwipe
+scene gym with Clockwipe
 n "After finishing up, Hertha meets me before I head to the locker room."
 
 ## >Hertha neutral

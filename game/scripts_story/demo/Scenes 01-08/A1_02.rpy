@@ -162,7 +162,7 @@ n "Thankfully, my morning prep isn't too extensive. With just a rinsing of my fa
 #--#
 
 #-# <Sister's Flat Main Room>
-scene SisAptMain at Position(xpos=0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+scene SisAptMain at Position(xpos=0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with Clockwipe
 #--#
 
 n "I enter the flat's main room, where the rest of my family is squashed into the somewhat small dining space."
@@ -519,7 +519,7 @@ dad "\"I'm not sure myself, but I'd take this as a good sign. He'll be able to p
 n "I {i}guess{/i} that's a good thing? My mind's certainly full of questions..."
 
 #-# >timewipe
-scene CarInteriorAlleyWay at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+scene CarInteriorAlleyWay at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with Clockwipe
 #--#
 #-# >car interior
 scene CarInteriorAlleyWay at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)
@@ -532,7 +532,7 @@ mum "\"Everyone ready?\""
 beatrice "\"Yep!\""
 
 #-# >clockwipe 2
-scene CarInteriorAlleyWay at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+scene CarInteriorAlleyWay at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with Clockwipe
 #--#
 #-# >open with car_interior(inside alleyway) BG
 scene CarInteriorAlleyWay at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)

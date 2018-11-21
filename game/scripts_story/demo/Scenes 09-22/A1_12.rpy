@@ -256,7 +256,7 @@ lena "\"Perfect. Let's get going.\""
 # next stage direction
 #--#
 #-# <newspaperclub(afternoon)>
-scene clubroom1 with ImageDissolve("Transitions/clock.png", 1.0)
+scene clubroom1 with Clockwipe
 #--#
 #-# >LIBRARY THEME IN
 stop music fadeout 5.0

@@ -508,7 +508,7 @@ ela "\"It's nice to meet you too, Erik.\""
 ela "\"Now, let's get started, shall we? Right this way, please!\""
 
 #-# >clock wipe transition
-scene mainlobby at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+scene mainlobby at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with Clockwipe
 #--#
 
 #-# >open to school hallway

@@ -82,8 +82,8 @@ n "\"Use the new verb conjugations we learned this week to write your essay.\""
 n "Well, that could take a bit longer than I thought it would. Sighing, I open up my laptop and start typing."
 
 #-#timeskip
-scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
-scene erikdormnight with ImageDissolve("Transitions/clock.png", 1.0)
+scene PitchBlack with Clockwipe
+scene erikdormnight with Clockwipe
 #--#
 
 n "Okay, I can call this a good amount of progress now."
@@ -335,8 +335,8 @@ jump A1_21end
 label A1_21end:
 
 #-#timeskip
-scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
-scene schoolnight2 with ImageDissolve("Transitions/clock.png", 1.0)
+scene PitchBlack with Clockwipe
+scene schoolnight2 with Clockwipe
 #--#
 
 #-# >Irene (Neutral P1E1)

@@ -223,8 +223,8 @@ n "I can’t help but smile at the remark."
 erik "\"Uhm, sure, no problem. So! Shall we get started?\""
 natalya "\"Da!\""
 #-#timeskip
-scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
-scene cafeteria with ImageDissolve("Transitions/clock.png", 1.0)
+scene PitchBlack with Clockwipe
+scene cafeteria with Clockwipe
 #--#
 #-#>>Nat P2_E2
 show natalya U_P2_E2:

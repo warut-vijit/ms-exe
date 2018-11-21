@@ -278,7 +278,7 @@ n "Needless to say, I have a bad feeling about this."
 play music "music/Be Violet 1.mp3" loop
 #--#
 #-# >CAFETERIA EXTERIOR BG
-scene cafeteriaoutside with ImageDissolve("Transitions/clock.png", 1.0)
+scene cafeteriaoutside with Clockwipe
 #--#
 #-# >FRAN P1_E1 EASE IN FROM RIGHT
 show fran P1_E1:

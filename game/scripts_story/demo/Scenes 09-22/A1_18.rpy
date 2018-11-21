@@ -60,9 +60,9 @@ claes "\"45 Newtons? That's correct. Did anyone else find the same answer?\""
 n "Only a couple other hands go up. One of them belongs to Ela, who glances in my direction with a proud smile."
 
 #--# <[minor timelapse]>
-scene PitchBlack with ImageDissolve("transitions/clock.png", 1.0)
+scene PitchBlack with Clockwipe
 $ renpy.pause(1.0)
-scene classroom1 with ImageDissolve("transitions/clock.png", 1.0)
+scene classroom1 with Clockwipe
 #--#
 
 n "Class breaks for lunch, a small crowd forming around the door as my fellow students rush for the exit."
@@ -115,9 +115,9 @@ ela "\"That makes two of us...\""
 n "We follow our classmates as they file into the hallway, joining the river of students on their way to lunch."
 
 #--# <[timelapse to] cafeteria (afternoon)>
-scene PitchBlack with ImageDissolve("transitions/clock.png", 1.0)
+scene PitchBlack with Clockwipe
 $ renpy.pause(1.0)
-scene cafeteria with ImageDissolve("transitions/clock.png", 1.0)
+scene cafeteria with Clockwipe
 #--#
 
 ## ela sprit1 still in scene##

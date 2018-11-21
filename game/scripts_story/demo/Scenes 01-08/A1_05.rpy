@@ -20,7 +20,7 @@ $ renpy.save_persistent()
 # Beatrice
 # Hilda
 #-# <timeskip>
-scene mainbuildingclose at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with ImageDissolve("Transitions/clock.png", 1.0)
+scene mainbuildingclose at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5) with Clockwipe
 #--#
 #-# >Background: School Entrance (day)
 
