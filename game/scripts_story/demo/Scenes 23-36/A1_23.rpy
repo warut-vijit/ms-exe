@@ -158,7 +158,7 @@ with SDis
 jeanne "Yes, we're in the same physical education class."
 
 #>claes neutral
-show claes P1_E1
+show claes P1_E2
 with SDis
 
 n "One could say we had an \"impactful\" encounter, so to speak."
@@ -167,6 +167,7 @@ n "One could say we had an \"impactful\" encounter, so to speak."
 #Should we maybe have a definition for this in script_start? TODO
 show jeanne U_P6a_E2
 with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
 show jeanne U_P6b_E2
 with Dissolve(0.2)
 show jeanne U_P1_E9
@@ -218,6 +219,7 @@ jeanne "Since I'm going to tutor you, I'd like to ask you a few questions, just 
 #>click
 show jeanne U_P6a_E2
 with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
 show jeanne U_P6b_E2
 with Dissolve(0.2)
 show jeanne U_P1_E2
@@ -229,6 +231,10 @@ n "I try to hold in a yawn. I fail."
 
 erik "Sure. Have at it."
 
+#>jeanne smile
+show jeanne U_P1_E9
+with SDis
+
 jeanne "Okay, so, question one: Where are you from?"
 
 erik "Basel-Stadt. I lived on the outskirts."
@@ -238,6 +244,7 @@ jeanne "So... near Switzerland, right? We have a few students from there, last I
 #>click
 show jeanne U_P6a_E2
 with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
 show jeanne U_P6b_E2
 with Dissolve(0.2)
 show jeanne U_P1_E2
@@ -264,6 +271,7 @@ jeanne "I’m from the west coast, near Nantes."
 #>click
 show jeanne U_P6a_E2
 with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
 show jeanne U_P6b_E2
 with Dissolve(0.2)
 show jeanne U_P1_E2
@@ -302,6 +310,7 @@ jeanne "Hmm… Like, different from how the media plays it out? Constant, vulgar
 #>click
 show jeanne U_P6a_E2
 with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
 show jeanne U_P6b_E2
 with Dissolve(0.2)
 show jeanne U_P1_E5
@@ -312,7 +321,7 @@ erik "Uh, yeah. That."
 n "I feel really awkward asking that, but Jeanne doesn’t look phased at all." 
 
 #>jeanne neutral
-show jeanne U_P1_E2
+show jeanne U_P6b_E2
 with SDis
 
 jeanne "Well, that’s actually a very small number of people with Tourette’s. It gets a lot of media attention because it’s so shocking. But in reality, most patients just have minor verbal or motor tics."
@@ -340,6 +349,7 @@ jeanne "It’s something I’ve come to terms with, and I do my best to make sur
 #>click
 show jeanne U_P6a_E2
 with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
 show jeanne U_P6b_E2
 with Dissolve(0.2)
 show jeanne U_P1_E2
@@ -360,6 +370,7 @@ jeanne "Really? You’re welcome! I’m always happy to help."
 #>click
 show jeanne U_P6a_E2
 with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
 show jeanne U_P6b_E2
 with Dissolve(0.2)
 show jeanne U_P1_E9
@@ -398,6 +409,7 @@ jeanne "The way I run things, we generally do research activities to learn more 
 #>click
 show jeanne U_P6a_E2
 with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
 show jeanne U_P6b_E2
 with Dissolve(0.2)
 show jeanne U_P1_E2
@@ -436,6 +448,7 @@ jeanne "I sure think so!"
 #>click
 show jeanne U_P6a_E2
 with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
 show jeanne U_P6b_E2
 with Dissolve(0.2)
 show jeanne U_P1_E2
@@ -450,6 +463,7 @@ jeanne "Oh, before I forget, let’s see… my schedule is pretty open today for
 #>click
 show jeanne U_P6a_E2
 with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
 show jeanne U_P6b_E2
 with Dissolve(0.2)
 show jeanne U_P1_E2
