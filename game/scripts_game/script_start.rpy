@@ -598,6 +598,7 @@ label start0:
   image jeanne G_P1_E9 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E9.png", 0.62, bilinear=True)
   image jeanne G_P6a_E2 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P6a E2.png", 0.62, bilinear=True)
   image jeanne G_P6b_E2 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P6b E2.png", 0.62, bilinear=True)
+  image jeanne F_P1 = im.FactorScale("images/Sprites/Main Characters/Jeanne/Jeanne Falling.png", 0.62, bilinear=True)
   
   #Uniform definitions (We don't have them yet, so these paths will need to be changed TODO)
   image jeanne U_P1_E1 = im.FactorScale("images/Sprites/Main Characters/Jeanne/JeanneGym P1 E1.png", 0.62, bilinear=True)

@@ -14,6 +14,11 @@ $ renpy.save_persistent ()
 ## Music: Jeanne's Theme, school theme
 
 ## <Fade into Hallway (Day)>
+#Temporary audio stops
+stop music fadeout 1.0
+stop music2 fadeout 1.0
+stop ambience fadeout 1.0
+stop ambience2 fadeout 1.0
 ## >start school theme
 scene classroomhall
 with Dissolve(2.0)
@@ -24,8 +29,12 @@ n "I’m finally free of those horrible jokes."
 n "At least there’s physical education later this morning. Maybe I can get my mind off of them by moving around and sweating a bit."
 
 ##<Timeskip to Gym (Day)>
-scene PitchBlack with ImageDissolve("Transitions/clock.png", 1.0)
-scene gym with ImageDissolve("Transitions/clock.png", 1.0)
+scene PitchBlack with Clockwipe
+scene gym with Clockwipe
+show gym:
+  xalign 0.5
+  easein 10.0 xalign 1.0
+
 n "Entering the gym, about half of these students I can see are from my class, but I notice some new faces mixed in. "
 
 n "All of us are wearing the same white—and—blue gym uniforms provided to us by the school, of course."
@@ -58,13 +67,14 @@ play sound "music/effects/door open and close.mp3"
 
 n "Suddenly, a loud clap bursts from the side doors, where a young woman—probably in her late twenties—strides over to us. "
 
-n "Oh, it's Hertha. I wasn't expecting her to show up here. It's kind of interesting to see teachers in multiple roles in this school."
-
 ## >Hertha (smile)
 show hertha U_P3_E2:
-  xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.55 alpha 1.0
+  xalign 0.4 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.5 alpha 1.0
 show hertha U_P3_E2 alpha 1.0
+
+n "Oh, it's Hertha. I wasn't expecting her to show up here. It's kind of interesting to see teachers in multiple roles in this school."
+
 hertha "\"Hello, students! I’m Ms. Wieck, and I’ll be substituting for this class.\" "
 
 n "Everyone pauses for a moment, unsure what to think."
@@ -75,12 +85,12 @@ n "A hand shoots up from the crowd of students gathering around this new face."
 
 hertha "\"Yes?\""
 show hertha U_P3_E1
-with Dissolve (0.25)
+with SDis
 student "\"Where’s Dr. Berhn? He’s supposed to teach us, right?\"" 
 
 ## >Hertha (smile)
 show hertha U_P2_E2
-with Dissolve (0.25)
+with SDis
 hertha "\"Dr. Berhn is very busy this school year–he’s been invited to several international conferences across Europe and in the United States. I’m sure he misses teaching all of you, though!\""
 
 n "Several students nod.  I guess this Dr. Berhn was pretty popular with the students here."
@@ -90,8 +100,9 @@ hertha "\"I know I’m not him, but let’s do our best to get along and have so
 n "Some students give a smile, but most of the others sigh and shrug their shoulders. "
 
 ## >Hertha out
-show hertha U_P2_E2:
-  easein 0.5 xalign 1.0 alpha 0.0
+show hertha U_P3_E2:
+  xalign 0.5 yanchor 1.0 ypos 1080+425 alpha 1.0
+  easein 1.0 xalign 0.6 alpha 0.0
 
 n "Everyone lines up into rows to get started on some calisthenics. However, despite Ms. Wieck's cheerful demeanor, many of the students don’t seem all that interested, many putting in a minimal effort to appear active. "
 
@@ -105,23 +116,35 @@ n "..."
 
 n "Am I the only one actually putting effort into this? Looking to my right yields two lanky males from my class who are sort of doing some half hearted jumping jacks."
 
-n "To my left, however..."
+show jeanne F_P1:
+  xalign -0.5 yanchor 1.0 ypos 1080+350
+  easein 1.0 xalign 0.15
 
 ## <Pan left>
+show gym:
+  xalign 1.0
+  easein 1.0 xalign 0.0
+
+n "To my left, however..."
 
 ## <Dark shape zoom>
+show gym:
+  zoom 1.0 ypos 1.0
+  easein 2.5 zoom 1.25 ypos 1.25
+show jeanne F_P1:
+  xalign .15 yanchor 1.0 ypos 1080+350 zoom 1.0
+  easein 2.5 xalign 0.40 ypos 1080+1350 zoom 2.5
 
 n "The person to my left has apparently tripped. "
 
 ## <Crash>
+scene PitchBlack
+with Dissolve (0.1)
 
 n "Right into me."
 
 n "Both of us take a sharp fall into the ground, and I brace for impact."
 
-## <black>
-scene PitchBlack
-with Dissolve (0.5)
 n "So today, I was asked to stare into the sun, endured some terrible puns, and now have had someone crash into me."
 
 n "What is this, a cartoon?"
@@ -176,25 +199,24 @@ scene gym
 with Dissolve (2.0)
 ## >show Jeanne/Hertha moved down
 show hertha U_P1_E4:
-  xalign 0.30 yanchor 1.0 ypos 1080+425+300 alpha 1.0
+  alpha 0.0 xalign 0.75 yanchor 1.0 ypos 1080+425+50
+  easein 1.0 xalign 0.75 alpha 1.0 ypos 1080+425
   
 show jeanne G_P1_E1:
-  xalign 0.70 yanchor 1.0 ypos 1080+425+300 alpha 1.0
+  alpha 0.0 xalign 0.25 yanchor 1.0 ypos 1080+350+50
+  easein 1.0 xalign 0.25 alpha 1.0 ypos 1080+350
   
 ## BLOOD ##
 ## >Hertha up, slow
 ## >Jeanne up, wobble animation
-show hertha U_P1_E4:
-  easein 3.0 ypos 1080+425
-  
-show jeanne G_P1_E1:
-  easein 3.0 ypos 1080+425-30
-  
 ## BLOOD ##
+
 n "She stumbles in an attempt to get up, wincing as she rises to her feet."
 
 ## >Jeanne (pain/frown)
 show jeanne G_P1_E8
+with SDis
+
 jeanne "\"Oww...\""
 
 n "She must have rolled one of her ankles pretty badly in the fall. Could it be a sprain?"
@@ -209,28 +231,34 @@ erik "\"...From the newspaper club yesterday. I’m Erik?\""
 
 ## >Hertha smile
 show hertha U_P1_E2
+with SDis
 n "Ms. Wieck’s face lights up in recognition."
 
 hertha "\"Oh, thought you looked familiar!\""
 
 ##>Hertha frown
 show hertha U_P1_E5
+with SDis
 hertha "\"Sorry this happened. But, could you help out Jeanne here? I can’t leave these students here unsupervised, but she needs to see the nurse for school injuries.  Do you know where the nurse’s office is?\""
 
 n "I shake my head. It was probably pointed out to me briefly in Ela’s tour, but I can't seem to recall where it was."
 
 ## >Hertha neutral
 show hertha U_P1_E4
+with SDis
 hertha "\"Well, from those doors over there, just take a left and head all the way down until you see a fork in the hall. Take the left one—the nurse’s office is the second door on the right. There’s a sign that says 'Nurse's Office' over the door. Got it?\""
 
 erik "\"Got it. I’ll take her there.\""
 
 ## >Hertha exit left
 show hertha U_P1_E4:
-  easein 0.5 xalign 0.0 alpha 0.0
+  alpha 1.0 xalign 0.75 yanchor 1.0
+  easein 1.0 xalign 1.0 alpha 0.0
 ## >Jeanne move center
 show jeanne:
-  easein 0.5 xalign 0.5
+  xalign 0.25 yanchor 1.0
+  easein 1.0 xalign 0.5
+  
 n "Hopefully my own leg doesn’t give out while guiding her down there."
 
 n "I reach out to the girl, who is still focusing on trying not to stain her gym shirt with blood."
@@ -247,8 +275,12 @@ n "Slowly, we make our way to the doors outside."
 
 ## <Cross to Hallway (day)> Needs transition ##
 scene classroomhall2
+with Dissolve(2.5)
+
 show jeanne G_P1_E8:
-  xalign 0.50 yanchor 1.0 ypos 1080+425-30 alpha 1.0
+  alpha 0.0 xalign 0.6 yanchor 1.0 ypos 1080+350
+  easein 1.0 xalign 0.5 alpha 1.0
+  
 n "It feels weird saying nothing while walking down the hallway. I don't know her all that well, and she looks pretty shaken up. But..."
 
 n "Maybe I should talk to her, to get her mind off of things. It is kind of awkward walking down here without trying to say anything."
