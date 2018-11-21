@@ -30,6 +30,7 @@ n "Tonight, aside from the ubiquitous daily newsletter, there's only one message
 #<CG of Erik's phone#>
 show EriksPhone
 with Dissolve (1.0)
+play music "music/Unknown Past.mp3" loop fadein 5.0
 #
 
 n "{i}Mr. Wilhelm,{/i}"
@@ -58,6 +59,7 @@ n "For a few more minutes, I click back through previous emails. I read a few ol
 n "When I'm tired of that, I close up shop and take my metaphorical surfboard to bed."
 
 ##>timeskip
+stop music fadeout 5.0
 scene PitchBlack
 with Clockwipe
 scene erikdorm
@@ -71,6 +73,7 @@ n "But still, I hope that that email I got doesn’t mean anything serious is go
 n "I suppose there’s no worrying about it at this hour. I’m too tired to think about it too much."
 
 ##>crossfade to classroom (day)
+play music "music/Ditzy.mp3" loop fadein 5.0
 scene classroom1
 with Dissolve (2.0)
 #
