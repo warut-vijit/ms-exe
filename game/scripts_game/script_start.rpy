@@ -297,6 +297,7 @@ label start0:
   image clubroom1 =         im.Scale("backgrounds/School_Clubroom_NOPAN.png", 1920, 1080, bilinear=True)
   image cafeteriaoutside =           "backgrounds/School_CafeteriaOutside.png"
   image cafeteria =                  "backgrounds/School_Cafeteria.png"
+  image cafeterianight =             "backgrounds/School_Cafeteria_Night.png"
   image ViennaStreet1 =              "backgrounds/Vienna_1.png"
   image ViennaStreet2 =              "backgrounds/Vienna_2.png"
   image ViennaStreet3 =              "backgrounds/Vienna_3.png"
@@ -320,7 +321,7 @@ label start0:
   #Transitions
   #Clockwipe transition
   define Clockwipe = ImageDissolve("images/Transitions/clock.png", 1.5)
-  #"Spride Dissolve" Used to fade one sprite to another
+  #"Sprite Dissolve" Used to fade one sprite to another
   define SDis = Dissolve(0.25)
   #TODO: Add all other transitions used here and change all scripts to use these definintions.
 

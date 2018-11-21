@@ -17,7 +17,7 @@ menu:
         jump A1_20a
     "I'm a free independent mental patient, and I don't need no woman!":
         $ persistent.i_tot += 1
-		$ A1_20_bad = True
+        $ A1_20_bad = True
         jump A1_20b
 
 
