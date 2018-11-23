@@ -71,7 +71,7 @@ with Dissolve(2)
 
 n "Today's coursework isn't too strenuous; just maths and a French essay I have to write. I can probably knock out the French essay first and start maths after dinner."
 
-n "Let's see…"
+n "Let's see..."
 
 n "\"Write about the causes of the French Revolution.\""
 
@@ -121,11 +121,11 @@ with Dissolve(0.25)
 
 n "She thinks for a bit, almost as if she's analyzing my question."
 
-irene "\"Hmm…\""
+irene "\"Hmm...\""
 
 n "No, scratch that. She {i}is{/i} analyzing my question."
 
-irene "\"If I'd have to guess…\""
+irene "\"If I'd have to guess...\""
 
 #-# >Irene (Happy P1E2)
 show irene U_P1_E2
@@ -134,7 +134,7 @@ with Dissolve(0.25)
 
 irene "\"I'm doing okay!\""
 
-erik "\"You… guess?\""
+erik "\"You... guess?\""
 
 irene "\"Sure! You can't {i}really{/i} tell other people how you're feeling, after all. Haven't you read Tolstoy?\""
 
@@ -154,7 +154,7 @@ irene "\"Well anyway, want to eat dinner together?\""
 
 n "That was a quick segue."
 
-erik "\"I… don't see why not.\""
+erik "\"I... don't see why not.\""
 
 irene "\"Great! Let's grub up and find a place to sit!\""
 
@@ -215,7 +215,7 @@ erik "\"I have absolutely no idea.\""
 
 n "Irene continues to think for a moment."
 
-irene "\"Me either, but I’m sure there’s some interesting reason.\""
+irene "\"Me neither, but I’m sure there’s some interesting reason.\""
 
 erik "\"Maybe they’re just cheaper?\""
 
@@ -225,6 +225,9 @@ erik "\"I guess.\""
 
 #-# >If “I’m fine” in A1_18
 label A1_21a:
+
+show irene U_P1_E2
+with Dissolve(0.25)
 
 irene "\"So how are you settling in?\""
 
@@ -251,6 +254,9 @@ jump A1_21end
 #-# >If “I’d like to meet people” in A1_18
 label A1_21b:
 
+show irene U_P1_E2
+with Dissolve(0.25)
+
 irene "\"So I see you’ve settled in quite well.\""
 
 erik "\"How so?\""
@@ -263,15 +269,24 @@ irene "\"Trust me, I’m pretty sure.\""
 
 erik "\"More sure about what I’ve been doing than me?\""
 
+show irene U_P1_E4
+with Dissolve(0.25)
+
 irene "\"I’m like ninety percent confident.\""
 
 erik "\"Well, I guess I’ll take your word for it.\""
+
+show irene U_P1_E2
+with Dissolve(0.25)
 
 irene "\"It’s good though! Most transfers just do their own thing and never make any friends. It’s pretty sad, to be honest.\""
 
 erik "\"Wow.\""
 
-irene "\"Like there was this one girl who… uh, nevermind.\""
+irene "\"Like there was this one girl who... uh, nevermind.\""
+
+show irene U_P1_E1
+with Dissolve(0.25)
 
 erik "\"Now I’m curious.\""
 
@@ -281,6 +296,9 @@ jump A1_21end
 
 #-# >If “My classes are tough” in A1_18
 label A1_21c:
+
+show irene U_P1_E4
+with Dissolve(0.25)
 
 irene "\"How’s class?\""
 
@@ -292,15 +310,24 @@ erik "\"Just for a few months, but yeah.\""
 
 n "I briefly consider if giving this information to Irene is a good idea."
 
+show irene U_P1_E1
+with Dissolve(0.25)
+
 irene "\"You seem like a smart guy, you even helped Natalya with her homework.\""
 
 erik "\"How do you know about that?\""
 
+show irene U_P1_E4
+with Dissolve(0.25)
+
 irene "\"I know about a lot of things, Erik.\""
+
+show irene U_P1_E1
+with Dissolve(0.25)
 
 n "I decide to leave that strange remark be and move on with the conversation."
 
-erik "\"That was her geography homework, something I’m pretty good at. When it comes to everything else… I dunno.\""
+erik "\"That was her geography homework, something I’m pretty good at. When it comes to everything else... I dunno.\""
 
 irene "\"There are study groups in the school, Ela might be able to help you set that up.\""
 
@@ -315,15 +342,25 @@ jump A1_21end
 #-# >If “It’s overwhelming” in A1_18
 label A1_21d:
 
-irene "\"So… are you okay?\""
+show irene U_P1_E1
+with Dissolve(0.25)
+
+irene "\"So... are you okay?\""
 
 erik "\"Okay?\""
 
-irene "\"Yeah. You seem… I dunno. Stressed.\""
+# This should be a more subtle frowning expression instead of "cringe"
+show irene U_P1_E3
+with Dissolve(0.25)
+
+irene "\"Yeah. You seem... I dunno. Stressed.\""
 
 erik "\"Isn’t that normal for transfer students?\""
 
-irene "\"Sure…\""
+irene "\"Sure...\""
+
+show irene U_P1_E1
+with Dissolve(0.25)
 
 n "Irene looks like she has more to say, but doesn’t speak it aloud."
 
@@ -351,6 +388,9 @@ n "With our dinners complete and our trays returned, we begin to wander from the
 irene "\"Are you going back to the dorms?\""
 
 erik "\"Yeah, I’ve got an assignment to work on. How about you?\""
+
+show irene U_P1_E2
+with Dissolve(0.25)
 
 irene "\"I have an assignment too. I’ll see ya’ around, Erik!\""
 

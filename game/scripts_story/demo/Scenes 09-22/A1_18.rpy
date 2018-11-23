@@ -43,6 +43,11 @@ scene classroom1 with Clockwipe
 n "Class the next day is rather uneventful. Most periods are taken up by lecture time except for a small class discussion in philosophy."
 n "I'm awake through all of them, at least. I slept better last night. Still woke up early – and didn't watch the sunrise with any pretty girls, but I still think it's an improvement."
 n "At the very least, let's call it an even trade."
+
+show claes P1_E1:
+  xalign 0.4 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.4 alpha 1.0
+
 claes "\"And the last equation? Don't be afraid to give the wrong answer; I expect it gave you all some trouble.\""
 
 n "Ms Claes' question nudges me back into the present. I've been absent-mindedly ticking off the problems as we go, and even if I got them right, I wasn't listening closely enough to know why I got them right."
@@ -54,6 +59,9 @@ claes "\"Anyone?\""
 n "The silence is killing me. I raise my hand."
 
 erik "\"I got 45.\""
+
+show claes P1_E5
+with Dissolve(0.25)
 
 claes "\"45 Newtons? That's correct. Did anyone else find the same answer?\""
 
@@ -140,7 +148,10 @@ n "I try not to think about what my selection says about me as I sit across from
 erik "\"Thanks. I was just going to eat alone; I’m not sure who I should be sitting with yet. Don’t want to impose, you know?\""
 
 n "Ms. Claes’s advice on ‘social pressure’ seemed a little too direct to be dismissed out of hand."
- 
+
+show ela P1_E2
+with SDis
+
 ela "\"Of course! It’s definitely good to give people space, but you’re a new student: most of us are more than happy to get to know you. I’m sure you’ll fit right in.\""
 
 ela "\"With your uniform on, sometimes I forget you’ve only just gotten here.\""
@@ -149,8 +160,8 @@ n "She points at the jacket, which reminds me just how weird I feel in this outf
 
 erik "\"Well, you know. I thought it would be best if I started dressing like the locals.\""
 
-#-# >Ela(Smiling P1E2)
-show ela P1_E2
+#-# >Ela(Neutral P1E1)
+show ela P1_E1
 with SDis
 #--#
 
@@ -161,11 +172,6 @@ ela "\"It looks good on you. Really.\""
 n "That compliment is a little too sincere for me, but I manage to mumble a ‘thanks’."
 
 n "To her credit, Ela is quick to change the subject."
-
-#-# >Ela(Neutral P1E1)
-show ela P1_E1
-with SDis
-#--#
 
 ela "\"So, what do you think of our teachers?\""
 
@@ -272,6 +278,9 @@ n "What would help me most right now is having a normal, friendly conversation f
 
 erik "\"Sorry, that probably came out wrong. I’m just saying— \""
 
+show ela P1_E6
+with SDis
+
 ela "\"I know, I know, I’m probably pushing too hard. Dr. Faber said the same thing.\""
 
 ela "\"I tend to get ahead of myself a lot, and it makes people defensive. You don’t have to talk about anything if you don’t want to.\""
@@ -283,6 +292,9 @@ erik "\"I just don’t have anything to talk about. I’m really not that intere
 ela "\"Well, that's normal for a transfer student, isn't it?\""
 
 erik "\"I suppose you're right.\""
+
+show ela P1_E1
+with SDis
 
 ela "\"Just take things at your own pace and you'll know plenty of people before the month is over.\""
 
@@ -299,11 +311,17 @@ with SDis
 
 ela "\"See? That's progress!\""
 
+show ela P1_E1
+with SDis
+
 n "It's like she said earlier."
 
 n "{i}Don't sell yourself short.{/i}"
 
 erik "\"All right. I'll take your advice and do things at my pace for now.\""
+
+show ela P1_E2
+with SDis
 
 ela "\"Sure!\""
 
@@ -351,12 +369,13 @@ n "\"Get to know\" being the key phrase. Not just meet. Preferably without injur
 
 erik "\"I guess I'm kind of interested in joining a club, maybe?\""
 
-n "Ela’s eyes light up, immediately shoving her plate to one side to make room for her backpack."
-
 #-# >Ela(Smiling P1E2)
+# Needs to have a more excited expression here
 show ela P1_E2
 with SDis
 #--#
+
+n "Ela’s eyes light up, immediately shoving her plate to one side to make room for her backpack."
 
 ela "\"Ah, well, there are lots to choose from! Chess club, newspaper club, book club, art club... A lot of smaller ones, too... I couldn't possibly remember all of them off the top of my head.\""
 
@@ -381,9 +400,15 @@ ela "\"This is all the officially recognised clubs, anyway. So, it's a place to 
 
 erik "\"Wow... this is...\""
 
+show ela P1_E3
+with SDis
+
 ela "\"Too much?\""
 
 erik "\"You could say that.\""
+
+show ela P1_E1
+with SDis
 
 ela "\"It's not as bad as it looks. You could narrow it down a little, too. What are you interested in?\""
 
@@ -459,7 +484,7 @@ label A1_18c:
 erik "\"I'm a little worried I might fall behind.\""
 
 #-# >Ela(Serious P1E6)
-show ela P1_E6
+show ela P1_E4
 with SDis
 #--#
 
