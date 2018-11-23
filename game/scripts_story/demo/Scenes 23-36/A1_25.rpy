@@ -502,6 +502,7 @@ n "As I acclimatise to St. Dymphna’s I expect my schedule will fill up and it 
 # TODO: MENU CHOICE AND POINTS
 menu:
     "Yeah, that would be great!":
+        $ persistient.kb_tot += 1
         jump great
     "Sure, I'd like to visit when I can!":
         jump visit

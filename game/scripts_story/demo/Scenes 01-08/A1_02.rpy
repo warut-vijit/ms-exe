@@ -346,7 +346,7 @@ n "Mum knows what happened last night, but I can tell she's just trying to get m
 n "I feel like I should say something here."
 
 label A1_02_menu:
-label MENu1:
+label MENU1:
 #-# [Menu choice:] 
 menu:
     "\"Sorry, just not hungry after last night.\"":

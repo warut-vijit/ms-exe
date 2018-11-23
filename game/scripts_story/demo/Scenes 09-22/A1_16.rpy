@@ -124,7 +124,7 @@ menu:
     "Don't make a big deal of it.":
         jump A1_16a
     "Ask her what's wrong.":
-        $ persistent.nl_tot += 1
+        $ persistent.nv_tot += 1
         jump A1_16b
 #--#
 #-# > CHOICE #1: Don’t make a big deal of it.

@@ -26,22 +26,21 @@ init python:
           girl = 3
       elif (mode == 'good' or mode == '100%'):
         if (girl == 3 or girl == 4):
-          if (persistent.am_menu == 0):
-            persistent.am_menu = 1
+          if (persistent.ir_menu == 0):
+            persistent.ir_menu = 1
           # Since the last 'good' hasn't copied yet,
           # check for all 4s or 5s except one 3
           # This will change Anne-Marie to 'meet'
-          if (persistent.am_menu == 1 and girl == 3 and persistent.i_menu>2 and persistent.j_menu>2 and persistent.l_menu>2 and persistent.k_menu>2 and persistent.a_menu>2 and persistent.nl_menu>2 and persistent.nh_menu>2):
+          if (persistent.ir_menu == 1 and girl == 3 and persistent.ig_menu>2 and persistent.jl_menu>2 and persistent.lf_menu>2 and persistent.kb_menu>2 and persistent.ak_menu>2 and persistent.nv_menu>2):
             tot = 0
-            if (persistent.i_menu==3): tot += 1
-            if (persistent.j_menu==3): tot += 1
-            if (persistent.l_menu==3): tot += 1
-            if (persistent.k_menu==3): tot += 1
-            if (persistent.a_menu==3): tot += 1
-            if (persistent.nl_menu==3): tot += 1
-            if (persistent.nh_menu==3): tot += 1
+            if (persistent.ig_menu==3): tot += 1
+            if (persistent.jl_menu==3): tot += 1
+            if (persistent.lf_menu==3): tot += 1
+            if (persistent.kb_menu==3): tot += 1
+            if (persistent.ak_menu==3): tot += 1
+            if (persistent.nv_menu==3): tot += 1
             if (tot == 1):
-              persistent.am_menu = 2
+              persistent.ir_menu = 2
           if (mode == 'good' and girl < 5):
             girl = 4
           else:
@@ -107,14 +106,13 @@ label start:
     $ persistent.menu_ui = -persistent.menu_ui
     return
 
-  $ persistent.i_tot = 0
-  $ persistent.j_tot = 0
-  $ persistent.l_tot = 0
-  $ persistent.k_tot = 0
-  $ persistent.a_tot = 0
-  $ persistent.nl_tot = 0
-  $ persistent.nh_tot = 0
-  $ persistent.am_tot = 0
+  $ persistent.ig_tot = 0
+  $ persistent.jl_tot = 0
+  $ persistent.lf_tot = 0
+  $ persistent.kb_tot = 0
+  $ persistent.ak_tot = 0
+  $ persistent.nv_tot = 0
+  $ persistent.ir_tot = 0
 
 label start0:
 
@@ -732,23 +730,21 @@ label start0:
   $ persistent.started = 1
 
   # Girl influence totals
-  if (persistent.i_tot == None):
-    $ persistent.i_tot = 0
-  if (persistent.j_tot == None):
-    $ persistent.j_tot = 0
-  if (persistent.l_tot == None):
-    $ persistent.l_tot = 0
-  if (persistent.k_tot == None):
-    $ persistent.k_tot = 0
-  if (persistent.a_tot == None):
-    $ persistent.a_tot = 0
-  if (persistent.nl_tot == None):
-    $ persistent.nl_tot = 0
-  if (persistent.nh_tot == None):
-    $ persistent.nh_tot = 0
-  if (persistent.am_tot == None):
-    $ persistent.am_tot = 0
-  $ j_help = 0
+  if (persistent.ig_tot == None):
+    $ persistent.ig_tot = 0
+  if (persistent.jl_tot == None):
+    $ persistent.jl_tot = 0
+  if (persistent.lf_tot == None):
+    $ persistent.lf_tot = 0
+  if (persistent.kb_tot == None):
+    $ persistent.kb_tot = 0
+  if (persistent.ak_tot == None):
+    $ persistent.ak_tot = 0
+  if (persistent.nv_tot == None):
+    $ persistent.nv_tot = 0
+  if (persistent.ir_tot == None):
+    $ persistent.ir_tot = 0
+  # $ j_help = 0
 
   # Girl whose path you are on, 1..x, up to 9, "0"=on no path
   # yes, use a string

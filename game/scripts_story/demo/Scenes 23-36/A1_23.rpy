@@ -186,7 +186,7 @@ with SDis
 
 claes "As I had been saying previously, we have on-campus tutors for students that need an extra hand with assignments."
 
-if (persistient.j_tot > 2):
+if (persistient.jl_tot > 2):
   claes "Ms. Lefevre is one of the few student tutors here on campus, and Miss Sahin recommended her to me just the other day."
   n "Ela's quick as always. This must be the study group she mentioned."
 else:

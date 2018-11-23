@@ -1188,9 +1188,9 @@ screen quick_menu1:
             action Preference("all mute", "enable")
         if persistent.show_girl_totals:
           if persistent.am_tot == 0:
-            text ("{size=11}{color=#FF0000} Annaliese:[persistent.a_tot] Isolda:[persistent.i_tot] Jeanne:[persistent.j_tot] Lena:[persistent.l_tot] Katja:[persistent.k_tot] Twins:[persistent.nh_tot] {/color}{/size}")
+            text ("{size=11}{color=#FF0000} Annaliese:[persistent.ak_tot] Isolda:[persistent.ig_tot] Jeanne:[persistent.jl_tot] Lena:[persistent.lf_tot] Katja:[persistent.kb_tot] Natalya:[persistent.nv_tot] {/color}{/size}")
           else:
-            text ("{size=11}{color=#FF0000} Annaliese:[persistent.a_tot] Isolda:[persistent.i_tot] Jeanne:[persistent.j_tot] Lena:[persistent.l_tot] Katja:[persistent.k_tot] Twins:[persistent.nh_tot] Anne-Marie:[persistent.am_tot]{/color}{/size}")
+            text ("{size=11}{color=#FF0000} Annaliese:[persistent.ak_tot] Isolda:[persistent.ig_tot] Jeanne:[persistent.jl_tot] Lena:[persistent.lf_tot] Katja:[persistent.kb_tot] Natalya:[persistent.nv_tot] Irene:[persistent.ir_tot]{/color}{/size}")
         #if persistent.show_scene_number:
         #    textbutton ("{size=11}{color=#FF0000} [persistent.scene_number]{/color}{/size}") action [ ]
 
@@ -1221,9 +1221,9 @@ screen quick_menu2:
         textbutton _(" Prefs ") action ShowMenu("preferences")
         if persistent.show_girl_totals:
           if persistent.am_tot == 0:
-            text ("{size=11}{color=#FF0000} Annaliese:[persistent.a_tot] Isolda:[persistent.i_tot] Jeanne:[persistent.j_tot] Lena:[persistent.l_tot] Katja:[persistent.k_tot] Twins:[persistent.nh_tot] {/color}{/size}")
+            text ("{size=11}{color=#FF0000} Annaliese:[persistent.ak_tot] Isolda:[persistent.ig_tot] Jeanne:[persistent.jl_tot] Lena:[persistent.lf_tot] Katja:[persistent.kb_tot] Natalya:[persistent.nv_tot] {/color}{/size}")
           else:
-            text ("{size=11}{color=#FF0000} Annaliese:[persistent.a_tot] Isolda:[persistent.i_tot] Jeanne:[persistent.j_tot] Lena:[persistent.l_tot] Katja:[persistent.k_tot] Twins:[persistent.nh_tot] Anne-Marie:[persistent.am_tot]{/color}{/size}")
+            text ("{size=11}{color=#FF0000} Annaliese:[persistent.ak_tot] Isolda:[persistent.ig_tot] Jeanne:[persistent.jl_tot] Lena:[persistent.lf_tot] Katja:[persistent.kb_tot] Natalya:[persistent.nv_tot] Irene:[persistent.ir_tot]{/color}{/size}")
         #if persistent.show_scene_number:
         #    textbutton ("{size=11}{color=#FF0000} [persistent.scene_number]{/color}{/size}") action [ ]
 
@@ -1290,34 +1290,31 @@ label tog_menus:
 
 label set_girls:
     python:
-      persistent.a_tot = None
-      persistent.i_tot = None
-      persistent.j_tot = None
-      persistent.l_tot = None
-      persistent.k_tot = None
-      persistent.nh_tot = None
-      persistent.nl_tot = None
-      persistent.am_tot = None
+      persistent.ak_tot = None
+      persistent.ig_tot = None
+      persistent.jl_tot = None
+      persistent.lf_tot = None
+      persistent.kb_tot = None
+      persistent.nv_tot = None
+      persistent.ir_tot = None
       ints_list = []
       girllist = renpy.input("Enter a,i,j,l,k,nh,nl,am as e.g. 1,5,6,1,1,1,-1,5: ")
       if (len(girllist) > 0):
         ints_list = map(int, girllist.strip().split(','))
         if (len(ints_list) > 0):
-          persistent.a_tot = ints_list[0]
+          persistent.ak_tot = ints_list[0]
         if (len(ints_list) > 1):
-          persistent.i_tot = ints_list[1]
+          persistent.ig_tot = ints_list[1]
         if (len(ints_list) > 2):
-          persistent.j_tot = ints_list[2]
+          persistent.jl_tot = ints_list[2]
         if (len(ints_list) > 3):
-          persistent.l_tot = ints_list[3]
+          persistent.lf_tot = ints_list[3]
         if (len(ints_list) > 4):
-          persistent.k_tot = ints_list[4]
+          persistent.kb_tot = ints_list[4]
         if (len(ints_list) > 5):
-          persistent.nh_tot = ints_list[5]
+          persistent.nv_tot = ints_list[5]
         if (len(ints_list) > 6):
-          persistent.nl_tot = ints_list[6]
-        if (len(ints_list) > 7):
-          persistent.am_tot = ints_list[7]
+          persistent.ir_tot = ints_list[6]
 
     jump main_menu_reset
 

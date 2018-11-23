@@ -617,11 +617,11 @@ if (persistent.skip_menus):
   jump A1_15a
 menu:
   "\"Absolutely. I didn't even realize how much I missed watching the sunrise.\"":
-    $ persistent.i_tot += 1
+    $ persistent.ig_tot += 1
     $ persistent.A1_15 = 1
     jump A1_15a
   "\"It was. This whole conversation was just what I needed to cheer me up.\"":
-    $ persistent.k_tot += 1
+    $ persistent.kb_tot += 1
     $ persistent.A1_15 = 2
     jump A1_15b
 #--#
