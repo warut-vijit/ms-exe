@@ -223,6 +223,17 @@ irene "\"Cheaper for more table? That doesn’t make any sense, Erik.\""
 
 erik "\"I guess.\""
 
+#-# Dialogue based on responses to Ela in A1_18
+if (persistent.A1_18 == 1):
+    jump A1_21a
+elif (persistent.A1_18 == 2):
+    jump A1_21b
+elif (persistent.A1_18 == 3):
+    jump A1_21c
+else:
+    jump A1_21d
+#--#
+
 #-# >If “I’m fine” in A1_18
 label A1_21a:
 
