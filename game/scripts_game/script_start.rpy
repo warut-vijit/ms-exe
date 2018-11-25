@@ -758,6 +758,7 @@ label start0:
   $ club_flag = 0        # Default is to not have been to the club
   $ scene_a1_30_flag = 1 # This needs to be set as default in case the question is skipped
   $ A1_20_bad = 0        # Default is to help yourself, not beg for aid - needed for A1_25
+  $ A1_24_shouldertap = 0        # needed for A1_25
   
   # image movie = Movie(size=(1024, 768))
   stop movie

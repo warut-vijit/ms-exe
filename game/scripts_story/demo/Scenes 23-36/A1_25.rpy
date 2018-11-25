@@ -19,8 +19,7 @@ stop ambience2 fadeout 1.0
 #--#
 
 #start scene music
-play music "music/Be_Green.mp3"
-
+#play music "music/Be_Green.mp3"
 
 n "There’s a certain {i}je ne sais quoi{/i} about the way the school bell punctuates the end of French class."
 
@@ -35,6 +34,7 @@ n "I can’t say I like the idea of my lunches always being adventures. I just w
 n "It’s all I can do to push myself off my chair and up on my feet. It feels almost more than I can do to lumber toward the classroom door so I can make my way to the cafeteria, but I manage it in time."
 
 scene classroomhall
+with Dissolve(1.5)
 
 n "My protesting leg has already delayed me so long that everyone else disappeared down some hall or another."
 
@@ -51,6 +51,7 @@ n "Even a complete tease like Fran has that seed of compassion somewhere, I’m 
 n "So it’s decided: I’ll try to find someone I know at the cafeteria. Even if it’s Fran. I shouldn’t—don’t want to—get in the habit of eating on my own or waiting for someone to feel sorry for me. This is my initiative to take."
 
 scene cafeteria
+with Dissolve(1.5)
 
 n "One good thing about being slow is that by the time I arrive, the worst of the lunch rush is gone. People are either seated or taking their food elsewhere and I can step through the line nice and quick."
 
@@ -92,10 +93,9 @@ n "I step past the last of the furniture between me and the corner table and sto
 
 n "Noticing me, Katja breaks off from her conversation and looks my way, giving the tray in my hands a glance."
 
-show katja U_P1_E1:
-  alpha 0.0 xalign 0.6 yanchor 1.0 ypos 1080+425
+show katja U_P5_E2a:
+  xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
   easein 1.0 xalign 0.5 alpha 1.0
-with Dissolve (0.25)  
 
 # TODO: ADD KATJA CALM THEME
 
@@ -105,7 +105,13 @@ katja "My intuitions tell me you’re looking for a seat."
 
 erik "I didn’t realize your intuitions looked like a tray of food."
 
+show katja U_P1_E3a
+with SDis
+
 katja "Clearly, you’ve been slacking in your philosophy classes. It’s elementary metaphysics."
+
+show katja U_P1_E2b
+with SDis
 
 katja "That aside, would you care to join us?"
 
@@ -113,27 +119,36 @@ n "She motions to the open spot across from her and I nod, setting my food down 
 
 erik "Thanks. I hope I’m not interrupting anything."
 
+show katja U_P1_E2a
+with SDis
+
 katja "Not at all. We were discussing the choir’s plans for the upcoming Gala. As important as it is, it can wait."
 
 katja "However, introductions are in order. Everyone, this is Erik Wilhelm, a new student in Ms. Claes’ class. Erik—"
 
 n "She begins to motion at each of the others in turn."
 
+show katja U_P5_E2b
+with SDis
+
 katja "—this is Effie, Suraya, and Maria. They’re fellow members of the choir."
 
-"I nod and blink, making a concerted effort to engrave the names and faces into my head. I’m confident I’ll fail, but it seems like common courtesy to try."
+n "I nod and blink, making a concerted effort to engrave the names and faces into my head. I’m confident I’ll fail, but it seems like common courtesy to try."
 
-"They all smile at me by way of a greeting and we’re thrown into the formulaic exchange of pleasantries. I answer and ask the standard how do you do questions as they come, glancing at Katja all the while."
+n "They all smile at me by way of a greeting and we’re thrown into the formulaic exchange of pleasantries. I answer and ask the standard how do you do questions as they come, glancing at Katja all the while."
 
-"By the time we’re done with the extended introductions, I confirm that I’ve completely forgotten their names. I temporarily number them one, two, and three, hoping to be reminded of their identities before it’s obvious I forgot."
+n "By the time we’re done with the extended introductions, I confirm that I’ve completely forgotten their names. I temporarily number them one, two, and three, hoping to be reminded of their identities before it’s obvious I forgot."
 
-"But Katja motions to them before I can say anything, and they resume the conversation on their own. It seems she anticipated my apprehension and decided to make this a one-on-one talk."
+n "But Katja motions to them before I can say anything, and they resume the conversation on their own. It seems she anticipated my apprehension and decided to make this a one-on-one talk."
 
-"I give her a prayer of thanks for sparing me from the inevitable awkwardness."
+n "I give her a prayer of thanks for sparing me from the inevitable awkwardness."
 
-"Now she looks back at me with interest. It’s a look of respectful attention, the same one she seems to maintain every time we speak."
+n "Now she looks back at me with interest. It’s a look of respectful attention, the same one she seems to maintain every time we speak."
 
-"There’s something genuine about it, but also something detached. As though she wants to keep a little distance. I wonder if this is the façade Father Max was talking about."
+n "There’s something genuine about it, but also something detached. As though she wants to keep a little distance. I wonder if this is the façade Father Max was talking about."
+
+show katja U_P1_E8b
+with SDis
 
 katja "So, Erik: how have you been?"
 
@@ -147,15 +162,24 @@ n "The question opens a messy can of worms and I find myself unable to close it.
 
 erik "I’ve been getting by, you know? It’s still a bit overwhelming orienting myself here."
 
+show katja U_P5_E2a
+with SDis
+
 katja "Of course. You’d do best not to push yourself in that respect."
 
 katja "As I mentioned at our first meeting, these things take time. We were all in your shoes, and we’ve all grown into the ones we wear now."
 
 erik "Right, but—"
 
+show katja U_P1_E3a
+with SDis
+
 katja "—those words can sound empty. I know. There’s only so much anyone can say to alleviate the anxiety. In the end, the bulk of it falls squarely in your own hands."
 
 n "I sigh. She’s right, unfortunately, and I have to face the fact that I need to deal with this myself."
+
+show katja U_P1_E2b
+with SDis
 
 katja "This is never to say that you must do it alone. The distinction is important. There are things others can do for you, and there are things you must do for yourself, but those around you can help with the latter."
 
@@ -165,6 +189,9 @@ erik "Right."
 
 erik "That’s actually why I came here, sort of. To this table specifically."
 
+show katja U_P5_E10
+with SDis
+
 katja "Oh?"
 
 erik "I told myself I couldn’t keep waiting for someone else to come to me and I decided to look for someone I knew at lunch."
@@ -173,15 +200,27 @@ erik "It took a while, but I managed to spot you here in the corner."
 
 erik "So, in a way, I guess this is me taking your advice before it was given and trying not to be alone."
 
+show katja U_P5_E3b
+with SDis
+
 katja "Lonely. Not alone."
+
+show katja U_P1_E8b
+with SDis
 
 katja "Regardless, I’m very happy to hear that, and I’m glad I’ve managed to be of assistance."
 
 erik "When you put it that way it sounds so sterile."
 
+show katja U_P1_E2a
+with SDis
+
 katja "My apologies. It’s an occupational hazard."
 
 erik "Occupational hazard? Of what occupation?"
+
+show katja U_P5_E3b
+with SDis
 
 katja "Being me."
 
@@ -191,15 +230,24 @@ n "Maybe I’ll see more of this true layer of Katja in the days and weeks to co
 
 n "If the ever-cordial Katja is comfortable enough with me to let out a giggle, then maybe I’m not so awkward as I thought."
 
+show katja U_P5_E8a
+with SDis
+
 katja "How was the rest of your Wednesday evening, by the way?"
 
 erik "Ah, well… it was eventful."
+
+show katja U_P5_E10
+with SDis
 
 katja "Eventful?"
 
 katja "A good or a bad kind of eventful?"
 
 erik "A bit of both, I think. There were many events."
+
+show katja U_P2_E2
+with SDis
 
 n "She raises an eyebrow and I feel her eye bore into me, not with any malice but with a healthy dose of sarcasm."
 
@@ -209,6 +257,9 @@ n "That’s a pretty blunt way to put it, but I can tell that beneath the teasin
 
 erik "I had my first appointment with Dr. Faber, for one."
 
+show katja U_P1_E2a
+with SDis
+
 katja "I see. That would be enough to make any day eventful on its own. The first appointment can be a significant milestone for the students here."
 
 erik "It was, in a way. I had my own expectations and to be honest, he defied them — I was pleasantly surprised."
@@ -216,6 +267,9 @@ erik "It was, in a way. I had my own expectations and to be honest, he defied th
 erik "I came in cynical about the whole thing but I left genuinely feeling a little better and hopeful, you know? I didn’t think it would affect me so quickly."
 
 erik "The idea of therapy seemed dark and mysterious to me and I’m starting to realise that may have been wrong."
+
+show katja U_P1_E2b
+with SDis
 
 katja "It may have, but you wouldn’t be the first to have the idea. I fear popular representations have painted therapy in a rather bad light."
 
@@ -225,11 +279,20 @@ katja "I’m glad you had a good first experience with Dr. Faber. I expect it’
 
 erik "Absolutely. I’d be lying if I said I wasn’t anxious before the first one, but now I can feel relaxed about it."
 
+show katja U_P1_E3b
+with SDis
+
 katja "I think you’ll find that that alone helps with the treatment tremendously."
 
 erik "I hope so."
 
+show katja U_P1_E8b
+with SDis
+
 katja "I’d count on it."
+
+show katja U_P5_E3b
+with SDis
 
 katja "So, that was the first of multiple events. Shall I ask about the next?"
 
@@ -239,60 +302,103 @@ n "I guess I don’t have any reason to stop now."
 
 erik "You remember how when we first met, you asked me about my sandwich?"
 
+show katja U_P5_E2b
+with SDis
+
 katja "Yes."
 
 erik "You called it ‘protocol’ and explained how it was useful for gauging individual students."
+
+n "DEBUG QUESTION"
+
+#DEBUG QUESTION
+menu:
+    "20bad":
+        $ A1_20_bad = 1
+    "20good":
+        $ A1_20_bad = 0
 
 
 ## TODO: check which choice Erik made in A1_20
 # [if wrong Isolda choice in A1_20]
 ## ref flag : A1_20_bad 
 
-# erik "I’ve been trying to do something similar since then and I’m discovering it’s hard to nail down."
+if A1_20_bad == True:
+    jump a1_25_20bad
+elif A1_20_bad == False:
+    jump a1_25_20good
 
-# erik "On my way back from the appointment I ran into someone and... I’m not sure I handled it the best."
 
-# erik "I thought I was doing alright, I tried to be friendly, but I ended up tripping over myself and making things awkward."
+label a1_25_20bad:
+n "A1_25_20bad"
 
-# erik "With how different everyone is I don’t know how to improvise the one-size-fits-all approach you used on me and when I try I mess it up."
+show katja U_P5_E2a
+with SDis
 
-# katja "I wouldn’t rush to make that comparison. It’s only your fourth day, after all."
+erik "I’ve been trying to do something similar since then and I’m discovering it’s hard to nail down."
 
-# erik "Right, but when will I get better at this?"
+erik "On my way back from the appointment I ran into someone and... I’m not sure I handled it the best."
 
-# n "Katja pauses and gives me a look, her brows pressed together like she’s giving my question genuine consideration." 
+erik "I thought I was doing alright, I tried to be friendly, but I ended up tripping over myself and making things awkward."
 
-# katja "You said you tried to be friendly."
+erik "With how different everyone is I don’t know how to improvise the one-size-fits-all approach you used on me and when I try I mess it up."
 
-# erik "I did. Not pushy but still, friendly. I thought I’d try to make conversation."
+show katja U_P5_E2b
+with SDis
 
-# katja "I see."
+katja "I wouldn’t rush to make that comparison. It’s only your fourth day, after all."
 
-# n "She lets out a sympathetic sigh."
+erik "Right, but when will I get better at this?"
 
-# katja "Unfortunately, Erik, not being pushy isn’t always enough. Noble as it is, if you’re aiming for a general-purpose approach you’ll need to set aside being ‘friendly’ at all."
+show katja U_P1_E5
+with SDis
 
-# katja "You can be cordial and pleasant without being friendly, and given that some people are less than comfortable with friendliness, that is what I’d suggest."
+n "Katja pauses and gives me a look, her brows pressed together like she’s giving my question genuine consideration." 
 
-# katja "You can try to be more forward if you’re sure the person would welcome it, but otherwise it’s best to maintain an appreciable distance between them and yourself."
+katja "You said you tried to be friendly."
 
-# n "I’m reminded of my first two encounters with Annaliese, the disasters that they were. In retrospect I realized I was pushing too hard, but I didn’t think that meant I should avoid being friendly altogether."
+erik "I did. Not pushy but still, friendly. I thought I’d try to make conversation."
 
-# n "Given yesterday’s events, though, maybe Katja’s right. I have to be more careful. I can’t assume everybody wants to have a conversation and I can’t force it on them."
+katja "I see."
 
-# katja "For that matter, the same advice goes for people you’re already friends with."
+n "She lets out a sympathetic sigh."
 
-# katja "Sometimes our friends just need a little solitude and in those moments it’s important to respect that."
+show katja U_P2_E1b
+with SDis
 
-# erik "I think I get it. But how do I know if someone’s receptive, then?"
+katja "Unfortunately, Erik, not being pushy isn’t always enough. Noble as it is, if you’re aiming for a general-purpose approach you’ll need to set aside being ‘friendly’ at all."
 
-# katja "That, alas, is a matter of practice. You’ll pick it up."
+katja "You can be cordial and pleasant without being friendly, and given that some people are less than comfortable with friendliness, that is what I’d suggest."
 
-# n "I sigh."
+katja "You can try to be more forward if you’re sure the person would welcome it, but otherwise it’s best to maintain an appreciable distance between them and yourself."
 
-# erik: "Alright."
+n "I’m reminded of my first two encounters with Annaliese, the disasters that they were. In retrospect I realized I was pushing too hard, but I didn’t think that meant I should avoid being friendly altogether."
+
+n "Given yesterday’s events, though, maybe Katja’s right. I have to be more careful. I can’t assume everybody wants to have a conversation and I can’t force it on them."
+
+show katja U_P4_E8
+with SDis
+
+katja "For that matter, the same advice goes for people you’re already friends with."
+
+katja "Sometimes our friends just need a little solitude and in those moments it’s important to respect that."
+
+erik "I think I get it. But how do I know if someone’s receptive, then?"
+
+show katja U_P1_E2b
+with SDis
+
+katja "That, alas, is a matter of practice. You’ll pick it up."
+
+n "I sigh."
+
+erik "Alright."
+
+jump return20
 
 # [else]
+label a1_25_20good:
+n "A1_25_20good"
 
 erik "I’ve been trying to do something similar myself and I think I might be getting the hang of it."
 
@@ -300,13 +406,22 @@ erik "I ran into someone on my way back from the appointment yesterday and I wan
 
 erik "It was a bit awkward but I was able to talk to the person without making too much a fool of myself."
 
+show katja U_P1_E3b
+with SDis
+
 katja "That’s certainly progress from our first meeting."
+
+show katja U_P5_E3a
+with SDis
 
 katja "But, speaking seriously, I’m pleased to hear that."
 
 erik "Yeah. I guess I’m learning how to gauge people better."
 
-n "My run-in with Isolda definitely went better than the first two times I tried to talk to Annaliese. Sometimes you have t0 know when not to try and engage someone."
+show katja U_P1_E2b
+with SDis
+
+n "My run-in with Isolda definitely went better than the first two times I tried to talk to Annaliese. Sometimes you have to know when not to try and engage someone."
 
 n "These are the little lessons I have to learn along the way." 
 
@@ -314,23 +429,38 @@ erik "Before I came here I thought I could get by trying to make conversation wi
 
 erik "Sometimes people don’t want to jump right into a talk."
 
+show katja U_P2_E8
+with SDis
+
 n "Katja tilts her head almost like she’s surprised at my comments."
 
 katja "That’s very insightful of you."
 
 erik "Well, there’s some brain behind all this brawn, you know."
 
+show katja U_P1_E3b
+with SDis
+
 katja "Of that there was never any doubt. It doesn’t have much to hide behind, after all."
 
 erik "Sometimes I wonder why I even try."
 
+show katja U_P5_E8a
+with SDis
+
 katja "Your valiance is endearing."
+
+show katja U_P1_E2b
+with SDis
 
 katja "And yes, you’re correct: there’s more to people than just making conversation. That isn’t an idiosyncrasy of St. Dymphna’s, but something you’ll find wherever you go."
 
 katja "The only reason you’ve been able to get by without that realization so far is that you’ve had enough open people to work with."
 
 katja "When you’re used to receptiveness it’s easy to dismiss those less willing to engage with a stranger as abnormal outliers."
+
+show katja U_P1_E2a
+with SDis
 
 katja "For better or for worse, with the type of school St. Dymphna’s is we have a greater concentration of people who would rather not strike up conversation with someone they’ve only just met."
 
@@ -340,69 +470,117 @@ erik "Well, it’s like you said: this takes time, but I’m making progress."
 
 erik "I can’t spend my whole time here playing catch-up to your social skills."
 
+show katja U_P5_E8b
+with SDis
+
 katja "And at this rate, I’m confident you won’t have to."
 
-# [return]
+jump return20
 
+
+
+label return20:
+n "return20"
 n "The discussion reminds me of the most recent development in my social life. I’m on a roll and I decide to press through, even if I’m just dumping everything that’s been on my mind."
+
+n "DEBUG QUESTION"
+
+#DEBUG QUESTION
+menu:
+    "a1_24_shouldertaptrue":
+        $ A1_24_shouldertap = 1
+    "a1_24_shouldertapfalse":
+        $ A1_24_shouldertap = 0
 
 # [if bad Annaliese choice in 1_24]
 
+if A1_24_shouldertap == True:
+    jump a1_24_shouldertaptrue
+elif A1_24_shouldertap == False:
+    jump a1_24_shouldertapfalse
+
 ### check against flag shouldertap=true 
+label a1_24_shouldertaptrue:
+n "tapped shoulder"
 
-# erik "On that subject, I guess sometimes you just have to give up on someone."
+erik "On that subject, I guess sometimes you just have to give up on someone."
 
-# n "Katja seems to perk up at this comment. She gives me an inquisitive look, and I think I see a hint of concern mixed into it."
+show katja U_P1_E9
+with SDis
 
-# katja "Do you think so?"
+n "Katja seems to perk up at this comment. She gives me an inquisitive look, and I think I see a hint of concern mixed into it."
 
-# erik "I just mean that sometimes you run into a person who doesn’t want to make friends at all and at that point, there’s no good reason to try."
+katja "Do you think so?"
 
-# katja "There is something to that, to be sure. You’re right that it’s sometimes best to leave a person well enough alone."
+erik "I just mean that sometimes you run into a person who doesn’t want to make friends at all and at that point, there’s no good reason to try."
 
-# katja "I’d hesitate to call that ‘giving up’, however."
+show katja U_P1_E1
+with SDis
 
-# katja "It’s one thing to acknowledge that a particular person isn’t going to engage with you the way you might want. It’s another to conceptualise that as a resignation."
+katja "There is something to that, to be sure. You’re right that it’s sometimes best to leave a person well enough alone."
 
-# katja "The first involves accepting the other person for who they are and moving on from that; the second frames the exchange as a failure and puts the responsibility for that on the person you’ve ‘given up’ on."
+katja "I’d hesitate to call that ‘giving up’, however."
 
-# n "Katja’s response surprises me. I’m sure she knows nothing of how my latest 'interaction' with Annaliese went, but she’s still managed to hit the nail on the head."
+show katja U_P1_E5
+with SDis
 
-# n "The whole experience felt like a failure to me, and I realise I was blaming her."
+katja "It’s one thing to acknowledge that a particular person isn’t going to engage with you the way you might want. It’s another to conceptualise that as a resignation."
 
-# n "It was frustrating trying to communicate with Annaliese and failing over and over again. How can I reduce that situation to 'accepting' that we’re different and moving on from it?"
+katja "The first involves accepting the other person for who they are and moving on from that; the second frames the exchange as a failure and puts the responsibility for that on the person you’ve ‘given up’ on."
 
-# n "Every time I tried with her it felt like poking at an uncooperative brick wall. There wasn’t a single crack to break through and the futility of it got to me."
+n "Katja’s response surprises me. I’m sure she knows nothing of how my latest 'interaction' with Annaliese went, but she’s still managed to hit the nail on the head."
 
-# n "It’s not even like I did it without thinking. I knew I couldn’t expect a normal greeting to work so I tried a more sensitive strategy—even if I took it too far by literally asking her about sandwiches."
+n "The whole experience felt like a failure to me, and I realise I was blaming her."
 
-# n "To have all that effort fall flat seems like the definition of a failure, and I can’t see how that’s my fault."
+n "It was frustrating trying to communicate with Annaliese and failing over and over again. How can I reduce that situation to 'accepting' that we’re different and moving on from it?"
 
-# n "That doesn’t stop Katja’s words from digging at me."
+n "Every time I tried with her it felt like poking at an uncooperative brick wall. There wasn’t a single crack to break through and the futility of it got to me."
 
-# n "A brick wall can’t help being what it is. If anything, it might be frustrating having people throw themselves at you all the time."
+n "It’s not even like I did it without thinking. I knew I couldn’t expect a normal greeting to work so I tried a more sensitive strategy—even if I took it too far by literally asking her about sandwiches."
 
-# n "I don’t know if I can just 'accept' that Annaliese doesn’t want to be talked to, but maybe I should accept that it’s not on her that I couldn’t get a conversation going. For all I know, she might feel the same way about me."
+n "To have all that effort fall flat seems like the definition of a failure, and I can’t see how that’s my fault."
 
-# erik "I didn’t think of it that way but I take your point. Putting it in terms of ‘giving up’ was a bit unfair."
+n "That doesn’t stop Katja’s words from digging at me."
 
-# katja "More than that, it closes a door which may still be open."
+n "A brick wall can’t help being what it is. If anything, it might be frustrating having people throw themselves at you all the time."
 
-# katja "I’m not telling you this to prompt you into reconsidering whatever interaction it is you’re alluding to, but as advice for the future. We rely so much on the open doors we find. It’s reckless to close them prematurely."
+n "I don’t know if I can just 'accept' that Annaliese doesn’t want to be talked to, but maybe I should accept that it’s not on her that I couldn’t get a conversation going. For all I know, she might feel the same way about me."
 
-# n "At this point it just feels like Katja is lecturing me. I want to feel indignant at this, but I’m struggling to justify it."
+erik "I didn’t think of it that way but I take your point. Putting it in terms of ‘giving up’ was a bit unfair."
 
-# n "She’s being a bit presumptuous, but her advice is solid. And, to be fair, I chose to complain to her. I guess I’ll just have to take what she has to say."
+show katja U_P1_E9
+with SDis
 
-# erik "That makes sense."
+katja "More than that, it closes a door which may still be open."
+
+show katja U_P5_E1
+with SDis
+
+katja "I’m not telling you this to prompt you into reconsidering whatever interaction it is you’re alluding to, but as advice for the future. We rely so much on the open doors we find. It’s reckless to close them prematurely."
+
+n "At this point it just feels like Katja is lecturing me. I want to feel indignant at this, but I’m struggling to justify it."
+
+n "She’s being a bit presumptuous, but her advice is solid. And, to be fair, I chose to complain to her. I guess I’ll just have to take what she has to say."
+
+erik "That makes sense."
+
+jump shouldertapreturn
 
 # [else]
+label a1_24_shouldertapfalse:
+n "didn't tap shoulder"
 
 erik "I actually think I’ve had a bit of a breakthrough on that front today."
+
+show katja U_P5_E10
+with SDis
 
 katja "A breakthrough?"
 
 erik "Yeah. There’s someone in my class I’d been trying to talk to for a few days. Nothing I tried was working; they just wouldn’t say a word to me."
+
+show katja U_P1_E2b
+with SDis
 
 n "Katja nods and gives me a knowing look. I’m not going to bother identifying Annaliese to her but I expect word gets around about someone so quiet. It wouldn’t be difficult to guess who I’m talking about."
 
@@ -412,17 +590,30 @@ erik "I was on the verge of accepting, as you said, that we weren’t going to h
 
 erik "My old book of social tricks won’t always work here but I think I’m giving it a good update."
 
+show katja U_P5_E8b
+with SDis
+
 katja "That sounds like a lesson well learnt."
 
 katja "As much as opening moves like my sandwich inquiry are catered to work with a wide audience, a change of tactics is sometimes in order."
+
+show katja U_P1_E3a
+with SDis
 
 katja "Learning to act with that kind of flexibility will get you far here."
 
 erik "It was satisfying, to say the least. I’m taking it as a sign that maybe my time here will actually work out."
 
+show katja U_P1_E2a
+with SDis
+
 katja "It will pass more easily if you’re not shooting yourself in the foot quite so often, yes."
 
+jump shouldertapreturn
+
 # [return]
+label shouldertapreturn:
+n "shoulder tap return"
 
 n "At this point I notice I’ve gone through most of my meal and made the conversation into an impromptu therapy session. I should probably fix that before the entire lunch break is gone."
 
@@ -432,9 +623,15 @@ erik "Anyway, you said you had planning to do for the Gala?"
 
 n "Katja blinks at the sudden gear shift, but catches on quickly enough with a smirk."
 
+show katja U_P5_E2b
+with SDis
+
 katja "You aren’t obliged to humour me, you know."
 
 erik "It isn’t an obligation, I’m really curious—and besides, what kind of gentleman would I be if I spent the whole lunch talking about myself?"
+
+show katja U_P1_E8a
+with SDis
 
 katja "Not too different a kind from the others I’ve met, suffice it to say."
 
@@ -444,11 +641,20 @@ katja "I expect it’ll keep me quite busy the next ten days."
 
 erik "When are you performing? Sunday?"
 
+show katja U_P5_E8b
+with SDis
+
 katja "That’s right, per the obvious religious associations."
+
+show katja U_P1_E3a
+with SDis
 
 katja "It’s one of the most ambitious events we have every year and the coordination it takes is substantial. We have to arrange multiple solos and the length gets exhausting."
 
 katja "At the same time it’s something we’ve always been proud of. Most of the school turns up to watch, and given the withdrawn tendencies some of them have, that’s saying something."
+
+show katja U_P2_E1b
+with SDis
 
 n "Now she pauses and looks off to one side, pensive. Her expression clouds into troubled thought, like she’s considering something and isn’t sure how to judge it."
 
@@ -456,9 +662,15 @@ n "It’s a bit surprising; Katja usually cruises through a conversation with ea
 
 n "I wait for her to work it through and after a moment, she looks back at me and speaks."
 
+show katja U_P1_E2a
+with SDis
+
 katja "I like to think that it gives everyone a bit of hope for the year. The concept can be so foreign to a lot of us here, and I want to make it familiar."
 
 katja "Preparing for the Gala invariably puts us under intense pressure, but I feel it’s worth it. As a performance it’s a spectacle to watch, but more than that I want it to lift everyone’s spirits."
+
+show katja U_P1_E2b
+with SDis
 
 katja "If I—if we—manage to do that, then I can take the heat of the preceding weeks."
 
@@ -476,6 +688,9 @@ n "I don’t need to make it clear that I’m speaking from experience. I think 
 
 erik "If you put that much effort into it I think there’s a good chance it’s having the intended effect. I know I’m looking forward to seeing it."
 
+show katja U_P5_E8b
+with SDis
+
 n "Katja lights up at that last sentence."
 
 katja "Oh, excellent! I’m eager to know what you think of it, when the time comes."
@@ -484,7 +699,13 @@ katja "For now I just have to focus on our practices."
 
 erik "If they’re anything like what I saw you do yesterday, I’m sure you’ll be fine."
 
+show katja U_P1_E3b
+with SDis
+
 katja "Thank you."
+
+show katja U_P5_E8a
+with SDis
 
 katja "I do want to thank you again for coming to watch, and actually…"
 
@@ -502,7 +723,7 @@ n "As I acclimatise to St. Dymphna’s I expect my schedule will fill up and it 
 # TODO: MENU CHOICE AND POINTS
 menu:
     "Yeah, that would be great!":
-        $ persistient.kb_tot += 1
+        $ persistent.kb_tot += 1
         jump great
     "Sure, I'd like to visit when I can!":
         jump visit
@@ -516,9 +737,15 @@ erik "I could use something to unwind, and I’d enjoy being at your practice se
 
 erik "Just let me know when and I’ll make some time to drop by."
 
+show katja U_P5_E8b
+with SDis
+
 n "Katja gives me a wide smile and inclines her head in a gentle bow."
 
 katja "Thank you, Erik. I’ll keep you informed."
+
+show katja U_P1_E2b
+with SDis
 
 katja "In the meantime, we might want to finish up here. Our break is nearing its close."
 
@@ -533,8 +760,8 @@ katja "It’s been a pleasant conversation. I look forward to seeing you around 
 erik "Sure, count on it. I’ll see you later."
 
 #-# >Katja out
-show Katja U_P1_E1:
-  easein 1.0 xalign 0.9 alpha 0.0
+show katja U_P1_E2b:
+  easein 1.0 xalign 0.4 alpha 0.0
 #--#
 
 n "And with that we make our way back to our classes."
@@ -545,9 +772,15 @@ label visit:
 
 erik "Sure, I'd like to hear you sing again! I'll try to come when I can."
 
+show katja U_P5_E8a
+with SDis
+
 n "Katja offers a slight smile in response."
 
 katja "Thank you. I’ll let you know about our sessions."
+
+show katja U_P1_E2b
+with SDis
 
 katja "For now, it would appear we’ve run out of time to talk."
 
@@ -562,13 +795,14 @@ katja "Thank you for your company, Erik. Perhaps I’ll be seeing you soon."
 erik "Yeah, I’ll see you later."
 
 #-# >Katja out
-show Katja U_P1_E1:
-  easein 1.0 xalign 0.9 alpha 0.0
+show katja U_P1_E2b:
+  easein 1.0 xalign 0.4 alpha 0.0
 #--#
 
 n "She heads off, and I’m left to my thoughts on my way to my afternoon classes."
 
 jump resume_25
+
 
 label resume_25:
 
