@@ -21,9 +21,9 @@ stop ambience fadeout 1.0
 stop ambience2 fadeout 1.0
 ## >start school theme
 scene classroomhall
-with Dissolve(2.0)
+with ScDis
 
-play music "music/Be_Green.mp3"
+play music "music/Be_Green.mp3" fadein(2.0)
 n "I’m finally free of those horrible jokes."
 
 n "At least there’s physical education later this morning. Maybe I can get my mind off of them by moving around and sweating a bit."
@@ -84,8 +84,7 @@ n "A hand shoots up from the crowd of students gathering around this new face."
 ## >Hertha (neutral)
 
 hertha "\"Yes?\""
-show hertha U_P3_E1
-with SDis
+
 student "\"Where’s Dr. Berhn? He’s supposed to teach us, right?\"" 
 
 ## >Hertha (smile)
@@ -100,7 +99,7 @@ hertha "\"I know I’m not him, but let’s do our best to get along and have so
 n "Some students give a smile, but most of the others sigh and shrug their shoulders. "
 
 ## >Hertha out
-show hertha U_P3_E2:
+show hertha U_P2_E2:
   xalign 0.5 yanchor 1.0 ypos 1080+425 alpha 1.0
   easein 1.0 xalign 0.6 alpha 0.0
 
@@ -115,6 +114,8 @@ n "..."
 ## <Pan right>
 
 n "Am I the only one actually putting effort into this? Looking to my right yields two lanky males from my class who are sort of doing some half hearted jumping jacks."
+
+stop music fadeout (5.0)
 
 show jeanne F_P1:
   xalign -0.5 yanchor 1.0 ypos 1080+350
@@ -155,6 +156,7 @@ n "It feels hard to breathe. I try to lift myself up, but I can’t move. There�
 ##<CG – Jeanne Intro>
 
 ## <eye opening>
+play music "music/Shades Of Echo.mp3" fadein (1.0)
 show CG_A1_17
 with Dissolve (2.0)
 n "Before me is a girl splayed on top of my chest. Well, that explains why I can’t move. Or… breathe..."
@@ -196,7 +198,7 @@ n "The girl starts moving in an attempt to get up, Ms. Wieck gently supporting h
 
 ## <End CG>
 scene gym
-with Dissolve (2.0)
+with ScDis
 ## >show Jeanne/Hertha moved down
 show hertha U_P1_E4:
   alpha 0.0 xalign 0.75 yanchor 1.0 ypos 1080+425+50
@@ -275,7 +277,7 @@ n "Slowly, we make our way to the doors outside."
 
 ## <Cross to Hallway (day)> Needs transition ##
 scene classroomhall2
-with Dissolve(2.5)
+with ScDis
 
 show jeanne G_P1_E8:
   alpha 0.0 xalign 0.6 yanchor 1.0 ypos 1080+350
@@ -295,28 +297,45 @@ n "Yep, I’m not seeing things—she’s missing part of one her left hand’s 
 
 ## >start Jeanne’s theme
 ## >Jeanne (nosebleed)
-play music "music/Shades of Echo.mp3"
+
+show jeanne G_P1_E4
+with SDis
+
 jeanne "\"Umm...\""
 
 n "Crap, I think she noticed me peeking at her. Look away, look away..."
 
 erik "\"Um, hey, are you gonna be okay? You took quite a fall there.\""
 
+show jeanne G_P1_E8
+with SDis
+
 jeanne "\"Ah subose I did...\""
 
 n "The girl trails off for a moment."
 
+show jeanne G_P1_E2
+with SDis
+
 jeanne "\"Umm, thad is...I shoobd be fyn.\""
 
 ##>snap
+show jeanne G_P6a_E2
+with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
+show jeanne G_P6b_E2
+with Dissolve(0.2)
+show jeanne G_P1_E1
+with Dissolve(0.2)
 
 n "As if on instinct, her body stiffens a little and the fingers on her right hand snap. It's quick, but it's quite loud. She turns a gaze in my direction."
-
-show jeanne G_P1_E6
 
 n "Is it a nervous tic? I remember hearing about those on some documentary I watched. She was doing it after she collided with me, so maybe this is something related to that?"
 
 erik "\"What was that?\""
+
+show jeanne G_P1_E2
+with SDis
 
 jeanne "\"Oh, thad’s just me. I do thad, um, ad ramdun. Turrette’s Syundrone.\""
 
@@ -333,6 +352,9 @@ n "All I can do is accept it and move on, I guess."
 n "Maybe she only does it when she’s not bleeding from the nose. No idea."
 
 erik "\"Well, in any case, glad I was there to cushion you from the fall. That could have been worse.\""
+
+show jeanne G_P1_E1
+with SDis
 
 n "Jeanne solemnly nods."
 
@@ -352,6 +374,9 @@ erik "\"Don't worry, I've had worse. The doctors say I'm pretty sturdy.\""
 
 n "I pat my chest to show that I’m still intact."
 
+show jeanne G_P1_E2
+with SDis
+
 jeanne "\"Thabt's goob to hear.\""
 
 n "I can see a small smile forming underneath her hands."
@@ -362,10 +387,18 @@ n "The girl releases her hold on her nose. Looks like the bleeding has stopped f
 
 ## >Jeanne (smile, small bit of blood)
 show jeanne G_P1_E9
+with SDis
 ## MINI BLOOD ##
 jeanne "\"My name's Jeanne. Thanks for your help, and once again, I'm really, {i}really{/i} sorry for knocking you over.\""
 
 ##>click
+show jeanne G_P6a_E2
+with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
+show jeanne G_P6b_E2
+with Dissolve(0.2)
+show jeanne G_P1_E2
+with Dissolve(0.2)
 
 n "Her body stiffens and she snaps her fingers once more. She doesn’t seem bothered by it, so my guess is that I can safely ignore it as well. "
 
@@ -373,18 +406,21 @@ erik "\"Don't worry about it. I'm fine!\""
 
 ##>Jeanne (smile)
 show jeanne G_P1_E9
+with SDis
 ##  BLOOD ? ##
 jeanne "\"So you're a transfer student, correct? I don't think I've ever seen you here before.\""
 
 erik "\"Guilty as charged. I just started here this week.\""
 
 ## >Jeanne (surprise)
-show jeanne G_P1_E4
+show jeanne G_P1_E3
+with SDis
 ##  BLOOD ? ##
 jeanne "\"Oh! I was right.\""
 
 ## >Jeanne (smile)
 show jeanne G_P1_E9
+with SDis
 ##  BLOOD ? ##
 jeanne "\"Welcome to St. Dymphna's, then.\""
 
@@ -392,19 +428,36 @@ erik "\"Thanks.\""
 
 ## >Jeanne (neutral)
 show jeanne G_P1_E2
+with SDis
 ##  BLOOD ? ##
 jeanne "\"What do you think of the school so far?\""
 
 ##>click
+show jeanne G_P6a_E2
+with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
+show jeanne G_P6b_E2
+with Dissolve(0.2)
+show jeanne G_P1_E2
+with Dissolve(0.2)
 
 erik "\"It's all right. Can't say I love it or hate it just yet, you know?\""
 
 jeanne "\"Mm, I understand. I was the same way when I first started going here a few years ago.\""
 
 ## Jeanne smile
+show jeanne G_P1_E9
+with SDis
 jeanne "\"Don't worry—this place grows on you after a while.\""
 
 ##>click
+show jeanne G_P6a_E2
+with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
+show jeanne G_P6b_E2
+with Dissolve(0.2)
+show jeanne G_P1_E2
+with Dissolve(0.2)
 
 erik "\"How long did that take for you?\""
 
@@ -418,9 +471,11 @@ n "Finally, we arrive at the nurse's office."
 
 ##<Crossfade to Nurse's office – Lobby Day>
 scene nursesoffice
+with ScDis
 
 show jeanne G_P1_E2:
-  xalign 0.50 yanchor 1.0 ypos 1080+425 alpha 1.0
+  xalign 0.60 alpha 0.0 yanchor 1.0 ypos 1080+350
+  easein 1.0 xalign 0.50 alpha 1.0
   
 n "Looking around, the office actually extends a little bit past the lobby we're currently in; several doors lead into what I assume to be beds or private offices."
   
@@ -431,10 +486,18 @@ erik "\"She rolled her ankle a bit in gym class, and she had a slight nosebleed.
 nurse "\"Goodness, are you okay, young lady?\""
 
 ##>Jeanne (frown)
-show jeanne G_P1_E6
+show jeanne G_P1_E1
+with SDis
 jeanne "\"Well, my nose has stopped bleeding, but my ankle still hurts.\""
 
 ##>click
+show jeanne G_P6a_E2
+with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
+show jeanne G_P6b_E2
+with Dissolve(0.2)
+show jeanne G_P1_E1
+with Dissolve(0.2)
 
 nurse "\"All right, let’s head back to my office and I’ll take a look.\""
 
@@ -455,12 +518,16 @@ n "The nurse steps out, leaving the two of us in the room."
 erik "\"All good up there?\""
 
 ## Jeanne neutral ##
+show jeanne G_P1_E2
+with SDis
 
 jeanne "\"I'm fine. I just hope it's not a sprain.\""
 
 erik "\"Mind if I take a look?\""
 
 ## Jeanne puzzled ##
+show jeanne G_P1_E5
+with SDis
 
 jeanne "\"... Sure?\""
 
@@ -471,12 +538,16 @@ n "If it were a sprain, her ankle would definitely be puffed up and red right ab
 erik "\"I don't know if it's sprained. Does it still hurt?\""
 
 ## Jeanne neutral ##
+show jeanne G_P1_E1
+with SDis
 
 n "Jeanne nods."
 
 erik "\"Then it's probably just the pain from rolling your ankle so suddenly.\""
 
 ## Jeanne smile ##
+show jeanne G_P1_E9
+with SDis
 
 jeanne "\"You sure know a lot about ankles, Erik. Are you studying to be a doctor? Or a physical therapist?\""
 
@@ -486,6 +557,7 @@ n "Coincidentally, it was on the same leg that’s been giving me trouble as of 
 
 ## >Jeanne (shock)
 show jeanne G_P1_E5
+with SDis
 
 jeanne "\"Did it hurt?\""
 
@@ -495,7 +567,11 @@ erik "\"But you should definitely be alright.\""
 
 ## >Jeanne (smile)
 show jeanne G_P1_E9
+with SDis
 jeanne "\"That’s good to hear!\""
+
+show jeanne G_P1_E2
+with SDis
 
 n "Just then, the nurse re-enters the room."
 
@@ -505,9 +581,19 @@ n "The two of us nod, which seems to satisfy her."
 
 erik "\"I guess this is my cue to leave. See you in a bit, Jeanne.\""
 
+show jeanne G_P1_E9
+with SDis
+
 jeanne "\"Okay. See you soon!\""
 
 ## >click
+show jeanne G_P6a_E2
+with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
+show jeanne G_P6b_E2
+with Dissolve(0.2)
+show jeanne G_P1_E2
+with Dissolve(0.2)
 
 nurse "\"She won't be long. Please, take a seat outside.\""
 
@@ -516,6 +602,7 @@ nurse "\"She won't be long. Please, take a seat outside.\""
 
 ## >TO Lobby <Day>
 scene mainlobby
+with ScDis
 
 n "The lobby seems to be pretty new in comparison to the rest of the building."
 n "There's a secretary clacking away on a computer nearby."
@@ -532,9 +619,9 @@ n "Right next to the cooler is a small candy dish with some wrapped chocolates. 
 scene PitchBlack with Clockwipe
 scene mainlobby with Clockwipe
 ## >Jeanne enter smile
-show jeanne G_P1_E9:
-  xalign 0.5 yanchor 1.0 ypos 1080+425-30 alpha 0.0
-  easein 1.0 xalign 0.55 alpha 1.0
+show jeanne G_P1_E2:
+  xalign 0.6 yanchor 1.0 ypos 1080+325 alpha 0.0
+  easein 1.0 xalign 0.5 alpha 1.0
 
 n "Soon after, Jeanne returns, minus the blood on her face. The worried, embarrassed look she had is also gone, replaced with a gentle, friendly smile. The nurse turns to me."
 
@@ -544,19 +631,24 @@ erik "\"Okay.\""
 
 ## <Cross to Hallway – Day>
 scene classroomhall2
-show jeanne G_P1_E9:
-  xalign 0.5 yanchor 1.0 ypos 1080+425-30 alpha 0.0
+with ScDis
+show jeanne G_P1_E2:
+  xalign 0.5 yanchor 1.0 ypos 1080+350 alpha 0.0
   easein 1.0 xalign 0.55 alpha 1.0
 n "Jeanne still has a slight limp to her step, but she looks much better after getting cleaned up. Her eyes, which were sullen and a bit red a few minutes ago, look to be a lot brighter now that she's cheered up a bit."
 
 erik "\"Feeling better?\""
+
+show jeanne G_P1_E9
+with SDis
 
 jeanne "\"Yeah. Thanks for helping me get to the nurse.\""
 
 erik "\"Like I said, it's no big deal.\""
 
 ## >Jeanne (neutral)
-show jeanne G_P1_E4
+show jeanne G_P1_E1
+with SDis
 jeanne "\"You were right, you know. It was just sore from the rolling.\""
 
 ##>click
@@ -572,21 +664,37 @@ n "Ha, I was right."
 erik "\"That's a relief then. Trust me, you do not want a sprained ankle during school.\""
 
 ## Jeanne laugh ##
+show jeanne G_P1_E3
+with SDis
 
 jeanne "\"Right! I'll have to be careful.\""
 
 ## Jeanne neutral ##
+show jeanne G_P1_E2
+with SDis
 
 ## >click
+show jeanne G_P6a_E2
+with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
+show jeanne G_P6b_E2
+with Dissolve(0.2)
+show jeanne G_P1_E2
+with Dissolve(0.2)
 
 erik "\"Want some chocolate? I got a few extras from the front desk.\""
 
 n "I pull out a small piece of candy that I swiped from the secretary's candy bowl."
 
+show jeanne G_P1_E9
+with SDis
+
 n "Jeanne's eyes light up."
 
 ##>Jeanne smile
 show jeanne G_P1_E2
+with SDis
+
 jeanne "\"Thanks!\""
 
 n "In one smooth motion, she unwraps and pops the candy into her mouth."
@@ -594,56 +702,85 @@ n "In one smooth motion, she unwraps and pops the candy into her mouth."
 erik "\"So, what do you think of our substitute teacher?\""
 
 ## >Jeanne smile
+show jeanne G_P1_E9
+with SDis
 
 jeanne "\"Oh? Well, she's my floor's dorm mom, so I already know her through there.\""
 
 ## >click
-
-## >Jeanne big smile
+show jeanne G_P6a_E2
+with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
+show jeanne G_P6b_E2
+with Dissolve(0.2)
 show jeanne G_P1_E9
+with Dissolve(0.2)
+
 jeanne "\"She's really nice to all of us at the dorm, so it's nice to see her helping out at school, too!\""
 
 erik "\"Sounds like we'll be fine in gym then.\""
 
 ## Jeanne smile
 show jeanne G_P1_E2
+with SDis
 jeanne "\"You bet!\""
 
 ## <Cross to Gym – Day>
 scene gym
+with ScDis
+
 show jeanne G_P1_E2:
-  xalign 0.7 yanchor 1.0 ypos 1080+425-30 alpha 0.0
+  xalign 0.8 yanchor 1.0 ypos 1080+350 alpha 0.0
   easein 1.0 xalign 0.7 alpha 1.0
+  
 n "I lead Jeanne back over to Hertha, who jogs up to greet us."
 
 ## >show Hertha neutral
 show hertha U_P3_E1:
-  xalign 0.3 yanchor 1.0 ypos 1080+425 alpha 0.0
+  xalign 0.2 yanchor 1.0 ypos 1080+425 alpha 0.0
   easein 1.0 xalign 0.3 alpha 1.0
 hertha "\"Ah, you guys are back. How’s everything?\""
 
 ## >Jeanne neutral
-show jeanne G_P1_E4
+show jeanne G_P1_E9
+with SDis
 jeanne "\"Well, the nurse says I just rolled my ankle badly – it's not a sprain, thank goodness.\""
 
 ## >click
+show jeanne G_P6a_E2
+with Dissolve(0.2)
+play sound "music/effects/Fingersnap.mp3"
+show jeanne G_P6b_E2
+with Dissolve(0.2)
+show jeanne G_P1_E2
+with Dissolve(0.2)
 
 ## >Hertha smile
 show hertha U_P1_E2
+with SDis
 hertha "\"That's good to hear! Just sit out for the rest of class, okay?\""
 
 ##>Jeanne (neutral)
+show jeanne G_P1_E1
+with SDis
 
 jeanne "\"Okay, sure.\""
 
 ## Jeanne out ##
+show jeanne G_P1_E2:
+  xalign 0.7 yanchor 1.0 ypos 1080+350 alpha 1.0
+  easein 1.0 xalign 0.8 alpha 0.0
 ## Hertha out ##
+show hertha U_P3_E1:
+  xalign 0.3 yanchor 1.0 ypos 1080+425 alpha 1.0
+  easein 1.0 xalign 0.2 alpha 0.0
 
-show jeanne G_P1_E4:
-  easein 1.0 xalign 1.0 alpha 0.0
 n "I go to walk her to the bleachers."
 
 ## >Hertha in to centre - frown ##
+show hertha U_P2_E4:
+  xalign 0.4 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.5 alpha 1.0
 
 hertha "\"And you, young man, don't have a sprained ankle, last I checked.\""
 
@@ -651,29 +788,36 @@ n "Well, shoot."
 
 ## >Hertha grin
 show hertha U_P1_E1
+with SDis
 hertha "\"Get some laps in, all right? Jeanne will be fine.\""
 
 erik "\"Yes, ma'am.\""
 
 ## >Hertha smile
 show hertha U_P1_E2
+with SDis
 hertha "\"Oh, don't be so formal – you're making me sound old!\""
 
 n "I nod as I head back to the track as the two girls take a seat and start talking."
 
 ##<timeskip>
+stop music fadeout (1.0)
+play music2 "music/Be_Green.mp3" fadein (1.0) 
 scene PitchBlack with Clockwipe
 scene gym with Clockwipe
+
 n "After finishing up, Hertha meets me before I head to the locker room."
 
 ## >Hertha neutral
 show hertha U_P3_E1:
-  xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.55 alpha 1.0
+  xalign 0.4 yanchor 1.0 ypos 1080+425 alpha 0.0
+  easein 1.0 xalign 0.5 alpha 1.0
+  
 hertha "\"Hey, thanks for your help today, Erik.\""
 
 ## >Hertha smile
 show hertha U_P3_E2
+with SDis
 hertha "\"It's good of you to help out other students here.\""
 
 erik "\"No problem. Just doing the right thing.\""
@@ -692,19 +836,20 @@ hertha "\"I hope you two continue to get along! It’ll be nice to have two grea
 
 ## >Hertha neutral
 show hertha U_P1_E1
+with SDis
 
-erik "\"I think we'll be goof.  Jeanne seems nice.\""
+erik "\"I think we'll be good.  Jeanne seems nice.\""
 
 ## >Hertha smile
 show hertha U_P1_E2
+with SDis
 hertha "\"Great!\""
-
 
 hertha "\"Well, see you around, Erik.\""
 
 ## >hide Hertha
 show hertha U_P1_E2:
-  easein 1.0 xalign 1.0 alpha 0.0
+  easein 1.0 xalign 0.4 alpha 0.0
 
 n "As she leaves, I can’t but feel a surge of pride after helping out Jeanne."
 

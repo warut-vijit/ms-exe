@@ -321,6 +321,8 @@ label start0:
   define Clockwipe = ImageDissolve("images/Transitions/clock.png", 1.5)
   #"Sprite Dissolve" Used to fade one sprite to another
   define SDis = Dissolve(0.25)
+  #"Scene Dissolve" Used to fade from one scene to another
+  define ScDis = Dissolve(2.0)
   #TODO: Add all other transitions used here and change all scripts to use these definintions.
 
   #CG
