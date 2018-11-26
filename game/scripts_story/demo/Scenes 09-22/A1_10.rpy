@@ -2,8 +2,8 @@
 label A1_10:
 ###############
 
-$ persistent.scene_number = "A1_10" # current scene
-$ persistent.scene_name = "Privet!" # current scene name
+$ scene_number = "A1_10" # current scene
+$ scene_name = "Privet!" # current scene name
 $ renpy.save_persistent()
 
 

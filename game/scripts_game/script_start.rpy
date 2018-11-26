@@ -126,7 +126,7 @@ label start0:
     return
 
   # Debug info
-  $ persistent.scene_number = "startup" # current scene
+  $ scene_number = "startup" # current scene
 
   $ virgin_init_variables()  # Init "first time run" variables
   $ init_variables()         # Init "startup" variables
@@ -764,7 +764,7 @@ label start0:
   stop movie
 
   # Debug info
-  $ persistent.scene_number = "no scene" # current scene
+  $ scene_number = "no scene" # current scene
 
   jump expression persistent.start_act.upper()[:3] + persistent.start_act.lower()[3:]
 

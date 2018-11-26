@@ -1,8 +1,8 @@
 label A1_18:
 ###############
 
-$ persistent.scene_number = "A1_18" # current scene
-$ persistent.scene_name = "Ela Sahin's Checkup"
+$ scene_number = "A1_18" # current scene
+$ scene_name = "Ela Sahin's Checkup"
 $ renpy.save_persistent()
 
 # Scene 18

@@ -29,4 +29,6 @@ label __init_variables:
     ak_tot = 0
     nv_tot = 0
     ir_tot = 0
+    scene_number = ""
+    scene_name = ""
   return

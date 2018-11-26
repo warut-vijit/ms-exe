@@ -450,8 +450,8 @@ screen file_picker_save:
         $ rows = 3
         $ persistent.SLStart = persistent.SLStart - ((persistent.SLStart - 1) & 1)
         $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
-        $ scenenumber = persistent.scene_number
-        $ scenename = persistent.scene_name
+        $ scenenumber = scene_number
+        $ scenename = scene_name
 
         # Set up for a new file added at the end
         if fileAddedAtEnd > 0:
@@ -657,8 +657,8 @@ screen file_picker_load:
         $ rows = 3
         $ persistent.SLStart = persistent.SLStart - ((persistent.SLStart - 1) & 1)
         $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
-        $ scenenumber = persistent.scene_number
-        $ scenename = persistent.scene_name
+        $ scenenumber = scene_number
+        $ scenename = scene_name
 
 #        # Set up for a new file added at the end
 #        if fileAddedAtEnd > 0:
@@ -1192,7 +1192,7 @@ screen quick_menu1:
           else:
             text ("{size=11}{color=#FF0000} Annaliese:[ak_tot] Isolda:[ig_tot] Jeanne:[jl_tot] Lena:[lf_tot] Katja:[kb_tot] Natalya:[nv_tot] Irene:[ir_tot]{/color}{/size}")
         #if persistent.show_scene_number:
-        #    textbutton ("{size=11}{color=#FF0000} [persistent.scene_number]{/color}{/size}") action [ ]
+        #    textbutton ("{size=11}{color=#FF0000} [scene_number]{/color}{/size}") action [ ]
 
 
 screen quick_menu2:
@@ -1211,8 +1211,8 @@ screen quick_menu2:
         $ persistent.checkActScene = 0
         $ persistent.note = 0
         #textbutton _(" Log") action ShowMenu('log')
-        #if (persistent.scene_number != None):
-        #  textbutton ("{size=24}{color=#2e89ff80}" + persistent.scene_number) action [ ]
+        #if (scene_number != None):
+        #  textbutton ("{size=24}{color=#2e89ff80}" + scene_number) action [ ]
         textbutton _(" Menu") action ShowMenu("game_menu")
         textbutton _(" Save") action ShowMenu("save")
         #textbutton _(" Load") action ShowMenu("load")
@@ -1225,7 +1225,7 @@ screen quick_menu2:
           else:
             text ("{size=11}{color=#FF0000} Annaliese:[ak_tot] Isolda:[ig_tot] Jeanne:[jl_tot] Lena:[lf_tot] Katja:[kb_tot] Natalya:[nv_tot] Irene:[ir_tot]{/color}{/size}")
         #if persistent.show_scene_number:
-        #    textbutton ("{size=11}{color=#FF0000} [persistent.scene_number]{/color}{/size}") action [ ]
+        #    textbutton ("{size=11}{color=#FF0000} [scene_number]{/color}{/size}") action [ ]
 
 
 init -2 python:

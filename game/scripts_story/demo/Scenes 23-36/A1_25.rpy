@@ -1,8 +1,8 @@
 label A1_25:
 ############
 
-$ persistent.scene_number = "A1_23" # current scene
-$ persistent.scene_name = "Grace and Gratitude" # current scene name
+$ scene_number = "A1_23" # current scene
+$ scene_name = "Grace and Gratitude" # current scene name
 $ renpy.save_persistent()
 
 # Backgrounds: Classroom, School Corridor, Cafeteria
