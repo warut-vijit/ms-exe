@@ -90,7 +90,7 @@ menu:
         jump A1_24a
     "Tap her on the shoulder.":
         jump A1_24b
-    "Pass a note." if persistent.ak_tot > 0:
+    "Pass a note." if ak_tot > 0:
         jump A1_24c
 #--#
 label A1_24a:
@@ -116,7 +116,7 @@ label A1_24b:
     jump A1_24_continue
 
 label A1_24c:
-    $ persistent.ak_tot += 1
+    $ ak_tot += 1
     $ passednote = True
     
     n "The world doesn't exist to her. I need some physical way of getting her attention, but actually touching her might be a bit much. Maybe a note?"

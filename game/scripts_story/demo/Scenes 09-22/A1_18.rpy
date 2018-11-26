@@ -216,24 +216,24 @@ if (persistent.skip_menus):
   jump A1_18a
 menu:
   "\"I'm fine.\"":
-    $ persistent.kb_tot += 1
-    $ persistent.ak_tot += 1
+    $ kb_tot += 1
+    $ ak_tot += 1
     $ persistent.A1_18 = 1
     jump A1_18a
 
   "\"I'd like to meet people. Maybe join a club.\"":
-    $ persistent.lf_tot += 1
-    $ persistent.nv_tot += 1
+    $ lf_tot += 1
+    $ nv_tot += 1
     $ persistent.A1_18 = 2
     jump A1_18b
 
   "\"I'm worried I might fall behind.\"":
-    $ persistent.jl_tot += 1
+    $ jl_tot += 1
     $ persistent.A1_18 = 3
     jump A1_18c
 
   "\"It's a little overwhelming.\"":
-    $ persistent.ig_tot += 1
+    $ ig_tot += 1
     $ persistent.A1_18 = 4
     jump A1_18d
 

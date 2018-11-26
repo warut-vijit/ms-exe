@@ -16,18 +16,17 @@ label __virgin_init_variables:
           persistent.show_girl_totals = False
           persistent.screen_width = 0
           persistent.screen_height = 0
-          persistent.i_tot = 0
-          persistent.j_tot = 0
-          persistent.l_tot = 0
-          persistent.k_tot = 0
-          persistent.a_tot = 0
-          persistent.nl_tot = 0
-          persistent.nh_tot = 0
-          persistent.am_tot = 0
   return
 
 
 label __init_variables:
-
   # Declare characters used by this game.
+  python:
+    ig_tot = 0
+    jl_tot = 0
+    lf_tot = 0
+    kb_tot = 0
+    ak_tot = 0
+    nv_tot = 0
+    ir_tot = 0
   return

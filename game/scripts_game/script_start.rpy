@@ -106,13 +106,13 @@ label start:
     $ persistent.menu_ui = -persistent.menu_ui
     return
 
-  $ persistent.ig_tot = 0
-  $ persistent.jl_tot = 0
-  $ persistent.lf_tot = 0
-  $ persistent.kb_tot = 0
-  $ persistent.ak_tot = 0
-  $ persistent.nv_tot = 0
-  $ persistent.ir_tot = 0
+  $ ig_tot = 0
+  $ jl_tot = 0
+  $ lf_tot = 0
+  $ kb_tot = 0
+  $ ak_tot = 0
+  $ nv_tot = 0
+  $ ir_tot = 0
 
 label start0:
 
@@ -730,20 +730,20 @@ label start0:
   $ persistent.started = 1
 
   # Girl influence totals
-  if (persistent.ig_tot == None):
-    $ persistent.ig_tot = 0
-  if (persistent.jl_tot == None):
-    $ persistent.jl_tot = 0
-  if (persistent.lf_tot == None):
-    $ persistent.lf_tot = 0
-  if (persistent.kb_tot == None):
-    $ persistent.kb_tot = 0
-  if (persistent.ak_tot == None):
-    $ persistent.ak_tot = 0
-  if (persistent.nv_tot == None):
-    $ persistent.nv_tot = 0
-  if (persistent.ir_tot == None):
-    $ persistent.ir_tot = 0
+  if (ig_tot == None):
+    $ ig_tot = 0
+  if (jl_tot == None):
+    $ jl_tot = 0
+  if (lf_tot == None):
+    $ lf_tot = 0
+  if (kb_tot == None):
+    $ kb_tot = 0
+  if (ak_tot == None):
+    $ ak_tot = 0
+  if (nv_tot == None):
+    $ nv_tot = 0
+  if (ir_tot == None):
+    $ ir_tot = 0
   # $ j_help = 0
 
   # Girl whose path you are on, 1..x, up to 9, "0"=on no path

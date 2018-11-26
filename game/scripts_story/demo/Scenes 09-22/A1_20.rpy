@@ -16,7 +16,7 @@ menu:
     "Reach a hand out and beg for help":
         jump A1_20a
     "I'm a free independent mental patient, and I don't need no woman!":
-        $ persistent.ig_tot += 1
+        $ ig_tot += 1
         $ A1_20_bad = True
         jump A1_20b
 
