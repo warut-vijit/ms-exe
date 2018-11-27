@@ -19,7 +19,7 @@ stop ambience2 fadeout 1.0
 #--#
 
 #start scene music
-#play music "music/Be_Green.mp3"
+play music "music/Be_Green.mp3"
 
 n "There’s a certain {i}je ne sais quoi{/i} about the way the school bell punctuates the end of French class."
 
