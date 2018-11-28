@@ -652,7 +652,7 @@ ela "\"I'll see you later, Erik!\""
 
 #>ELA OUT
 show ela P1_E4:
-  easein 1.0 xalign 0.55 alpha 0.0
+  easeoutright 1.0 xalign 0.55 alpha 0.0
 
 n "The lunch period is almost over, so I hurry to finish what turns out to be a rather unappealing meal. I wouldn't call them plans, but I've got some stuff I can check out later, and that's something."
 

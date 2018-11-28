@@ -2,8 +2,8 @@
 label A1_24:
 ###############
 
-$ scene_number = "Second Contact" # current scene
-$ scene_name = "Second Contact" # current scene name
+$ persistent.scene_number = "Second Contact" # current scene
+$ persistent.scene_name = "Second Contact" # current scene name
 $ renpy.save_persistent()
 
 
@@ -24,13 +24,14 @@ $ renpy.save_persistent()
 $ passednote = False
 
 #-# <scene open>
-#--#
+scene classroom1
 
 #-# <School_Classroom1_NOPAN.png> (should still be active from previous scene?)
 #--#
 
 #-# >Ms. Claes exit to left
-#--#
+show claes P1_E5:
+    easeoutleft 1.0 xalign 0.55 alpha 0.0
 
 n "I have to say, that went better than expected. Jeanne wasn't what I expected from a student tutor. Nothing like the hard-nosed stuffed shirts I had as tutors at my old school."
 n "It's still disappointing to know that the administration has already figured out that I'm not the best student."
@@ -39,7 +40,9 @@ n "Maybe I can turn it around today. Yeah, if I keep telling myself that I'm sur
 n "The small victories are already starting to pile up, as I manage to make my way to my seat without embarrassing myself while everyone else filters into the class for homeroom."
 
 #-# >timeskip
-#--#
+scene PitchBlack with Clockwipe
+$ renpy.pause(1.0)
+scene classroom1 with Clockwipe
 
 n "The morning's announcements pass by with little fanfare, and before I know it, it's time for maths. About half the class get up to leave, the others staying behind."
 n "They're soon replaced by other students, and among them I spot my neighbour from last time — the girl with the perpetual earphones."
@@ -51,7 +54,9 @@ n "Before I can say good morning, though, Ms. Claes purposefully reenters the ro
 n "Once everyone has settled down, she begins a lecture on a body of mathematics I’m completely unfamiliar with. Last lesson covered topics I already knew, but this time it’s all fresh. Still, I think I can handle this."
 
 #-# <timeskip>
-#--#
+scene PitchBlack with Clockwipe
+$ renpy.pause(1.0)
+scene classroom1 with Clockwipe
 
 n "Amazingly, I managed to stay awake throughout the entire lecture and I feel like I have a pretty good grasp on the subject matter."
 n "As I start to work on the practice problems, I notice the girl next to me is once again listening to music, this time under her hood. Was she listening to music during the lecture?"
@@ -59,12 +64,16 @@ n "Maybe she doesn't even need to be in this class — she certainly seems to be
 n "That said, she could just be doodling meaninglessly like last time. Her hand movements do have that distracted, erratic look about them."
 
 #-# <timeskip>
-#--#
+scene PitchBlack with Clockwipe
+$ renpy.pause(1.0)
+scene classroom1 with Clockwipe
 
 n "I'm actually a little proud of myself. I managed to get through all of the problems with very little difficulty. Maybe I could even get to like maths a little?"
 n "Okay, that might be pushing it."
 n "I give my answers one last look-through along with everyone else as Ms Claes stands back up in front of the board to wrap up the class."
-#Anna in somewhere here?
+show anna U_B_P2_E8:
+  alpha 0.0 xalign 0.65 yanchor 1.0 ypos 1080+425
+  easein 1.0 xalign 0.45 alpha 1.0
 n "I notice the girl next to me is still listening to music, now with her eyes closed. Does she know class is almost over?"
 n "People are starting to filter out of the room now, and she doesn't seem to notice. Does she just have her music really loud, or are does she have those fancy noise-cancelling headphones? Maybe she's just really good at tuning out the world."
 n "I'd better try to get her attention. Apparently, I'm the only one who's noticed her."
@@ -97,6 +106,8 @@ label A1_24a:
     n "I consider my options. Her eyes are still firmly closed and I’m not sure she even knows she’s sitting in a classroom, let alone that other students are vacating the desks around her."
     n "On the other hand, maybe I just shouldn't bother her anymore. She clearly doesn’t want to be disturbed, and she seems to be doing fine without me. I’m sure she’ll realise where she is eventually."
     n "With the matter settled, I think no more of it and continue packing my bag to leave."
+    show anna U_B_P2_E8:
+        easeoutright 1.0 xalign 0.55 alpha 0.0
     n "As I do, I notice someone slip out the door just before me — the last to leave. Looked like the girl who was sitting next to me."
     jump A1_24_continue
 
@@ -104,15 +115,37 @@ label A1_24b:
     n "She probably can’t hear me with those earbuds in. Maybe if I tap on her shoulder to get her attention."
     
     #-# <slight screen shake>
-    #--#
+    with hpunch
+
+    show anna U_B_P2_E3
+    with SDis
     
     n "She's giving me a piercing glare that cuts right through every bit of confidence I had about this idea. I should probably explain myself."
     erik "Hey, uh, sorry to bother you. It's just, class is over. Thought you might not have noticed. And, uh, the homework — "
+    
+    show anna U_B_P1_E5
+    with SDis
+
     n "Without letting me finish, she glances up at the clock above the board at the front of the class, and back at me."
+    
+    show anna U_B_P2_E4
+    with SDis
+
+    pause 0.5
+
+    show anna U_B_P2_E6
+    with SDis
+
     n "Now appearing quite embarrassed, she grabs her bag and begins packing it as quickly as possible."
-    n "For God's sake, Erik. "
+    
+    show anna U_B_P2_E6:
+        easeoutright 1.0 xalign 0.55 alpha 0.0
+
+    pause 1.0
+
+    n "For God's sake, Erik."
     n "Having made a fool of myself, I take her lead and begin packing my bag myself, trying to focus my mind on something else."
-    n "As I do, I notice someone slip out the door just before me — the last to leave. Looked like the girl who was sitting next to me."
+    n "As I do, I notice the girl slip out the door just before me — the last to leave."
     jump A1_24_continue
 
 label A1_24c:
@@ -120,12 +153,21 @@ label A1_24c:
     $ passednote = True
     
     n "The world doesn't exist to her. I need some physical way of getting her attention, but actually touching her might be a bit much. Maybe a note?"
-    n "Man. Passing notes in class. It’s like I’m 14 again."
+    n "Man. Passing notes in class. It’s like I’m fourteen again."
     n "What to write? \"Class is almost over\" would probably do the trick, but..."
     n "A perfectly enunciated voice swims into my mind, goading me for being so predictable and {i}objective{/i}. What would Katja ask?"
     n "I quickly scribble out a question, \"Hey, what are you listening to today?\" and slide it across her desk."
+
+    show anna U_B_P2_E1
+    with SDis
     n "This does the trick. She looks up, more dazed than surprised, as though someone has disturbed a pleasant dream."
+    show anna U_B_P2_E7
+    with SDis
     n "Then, realising what has happened, her eyes shoot open and she comes perilously close to making eye contact with me."
+    
+    show anna U_B_P1_E2
+    with SDis
+
     n "For a moment I feel like I’ve made a mistake as she looks kind of shocked, but when I glance down at the note and she follows my line of sight, she actually looks pleased."
     n "In fact, that might have been the biggest smile I’ve seen on her yet. Not that that’s saying much, but still, it’s something."
     n "She leans over and shows me the screen of her phone. Another artist, album and song I’ve never heard of. Today’s album art is a very blue scene with a snowy mountain behind a lake with a flock of swans."
@@ -133,56 +175,106 @@ label A1_24c:
     n "I'm hardly a music buff, but I feel as though I definitely wouldn't be alone in not having a clue what it is. I also have no idea which of the few words on the cover is the artist and which is the album, either."
     n "My brain scrambles a little trying to think of a worthwhile response to this, but nothing is forthcoming. A lame \"Cool\" is all that it can muster, which I don't bother saying."
     n "In any case, I managed to get her attention without annoying her. That's a start, at least."
-    n "She plucks out one of her earbuds, as if expecting me to say something. Pressure's on. I decide to avoid my lack of music knowledge completely."
+    
+    show anna U_P1_E2
+    with SDis
+    
+    n "She plucks out her earbuds, as if expecting me to say something. Pressure's on. I decide to avoid my lack of music knowledge completely."
     erik "By the way, I never got your name."
     n "The girl ponders this question for a second, before flipping over the note I passed her and scribbling something. She finishes and slides it back to me."
+    
+    show anna U_P1_E3
+    with SDis
+
+    pause 0.5
+
+    show anna U_P1_E2
+    with SDis
+    
     n "{i}Annaliese Koell.{/i}"
     n "Just a name and nothing else. Annaliese. At least that's one mystery solved. I look back up at her, smiling. Again, she fails to look me in the eye, but looks a little pleased with herself nonetheless."
     # wouldn't it make sense to have Ms. Claes' sprite show up for this line?
+
+    show claes P1_E2:
+        alpha 0.0 xalign 0.85 yanchor 1.0 ypos 1080+425 
+        easein 1.0 xalign 0.55 alpha 0.0
+
     n "Before I get the chance to respond, though, a shadow falls over my desk. Ms. Claes peers ominously at the note lying on my desk and quietly asks me to see her after class."
     n "Fuck me for trying to communicate with my fellow students, I guess. It’s not like there’s any other way of talking to this girl."
+    
+    show claes P1_E2: 
+        easeoutright 1.0 xalign 0.85 alpha 0.0
+    
     n "My gaze follows Ms. Claes as she pads back to her desk, unfolding the note. As she looks down at the creased piece of paper in her hands she hesitates for a moment, as if second-guessing herself, and glances briefly back at Annaliese and I."
+    
+    show anna U_P2_E4:
+    with SDis
+    
     n "Without saying anything else, though, she clears her throat and goes about explaining today's homework assignment."
     n "For a moment, I wonder why I even bothered writing the thing. Annaliese doesn’t seem to care all that much about talking to me. She smiled, sure, but her note was hardly receptive, and now I'm probably going to get some sort of undeserved reprimand at the end of class."
     n "When I shift my gaze to her, though, the guilty expression on her face melts any animosity I felt towards her. She clearly feels bad about getting me in trouble."
     n "It’s not like Ms. Claes is going to find anything incriminating on the note, either. A trivial question and a name. Nobody’s going to get in trouble for that, although the teacher's strange hesitation is still playing on my mind a little."
     n "After another few seconds of looking a little uneasy, Annaliese takes the chance to pass me another note while Ms. Claes has her back turned."
-    n "{i}Sorry{/i}"
+    n "{i}Sorry.{/i}"
+    show anna U_B_P2_E4:
+    with SDis
     n "And when I raise my vision again, she has already put her earbuds back in and apparently tuned out the world. Man, Annaliese, way to lay on the guilt trip. How did that one word make me feel like the bad guy?"
     
     #-# <timeskip>
-    #--#
+    scene PitchBlack with Clockwipe
+    $ renpy.pause(1.0)
+    scene classroom1 with Clockwipe
     
-    #claes in?
+    show claes P1_E1: 
+        alpha 0.0 xalign 0.85 yanchor 1.0 ypos 1080+425
+        easein 1.0 xalign 0.55 alpha 0.0
     erik "You said you needed to see me? It’s not about the note is it?"
     claes "Of course it's about the note, Erik, yes. Don't think — "
     erik "I hadn't forgotten about what you said this morning. I wasn't neglecting the class or anything."
+    show claes P1_E2
+    with SDis
     claes "I know, I mean — "
     erik "I really paid attention this lesson. I think I did really well on the workbook questions and I'm going to do that homework straight away this evening."
     claes "I'm sure you did, that's not what I — "
     erik "What you said this morning — "
+    show claes P1_E4
+    with SDis
     claes "Stop right there, Mr Wilhelm, you {i}aren't{/i} in trouble!"
     erik "...I'm not?"
+    show claes P1_E2
+    with SDis
     claes "No, you're not. I just wanted to say... well, I don't mean to be nosey or anything, but I noticed how sensitive you've been with Ms. Koell in this lesson and the last. I'm quite impressed."
     erik "What's impressive about it?"
+    show claes P1_E1
+    with SDis
     claes "Well... hmm, how can I put this?"
     claes "Annaliese hasn't had the easiest time at St. Dymphna's. I'm sure she appreciates you interacting with her while giving her some space. It's a difficult balance to strike."
     claes "Ah, but I probably shouldn't have said anything. It's Annaliese's business and yours, not mine."
+    show claes P1_E5
+    with SDis
     claes "Just keep it up, Erik. I'm sure you're going to fit in well here. Oh, and well done in today's lesson, I did notice you working hard on the practise questions."
     n "This makes me feel disproportionately proud. I'm just glad she noticed."
     erik "Thanks, I tried."
     claes "I hope you continue to bear what we talked about this morning in mind. Off you go, now."
+    show claes P1_E5: 
+        easeoutright 1.0 xalign 0.55 alpha 0.0
     n "With an uncharacteristically warm smile, Ms. Claes returns to a stack of papers on her desk and gets marking. I swing my bag over my shoulder and turn to exit."
     n "As I do, I notice someone slip out the door just before me — the last to leave. Looked like Annaliese."
     jump A1_24_continue
     
 label A1_24_continue:
-    n "Had she been hanging back to listen to our conversation or something? The way she left, slinking silently from the room, leads me to believe she was trying to be covert. Then again, there's nothing I haven't seen her do silently."
+    
     if passednote == True:
+        n "Had she been hanging back to listen to our conversation or something? The way she left, slinking silently from the room, leads me to believe she was trying to be covert. Then again, there's nothing I haven't seen her do silently."
         n "I wonder if I should try to catch up with her. Judging from what Ms. Claes said she could do with a friend. Would she appreciate that? Part of me thinks calling after her and trying again to make conversation would just be an inconvenience to her."
     else:
         n "I wonder if I should try to catch up with her. Would she appreciate that? Part of me thinks calling after her and trying again to make conversation would just be an inconvenience to her."
     n "Another part thinks that she'd be appalled by it. A sliver, though, is sure that on some level she wouldn't mind."
+
+    show anna U_B_P1_E1:
+        alpha 0.0 xalign 0.65 yanchor 1.0 ypos 1080+425
+        easein 1.0 xalign 0.55 alpha 0.0
+
     n "I jog a little to catch up with her. With her headphones in it looks like she didn't hear me coming, but as I come up alongside her she notices me in her peripheral vision and looks in my direction."
     n "I was expecting her reaction to be one of shock, but instead she seems relatively unfazed by my presence."
     n "She even raises her hand slightly in greeting."
@@ -205,6 +297,8 @@ label A1_24_continue:
     erik "Oh I know. 80s Swedish pop music? Why?"
     n "I grin."
     erik "Maybe you should subtly recommend him some headphones that don't leak so badly, huh? It's painful."
+    show anna U_B_P1_E2
+    with SDis
     n "She laughs — or, rather, forcefully exhales through her nose — and smiles faintly at the floor."
     if passednote == False:
         n "Without prompt, she taps something else out on her phone and once again shows me the screen."
@@ -218,6 +312,8 @@ label A1_24_continue:
     n "I realise as soon as I open my mouth that this is a terrible question, but now I'm committed. How can I reword this without looking like an idiot?"
     erik "— speak?"
     n "No, apparently there is no way to reword it without sounding like a complete tool."
+    show anna U_B_P1_E5
+    with SDis
     n "She doesn't seem to mind, though."
     n "She nods."
     erik "But you don't?"
@@ -226,13 +322,21 @@ label A1_24_continue:
     n "I'm not sure what drove me to be so forward. If I'm honest, I barely know this girl. Why am I trying so hard to communicate with her?"
     n "I guess I'm done being a bystander. So far, basically everybody I've spoken to in this school has been because I was told to speak to someone by someone else, or because they spoke to me first. I need some license."
     n "This spurt of sudden confidence — it must be something to do with what Ms. Claes said. Even though it's kind of weird, I feel like I'm doing the right thing."
+    show anna U_B_P2_E4
+    with SDis
     n "I study Annaliese's face. She still refuses eye contact with me, but I can see she's thinking hard."
+    show anna U_B_P2_E6
+    with SDis
     n "Her features are far from inscrutable. When she isn't focused on making herself unnoticed, her face is surprisingly expressive."
+    show anna U_B_P1_E1
+    with SDis
     n "Apparently coming to a conclusion, she reaches out and I pass her my phone."
     n "A few taps later, she hands it back. Number acquired."
-    n "After a second's pause, I send her a text; {i}Thanks{/i}"
+    n "After a second's pause, I send her a text; {i}Thanks.{/i}"
     n "She pulls out her own phone, checks it, smiles and taps out a reply of her own."
     n "{i}good to finally be able to talk to u.{/i}"
+    show anna U_B_P1_E2
+    with SDis
     n "Hm. Has she been waiting for this or something?"
     n "I look up at her and — before I can help myself — a laugh escapes my lips at the absurdity of our exchange. Still, if exchanging text messages while standing right next to one another is how Annaliese is, then so be it."
     n "Feeling a little awkward, I decide it best to reply via text myself, as well."
@@ -241,8 +345,12 @@ label A1_24_continue:
     n "As we reach a fork in the corridor, Annaliese and I need to part ways — our next classes are different. I pause for a second, wondering what to say."
     erik "Okay. See you, Annaliese."
     n "She gives me a small wave and heads off."
+
+    show anna U_B_P1_E2:
+        easeoutleft 1.0 xalign 0.55 alpha 0.0
+
     n "A few seconds later, my phone buzzes. A text from Anna."
-    n "{i}Bye{/i}"
+    n "{i}Bye.{/i}"
     n "And then a second."
     n "{i}just call me anna btw. annaliese is way too long. and old fashioned as hell.{/i}"
     n "Anna it is, then."
@@ -250,46 +358,90 @@ label A1_24_continue:
     n "As Anna rounds a corner out of sight and my mind begins to drift elsewhere, I feel a presence behind me. A foreboding, tense, and somehow non-gender-specific presence."
     n "It's Fran. I can feel it."
     n "Acting on impulse, I whip around and point dramatically at the figure behind me."
+    with hpunch
     erik "Fran!"
     n "It isn't Fran. The small boy standing behind me, at least a foot shorter than I am, looks terrified. Before I have to take any action myself, though, a hand is placed on gently on the boy's shoulder."
-    #fran in?
+    
+    show fran P1_E5:
+        alpha 0.0 xalign 0.65 yanchor 1.0 ypos 1080+425
+        easin 1.0 xalign 0.55 alpha 0.0
+
     fran "Sorry about Erik, chap. He's just been through quite an ordeal. Run along now."
     n "Not needing any further prompting, the boy departs, delighted to get away from me and melt into the crowd. Grinning ear-to-ear, Fran turns to me and chuckles, grinning toothily."
+    
+    show fran P1_E1
+    with SDis
+    
     fran "Oh, oho Erik. Oh, my sweet, precious child. You are persistent, aren't you?"
     n "I can guess what she's talking about, but I'm not going to give her the benefit."
     erik "What are you talking about?"
+
+    show fran P1_E4
+    with SDis
+
     fran "Come on, Wilhelm. It's so obvious!"
     erik "Were you listening in on my conversation?"
     n "Fran chuckles again and this time I can definitely see why."
     fran "Haha! What conversation? There was nothing to listen to! Bless you both, though, it was very sweet."
+
+    show fran P1_E5
+    with SDis
+
     fran "You're really working hard on winning her over, aren't you? Most people give up in a few minutes, let alone a few days."
     fran "Personally, I can never tell if that's what she wants or not. Plumbing the hidden depths of a selective mute doesn't appeal."
     n "I can see where she's coming from. Communicating with Annaliese wasn't exactly easy."
     erik "No? How come?"
+
+    show fran P1_E4
+    with SDis
+
     fran "I just don't have the time for it, sweetie! All strength to her, she's happy to keep doing what she's doing, but talking to her is more of a challenge than I want to take on."
     fran "Still, it should be much easier for you now, right?"
     n "I feel apprehensive about this. What does Fran know?"
     erik "...What are you talking about, Fran?"
+
+    show fran P1_E1
+    with SDis
+
     fran "Come on, Erik — I saw you give her your phone! Getting numbers already, and you've been here less than a week? You sly dog, you."
     n "Oh, that."
     n "I didn't even think about getting Annaliese's phone number as... well, getting a girl's number. It was just the simplest way of talking to her. Still, if that's what Fran wants to believe."
     erik "You have to admit, I've got game."
+
+    show fran P1_E4
+    with SDis
+
     n "She laughs uproariously."
     n "This time her laugh is much more than a wry chuckle, causing everyone in the hall to turn and look. After a few more seconds, she wipes a few tears from her eyes theatrically and looks back at me."
+
+    show fran P1_E3
+    with SDis
+
     fran "...Oh, honey, you weren't being serious, were you?"
     n "I wasn't being serious — but who's to say I {i}couldn't{/i} have been being serious?"
     erik "What are you implying?"
     #>this next line scrolls by super fast -> "cps=*2" sets text speed to double of normal
     fran "{cps=*2}Definitely nothing at all I don't know what you're talking about you definitely have game.{/cps}"
-    n "The words pour from her mouth, her grin belying her sincerity."
+    n "The words pour from their mouth, their grin belying their sincerity."
+
+    show fran P1_E4
+    with SDis
+
     fran "Anyway Erik, uh... good for you. Well done."
     erik "Well done?"
-    n "Her voice still coy, her expression softens a little and this time she {i}does{/i} sound sincere."
+    n "Their voice still coy, Fran's expression softens a little and this time they {i}do{/i} sound sincere."
+
+    show fran P1_E1
+    with SDis
+
     fran "Your perseverance. It's heartwarming, chap."
-    n "Before I can ask her why she decided to say this, she's turned around and calls over her shoulder as she trots away, giggling mischievously."
+    n "Before I can ask her why they decided to say this, Fran's turned around and calls over their shoulder as they trot away, giggling mischievously."
     fran "See you in class, Wilhelm!"
-    #replace 'her' with 'them'?
-    n "Ah. I share my next class with her as well. Damn."
+
+    show fran P1_E1:
+        easeoutright 1.0 xalign 0.55 alpha 0.0
+
+    n "Ah. I share my next class with them as well. Damn."
     n "For now, though, I'm left on my own once again."
     n "Is the fact that I tried to talk to Annaliese really such a big deal? First Ms Claes and now Fran — who else is going to interrogate me about this?"
     n "All this questioning makes me feel like I'm doing something wrong. It's certainly not helping that constant nagging feeling of forever being an outsider."
