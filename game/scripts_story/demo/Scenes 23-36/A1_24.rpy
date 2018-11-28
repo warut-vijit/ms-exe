@@ -30,8 +30,8 @@ scene classroom1
 #--#
 
 #-# >Ms. Claes exit to left
-show claes P1_E5:
-    easeoutleft 1.0 xalign 0.55 alpha 0.0
+hide claes P1_E5
+with easeoutleft
 
 n "I have to say, that went better than expected. Jeanne wasn't what I expected from a student tutor. Nothing like the hard-nosed stuffed shirts I had as tutors at my old school."
 n "It's still disappointing to know that the administration has already figured out that I'm not the best student."
@@ -106,8 +106,8 @@ label A1_24a:
     n "I consider my options. Her eyes are still firmly closed and I’m not sure she even knows she’s sitting in a classroom, let alone that other students are vacating the desks around her."
     n "On the other hand, maybe I just shouldn't bother her anymore. She clearly doesn’t want to be disturbed, and she seems to be doing fine without me. I’m sure she’ll realise where she is eventually."
     n "With the matter settled, I think no more of it and continue packing my bag to leave."
-    show anna U_B_P2_E8:
-        easeoutright 1.0 xalign 0.55 alpha 0.0
+    hide anna U_B_P2_E8
+    with easeoutright
     n "As I do, I notice someone slip out the door just before me — the last to leave. Looked like the girl who was sitting next to me."
     jump A1_24_continue
 
@@ -138,8 +138,8 @@ label A1_24b:
 
     n "Now appearing quite embarrassed, she grabs her bag and begins packing it as quickly as possible."
     
-    show anna U_B_P2_E6:
-        easeoutright 1.0 xalign 0.55 alpha 0.0
+    hide anna U_B_P2_E6
+    with easeoutright
 
     pause 1.0
 
@@ -202,8 +202,8 @@ label A1_24c:
     n "Before I get the chance to respond, though, a shadow falls over my desk. Ms. Claes peers ominously at the note lying on my desk and quietly asks me to see her after class."
     n "Fuck me for trying to communicate with my fellow students, I guess. It’s not like there’s any other way of talking to this girl."
     
-    show claes P1_E2: 
-        easeoutright 1.0 xalign 0.85 alpha 0.0
+    hide claes P1_E2
+    with easeoutright
     
     n "My gaze follows Ms. Claes as she pads back to her desk, unfolding the note. As she looks down at the creased piece of paper in her hands she hesitates for a moment, as if second-guessing herself, and glances briefly back at Annaliese and I."
     
@@ -256,8 +256,8 @@ label A1_24c:
     n "This makes me feel disproportionately proud. I'm just glad she noticed."
     erik "Thanks, I tried."
     claes "I hope you continue to bear what we talked about this morning in mind. Off you go, now."
-    show claes P1_E5: 
-        easeoutright 1.0 xalign 0.55 alpha 0.0
+    hide claes P1_E5 
+    with easeoutright
     n "With an uncharacteristically warm smile, Ms. Claes returns to a stack of papers on her desk and gets marking. I swing my bag over my shoulder and turn to exit."
     n "As I do, I notice someone slip out the door just before me — the last to leave. Looked like Annaliese."
     jump A1_24_continue
@@ -346,8 +346,8 @@ label A1_24_continue:
     erik "Okay. See you, Annaliese."
     n "She gives me a small wave and heads off."
 
-    show anna U_B_P1_E2:
-        easeoutleft 1.0 xalign 0.55 alpha 0.0
+    hide anna U_B_P1_E2
+    with easeoutleft
 
     n "A few seconds later, my phone buzzes. A text from Anna."
     n "{i}Bye.{/i}"
@@ -364,7 +364,7 @@ label A1_24_continue:
     
     show fran P1_E5:
         alpha 0.0 xalign 0.65 yanchor 1.0 ypos 1080+425
-        easin 1.0 xalign 0.55 alpha 0.0
+        easein 1.0 xalign 0.55 alpha 0.0
 
     fran "Sorry about Erik, chap. He's just been through quite an ordeal. Run along now."
     n "Not needing any further prompting, the boy departs, delighted to get away from me and melt into the crowd. Grinning ear-to-ear, Fran turns to me and chuckles, grinning toothily."
@@ -438,8 +438,8 @@ label A1_24_continue:
     n "Before I can ask her why they decided to say this, Fran's turned around and calls over their shoulder as they trot away, giggling mischievously."
     fran "See you in class, Wilhelm!"
 
-    show fran P1_E1:
-        easeoutright 1.0 xalign 0.55 alpha 0.0
+    hide fran P1_E1
+    with easeoutright
 
     n "Ah. I share my next class with them as well. Damn."
     n "For now, though, I'm left on my own once again."

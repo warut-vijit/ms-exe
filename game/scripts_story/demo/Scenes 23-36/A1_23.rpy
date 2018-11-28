@@ -7,7 +7,7 @@ $ scene_name = "Morning, With Additions" # current scene name
 $ renpy.save_persistent()
 
 #-# <scene open>
-scene erikdormcloudy
+scene erikdormnight
 #Temporary audio stops
 stop music fadeout 1.0
 stop music2 fadeout 1.0
@@ -186,7 +186,7 @@ with SDis
 
 claes "As I had been saying previously, we have on-campus tutors for students that need an extra hand with assignments."
 
-if (persistient.jl_tot > 2):
+if (persistent.jl_tot > 2):
   claes "Ms. Lefevre is one of the few student tutors here on campus, and Miss Sahin recommended her to me just the other day."
   n "Ela's quick as always. This must be the study group she mentioned."
 else:
