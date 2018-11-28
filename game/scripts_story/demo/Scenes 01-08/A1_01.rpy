@@ -48,7 +48,7 @@ play ambience "<from 0 to 5>music/effects/birdsandwind.ogg"
 n "The mountain looms above us, tall and imposing."
 
 #Temporary jump for directing purposes
-jump A1_25
+jump A1_17
 
 him "\"Hey, see that ledge?\""
 

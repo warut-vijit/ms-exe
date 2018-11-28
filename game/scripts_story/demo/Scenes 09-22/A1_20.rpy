@@ -2,6 +2,12 @@ label A1_20:
 
 ## I am a dummy file here to provide a choice flag for reference in A1_25 and to allow testing.  ##
 scene black
+
+stop music fadeout 1.0
+stop music2 fadeout 1.0
+stop ambience fadeout 1.0
+stop ambience2 fadeout 1.0
+
 n "So, it's all a bit lonely in here, and it's all dark."
 
 n "The only way either of us is getting out of here is to make a choice."

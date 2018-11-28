@@ -21,16 +21,15 @@ $ renpy.save_persistent()
 # Katja Calm Theme
 
 #-# <scene open>
-scene classroom1
-#Temporary audio stops
 stop music fadeout 1.0
 stop music2 fadeout 1.0
 stop ambience fadeout 1.0
 stop ambience2 fadeout 1.0
+scene classroom1 with Clockwipe
+play music "music/Be Green (Afternoon).mp3" loop fadein 1.5
 #--#
 
 #-# >music: school theme (day)
-play music "music/Be Green (Afternoon).mp3" loop fadein 5.0
 #--#
 
 n "Two days haven’t been enough to orient me and my afternoon philosophy class does little to help. In other circumstances I might be engaged or, at least, indifferent."

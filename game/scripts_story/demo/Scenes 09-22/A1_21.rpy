@@ -415,4 +415,5 @@ n "I’m pretty sure that’s not the way to the girl’s dorms, either."
 
 #-# <END>
 stop music fadeout 5.0
-jump A1_22 # jump A?_??
+jump A1_23 # jump A?_??
+#Yes, I know, 21 to 23 doesn't make any sense. Welcome to the madness.

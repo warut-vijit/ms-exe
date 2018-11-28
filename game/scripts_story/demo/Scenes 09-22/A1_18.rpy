@@ -20,6 +20,7 @@ $ renpy.save_persistent()
 #     Claes
 
 #--# <[timelapse to] Erik's room (evening)>
+stop music2 fadeout 1.5
 scene PitchBlack with Clockwipe
 $ renpy.pause(1.0)
 scene erikdormnight with Clockwipe
@@ -37,6 +38,7 @@ n "Surely."
 #--# <[timelapse to] Claes' classroom (morning)>
 scene PitchBlack with Clockwipe
 $ renpy.pause(1.0)
+play music "music/Be_Green.mp3" fadein(1.5)
 scene classroom1 with Clockwipe
 #--#
 
