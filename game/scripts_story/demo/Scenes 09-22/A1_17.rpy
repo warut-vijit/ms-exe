@@ -37,7 +37,7 @@ show gym:
 
 n "Entering the gym, about half of these students I can see are from my class, but I notice some new faces mixed in. "
 
-n "All of us are wearing the same white—and—blue gym uniforms provided to us by the school, of course."
+n "All of us are wearing the same white-and-blue gym uniforms provided to us by the school, of course."
 
 n "I recall when Mum got the gym uniform from the school; she called it “drab and boring,” then immediately tossed it into the washing machine before I had a chance to look at it."
 
@@ -45,7 +45,7 @@ n "It feels a bit snug, but at least the fabric is breathable."
 
 n "The gym here is a bit smaller than the one at my previous school—with soft, rubberised floors and a lack of any bleachers, it’s more suited to a playroom than a gym proper. "
 
-n "Outdoor sports like track and football are done as part of class occasionally, but apparently I've been placed on the 'low—impact' course."
+n "Outdoor sports like track and football are done as part of class occasionally, but apparently I've been placed on the 'low-impact' course."
 
 n "I’d prefer to be in the more active phys ed courses, but my leg could cause problems, according to the physical I had before transferring here."
 
@@ -57,7 +57,7 @@ n "Most of the conversations revolve around the latest school gossip I’m not a
 
 n "Seems fairly standard, though I can’t help but feel a sense of alienation. I don’t really know anyone here, aside from a few familiar faces from class."
 
-n "Maybe I can meet people who aren’t as pun—obsessed as Natalya, or as silent as Annaliese."
+n "Maybe I can meet people who aren’t as pun-obsessed as Natalya, or as silent as that one girl who sits next to me."
 
 n "Ela seemed pretty normal..."
 
@@ -159,9 +159,9 @@ n "It feels hard to breathe. I try to lift myself up, but I can’t move. There�
 play music "music/Shades Of Echo.mp3" fadein (1.0)
 show CG_A1_17
 with Dissolve (2.0)
-n "Before me is a girl splayed on top of my chest. Well, that explains why I can’t move. Or… breathe..."
+n "Before me is a girl splayed on top of my chest. Well, that explains why I can’t move. Or... breathe..."
 
-erik "\"Ack...need to…\""
+erik "\"Ack...need to...\""
 
 n "The girl who fell on me feebly squeaks out in surprise and scrambles off of me."
 
@@ -171,7 +171,7 @@ n "Her face is tinged red with embarrassment. I try and say something, but Herth
 
 hertha "\"Woah, everyone okay?\""
 
-jeanneunknown "\"Hertha! I um… I...\""
+jeanneunknown "\"Hertha! I um... I...\""
 
 ## >click
 ## >click
@@ -188,7 +188,7 @@ n "Blood starts trickling down her nose—a nosebleed?"
 
 n "Almost instantly she clamps her hand over her nose to try and plug it."
 
-n "That was a serious blow—my guess is she landed nose—first into me when she fell over. "
+n "That was a serious blow—my guess is she landed nose-first into me when she fell over. "
 
 n "I hear Hertha sharply inhale as she realises what’s happened."
 
@@ -289,9 +289,9 @@ n "Maybe I should talk to her, to get her mind off of things. It is kind of awkw
 
 n "Wait... how do you make small talk with a girl on your arm that also has a nosebleed?"
 
-n "Looking closer, she's… kind of cute. I'm usually not a fan of thick-rimmed glasses, but it works pretty well on her."
+n "Looking closer, she's... kind of cute. I'm usually not a fan of thick-rimmed glasses, but it works pretty well on her."
 
-n "Wait, is she…?"
+n "Wait, is she...?"
 
 n "Yep, I’m not seeing things—she’s missing part of one her left hand’s finger. Yikes."
 
