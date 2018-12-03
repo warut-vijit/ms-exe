@@ -50,7 +50,10 @@ init python:
 
       return girl
 
-
+# Set scene_number and scene_name initial values
+init python:
+    scene_number = None
+    scene_name = None 
 
 #  layout.imagemap_main_menu("images/Menus/menu1.jpg", "images/Menus/starnames.png", [
 #    (550, 1, 680 ,130, "Start Game"),
