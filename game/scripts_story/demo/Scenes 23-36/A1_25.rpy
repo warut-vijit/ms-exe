@@ -10,7 +10,10 @@ $ renpy.save_persistent()
 # Music: School Theme (day), Katja Calm Theme
 
 #-# <scene open>
+scene PitchBlack
+with Clockwipe
 scene classroom1
+with Clockwipe
 #Temporary audio stops
 stop music fadeout 1.0
 stop music2 fadeout 1.0
@@ -309,16 +312,6 @@ katja "Yes."
 
 erik "You called it ‘protocol’ and explained how it was useful for gauging individual students."
 
-n "DEBUG QUESTION"
-
-#DEBUG QUESTION
-menu:
-    "20bad":
-        $ A1_20_bad = 1
-    "20good":
-        $ A1_20_bad = 0
-
-
 ## TODO: check which choice Erik made in A1_20
 # [if wrong Isolda choice in A1_20]
 ## ref flag : A1_20_bad 
@@ -482,15 +475,6 @@ jump return20
 label return20:
 n "return20"
 n "The discussion reminds me of the most recent development in my social life. I’m on a roll and I decide to press through, even if I’m just dumping everything that’s been on my mind."
-
-n "DEBUG QUESTION"
-
-#DEBUG QUESTION
-menu:
-    "a1_24_shouldertaptrue":
-        $ A1_24_shouldertap = 1
-    "a1_24_shouldertapfalse":
-        $ A1_24_shouldertap = 0
 
 # [if bad Annaliese choice in 1_24]
 
@@ -805,5 +789,8 @@ jump resume_25
 
 
 label resume_25:
+
+   # Jump back to the main menu
+   $ MainMenu(confirm=False)()
 
 jump A1_26

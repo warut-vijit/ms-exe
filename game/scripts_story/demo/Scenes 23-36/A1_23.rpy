@@ -8,6 +8,7 @@ $ renpy.save_persistent()
 
 #-# <scene open>
 scene erikdormnight
+with Clockwipe
 #Temporary audio stops
 stop music fadeout 1.0
 stop music2 fadeout 1.0

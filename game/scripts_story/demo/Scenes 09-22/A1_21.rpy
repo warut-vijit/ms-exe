@@ -116,7 +116,7 @@ erik "\"More or less. You?\""
 
 #-# >Irene (Neutral P1E1)
 show irene U_P1_E1
-with Dissolve(0.25)
+with SDis
 #--#
 
 n "She thinks for a bit, almost as if she's analyzing my question."
@@ -129,12 +129,15 @@ irene "\"If I'd have to guess...\""
 
 #-# >Irene (Happy P1E2)
 show irene U_P1_E2
-with Dissolve(0.25)
+with SDis
 #--#
 
 irene "\"I'm doing okay!\""
 
 erik "\"You... guess?\""
+
+show irene U_P1_E4
+with SDis
 
 irene "\"Sure! You can't {i}really{/i} tell other people how you're feeling, after all. Haven't you read Tolstoy?\""
 
@@ -145,9 +148,9 @@ irene "\"Could have sworn you had at some point.\""
 erik "\"Pretty sure I'd remember.\""
 
 #-# >Irene (Neutral P1E1 to Happy P1E2)
-show irene U_P1_E1 with Dissolve(0.25)
+show irene U_P1_E1 with SDis
 $ renpy.pause (1.0)
-show irene U_P1_E2 with Dissolve(0.25)
+show irene U_P1_E2 with SDis
 #--#
 
 irene "\"Well anyway, want to eat dinner together?\""
@@ -161,13 +164,16 @@ irene "\"Great! Let's grub up and find a place to sit!\""
 n "The long line in front of us sort of makes that task a bit longer than Irene's expecting."
 
 #-# <cafeteria seats (evening)>
+scene PitchBlack
+with Clockwipe
+$ renpy.pause (1.0)
 scene cafeterianight
-with Dissolve(2)
+with Clockwipe
 #--#
 
 #-# >Irene (Neutral P1E1)
 show irene U_P1_E1:
-  xalign 0.8 yanchor 1.0 ypos 1080+425 alpha 0.0
+  xalign 0.6 yanchor 1.0 ypos 1080+425 alpha 0.0
   easein 1.0 xalign 0.5 alpha 1.0
 show irene U_P1_E1 alpha 1.0
 #--#
@@ -176,15 +182,24 @@ n "Finding our seats, thankfully, was a lot less difficult. "
 
 erik "\"This cafeteria is a lot bigger than I thought.\""
 
+show irene U_P1_E4
+with SDis
+
 irene "\"Funny, that's what everyone says when they come here.\""
 
 erik "\"Really?\""
+
+show irene U_P1_E2
+with SDis
 
 irene "\"I mean, I certainly thought so. Then Ela confirmed the same story with me and some other students, and I've figured that at large percentage of the student body thinks this place is smaller than it is.\""
 
 erik "\"Fascinating.\""
 
 n "My food's getting cold, so I shovel a bite into my mouth while she continues."
+
+show irene U_P1_E4
+with SDis
 
 irene "\"So I decided to take things into my own hands and investigated the cafeteria's dimensions, its {i}feng shui{/i}, everything.\""
 
@@ -196,7 +211,7 @@ erik "\"What?\""
 
 #-# >Irene (Happy P1E2)
 show irene U_P1_E2
-with Dissolve(0.25)
+with SDis
 #--#
 
 irene "\"It's the tables! They're two inches taller than other, similar tables I could find online.\""
@@ -209,15 +224,24 @@ irene "\"Turns out if you feel shorter, everything's bigger. It's subtle, but th
 
 n "I'm somewhat impressed that she did all that work, though I wonder just how much time that all took."
 
+show irene U_P1_E4
+with SDis
+
 irene "\"Then I got to wondering: just why were these tables so tall? What does the school gain from raising all of the tables?\""
 
 erik "\"I have absolutely no idea.\""
 
 n "Irene continues to think for a moment."
 
+show irene U_P1_E2
+with SDis
+
 irene "\"Me neither, but I’m sure there’s some interesting reason.\""
 
 erik "\"Maybe they’re just cheaper?\""
+
+show irene U_P1_E1
+with SDis
 
 irene "\"Cheaper for more table? That doesn’t make any sense, Erik.\""
 
@@ -238,21 +262,30 @@ else:
 label A1_21a:
 
 show irene U_P1_E2
-with Dissolve(0.25)
+with SDis
 
 irene "\"So how are you settling in?\""
 
 erik "\"Fine, I guess. What makes you ask?\""
 
+show irene U_P1_E4
+with SDis
+
 irene "\"Oh, Ela asked me to keep an eye on you. I was, anyway, but she asked as well.\""
 
 erik "\"That’s kind of ominous.\""
+
+show irene U_P1_E1
+with SDis
 
 irene "\"I keep an eye on the whole school, so by default I’m keeping an eye on you.\""
 
 erik "\"And every student?\""
 
 n "She nods."
+
+show irene U_P1_E2
+with SDis
 
 irene "\"Someone has to!\""
 
@@ -266,38 +299,46 @@ jump A1_21end
 label A1_21b:
 
 show irene U_P1_E2
-with Dissolve(0.25)
+with SDis
 
 irene "\"So I see you’ve settled in quite well.\""
 
 erik "\"How so?\""
 
+show irene U_P1_E4
+with SDis
+
 irene "\"You seem pretty sociable.\""
 
 erik "\"Do I? I don’t feel like it.\""
+
+show irene U_P1_E1
+with SDis
 
 irene "\"Trust me, I’m pretty sure.\""
 
 erik "\"More sure about what I’ve been doing than me?\""
 
 show irene U_P1_E4
-with Dissolve(0.25)
+with SDis
 
 irene "\"I’m like ninety percent confident.\""
 
 erik "\"Well, I guess I’ll take your word for it.\""
 
 show irene U_P1_E2
-with Dissolve(0.25)
+with SDis
 
 irene "\"It’s good though! Most transfers just do their own thing and never make any friends. It’s pretty sad, to be honest.\""
 
 erik "\"Wow.\""
 
-irene "\"Like there was this one girl who... uh, nevermind.\""
+irene "\"Like there was this one girl who..."
 
 show irene U_P1_E1
-with Dissolve(0.25)
+with SDis
+
+irene "\"...uh, nevermind.\""
 
 erik "\"Now I’m curious.\""
 
@@ -309,7 +350,7 @@ jump A1_21end
 label A1_21c:
 
 show irene U_P1_E4
-with Dissolve(0.25)
+with SDis
 
 irene "\"How’s class?\""
 
@@ -322,27 +363,33 @@ erik "\"Just for a few months, but yeah.\""
 n "I briefly consider if giving this information to Irene is a good idea."
 
 show irene U_P1_E1
-with Dissolve(0.25)
+with SDis
 
 irene "\"You seem like a smart guy, you even helped Natalya with her homework.\""
 
 erik "\"How do you know about that?\""
 
 show irene U_P1_E4
-with Dissolve(0.25)
+with SDis
 
 irene "\"I know about a lot of things, Erik.\""
 
-show irene U_P1_E1
-with Dissolve(0.25)
-
 n "I decide to leave that strange remark be and move on with the conversation."
 
+show irene U_P1_E1
+with SDis
+
 erik "\"That was her geography homework, something I’m pretty good at. When it comes to everything else... I dunno.\""
+
+show irene U_P1_E2
+with SDis
 
 irene "\"There are study groups in the school, Ela might be able to help you set that up.\""
 
 erik "\"I don’t think I’m that far gone yet. Thanks, though.\""
+
+show irene U_P1_E4
+with SDis
 
 irene "\"Anytime.\""
 
@@ -354,7 +401,7 @@ jump A1_21end
 label A1_21d:
 
 show irene U_P1_E1
-with Dissolve(0.25)
+with SDis
 
 irene "\"So... are you okay?\""
 
@@ -362,7 +409,7 @@ erik "\"Okay?\""
 
 # This should be a more subtle frowning expression instead of "cringe"
 show irene U_P1_E3
-with Dissolve(0.25)
+with SDis
 
 irene "\"Yeah. You seem... I dunno. Stressed.\""
 
@@ -371,7 +418,7 @@ erik "\"Isn’t that normal for transfer students?\""
 irene "\"Sure...\""
 
 show irene U_P1_E1
-with Dissolve(0.25)
+with SDis
 
 n "Irene looks like she has more to say, but doesn’t speak it aloud."
 
@@ -390,7 +437,7 @@ scene schoolnight2 with Clockwipe
 #-# >Irene (Neutral P1E1)
 show irene U_P1_E1:
   xalign 0.4 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.4 alpha 1.0
+  easein 1.0 xalign 0.5 alpha 1.0
 show irene U_P1_E1 alpha 1.0
 #--#
 
@@ -401,19 +448,20 @@ irene "\"Are you going back to the dorms?\""
 erik "\"Yeah, I’ve got an assignment to work on. How about you?\""
 
 show irene U_P1_E2
-with Dissolve(0.25)
+with SDis
 
 irene "\"I have an assignment too. I’ll see ya’ around, Erik!\""
 
 #-# Irene out
 show irene U_P1_E1:
-  easein 1.0 xalign 0.8 alpha 0.0
+  easein 1.0 xalign 0.6 alpha 0.0
 
 n "With that, Irene takes a hard left and starts walking along a patch of grass that I’m pretty sure you’re not meant to walk on."
 
 n "I’m pretty sure that’s not the way to the girl’s dorms, either."
 
 #-# <END>
-stop music fadeout 5.0
+scene PitchBlack
+with Clockwipe
 jump A1_23 # jump A?_??
 #Yes, I know, 21 to 23 doesn't make any sense. Welcome to the madness.

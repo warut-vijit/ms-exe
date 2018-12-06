@@ -30,6 +30,7 @@ n "At least there’s physical education later this morning. Maybe I can get my 
 
 ##<Timeskip to Gym (Day)>
 scene PitchBlack with Clockwipe
+$ renpy.pause(1.0)
 scene gym with Clockwipe
 show gym:
   xalign 0.5
@@ -617,6 +618,7 @@ n "Right next to the cooler is a small candy dish with some wrapped chocolates. 
 
 ## <timeskip>
 scene PitchBlack with Clockwipe
+$ renpy.pause(1.0)
 scene mainlobby with Clockwipe
 ## >Jeanne enter smile
 show jeanne G_P1_E2:
@@ -804,6 +806,7 @@ n "I nod as I head back to the track as the two girls take a seat and start talk
 stop music fadeout (1.0)
 play music2 "music/Be_Green.mp3" fadein (1.0) 
 scene PitchBlack with Clockwipe
+$ renpy.pause(1.0)
 scene gym with Clockwipe
 
 n "After finishing up, Hertha meets me before I head to the locker room."

@@ -81,7 +81,7 @@ n "I take my time packing my bag, not wanting to shove my way through, before a 
 
 # >ELA IN
 show ela P1_E1:
-  xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
+  xalign 0.85 yanchor 1.0 ypos 1080+425 alpha 0.0
   easein 1.0 xalign 0.75 alpha 1.0
 
 ela "\"I see you’re adjusting well!\""
@@ -95,32 +95,36 @@ with SDis
 
 erik "\"Thanks. It’s been going better than I thought it would.\""
 
+show ela P1_E1
+with SDis
+
 ela "\"I’m glad to hear it, and to see you answering tough questions like that shows great initiative in your studies.\""
 
 n "Does it?"
 
-ela "\"...It was more of a guess than anything…\""
+erik "\"...It was more of a guess than anything…\""
+
+show ela P1_E2
+with SDis
 
 ela "\"An educated guess. Don’t sell yourself short!\""
 
 n "She punctuates the word with a little flourish, far prouder of my accomplishment than I am."
 
-ela "\"Sorry, just trying to be humble. That way when I suck, no one will be surprised.\""
+show ela P1_E1
+with SDis
+
+erik "\"Sorry, just trying to be humble. That way when I suck, no one will be surprised.\""
 
 n "Ela’s good cheer seems to sour a little, but she falls into step with me as I zip my bag regardless."
 
-#-# >Ela(Neutral P1E1)
-show ela P1_E1
-with SDis
-#--#
-
-ela "\"Besides, you raised your hand, didn’t you? I don’t see you bragging.\""
+erik "\"Besides, you raised your hand, didn’t you? I don’t see you bragging.\""
 
 ela "\"Yes, but I’ve been in this class since the start of the semester. It’s not unusual for transfer students to come here with a few holes in their studies.\""
 
 ela "\"That’s not to say they aren’t intelligent, but every school has a different curriculum , after all, so I’m always a little worried.\""
 
-ela "\"That makes two of us...\""
+erik "\"That makes two of us...\""
 
 n "We follow our classmates as they file into the hallway, joining the river of students on their way to lunch."
 
@@ -602,12 +606,6 @@ with SDis
 
 ela "\"You might even be able to find a nice girl to go with.\""
 
-#-# >camera shake
-scene cafeteria with hpunch 
-show ela P1_E5:
-  xalign 0.35 yanchor 1.0 ypos 1080+425 alpha 0.0
-  easein 1.0 xalign 0.55 alpha 1.0
-
 n "Is she... hinting at what I think she's hinting at? I really can't tell with Ela, unfortunately."
 
 #-# >Ela(Neutral P1E1)
@@ -646,7 +644,7 @@ erik "\"Huh?\""
 
 ela "\"How did it get to be this late? Sorry, I've got to go!\""
 
-erik "\"Um... okay.\""
+erik "\"Uh... okay.\""
 
 n "There isn't a chance to say much more before Ela flutters off toward the door. As she jogs between cafeteria tables, I can hear her say,"
 

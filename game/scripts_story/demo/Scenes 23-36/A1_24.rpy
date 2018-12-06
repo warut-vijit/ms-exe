@@ -31,7 +31,7 @@ scene classroom1
 
 #-# >Ms. Claes exit to left
 hide claes P1_E5
-with easeoutleft
+with Dissolve(1.0)
 
 n "I have to say, that went better than expected. Jeanne wasn't what I expected from a student tutor. Nothing like the hard-nosed stuffed shirts I had as tutors at my old school."
 n "It's still disappointing to know that the administration has already figured out that I'm not the best student."
@@ -50,7 +50,7 @@ n "She drifts over to her desk next to mine without looking around, seemingly un
 n "I realise I haven't seen her around the school since we met on Monday. I might still be at the stage of not quite being able to put a name to every student, but I am starting to recognise quite a few faces — I'm sure I haven't seen her a single time since then."
 n "Taking a chance, I give her a wave and a nod in greeting."
 n "I half expected she might not notice at all with her earbuds already in, but she falters for a moment, and the slightest flicker of movement in her hand (that I choose to interpret as a wave) and a glance in my direction tells me that she did."
-n "Before I can say good morning, though, Ms. Claes purposefully reenters the room, needing to do nothing more to signal the start of class."
+n "Before I can say good morning, though, Ms. Claes purposefully clears her throat, needing to do nothing more to signal the start of class."
 n "Once everyone has settled down, she begins a lecture on a body of mathematics I’m completely unfamiliar with. Last lesson covered topics I already knew, but this time it’s all fresh. Still, I think I can handle this."
 
 #-# <timeskip>
@@ -67,13 +67,20 @@ n "That said, she could just be doodling meaninglessly like last time. Her hand 
 scene PitchBlack with Clockwipe
 $ renpy.pause(1.0)
 scene classroom1 with Clockwipe
+stop music fadeout 1.0
+stop music2 fadeout 1.0
+stop ambience fadeout 1.0
+stop ambience2 fadeout 1.0
 
 n "I'm actually a little proud of myself. I managed to get through all of the problems with very little difficulty. Maybe I could even get to like maths a little?"
 n "Okay, that might be pushing it."
 n "I give my answers one last look-through along with everyone else as Ms Claes stands back up in front of the board to wrap up the class."
+
+play music "music/St. D_s Ghost.mp3" loop fadein 5.0
 show anna U_B_P2_E8:
-  alpha 0.0 xalign 0.65 yanchor 1.0 ypos 1080+425
+  alpha 0.0 xalign 0.55 yanchor 1.0 ypos 1080+425
   easein 1.0 xalign 0.45 alpha 1.0
+  
 n "I notice the girl next to me is still listening to music, now with her eyes closed. Does she know class is almost over?"
 n "People are starting to filter out of the room now, and she doesn't seem to notice. Does she just have her music really loud, or are does she have those fancy noise-cancelling headphones? Maybe she's just really good at tuning out the world."
 n "I'd better try to get her attention. Apparently, I'm the only one who's noticed her."
@@ -138,8 +145,9 @@ label A1_24b:
 
     n "Now appearing quite embarrassed, she grabs her bag and begins packing it as quickly as possible."
     
-    hide anna U_B_P2_E6
-    with easeoutright
+    show anna U_B_P2_E6:
+      alpha 1.0 xalign 0.45 yanchor 1.0 ypos 1080+425
+      easein 1.0 xalign 0.55 alpha 0.0
 
     pause 1.0
 
@@ -226,8 +234,8 @@ label A1_24c:
     scene classroom1 with Clockwipe
     
     show claes P1_E1: 
-        alpha 0.0 xalign 0.85 yanchor 1.0 ypos 1080+425
-        easein 1.0 xalign 0.55 alpha 0.0
+        alpha 0.0 xalign 0.6 yanchor 1.0 ypos 1080+425 
+        easein 1.0 xalign 0.5 alpha 1.0
     erik "You said you needed to see me? It’s not about the note is it?"
     claes "Of course it's about the note, Erik, yes. Don't think — "
     erik "I hadn't forgotten about what you said this morning. I wasn't neglecting the class or anything."
@@ -257,7 +265,7 @@ label A1_24c:
     erik "Thanks, I tried."
     claes "I hope you continue to bear what we talked about this morning in mind. Off you go, now."
     hide claes P1_E5 
-    with easeoutright
+    with Dissolve(1.0)
     n "With an uncharacteristically warm smile, Ms. Claes returns to a stack of papers on her desk and gets marking. I swing my bag over my shoulder and turn to exit."
     n "As I do, I notice someone slip out the door just before me — the last to leave. Looked like Annaliese."
     jump A1_24_continue
@@ -271,9 +279,11 @@ label A1_24_continue:
         n "I wonder if I should try to catch up with her. Would she appreciate that? Part of me thinks calling after her and trying again to make conversation would just be an inconvenience to her."
     n "Another part thinks that she'd be appalled by it. A sliver, though, is sure that on some level she wouldn't mind."
 
+    scene classroomhall with ScDis
+
     show anna U_B_P1_E1:
-        alpha 0.0 xalign 0.65 yanchor 1.0 ypos 1080+425
-        easein 1.0 xalign 0.55 alpha 0.0
+        alpha 0.0 xalign 0.6 yanchor 1.0 ypos 1080+425
+        easein 1.0 xalign 0.5 alpha 1.0
 
     n "I jog a little to catch up with her. With her headphones in it looks like she didn't hear me coming, but as I come up alongside her she notices me in her peripheral vision and looks in my direction."
     n "I was expecting her reaction to be one of shock, but instead she seems relatively unfazed by my presence."
@@ -346,8 +356,9 @@ label A1_24_continue:
     erik "Okay. See you, Annaliese."
     n "She gives me a small wave and heads off."
 
-    hide anna U_B_P1_E2
-    with easeoutleft
+    show anna U_B_P1_E2:
+      alpha 1.0 xalign 0.5 yanchor 1.0 ypos 1080+425
+      easein 1.0 xalign 0.4 alpha 0.0
 
     n "A few seconds later, my phone buzzes. A text from Anna."
     n "{i}Bye.{/i}"
@@ -363,8 +374,8 @@ label A1_24_continue:
     n "It isn't Fran. The small boy standing behind me, at least a foot shorter than I am, looks terrified. Before I have to take any action myself, though, a hand is placed on gently on the boy's shoulder."
     
     show fran P1_E5:
-        alpha 0.0 xalign 0.65 yanchor 1.0 ypos 1080+425
-        easein 1.0 xalign 0.55 alpha 0.0
+        alpha 0.0 xalign 0.6 yanchor 1.0 ypos 1080+425
+        easein 1.0 xalign 0.5 alpha 1.0
 
     fran "Sorry about Erik, chap. He's just been through quite an ordeal. Run along now."
     n "Not needing any further prompting, the boy departs, delighted to get away from me and melt into the crowd. Grinning ear-to-ear, Fran turns to me and chuckles, grinning toothily."
@@ -420,8 +431,12 @@ label A1_24_continue:
     fran "...Oh, honey, you weren't being serious, were you?"
     n "I wasn't being serious — but who's to say I {i}couldn't{/i} have been being serious?"
     erik "What are you implying?"
+
+    show fran P1_E1
+    with SDis
+
     #>this next line scrolls by super fast -> "cps=*2" sets text speed to double of normal
-    fran "{cps=*2}Definitely nothing at all I don't know what you're talking about you definitely have game.{/cps}"
+    fran "{cps=*1}Definitely nothing at all I don't know what you're talking about you definitely have game.{/cps}{nw}"
     n "The words pour from their mouth, their grin belying their sincerity."
 
     show fran P1_E4
@@ -439,7 +454,7 @@ label A1_24_continue:
     fran "See you in class, Wilhelm!"
 
     hide fran P1_E1
-    with easeoutright
+    with Dissolve(1.)
 
     n "Ah. I share my next class with them as well. Damn."
     n "For now, though, I'm left on my own once again."
