@@ -350,12 +350,12 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "Missing_Stars_Demo"
+    build.directory_name = "Missing_Stars_0.1.3-alpha"
 
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
     ## users can click 'mygame.exe' to start the game.
-    build.executable_name = "Missing Stars Demo"
+    build.executable_name = "Missing Stars 0.1.3-alpha"
 
     ## If True, Ren'Py will include update information into packages. This
     ## allows the updater to run.
@@ -400,12 +400,12 @@ init python:
 
     ## To archive files, classify them as 'archive'.
 
-    build.classify('game/**.png', 'archive')
-    build.classify('game/**.jpg', 'archive')
-    build.classify('game/**.mp3', 'archive')
-    build.classify('game/**.ogg', 'archive')
-    build.classify('game/**.wav', 'archive')
-    build.classify('game/**.webm', 'archive')
+    #build.classify('game/**.png', 'archive')
+    #build.classify('game/**.jpg', 'archive')
+    #build.classify('game/**.mp3', 'archive')
+    #build.classify('game/**.ogg', 'archive')
+    #build.classify('game/**.wav', 'archive')
+    #build.classify('game/**.webm', 'archive')
 
     ## Files matching documentation patterns are duplicated in a mac app
     ## build, so they appear in both the app and the zip file.

@@ -722,58 +722,8 @@ n "As for myself, I'm going to give the cafeteria another check. Or at least the
 n "This might turn out to be an okay day despite the nightmares."
 #-# <END> 2
 label A1_15end:
-window hide
 scene PitchBlack
 with Dissolve(3)
-show movie
-play movie "video/IntroDemo.webm" noloop
-$ renpy.pause(16)
-label credits:
-    play music "music/Credits Roll.mp3" noloop
-#    image splash = Text("{size=90}Missing Stars", text_align=0.5, ypos=0.5) #Placeholder code if you don't have anything to use as a splash image or are just pure lazy.
-#    image splash = "images/Company-Logo.png" #This is usually going to be located in an init block executed early in the code to show it when the game loads up as a splash screen.
-#    image cred = Text(credits_s, font="myfont.ttf", text_align=0.5) #use this if you want to use special fonts
-    image cred = Text(credits_s, text_align=0.5)
-    $ credits_speed = 160 #scrolling speed in seconds
-    scene black #replace this with a fancy background
-    show cred at Move((0.5, 5.5), (0.5, 0.0), credits_speed, repeat=False, bounce=False, xanchor="center", yanchor="bottom")
-    with Pause(credits_speed - 5)
-    return
-
-init python:
-    #credits = ('Backgrounds', 'Airgoof'), ('Backgrounds', 'Dorktwerp'), ('Sprites and CG', 'Ballclown'), ('GUI', 'Cuddlywad'), ('Writing', 'Dorktwerp'), ('Writing', 'Fingerpookie'), ('Programming', 'Dorktwerp'), ('Music', 'Grumblemuck'), ('Music', 'Headwookum')
-    credits = ('Writing team', 'Blank Mage'), ('Writing team', 'Kosherbacon'), ('Writing team', 'Gloom'), ('Writing team', 'Hamadyne'), ('Writing team', 'Kuroe'), ('Writing team', 'Ultra_HR'), ('Writing team', 'Windreda'),\
-    ('Art team', 'Angry Evil'), ('Art team', 'Eora'), ('Art team', 'grant'), ('Art team', 'Likhos'), ('Art team', 'Morthiasik'), ('Art team', 'Shuuko'),\
-    ('Music team', 'Astartus'), ('Music team', 'Flare'), ('Music team', 'Lamalama'), ('Music team', 'susanne-hdt'),\
-    ('Photographers', 'Aaron'), ('Photographers', 'Teresa'),\
-    ('Programming team', 'Fernando'), ('Programming team', 'Merlyn LeRoy'),\
-    ('Medical Advisors', 'Fia'), ('Medical Advisors', 'thisiscarsonian'),\
-    ('Editing team', 'StuporSpoopy'), ('Editing team', 'Swampie'),\
-    ('Beta Testers', 'Boredom'), ('Beta Testers', 'brainy_kevin'), ('Beta Testers', 'Dakkyth'), ('Beta Testers', 'Hikaru'), ('Beta Testers', 'M.Night'), ('Beta Testers', 'Suriko'),\
-    ('Special Thanks', 'Honeymuffin'), ('Special Thanks', 'ImperialStandard'), ('Special Thanks', 'Josh Kaplan'), ('Special Thanks', 'Mike Inel'), ('Special Thanks', '...and to all of our fans!'),\
-    ('-------', 'All characters appearing in this work are fictitious.\nAny resemblance to real persons, living or dead, is purely coincidental.'),\
-    (' ', 'This game deals with potentially sensitive themes, including\nfictional depictions of psychological issues, self-harm,\neating disorders, troubled relationships, and trauma. These\nissues are real, complex, and highly personal. In order to\nensure a realistically accurate, respectful and comprehensive\nportrayal of the above, we have consulted and worked closely alongside\nmedical and special education professionals, alumni of special education\ninstitutions, and patients of the mental health system.'),\
-    (' ', '\n\nWe encourage all readers to use this visual novel as a way of\ndiscussing the issues people with mental illnesses face\nevery day.'),\
-    ('\n\n\n2018', 'Somnova Studios\n\n\n\n\n\n\n\n\n\n\n\n\n')
-    credits_s = "{size=80}MISSING STARS\n"
-    c1 = ''
-    for c in credits:
-        if not c1==c[0]:
-            credits_s += "\n{size=60}" + c[0] + "\n"
-        credits_s += "{size=40}" + c[1] + "\n"
-        c1=c[0]
-#--#
-
-
-
-
-
-
-
-#-# APPEND
-return
-#--#
-
 ########
 
 jump A1_16 # jump A?_??
