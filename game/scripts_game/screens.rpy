@@ -477,32 +477,24 @@ screen file_picker_save:
             $ lastDeleted = 0
             $ filez_list[persistent.SLFolder] = renpy.list_saved_games("1-%d" % (persistent.SLFolder))
             #$ renpy.save_persistent()
-
+        # Note: if you change this, check around line 650. There's another copy there.
+        # TODO: deduplication
         # See if we should check the act + Scene in notes
         if 0 < persistent.checkActScene and persistent.checkActScene < len(persistent.savenote_list[persistent.SLFolder]):
-            # insane code to check for recently overwritten file to generate new note
-            $ rightnow = int(time.strftime("%Y%j%H%M%S"))
-            # if we just clicked over a day/hour/minute, adjust time
-            if rightnow % 1000000 == 0:
-                $ rightnow = rightnow - 764040
-            elif rightnow % 10000 == 0:
-                $ rightnow = rightnow - 4040
-            elif rightnow % 100 == 0:
-                $ rightnow = rightnow - 40
-            $ filemod = int(FileTime(persistent.checkActScene + persistent.SLFolder * 10000, format="%Y%j%H%M%S", empty=_("0")))
-            # if this file was modified within the last second, redo note
-            if filemod + 2 > rightnow:
+            $ now = datetime.datetime.now()
+            $ filemod = datetime.datetime.strptime(FileTime(persistent.checkActScene + persistent.SLFolder * 10000, format="%Y%j%H%M%S", empty=_("0")), "%Y%j%H%M%S")
+            # if this file was modified within the last two seconds, redo note
+            if now - filemod >= datetime.timedelta(seconds=2):
                 if len(persistent.savenote_list[persistent.SLFolder]) == persistent.checkActScene:
                     $ persistent.savenote_list[persistent.SLFolder].append("")
-                if scenenumber.find("_") == -1 or not scenenumber.startswith("A"):
+                if "_" not in scenenumber or not scenenumber.startswith("A"):
                     $ persistent.savenote_list[persistent.SLFolder][persistent.checkActScene] = persistent.girlpath + scenenumber + "\n"
                 elif scenename == "":
                     $ persistent.actScene = scenenumber.split("_")
                     $ persistent.savenote_list[persistent.SLFolder][persistent.checkActScene] = persistent.girlpath + ("Act %s Scene %s\n" % (persistent.actScene[0][1:], persistent.actScene[1]))
                 else:
                     $ persistent.savenote_list[persistent.SLFolder][persistent.checkActScene] = persistent.girlpath + scenename + "\n"
-                if filemod + 2 > rightnow:
-                    $ persistent.checkActScene = 0
+                $ persistent.checkActScene = 0
                 $ filez_list[persistent.SLFolder] = renpy.list_saved_games("1-%d" % (persistent.SLFolder))
             #$ renpy.save_persistent()
 
@@ -686,29 +678,20 @@ screen file_picker_load:
 
         # See if we should check the act + Scene in notes
         if 0 < persistent.checkActScene and persistent.checkActScene < len(persistent.savenote_list[persistent.SLFolder]):
-            # insane code to check for recently overwritten file to generate new note
-            $ rightnow = int(time.strftime("%Y%j%H%M%S"))
-            # if we just clicked over a day/hour/minute, adjust time
-            if rightnow % 1000000 == 0:
-                $ rightnow = rightnow - 764040
-            elif rightnow % 10000 == 0:
-                $ rightnow = rightnow - 4040
-            elif rightnow % 100 == 0:
-                $ rightnow = rightnow - 40
-            $ filemod = int(FileTime(persistent.checkActScene + persistent.SLFolder * 10000, format="%Y%j%H%M%S", empty=_("0")))
-            # if this file was modified within the last second, redo note
-            if filemod + 2 > rightnow:
+            $ now = datetime.datetime.now()
+            $ filemod = datetime.datetime.strptime(FileTime(persistent.checkActScene + persistent.SLFolder * 10000, format="%Y%j%H%M%S", empty=_("0")), "%Y%j%H%M%S")
+            # if this file was modified within the last two seconds, redo note
+            if now - filemod >= datetime.timedelta(seconds=2):
                 if len(persistent.savenote_list[persistent.SLFolder]) == persistent.checkActScene:
                     $ persistent.savenote_list[persistent.SLFolder].append("")
-                if scenenumber.find("_") == -1 or not scenenumber.startswith("A"):
+                if "_" not in scenenumber or not scenenumber.startswith("A"):
                     $ persistent.savenote_list[persistent.SLFolder][persistent.checkActScene] = persistent.girlpath + scenenumber + "\n"
                 elif scenename == "":
                     $ persistent.actScene = scenenumber.split("_")
                     $ persistent.savenote_list[persistent.SLFolder][persistent.checkActScene] = persistent.girlpath + ("Act %s Scene %s\n" % (persistent.actScene[0][1:], persistent.actScene[1]))
                 else:
                     $ persistent.savenote_list[persistent.SLFolder][persistent.checkActScene] = persistent.girlpath + scenename + "\n"
-                if filemod + 2 > rightnow:
-                    $ persistent.checkActScene = 0
+                $ persistent.checkActScene = 0
                 $ filez_list[persistent.SLFolder] = renpy.list_saved_games("1-%d" % (persistent.SLFolder))
             #$ renpy.save_persistent()
 

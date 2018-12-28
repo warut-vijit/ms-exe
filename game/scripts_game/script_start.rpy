@@ -7,7 +7,7 @@
 
 
 init python:
-    import time
+    import datetime
     # Function to set main menu "stars" correctly
     # Call with girl's define and a parameter, meaning:
     # (0) means hidden path, (1) means not hidden
