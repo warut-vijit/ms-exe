@@ -163,6 +163,7 @@ label start0:
   define him = Character('Him', color="#FFCC99", ctc="ctcstar", ctc_position="fixed")
   define me = Character('Me', color="#FFCC99", ctc="ctcstar", ctc_position="fixed")
   define isolda = Character('Isolda', color="#5ABF90", ctc="ctcstar", ctc_position="fixed")
+  define isoldaunknown = Character('Isolda', color="#5ABF90", ctc="ctcstar", ctc_position="fixed")
   define jeanne = Character('Jeanne', color="#ED0202", ctc="ctcstar", ctc_position="fixed")
   define jeanneunknown = Character('???', color="#ED0202", ctc="ctcstar", ctc_position="fixed")
   define lena = Character('Lena', color="#808000", ctc="ctcstar", ctc_position="fixed")
