@@ -10,6 +10,9 @@ stop ambience2 fadeout 1.0
 
 ##
 
+scene schoolground1
+with ScDis
+
 n "I leave the chapel and begin my slow walk towards Dr. Faber's office."
  
 n "This meeting should be the least of my worries."
@@ -28,6 +31,9 @@ n "Should I really stress myself out over making my way there as soon as possibl
 
 n "Maybe I could come up with some excuse — miss the session entirely."
 
+scene school2
+with ScDis
+
 n "From the corner of my eye, I manage to catch the school's directory, which conveniently points me to the school’s main building."
 
 n "There it is, clear as day. Begging to be noticed by the students on campus."
@@ -44,7 +50,7 @@ n "..."
 
 n ".."
 
-n "Enough stalling."
+n "{i}Enough stalling.{/i}"
 
 ##(SFX - Walking)
 
@@ -94,6 +100,8 @@ n "..."
 n "That train of thought probably won’t win me any favours with Dr. Faber."
 
 #### BG shift — school courtyard, daytime
+scene mainbuildingfar
+with ScDis
  
 n "From here it’s just a straight shot to the main building."
 
@@ -111,6 +119,8 @@ n "As much as this walk sucks, I just need a few more moments, and finally —"
 
 ##SFX Door loudly opening
 ####  BG shift — corridor in the main building, blue
+scene faberhallway
+with ScDis
 
 n "— I reach the doors to the school offices."
 
@@ -221,6 +231,8 @@ drfaber "Please, come in. You’re right on time."
 n "I trudge into the office..."
 
 ##BG Faber's office
+scene faberoffice
+with ScDis
 
 n "...and am immediately thrown off by what I see."
 
@@ -379,6 +391,10 @@ n "No matter what I say Faber patiently listens and engages in the conversation.
 n "This isn’t an interrogation."
 
 #timeskip
+scene PitchBlack
+with Clockwipe
+scene faberoffice
+with Clockwipe
 
 n "Towards the end of our session Faber turns to pick up a thick folder from atop his desk."
  
@@ -402,6 +418,10 @@ n "He passes me a pen, and with little hesitation I begin to mark down the answe
 n "I’m surprised by how much more at ease I am even filling out personal medical questions."
 
 ## Timeskip
+scene PitchBlack
+with Clockwipe
+scene faberoffice
+with Clockwipe
  
 n "Minutes later, I put down the pen and pass the papers back."
 
@@ -521,11 +541,16 @@ drfaber "Any time, Erik."
 #faber fade out from center
 #door close SFX
 
+scene faberhallway
+with ScDis
+
 n "I leave the office and shut the door with an unexpected smile on my face."
 
 n "It’s a simple endeavour to retrace my way out of the building, however this time I pay deliberate attention to avoid walking within the old wear marks on the hallway carpeting."
 
-## BG school road ( daytime ) 
+## BG school road ( daytime )
+scene schoolground1
+with ScDis
  
 n "Now in a much better mood, I decide to take a longer route back to the dorm."
 
@@ -557,6 +582,8 @@ n "Cautiously, ignoring a caution along the way sign, I push through some of the
 
 ## SFX leaves being rustled
 ## CG treetop canopy
+scene forest1
+with ScDis
 
 n "...and come out into an almost brand new world under a canopy of trees."
 
@@ -796,6 +823,12 @@ n "It’s almost as if she’s afraid to have any contact with me."
 n "I decide not to push the issue and accept the book once more."
  
 ## Drawing of a sketched bird CG
+## TODO CG09
+show CG09:
+  alpha 0.0
+  easein 1.0 alpha 1.0
+  yalign 0.0
+  ease  20.0 yalign 1.0
 
 ## Music amplifies, an extension of Isolda’s theme building into something more concrete than the ambient sounds before. What once was a light ambient piano as remnants of an Isolda Theme is now overtaken by more concrete instruments. I have envisioned Isolda’s theme comprising a collection of strings in this moment. 
 
@@ -810,6 +843,9 @@ n "Up close they’re... {i}really{\i} good."
 n "I finish on a picture of an owl sheltering in the fork of a tree, its head tilted to one side as if eyeing me suspiciously. I’m quickly reminded of the girl in front of me."
 
 n "Satisfied, I hand the book back to her."
+
+hide CG09
+with ScDis
 
 #end CG
 
@@ -883,9 +919,15 @@ n "I can already see Isolda walking through a muddy clearing by the dormitories.
 
 n "Just as I start to work my way around —"
 
+scene PitchBlack
+with Dissolve (0.1)
+
 erik "Shit!"
 
 n "— I feel my leg fold underneath me."
+
+scene forest1
+with ScDis
 
 n "I fall against the mud, expertly missing dry grass by mere centimetres."
 
@@ -1202,5 +1244,7 @@ jump A1_20_end
 
 
 label A1_20_end:
+scene PitchBlack
+with Clockwipe
 
 jump A1_21

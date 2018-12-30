@@ -319,6 +319,9 @@ label start0:
   image nursesoffice=                "backgrounds/Nurses-office.jpg"
   image chapelentrance=              "backgrounds/chapelentrance.png"
   image chapelinterior=              "backgrounds/chapelinterior.png"
+  image faberhallway=                "backgrounds/faberhallway.png"
+  image faberoffice=                 "backgrounds/faberoffice.png"
+  image forest1=                     "backgrounds/forest1.png"
   
   #Transitions
   #Clockwipe transition
@@ -353,6 +356,7 @@ label start0:
   image EriksPhone = im.Scale("images/CG/EriksPhone.png", 1920, 1080, bilinear=True)
   image CGui = im.Scale("ui/TextboxFade.png", 1920, 1080, bilinear=True)
   image CG08 = im.Scale("images/CG/CG_08.png", 1920, 1080, bilinear=True)
+  image CG09 = "images/CG/CG_09.png"
   #Sprites
 
   image PitchBlack = Solid("#000")
