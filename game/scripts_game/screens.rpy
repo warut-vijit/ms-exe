@@ -536,38 +536,36 @@ screen file_picker_save:
             $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
             #$ renpy.save_persistent()
 
-            # render file slots
-            for i in range(1, filesInFolder):
-              frame:
-                area (-5, 8, 635, 202.5)
-                # Each file slot is a button.
-                button:
-                    area (35, 8, 675, 202.5)
-                    action [ FileAction(i + persistent.SLFolder * 10000), SetField(persistent, "checkActScene", i) ]
-                    has hbox
-
-                    # Add the screenshot.
-                    add FileScreenshot(i + persistent.SLFolder * 10000) xpos 25 ypos 18
-
-                    # Format the description, and add it as text.
-                    $ timestamp = FileTime(i + persistent.SLFolder * 10000, format="{color=#ffffff}%d.%m.%Y\n%H:%M", empty=_("{color=#2e89ff}Empty"))
-                    $ description = "{size=+5}%s\n{/size}{/color}\n" % (timestamp)
-                    text description xpos 50 ypos 10
-                    #$ renpy.save_persistent()
-
-            # render "new save" file slot
-            $ i = filesInFolder
-            button:
-              frame:
-                area (-5, 16, 635, 202.5)
-                if startFile + columns * rows <= filesInFolder:
-                    $ maxAdj = (filesInFolder % columns) + 1
-                    $ newSLStart = filesInFolder + maxAdj - columns * rows
+            for i in range(1, filesInFolder+1):
+                if i == filesInFolder:
+                    button:
+                      frame:
+                        area (-5, 16, 635, 202.5)
+                        if startFile + columns * rows <= filesInFolder:
+                            $ maxAdj = (filesInFolder % columns) + 1
+                            $ newSLStart = filesInFolder + maxAdj - columns * rows
+                        else:
+                            $ newSLStart = persistent.SLStart
+                        text "{color=#2e89ff}{size=+5}New save\n{/size}{/color}" xpos 270 ypos 10
+                        imagebutton idle "images/Menus/save-load/save_frame_30.png" hover "images/Menus/save-load/save_frame_100.png" xpos 24 ypos -1:
+                            clicked [ FileSave(i + persistent.SLFolder * 10000), SetField(persistent, "SLStart", newSLStart), SetVariable("fileAddedAtEnd", i) ]
                 else:
-                    $ newSLStart = persistent.SLStart
-                text "{color=#2e89ff}{size=+5}New save\n{/size}{/color}" xpos 270 ypos 10
-                imagebutton idle "images/Menus/save-load/save_frame_30.png" hover "images/Menus/save-load/save_frame_100.png" xpos 24 ypos -1:
-                    clicked [ FileSave(i + persistent.SLFolder * 10000), SetField(persistent, "SLStart", newSLStart), SetVariable("fileAddedAtEnd", i) ]
+                  frame:
+                    area (-5, 8, 635, 202.5)
+                    # Each file slot is a button.
+                    button:
+                        area (35, 8, 675, 202.5)
+                        action [ FileAction(i + persistent.SLFolder * 10000), SetField(persistent, "checkActScene", i) ]
+                        has hbox
+
+                        # Add the screenshot.
+                        add FileScreenshot(i + persistent.SLFolder * 10000) xpos 25 ypos 18
+
+                        # Format the description, and add it as text.
+                        $ timestamp = FileTime(i + persistent.SLFolder * 10000, format="{color=#ffffff}%d.%m.%Y\n%H:%M", empty=_("{color=#2e89ff}Empty"))
+                        $ description = "{size=+5}%s\n{/size}{/color}\n" % (timestamp)
+                        text description xpos 50 ypos 10
+                        #$ renpy.save_persistent()
 
     # Display X close button
                 if i < persistent.filecount_list[persistent.SLFolder] and FileLoadable(i + persistent.SLFolder * 10000):
@@ -711,14 +709,15 @@ screen file_picker_load:
                 else:
                     $ persistent.filecount_list[f] = 1
                 #$ renpy.save_persistent()
-            $ startFile = min(persistent.SLStart, persistent.filecount_list[persistent.SLFolder] - 1)
+            $ filesInFolder = persistent.filecount_list[persistent.SLFolder]
+            $ startFile = min(persistent.SLStart, filesInFolder - 1)
             if startFile == None:
                 $ startFile = 0
             $ startFile = startFile - ((startFile + 1) & 1)
             $ persistent.SLStart = startFile
             $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
             #$ renpy.save_persistent()
-            for i in range(1, persistent.filecount_list[persistent.SLFolder]):
+            for i in range(1, filesInFolder):
                   frame:
                     area (-5, 8, 635, 202.5)
                     # Each file slot is a button.
@@ -737,14 +736,14 @@ screen file_picker_load:
                         #$ renpy.save_persistent()
 
         # Display X close button
-                    if i < persistent.filecount_list[persistent.SLFolder] and FileLoadable(i + persistent.SLFolder * 10000):
+                    if i < filesInFolder and FileLoadable(i + persistent.SLFolder * 10000):
                         button:
                             area (-25, -1, 30, 50)
                             imagebutton idle "images/Menus/save-load/delete_frame_30.png" focus_mask "images/Menus/save-load/delete_frame_mask.png" hover "images/Menus/save-load/delete_frame_100.png" xoffset 7 yoffset 8:
                                 clicked [ FileDelete(i + persistent.SLFolder * 10000), SetVariable("lastDeleted", i) ]
 
         # Display the notes on each save
-                    if i < persistent.filecount_list[persistent.SLFolder] and FileLoadable(i + persistent.SLFolder * 10000):
+                    if i < filesInFolder and FileLoadable(i + persistent.SLFolder * 10000):
                     # Each file slot is a button.
                         button:
                             $ textsize = len(persistent.savenote_list[persistent.SLFolder][i])
