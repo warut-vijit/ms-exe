@@ -506,7 +506,7 @@ screen file_picker_save:
             spacing 0
             xsize 1300
             ysize 608
-            yinitial 99999
+            yinitial 0
             draggable True
             mousewheel True
 
@@ -527,52 +527,54 @@ screen file_picker_save:
                 else:
                     $ persistent.filecount_list[f] = 1
                 #$ renpy.save_persistent()
-            $ timestamp = ""
-            $ startFile = min(persistent.SLStart, persistent.filecount_list[persistent.SLFolder] - 1)
+            $ filesInFolder = persistent.filecount_list[persistent.SLFolder]
+            $ startFile = min(persistent.SLStart, filesInFolder - 1)
             if startFile == None:
                 $ startFile = 0
             $ startFile = startFile - ((startFile + 1) & 1)
             $ persistent.SLStart = startFile
             $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
             #$ renpy.save_persistent()
-            for i in range(1, persistent.filecount_list[persistent.SLFolder]+1):
-                if i == persistent.filecount_list[persistent.SLFolder]:
-                    button:
-                      frame:
-                        area (-5, 16, 635, 202.5)
-                        if startFile + columns * rows <= persistent.filecount_list[persistent.SLFolder]:
-                            $ maxAdj = (persistent.filecount_list[persistent.SLFolder] % columns) + 1
-                            $ newSLStart = persistent.filecount_list[persistent.SLFolder] + maxAdj - columns * rows
-                        else:
-                            $ newSLStart = persistent.SLStart
-                        $ i = persistent.filecount_list[persistent.SLFolder]
-                        text "{color=#2e89ff}{size=+5}New save\n{/size}{/color}" xpos 270 ypos 10
-                        imagebutton idle "images/Menus/save-load/save_frame_30.png" hover "images/Menus/save-load/save_frame_100.png" xpos 24 ypos -1:
-                            clicked [ FileSave(i + persistent.SLFolder * 10000), SetField(persistent, "SLStart", newSLStart), SetVariable("fileAddedAtEnd", i) ]
+
+            # render file slots
+            for i in range(1, filesInFolder):
+              frame:
+                area (-5, 8, 635, 202.5)
+                # Each file slot is a button.
+                button:
+                    area (35, 8, 675, 202.5)
+                    action [ FileAction(i + persistent.SLFolder * 10000), SetField(persistent, "checkActScene", i) ]
+                    has hbox
+
+                    # Add the screenshot.
+                    add FileScreenshot(i + persistent.SLFolder * 10000) xpos 25 ypos 18
+
+                    # Format the description, and add it as text.
+                    $ timestamp = FileTime(i + persistent.SLFolder * 10000, format="{color=#ffffff}%d.%m.%Y\n%H:%M", empty=_("{color=#2e89ff}Empty"))
+                    $ description = "{size=+5}%s\n{/size}{/color}\n" % (timestamp)
+                    text description xpos 50 ypos 10
+                    #$ renpy.save_persistent()
+
+            # render "new save" file slot
+            $ i = filesInFolder
+            button:
+              frame:
+                area (-5, 16, 635, 202.5)
+                if startFile + columns * rows <= filesInFolder:
+                    $ maxAdj = (filesInFolder % columns) + 1
+                    $ newSLStart = filesInFolder + maxAdj - columns * rows
                 else:
-                  frame:
-                    area (-5, 8, 635, 202.5)
-                    # Each file slot is a button.
+                    $ newSLStart = persistent.SLStart
+                text "{color=#2e89ff}{size=+5}New save\n{/size}{/color}" xpos 270 ypos 10
+                imagebutton idle "images/Menus/save-load/save_frame_30.png" hover "images/Menus/save-load/save_frame_100.png" xpos 24 ypos -1:
+                    clicked [ FileSave(i + persistent.SLFolder * 10000), SetField(persistent, "SLStart", newSLStart), SetVariable("fileAddedAtEnd", i) ]
+
+    # Display X close button
+                if i < persistent.filecount_list[persistent.SLFolder] and FileLoadable(i + persistent.SLFolder * 10000):
                     button:
-                        area (35, 8, 675, 202.5)
-                        action [ FileAction(i + persistent.SLFolder * 10000), SetField(persistent, "checkActScene", i) ]
-                        has hbox
-
-                        # Add the screenshot.
-                        add FileScreenshot(i + persistent.SLFolder * 10000) xpos 25 ypos 18
-
-                        # Format the description, and add it as text.
-                        $ timestamp = FileTime(i + persistent.SLFolder * 10000, format="{color=#ffffff}%d.%m.%Y\n%H:%M", empty=_("{color=#2e89ff}Empty"))
-                        $ description = "{size=+5}%s\n{/size}{/color}\n" % (timestamp)
-                        text description xpos 50 ypos 10
-                        #$ renpy.save_persistent()
-
-        # Display X close button
-                    if i < persistent.filecount_list[persistent.SLFolder] and FileLoadable(i + persistent.SLFolder * 10000):
-                        button:
-                            area (-25, -1, 30, 50)
-                            imagebutton idle "images/Menus/save-load/delete_frame_30.png" focus_mask "images/Menus/save-load/delete_frame_mask.png" hover "images/Menus/save-load/delete_frame_100.png" xoffset 7 yoffset 8:
-                                clicked [ FileDelete(i + persistent.SLFolder * 10000), SetVariable("lastDeleted", i) ]
+                        area (-25, -1, 30, 50)
+                        imagebutton idle "images/Menus/save-load/delete_frame_30.png" focus_mask "images/Menus/save-load/delete_frame_mask.png" hover "images/Menus/save-load/delete_frame_100.png" xoffset 7 yoffset 8:
+                            clicked [ FileDelete(i + persistent.SLFolder * 10000), SetVariable("lastDeleted", i) ]
 
         # Display the notes on each save
                     if i < persistent.filecount_list[persistent.SLFolder] and FileLoadable(i + persistent.SLFolder * 10000):
@@ -652,21 +654,6 @@ screen file_picker_load:
         $ scenenumber = scene_number
         $ scenename = scene_name
 
-#        # Set up for a new file added at the end
-#        if fileAddedAtEnd > 0:
-#            if len(persistent.savenote_list[persistent.SLFolder]) == fileAddedAtEnd:
-#                $ persistent.savenote_list[persistent.SLFolder].append("")
-#            if scenenumber.find("_") == -1 or not scenenumber.startswith("A"):
-#                $ persistent.savenote_list[persistent.SLFolder][fileAddedAtEnd] = persistent.girlpath + scenenumber + "\n"
-#            elif scenename == "":
-#                $ persistent.actScene = scenenumber.split("_")
-#                $ persistent.savenote_list[persistent.SLFolder][fileAddedAtEnd] = persistent.girlpath + "Act %s Scene %s\n" % (persistent.actScene[0][1:], persistent.actScene[1])
-#            else:
-#                $ persistent.savenote_list[persistent.SLFolder][fileAddedAtEnd] = persistent.girlpath + scenename + "\n"
-#            $ filez_list[persistent.SLFolder] = renpy.list_saved_games("1-%d" % (persistent.SLFolder))
-#            $ fileAddedAtEnd = 0
-#            #$ renpy.save_persistent()
-
         # Clean up any deleted slots in the middle
         if 0 < lastDeleted and lastDeleted <= persistent.filecount_list[persistent.SLFolder]:
             for i in range(lastDeleted, persistent.filecount_list[persistent.SLFolder]):
@@ -703,7 +690,7 @@ screen file_picker_load:
             spacing 0
             xsize 1300
             ysize 608
-            yinitial 99999
+            yinitial 0
             draggable True
             mousewheel True
 
@@ -724,7 +711,6 @@ screen file_picker_load:
                 else:
                     $ persistent.filecount_list[f] = 1
                 #$ renpy.save_persistent()
-            $ timestamp = ""
             $ startFile = min(persistent.SLStart, persistent.filecount_list[persistent.SLFolder] - 1)
             if startFile == None:
                 $ startFile = 0
@@ -773,16 +759,7 @@ screen file_picker_load:
                             text "{size="+textsize+"}{color=#2e89ff}" + persistent.savenote_list[persistent.SLFolder][i][1:] + "{/color}{/size}" xpos 411 ypos 8
                             imagebutton idle "images/Menus/save-load/note_frame_00.png" focus_mask "images/Menus/save-load/note_frame_30.png" hover "images/Menus/save-load/note_frame_30.png" xpos -10 ypos 8:
                                 clicked [ SetField(persistent, "note", i), Jump("type_comment") ]
-#        # Display the icon on each save
-#                    if i < persistent.filecount_list[persistent.SLFolder] and FileLoadable(i + persistent.SLFolder * 10000):
-#                        if persistent.savenote_list[persistent.SLFolder][i] != "":
-#                            $ icon = ord(persistent.savenote_list[persistent.SLFolder][i][0:1]) - ord("0")
-#                            if icon >= persistent.icon_len:
-#                                $ icon = 0
-#                        else:
-#                            $ icon = 0
-#                        image persistent.icon_list[icon] pos (320,67)
-#
+
         # Folders for save groups
         # The folders allow the user to pick a group of files.
         vbox:
