@@ -540,7 +540,7 @@ screen file_picker_save:
                 if i == filesInFolder:
                     button:
                       frame:
-                        area (-5, 16, 635, 202.5)
+                        area (-5, 16, 635, 202)
                         if startFile + columns * rows <= filesInFolder:
                             $ maxAdj = (filesInFolder % columns) + 1
                             $ newSLStart = filesInFolder + maxAdj - columns * rows
@@ -551,10 +551,10 @@ screen file_picker_save:
                             clicked [ FileSave(i + persistent.SLFolder * 10000), SetField(persistent, "SLStart", newSLStart), SetVariable("fileAddedAtEnd", i) ]
                 else:
                   frame:
-                    area (-5, 8, 635, 202.5)
+                    area (-5, 8, 635, 202)
                     # Each file slot is a button.
                     button:
-                        area (35, 8, 675, 202.5)
+                        area (35, 8, 675, 202)
                         action [ FileAction(i + persistent.SLFolder * 10000), SetField(persistent, "checkActScene", i) ]
                         has hbox
 
@@ -567,14 +567,14 @@ screen file_picker_save:
                         text description xpos 50 ypos 10
                         #$ renpy.save_persistent()
 
-    # Display X close button
-                if i < persistent.filecount_list[persistent.SLFolder] and FileLoadable(i + persistent.SLFolder * 10000):
-                    button:
-                        area (-25, -1, 30, 50)
-                        imagebutton idle "images/Menus/save-load/delete_frame_30.png" focus_mask "images/Menus/save-load/delete_frame_mask.png" hover "images/Menus/save-load/delete_frame_100.png" xoffset 7 yoffset 8:
-                            clicked [ FileDelete(i + persistent.SLFolder * 10000), SetVariable("lastDeleted", i) ]
+                    # Display X close button
+                    if i < persistent.filecount_list[persistent.SLFolder] and FileLoadable(i + persistent.SLFolder * 10000):
+                        button:
+                            area (-25, -1, 30, 50)
+                            imagebutton idle "images/Menus/save-load/delete_frame_30.png" focus_mask "images/Menus/save-load/delete_frame_mask.png" hover "images/Menus/save-load/delete_frame_100.png" xoffset 7 yoffset 8:
+                                clicked [ FileDelete(i + persistent.SLFolder * 10000), SetVariable("lastDeleted", i) ]
 
-        # Display the notes on each save
+                    # Display the notes on each save
                     if i < persistent.filecount_list[persistent.SLFolder] and FileLoadable(i + persistent.SLFolder * 10000):
                     # Each file slot is a button.
                         button:
@@ -688,7 +688,7 @@ screen file_picker_load:
             spacing 0
             xsize 1300
             ysize 608
-            yinitial 0
+            yinitial 200
             draggable True
             mousewheel True
 
@@ -717,12 +717,13 @@ screen file_picker_load:
             $ persistent.SLStart = startFile
             $ persistent.fileposition_list[persistent.SLFolder] = persistent.SLStart
             #$ renpy.save_persistent()
+
             for i in range(1, filesInFolder):
                   frame:
-                    area (-5, 8, 635, 202.5)
+                    area (-5, 8, 635, 200)
                     # Each file slot is a button.
                     button:
-                        area (35, 8, 675, 202.5)
+                        area (35, 8, 675, 200)
                         action [ FileAction(i + persistent.SLFolder * 10000), SetField(persistent, "checkActScene", i) ]
                         has hbox
 
@@ -735,14 +736,14 @@ screen file_picker_load:
                         text description xpos 50 ypos 10
                         #$ renpy.save_persistent()
 
-        # Display X close button
+                    # Display X close button
                     if i < filesInFolder and FileLoadable(i + persistent.SLFolder * 10000):
                         button:
                             area (-25, -1, 30, 50)
                             imagebutton idle "images/Menus/save-load/delete_frame_30.png" focus_mask "images/Menus/save-load/delete_frame_mask.png" hover "images/Menus/save-load/delete_frame_100.png" xoffset 7 yoffset 8:
                                 clicked [ FileDelete(i + persistent.SLFolder * 10000), SetVariable("lastDeleted", i) ]
 
-        # Display the notes on each save
+                    # Display the notes on each save
                     if i < filesInFolder and FileLoadable(i + persistent.SLFolder * 10000):
                     # Each file slot is a button.
                         button:
