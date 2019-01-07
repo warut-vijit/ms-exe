@@ -688,7 +688,7 @@ screen file_picker_load:
             spacing 0
             xsize 1300
             ysize 608
-            yinitial 200
+            yinitial 0
             draggable True
             mousewheel True
 
